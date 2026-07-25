@@ -54,3 +54,62 @@ diagnosticForm?.addEventListener('submit', (event) => {
   diagnosticForm.classList.add('is-sent');
   diagnosticForm.querySelector('.diagnostic-submit').innerHTML = 'Запрос принят <b>✓</b>';
 });
+
+const caseStudiesSlider = document.querySelector('[data-case-studies-slider]');
+
+if (caseStudiesSlider) {
+  const caseSlides = [...caseStudiesSlider.querySelectorAll('[data-case-slide]')];
+  const previousCase = caseStudiesSlider.querySelector('[data-case-studies-prev]');
+  const nextCase = caseStudiesSlider.querySelector('[data-case-studies-next]');
+  const currentCase = caseStudiesSlider.querySelector('.case-studies-status span');
+  const totalCases = caseStudiesSlider.querySelector('.case-studies-status b');
+  const activeCaseTitle = caseStudiesSlider.querySelector('[data-case-studies-title]');
+  let activeCaseIndex = 0;
+  let pointerStartX = null;
+
+  const showCase = (nextIndex, direction = 'next') => {
+    activeCaseIndex = (nextIndex + caseSlides.length) % caseSlides.length;
+
+    caseSlides.forEach((slide, index) => {
+      const isActive = index === activeCaseIndex;
+      slide.classList.toggle('is-active', isActive);
+      slide.classList.remove('is-entering-next', 'is-entering-prev');
+      slide.setAttribute('aria-hidden', String(!isActive));
+      slide.inert = !isActive;
+      if (isActive) {
+        void slide.offsetWidth;
+        slide.classList.add(direction === 'prev' ? 'is-entering-prev' : 'is-entering-next');
+      }
+    });
+
+    const activeSlide = caseSlides[activeCaseIndex];
+    caseStudiesSlider.style.setProperty('--case-progress', `${((activeCaseIndex + 1) / caseSlides.length) * 100}%`);
+    currentCase.textContent = String(activeCaseIndex + 1).padStart(2, '0');
+    totalCases.textContent = `/ ${String(caseSlides.length).padStart(2, '0')}`;
+    activeCaseTitle.textContent = activeSlide.dataset.caseName;
+  };
+
+  previousCase.addEventListener('click', () => showCase(activeCaseIndex - 1, 'prev'));
+  nextCase.addEventListener('click', () => showCase(activeCaseIndex + 1, 'next'));
+
+  caseStudiesSlider.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const targetIndex = caseSlides.findIndex((slide) => `#${slide.id}` === link.getAttribute('href'));
+    if (targetIndex < 0) return;
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      showCase(targetIndex, targetIndex < activeCaseIndex ? 'prev' : 'next');
+    });
+  });
+
+  caseStudiesSlider.addEventListener('pointerdown', (event) => {
+    pointerStartX = event.clientX;
+  });
+
+  caseStudiesSlider.addEventListener('pointerup', (event) => {
+    if (pointerStartX === null) return;
+    const distance = event.clientX - pointerStartX;
+    pointerStartX = null;
+    if (Math.abs(distance) < 60) return;
+    showCase(activeCaseIndex + (distance < 0 ? 1 : -1), distance < 0 ? 'next' : 'prev');
+  });
+}
