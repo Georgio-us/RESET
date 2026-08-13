@@ -1,28 +1,42 @@
 const tabs = document.querySelectorAll('.navigator-tab');
 const panels = document.querySelectorAll('.navigator-panel');
+const navigatorPrevious = document.querySelector('[data-navigator-prev]');
+const navigatorNext = document.querySelector('[data-navigator-next]');
+
+const setActiveNavigatorTab = (tab, shouldScroll = false) => {
+  const target = tab.dataset.caseTarget;
+  tabs.forEach((item) => {
+    item.classList.toggle('is-active', item === tab);
+    item.setAttribute('aria-selected', String(item === tab));
+  });
+  panels.forEach((panel) => {
+    const active = panel.dataset.casePanel === target;
+    panel.classList.toggle('is-active', active);
+    panel.hidden = !active;
+  });
+  if (shouldScroll) tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+};
 
 tabs.forEach((tab) => {
-  tab.addEventListener('click', () => {
-    const target = tab.dataset.caseTarget;
-    tabs.forEach((item) => {
-      item.classList.toggle('is-active', item === tab);
-      item.setAttribute('aria-selected', String(item === tab));
-    });
-    panels.forEach((panel) => {
-      const active = panel.dataset.casePanel === target;
-      panel.classList.toggle('is-active', active);
-      panel.hidden = !active;
-    });
-  });
+  tab.addEventListener('click', () => setActiveNavigatorTab(tab, true));
 });
 
+const moveNavigatorTab = (offset) => {
+  const activeIndex = Array.from(tabs).findIndex((tab) => tab.classList.contains('is-active'));
+  const nextIndex = (activeIndex + offset + tabs.length) % tabs.length;
+  setActiveNavigatorTab(tabs[nextIndex], true);
+};
+
+navigatorPrevious?.addEventListener('click', () => moveNavigatorTab(-1));
+navigatorNext?.addEventListener('click', () => moveNavigatorTab(1));
+
 const testimonials = {
-  estyle: { quote: '«Теперь я чётко понимаю, что происходит с SEO, Google и всеми направлениями, в которых мы работаем. Мы решили технические ограничения и собрали все доступы в одно место.»', name: 'Светлана', role: 'Estyle Properties Spain · AI / SEO / Mediaelx', index: '01 / 06' },
-  nivellux: { quote: '«Мы пришли не просто за сайтом. RESET помог упаковать компанию: от названия и позиционирования до рекламы, кейсов и понятного направления роста.»', name: 'Богдан', role: 'NIVELLUX · строительство и ремонты / Валенсия', index: '02 / 06' },
-  dominant: { quote: '«Для выхода на рынок Испании мы собрали не отдельный инструмент, а рабочую основу: базу девелоперов, процессы команды, партнёрства и знания в одном пространстве.»', name: 'Анастасия', role: 'Dominant Spain · международное направление', index: '03 / 06' },
-  factor: { quote: '«Запрос на рекламу стал началом более важной работы: увидели слабые места сайта, соцсетей и обработки заявок. Теперь закрываем разрыв между лидом и продажей.»', name: 'Вадим', role: 'Агентство «Фактор» · Meta Ads и консалтинг продаж', index: '04 / 06' },
-  delmar: { quote: '«Мини-приложение стало для каждого агента своим сайтом в кармане: подборки отправляются за секунды, а Telegram превращается в самостоятельный канал работы с аудиторией.»', name: 'Юлия', role: 'DELMAR · Telegram Mini App', index: '05 / 06' },
-  domstar: { quote: '«Получили не просто подключение базы, а личное сопровождение: настройку процесса, обучение команды и развитие базы знаний, с которой агенты действительно могут работать.»', name: 'Кристина', role: 'DOMSTAR · интеграция базы и RAG-знания', index: '06 / 06' },
+  shepit: { quote: '«RESET помог собрать рабочую digital-систему для проекта: сайт, рекламу, аналитику и CRM в единой логике.»', name: 'Алексей', role: 'SHEPIT HOUSE', index: '01 / 06' },
+  factor: { quote: '«Запрос на рекламу стал началом более важной работы: увидели слабые места сайта, соцсетей и обработки заявок. Теперь закрываем разрыв между лидом и продажей.»', name: 'Вадим', role: 'Агентство «Фактор» · Meta Ads и консалтинг продаж', index: '02 / 06' },
+  estyle: { quote: '«Теперь я чётко понимаю, что происходит с SEO, Google и всеми направлениями, в которых мы работаем. Мы решили технические ограничения и собрали все доступы в одно место.»', name: 'Светлана', role: 'Estyle Properties Spain · AI / SEO / Mediaelx', index: '03 / 06' },
+  nivellux: { quote: '«Мы пришли не просто за сайтом. RESET помог упаковать компанию: от названия и позиционирования до рекламы, кейсов и понятного направления роста.»', name: 'Богдан', role: 'NIVELLUX · строительство и ремонты / Валенсия', index: '04 / 06' },
+  dominant: { quote: '«Для выхода на рынок Испании мы собрали не отдельный инструмент, а рабочую основу: базу девелоперов, процессы команды, партнёрства и знания в одном пространстве.»', name: 'Анастасия', role: 'Dominant Spain · международное направление', index: '05 / 06' },
+  delmar: { quote: '«Мини-приложение стало для каждого агента своим сайтом в кармане: подборки отправляются за секунды, а Telegram превращается в самостоятельный канал работы с аудиторией.»', name: 'Юлия', role: 'DELMAR · Telegram Mini App', index: '06 / 06' },
 };
 
 const testimonialItems = document.querySelectorAll('.testimonial-item');
@@ -56,6 +70,8 @@ diagnosticForm?.addEventListener('submit', (event) => {
 });
 
 const caseStudiesSlider = document.querySelector('[data-case-studies-slider]');
+const shepitAssets = document.querySelector('#shepit-case-title');
+const factorAssets = document.querySelector('#an-factor-case-title');
 
 const shepitStoryTitles = {
   strategy: 'Сначала собрали логику<br /><em>запуска проекта.</em>',
@@ -67,24 +83,24 @@ const shepitStoryTitles = {
   summary: 'Результат комплексного<br /><em>запуска проекта.</em>',
 };
 
-Object.entries(shepitStoryTitles).forEach(([sectionId, title]) => {
-  const heading = document.querySelector(`#${sectionId} h2`);
-  if (heading) heading.innerHTML = title;
-});
+if (shepitAssets) {
+  Object.entries(shepitStoryTitles).forEach(([sectionId, title]) => {
+    const heading = document.querySelector(`#${sectionId} h2`);
+    if (heading) heading.innerHTML = title;
+  });
 
-const strategyIntro = document.querySelector('#strategy .case-story-copy p');
-const strategyGrid = document.querySelector('#strategy .strategy-principles');
+  const strategyIntro = document.querySelector('#strategy .case-story-copy p');
+  const strategyGrid = document.querySelector('#strategy .strategy-principles');
 
-if (strategyIntro && strategyGrid) {
-  strategyIntro.textContent = 'На старте не было единой системы: продукт существовал отдельно, а сайт, реклама и работа с обращениями ещё не были связаны. Мы изучили локальных конкурентов, их позиционирование, сайты, офферы и рекламную подачу — затем определили, как представить проект, откуда приводить спрос и как передавать его в работу отдела продаж.';
-  strategyGrid.innerHTML = `
+  if (strategyIntro && strategyGrid) {
+    strategyIntro.textContent = 'На старте не было единой системы: продукт существовал отдельно, а сайт, реклама и работа с обращениями ещё не были связаны. Мы изучили локальных конкурентов, их позиционирование, сайты, офферы и рекламную подачу — затем определили, как представить проект, откуда приводить спрос и как передавать его в работу отдела продаж.';
+    strategyGrid.innerHTML = `
     <article><span>01 / ПОЗИЦИОНИРОВАНИЕ</span><h3>Приватная жилая среда рядом с Киевом</h3><p>Камерный проект на 8 домов: природа, приватность, современная архитектура и комфортная дистанция до города.</p></article>
     <article><span>02 / ПРОДУКТ</span><h3>Предложение, которое легко сравнить и понять</h3><p>Форматы домов, площадь, планировки, стоимость, рассрочка и преимущества каждого варианта.</p></article>
     <article><span>03 / ПРИВЛЕЧЕНИЕ</span><h3>Разделили сформированный и потенциальный спрос</h3><p>Google Ads работает с готовым намерением купить дом. Meta Ads формирует интерес через офферы и визуальные сценарии.</p></article>
     <article class="strategy-priority"><span>04 / ПРОДАЖИ</span><h3>Связали рекламу, сайт, аналитику и CRM</h3><p>Каждое обращение фиксируется, передаётся менеджеру и проходит понятную воронку до встречи и сделки.</p></article>`;
+  }
 }
-
-const shepitAssets = document.querySelector('#strategy');
 
 if (false && shepitAssets) {
   const assetRoot = 'shepit_assets/';
@@ -157,6 +173,31 @@ if (shepitAssets) {
   if (summaryResults) summaryResults.outerHTML = '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 247 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
 }
 
+if (factorAssets) {
+  const factorStrategy = document.querySelector('#strategy .strategy-principles');
+  const factorStrategyIntro = document.querySelector('#strategy .case-story-copy p');
+  const factorStrategyTitle = document.querySelector('#strategy .case-story-copy h2');
+  if (factorStrategyTitle) factorStrategyTitle.innerHTML = 'Собрали логику<br /><em>перезапуска Meta Ads.</em>';
+  if (factorStrategyIntro) factorStrategyIntro.textContent = 'Нужно было быстро перезапустить поток заявок: определить рабочие офферы, подготовить креативы и собрать кампании с понятной стоимостью лида.';
+  if (factorStrategy) factorStrategy.innerHTML = '<article><span>01 / АУДИТ</span><h3>Проверили текущие кампании и точки роста</h3><p>Определили, какие настройки, офферы и аудитории требуют перезапуска.</p></article><article><span>02 / ОФФЕРЫ</span><h3>Собрали предложения под спрос каждого филиала</h3><p>Сформировали понятные поводы оставить заявку и поговорить с менеджером.</p></article><article><span>03 / КРЕАТИВЫ</span><h3>Подготовили визуалы для разных сценариев выбора</h3><p>Тестировали подачу объекта, стоимости, форматов и преимуществ.</p></article><article class="strategy-priority"><span>04 / ЗАПУСК</span><h3>Перезапустили Meta Ads для двух филиалов</h3><p>Настроили кампании и лид-формы, получили равное количество заявок для каждого направления.</p></article>';
+
+  const factorMeta = document.querySelector('#meta-ads .creative-rail');
+  const factorMetaIntro = document.querySelector('#meta-ads .case-story-title p');
+  const factorMetaTitle = document.querySelector('#meta-ads .case-story-title h2');
+  if (factorMetaTitle) factorMetaTitle.innerHTML = 'Настройка и запуск<br /><em>Meta Ads.</em>';
+  if (factorMetaIntro) factorMetaIntro.textContent = 'Результат не нужно ждать месяцами: уже за первые две недели после перезапуска получили 76 заявок со средней стоимостью лида 6.94 $.';
+  if (factorMeta) factorMeta.innerHTML = '<div class="meta-case-board"><div class="meta-board-top"><span>04 / META ADS</span><span>КРЕАТИВЫ И РЕЗУЛЬТАТЫ КАМПАНИЙ</span></div><div class="meta-creatives" aria-label="Рекламные креативы Meta Ads"><figure><img src="factor_assets/creo_NY.png" alt="Рекламный креатив Meta Ads 01" /><figcaption>КРЕАТИВ 01</figcaption></figure><figure><img src="factor_assets/creo_cuvee.png" alt="Рекламный креатив Meta Ads 02" /><figcaption>КРЕАТИВ 02</figcaption></figure><figure><img src="factor_assets/creo_option.png" alt="Рекламный креатив Meta Ads 03" /><figcaption>КРЕАТИВ 03</figcaption></figure><figure><img src="factor_assets/creo_price.png" alt="Рекламный креатив Meta Ads 04" /><figcaption>КРЕАТИВ 04</figcaption></figure></div><div class="factor-meta-screens"><figure><img src="factor_assets/filial_1.png" alt="Результаты первой кампании Meta Ads" /><figcaption>META ADS / РЕЗУЛЬТАТЫ КАМПАНИЙ</figcaption></figure><figure><img src="factor_assets/filial_4.png" alt="Результаты второй кампании Meta Ads" /><figcaption>META ADS / РЕЗУЛЬТАТЫ КАМПАНИЙ</figcaption></figure></div><aside class="meta-usage"><span>ЧТО СДЕЛАЛИ</span><ul><li>Перезапустили кампании</li><li>Разделили направления</li><li>Подготовили новые креативы</li><li>Настроили лид-формы</li><li>Контролируем стоимость лида</li></ul></aside><div class="meta-results"><div><span>МИНИМАЛЬНАЯ ЦЕНА ЛИДА</span><b>3.29 $</b><small>по одной из кампаний</small></div><div><span>СРЕДНЯЯ ЦЕНА ЛИДА</span><b>6.94 $</b><small>по всем кампаниям</small></div><div><span>ОБЩЕЕ КОЛИЧЕСТВО ЛИДОВ</span><b>76</b><small>заявок получено</small></div><div><span>РЕЗУЛЬТАТ ЗА ПЕРВЫЕ</span><b>2 недели</b><small>работы кампаний</small></div></div></div>';
+
+  const factorSummaryTitle = document.querySelector('#summary .case-story-copy h2');
+  const factorSummaryCopy = document.querySelector('#summary .case-story-copy');
+  if (factorSummaryCopy && !factorSummaryCopy.querySelector('p')) factorSummaryCopy.insertAdjacentHTML('beforeend', '<p></p>');
+  const factorSummaryIntro = factorSummaryCopy?.querySelector('p');
+  const factorSummary = document.querySelector('#summary .summary-results');
+  if (factorSummaryTitle) factorSummaryTitle.innerHTML = 'Результат уже<br /><em>за 2 недели.</em>';
+  if (factorSummaryIntro) factorSummaryIntro.textContent = 'Первые измеримые результаты можно получить сразу после корректного запуска кампаний.';
+  if (factorSummary) factorSummary.outerHTML = '<div class="summary-scorecard"><div class="summary-metrics"><article><b>76</b><span>лидов суммарно<br />за первые две недели</span></article><article class="summary-featured"><b>6.94 $</b><span>средняя стоимость лида<br />по всем кампаниям<br /><small>с первого периода запуска</small></span></article><article><b>3.29 $</b><span>минимальная стоимость лида<br />по одной из кампаний</span></article><article><b>20+</b><span>креативов<br />для тестирования офферов</span></article><article><b>2 недели</b><span>до первого<br />зафиксированного результата</span></article><article><b>527.76 $</b><span>потраченный бюджет<br />за первые две недели</span></article></div><div class="summary-conclusion"><p>Агентство получило работающую систему Meta Ads: креативы, лид-формы и прозрачные показатели, которые позволяют управлять стоимостью и объёмом заявок уже со старта.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
+}
+
 const casePageNavigation = {
   'an-factor.html': { position: '02 / 08', title: 'AN FACTOR', next: 'estyle-spain.html', nextLabel: 'АГЕНТСТВО НЕДВИЖИМОСТИ / SEO / ИСПАНИЯ' },
   'estyle-spain.html': { position: '03 / 08', title: 'ESTYLE SPAIN', next: 'nivellux.html', nextLabel: 'РЕМОНТНО-СТРОИТЕЛЬНАЯ КОМПАНИЯ / DIGITAL / ИСПАНИЯ' },
@@ -175,6 +216,101 @@ if (document.body.classList.contains('case-page') && currentCaseNavigation && !d
 
   const caseNav = document.querySelector('.case-page-nav');
   if (caseNav) caseNav.innerHTML = `<div class="container case-page-nav-layout"><a href="../index.html#case-index">← Смотреть все кейсы</a><span>${currentCaseNavigation.position}</span><a href="${currentCaseNavigation.next}">Следующий кейс: <b>${currentCaseNavigation.nextLabel}</b> →</a></div>`;
+}
+
+const caseStoryTemplates = {
+  'estyle-spain.html': [
+    `<section class="case-story case-story-strategy"><div class="container case-story-grid"><div class="case-story-meta"><span>01 / СТРАТЕГИЯ</span><i></i><small>ТОЧКА ВОССТАНОВЛЕНИЯ</small></div><div class="case-story-copy"><h2>Сначала вернули<br /><em>контроль над системой.</em></h2><p>Собрали приоритеты после миграции: технические ошибки, структура сайта, аналитика и дальнейшая SEO-работа.</p></div><div class="strategy-principles"><article><span>01 / АУДИТ</span><h3>Нашли технические блокеры</h3><p>Проверили индексацию, структуру, скорость и критические ошибки сайта.</p></article><article><span>02 / SEO</span><h3>Вернули основу для органического роста</h3><p>Собрали понятную структуру страниц и точки дальнейшей оптимизации.</p></article><article><span>03 / АНАЛИТИКА</span><h3>Настроили измерение спроса</h3><p>Зафиксировали источники трафика, события и обращения.</p></article><article class="strategy-priority"><span>04 / РАЗВИТИЕ</span><h3>Связали сайт, SEO и аналитику в одну систему</h3><p>Команда получила основу для последовательного восстановления видимости и развития сайта.</p></article></div></div></section>`,
+    `<section class="case-story case-story-performance"><div class="container case-story-grid"><div class="case-story-copy"><span class="case-kicker">02 / GOOGLE ADS</span><h2>Спрос, который<br /><em>можно измерить.</em></h2><p>Шаблон для настройки кампаний, структуры запросов и контроля качества рекламного трафика.</p></div><div class="performance-board"><div class="board-top"><span>GOOGLE ADS / ШАБЛОН РАБОТЫ</span><b>ГОТОВО К НАСТРОЙКЕ</b></div><div class="performance-main"><strong>ADS</strong><span>структура кампаний<br />и коммерческие запросы</span><i>↗ запуск</i></div><svg viewBox="0 0 600 150" aria-hidden="true"><polyline points="0,122 45,105 80,112 125,80 170,95 215,51 260,68 305,43 350,70 395,38 440,53 485,25 530,47 600,18" fill="none" stroke="#b9dce5" stroke-width="3" /></svg><div class="performance-metrics"><span><b>01</b>структура</span><span><b>02</b>кампании</span><span><b>03</b>контроль</span></div></div></div></section>`,
+    `<section class="case-story case-story-analytics"><div class="container case-story-grid"><div class="analytics-map"><span>03 / АНАЛИТИКА</span><div class="analytics-node node-ad">SEO / ADS</div><div class="analytics-node node-site">САЙТ</div><div class="analytics-node node-lead">ЗАЯВКА</div><div class="analytics-node node-crm">CRM</div><div class="analytics-core">GA4<br />+ GTM</div></div><div class="case-story-copy"><h2>Аналитика:<br /><em>от поиска до обращения.</em></h2><p>GA4, Google Tag Manager и Search Console объединяют техническую картину сайта и поведение пользователей.</p><ul class="case-checklist"><li>Источники органического трафика</li><li>События и действия на сайте</li><li>Заявки и качество спроса</li></ul></div></div></section>`,
+    `<section class="case-story case-story-summary"><div class="container case-story-grid"><div class="case-story-copy"><span class="case-kicker">04 / ИТОГИ</span><h2>Основа для<br /><em>цифрового роста.</em></h2></div><div class="summary-results"><div><b>01</b><p>Техническая и SEO-структура сайта</p></div><div><b>02</b><p>Измеримая аналитика и события</p></div><div><b>03</b><p>Подготовка рекламных каналов</p></div><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div></section>`,
+  ],
+  'nivellux.html': [
+    `<section class="case-story case-story-strategy"><div class="container case-story-grid"><div class="case-story-meta"><span>01 / СТРАТЕГИЯ</span><i></i><small>ТОЧКА ВХОДА</small></div><div class="case-story-copy"><h2>Сначала собрали<br /><em>логику digital-упаковки.</em></h2><p>Определили, как показать компанию, её услуги и реализованные проекты в понятной системе коммуникации.</p></div><div class="strategy-principles"><article><span>01 / ПОЗИЦИОНИРОВАНИЕ</span><h3>Собрали ясный образ компании</h3><p>Определили ключевые услуги, преимущества и тональность бренда.</p></article><article><span>02 / СТРУКТУРА</span><h3>Связали услуги, проекты и обращения</h3><p>Сформировали путь клиента от первого интереса до контакта.</p></article><article><span>03 / ВИЗУАЛ</span><h3>Подготовили основу для доверия</h3><p>Показали качество работ, процессы и специализацию компании.</p></article><article class="strategy-priority"><span>04 / ЗАПУСК</span><h3>Собрали основу для системного digital-присутствия</h3><p>Бренд, сайт и коммуникация начинают работать как единое целое.</p></article></div></div></section>`,
+    `<section class="case-story case-story-site"><div class="container"><div class="case-story-title"><span>02 / САЙТ</span><h2>Первый контакт<br />с компанией — <em>не форма.</em></h2><p>Сайт объясняет специализацию, показывает качество работ и ведёт клиента к понятному следующему шагу.</p></div><div class="site-devices"><div class="site-browser"><div class="device-top"><i></i><i></i><i></i><span>nivellux.es</span></div><div class="site-screen"><b>NIVEL<br />LUX</b><span>РЕМОНТ И СТРОИТЕЛЬСТВО<br />В ВАЛЕНСИИ</span><button>Обсудить проект ↗</button></div></div><div class="site-phone"><div></div><b>NL</b><span>УСЛУГИ<br />И ПРОЕКТЫ</span></div><p>DESKTOP + MOBILE<br />ОДИН СЦЕНАРИЙ КЛИЕНТА</p></div></div></section>`,
+    `<section class="case-story case-story-meta-ads"><div class="container"><div class="case-story-title"><span>03 / META ADS</span><h2>Креативы, которые<br /><em>объясняют качество работы.</em></h2><p>Шаблон рекламной коммуникации: услуги, проекты, процесс и преимущества компании.</p></div><div class="creative-rail"><article><span>01 / УСЛУГИ</span><b>РЕМОНТ<br />ПОД КЛЮЧ</b><small>ВАЛЕНСИЯ</small></article><article><span>02 / ПРОЕКТЫ</span><b>ДЕТАЛИ,<br />КОТОРЫЕ ВИДНО</b><small>ПОРТФОЛИО РАБОТ</small></article><article><span>03 / ПРОЦЕСС</span><b>ПОНЯТНЫЙ<br />ПЛАН РАБОТ</b><small>ОТ ЗАДАЧИ ДО СДАЧИ</small></article><article><span>04 / КАЧЕСТВО</span><b>ПРОСТРАНСТВО<br />ДЛЯ ЖИЗНИ</b><small>NIVELLUX</small></article></div></div></section>`,
+    `<section class="case-story case-story-summary"><div class="container case-story-grid"><div class="case-story-copy"><span class="case-kicker">04 / ИТОГИ</span><h2>Собрали основу<br /><em>для роста компании.</em></h2></div><div class="summary-results"><div><b>01</b><p>Позиционирование и фирменный стиль</p></div><div><b>02</b><p>Сайт и путь обращения клиента</p></div><div><b>03</b><p>Шаблон рекламной коммуникации</p></div><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div></section>`,
+  ],
+  'irina-uzhelovskaya.html': [
+    `<section class="case-story case-story-strategy"><div class="container case-story-grid"><div class="case-story-meta"><span>01 / СТРАТЕГИЯ</span><i></i><small>ТОЧКА ВХОДА</small></div><div class="case-story-copy"><h2>Собрали знания<br /><em>в работающую структуру.</em></h2><p>Авторские методики, продукты и материалы были объединены в понятную digital-платформу для дальнейшего развития.</p></div><div class="strategy-principles"><article><span>01 / АРХИТЕКТУРА</span><h3>Разложили большой объём контента</h3><p>Собрали логичную структуру программ, материалов и разделов.</p></article><article><span>02 / ПРОДУКТЫ</span><h3>Сделали предложения понятными</h3><p>Каждый образовательный продукт получил своё место и путь выбора.</p></article><article><span>03 / СЦЕНАРИИ</span><h3>Продумали путь пользователя</h3><p>От знакомства с методикой до выбора программы и оплаты.</p></article><article class="strategy-priority"><span>04 / ПЛАТФОРМА</span><h3>Подготовили основу для онлайн-продаж</h3><p>Сайт стал единой точкой работы с контентом, продуктами и аудиторией.</p></article></div></div></section>`,
+    `<section class="case-story case-story-site"><div class="container"><div class="case-story-title"><span>02 / DIGITAL-ПЛАТФОРМА</span><h2>Материалы и продукты<br /><em>в одной системе.</em></h2><p>Платформа объединяет программы, блог, каталог продуктов и будущую онлайн-оплату.</p></div><div class="site-devices"><div class="site-browser"><div class="device-top"><i></i><i></i><i></i><span>irina-uzhelovskaya.com</span></div><div class="site-screen"><b>IRINA<br />UZHELOVSKAYA</b><span>АВТОРСКИЕ МЕТОДИКИ<br />И ОБРАЗОВАТЕЛЬНЫЕ ПРОДУКТЫ</span><button>Выбрать программу ↗</button></div></div><div class="site-phone"><div></div><b>IU</b><span>КАТАЛОГ<br />ПРОДУКТОВ</span></div><p>DESKTOP + MOBILE<br />ЕДИНАЯ ПЛАТФОРМА</p></div></div></section>`,
+    `<section class="case-story case-story-summary"><div class="container case-story-grid"><div class="case-story-copy"><span class="case-kicker">03 / ИТОГИ</span><h2>Платформа готова<br /><em>к дальнейшему развитию.</em></h2></div><div class="summary-results"><div><b>01</b><p>Структура авторских материалов</p></div><div><b>02</b><p>Каталог образовательных продуктов</p></div><div><b>03</b><p>Основа для онлайн-продаж</p></div><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div></section>`,
+  ],
+};
+
+const templatesForCurrentCase = caseStoryTemplates[currentCaseFile];
+const currentCaseNav = document.querySelector('.case-page-nav');
+if (templatesForCurrentCase && currentCaseNav && !document.querySelector('[data-case-templates]')) {
+  currentCaseNav.insertAdjacentHTML('beforebegin', `<div data-case-templates>${templatesForCurrentCase.join('')}</div>`);
+}
+
+const templateRoot = document.querySelector('[data-case-templates]');
+// CANONICAL SHEPIT HOUSE TEMPLATE: this is the final, rendered case section.
+// Reuse it unchanged first; alter its content only in a follow-up case-specific task.
+const templateSummary = () => '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 247 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
+
+if (templateRoot) {
+  templateRoot.querySelectorAll('.case-story-strategy').forEach((section) => {
+    const title = section.querySelector('.case-story-copy h2');
+    const intro = section.querySelector('.case-story-copy p');
+    const cards = section.querySelector('.strategy-principles');
+    if (title) title.innerHTML = shepitStoryTitles.strategy;
+    if (intro) intro.textContent = 'На старте не было единой системы: продукт существовал отдельно, а сайт, реклама и работа с обращениями ещё не были связаны. Мы изучили локальных конкурентов, их позиционирование, сайты, офферы и рекламную подачу — затем определили, как представить проект, откуда приводить спрос и как передавать его в работу отдела продаж.';
+    if (cards) cards.innerHTML = '<article><span>01 / ПОЗИЦИОНИРОВАНИЕ</span><h3>Приватная жилая среда рядом с Киевом</h3><p>Камерный проект на 8 домов: природа, приватность, современная архитектура и комфортная дистанция до города.</p></article><article><span>02 / ПРОДУКТ</span><h3>Предложение, которое легко сравнить и понять</h3><p>Форматы домов, площадь, планировки, стоимость, рассрочка и преимущества каждого варианта.</p></article><article><span>03 / ПРИВЛЕЧЕНИЕ</span><h3>Разделили сформированный и потенциальный спрос</h3><p>Google Ads работает с готовым намерением купить дом. Meta Ads формирует интерес через офферы и визуальные сценарии.</p></article><article class="strategy-priority"><span>04 / ПРОДАЖИ</span><h3>Связали рекламу, сайт, аналитику и CRM</h3><p>Каждое обращение фиксируется, передаётся менеджеру и проходит понятную воронку до встречи и сделки.</p></article>';
+  });
+
+  templateRoot.querySelectorAll('.summary-results').forEach((summary) => {
+    summary.outerHTML = templateSummary();
+  });
+
+  const site = templateRoot.querySelector('.case-story-site .site-devices');
+  const siteSection = templateRoot.querySelector('.case-story-site');
+  const siteTitle = siteSection?.querySelector('.case-story-title h2');
+  const siteIntro = siteSection?.querySelector('.case-story-title p');
+  if (siteTitle) siteTitle.innerHTML = shepitStoryTitles.site;
+  if (siteIntro) siteIntro.textContent = 'Сайт объясняет ценность дома, помогает выбрать участок и переводит интерес в конкретное действие.';
+  if (site) site.innerHTML = `<div class="shepit-product-stage"><i class="product-orbit orbit-one"></i><i class="product-orbit orbit-two"></i><svg class="product-links" viewBox="0 0 1000 520" aria-hidden="true"><path d="M250 260V470H40"/><path d="M610 80V180H805V330"/><circle cx="250" cy="260" r="7"/><circle cx="805" cy="330" r="7"/></svg><figure class="shepit-desktop-preview"><img src="shepit_assets/website.png" alt="Десктопная версия сайта SHEPIT HOUSE" /><figcaption>ДЕСКТОПНАЯ ВЕРСИЯ / SHEPIT HOUSE</figcaption></figure><figure class="shepit-mobile-preview"><img src="shepit_assets/mobile.png" alt="Мобильная версия сайта SHEPIT HOUSE" /><figcaption>МОБИЛЬНАЯ ВЕРСИЯ / АДАПТИВ</figcaption></figure><aside class="site-product-details"><span>ЧТО ПОЛУЧИЛ ПРОЕКТ</span><div class="site-outcome-grid"><article><b>14+</b><p>отдельных URL-страниц<br />и SEO-структура сайта</p></article><article><b>02</b><p>версии интерфейса:<br />Desktop + Mobile</p></article><article><b>01</b><p>интерактивный<br />генплан проекта</p></article><article><b>MAP</b><p>интеграция с картой<br />и геолокацией</p></article><article><b>UI</b><p>планировки с переключением<br />дизайн-проекта</p></article><article><b>CAT</b><p>каталог домов<br />и калькулятор</p></article></div><a href="https://shepithouse.ua" target="_blank" rel="noreferrer">Посмотреть сайт <b>↗</b></a></aside><div class="site-product-stats"><b>14+<small>уникальных страниц</small></b><b>2<small>версии: Desktop + Mobile</small></b><b>ИНТЕРАКТИВНЫЙ<small>генплан</small></b><b>КАТАЛОГ<small>домов</small></b><span class="site-tech-note">ИНТЕРФЕЙС ПРОДУКТА<br />САЙТ / ПУТЬ ЗАЯВКИ</span></div></div>`;
+
+  const google = templateRoot.querySelector('.case-story-performance .performance-board');
+  const googleSection = templateRoot.querySelector('.case-story-performance');
+  const googleKicker = googleSection?.querySelector('.case-kicker');
+  const googleTitle = googleSection?.querySelector('.case-story-copy h2');
+  const googleIntro = googleSection?.querySelector('.case-story-copy p');
+  if (googleTitle) googleTitle.innerHTML = shepitStoryTitles['google-ads'];
+  if (googleKicker) googleKicker.textContent = '03 / GOOGLE ADS';
+  if (googleIntro) googleIntro.textContent = 'Поисковые кампании собраны вокруг коммерческих запросов покупателей домов: покупка, рассрочка, локация, формат жилья и выбор объекта.';
+  if (google) google.innerHTML = `<div class="google-analysis"><div class="google-analysis-top"><span>03 / GOOGLE ADS</span><span>05.06 — 11.08</span></div><figure class="google-account"><img src="shepit_assets/new_google_stats.png" alt="Обновлённый обзор кампаний Google Ads SHEPIT HOUSE" /><figcaption>ОБЗОР АККАУНТА GOOGLE ADS</figcaption></figure><svg class="google-connectors" viewBox="0 0 1000 500" aria-hidden="true"><path d="M118 308H290V382H504"/><path d="M708 109V214H875"/><circle cx="290" cy="308" r="6"/><circle cx="708" cy="214" r="6"/></svg><div class="google-evidence"><figure><img src="shepit_assets/google_ads_keys.png" alt="Коммерческие ключевые слова Google Ads" /><figcaption>КОММЕРЧЕСКИЕ КЛЮЧЕВЫЕ СЛОВА</figcaption></figure><figure><img src="shepit_assets/new_google_advertising_example.png" alt="Адаптивное объявление Google Ads" /><figcaption>ГРУППЫ И АДАПТИВНЫЕ ОБЪЯВЛЕНИЯ</figcaption></figure></div><aside class="google-kpis"><div><span>СРЕДНИЙ CTR GOOGLE ADS</span><b>5.22%</b></div><div><span>РАСХОДЫ НА РЕКЛАМУ</span><b>37.4K</b><small>за период кампании</small></div><div><span>ЛУЧШЕЕ ОБЪЯВЛЕНИЕ</span><b>7.53%</b></div></aside><div class="google-work"><span>ЧТО СДЕЛАЛИ</span><p>Исследование спроса · семантическое ядро · коммерческие ключевые слова · группы и адаптивные объявления · минус-слова · оптимизация CTR</p></div></div>`;
+  const googleCopy = googleSection?.querySelector('.case-story-copy');
+  if (googleCopy && !googleCopy.querySelector('.google-key-results')) googleCopy.insertAdjacentHTML('beforeend', '<div class="google-key-results"><div><b>37.4K</b><span>расходы<br />на рекламу</span></div><div><b>5.22%</b><span>средний CTR<br />Google Ads</span></div><div><b>7.53%</b><span>лучшее<br />объявление</span></div></div>');
+
+  const meta = templateRoot.querySelector('.case-story-meta-ads .creative-rail');
+  const metaSection = templateRoot.querySelector('.case-story-meta-ads');
+  const metaKicker = metaSection?.querySelector('.case-story-title > span');
+  const metaTitle = metaSection?.querySelector('.case-story-title h2');
+  const metaIntro = metaSection?.querySelector('.case-story-title p');
+  if (metaTitle) metaTitle.innerHTML = shepitStoryTitles['meta-ads'];
+  if (metaKicker) metaKicker.textContent = '04 / META ADS';
+  if (metaIntro) metaIntro.textContent = 'Мы разработали рекламные креативы под разные сценарии принятия решения. Вместо одного универсального объявления использовали несколько офферов, чтобы охватить разные мотивы покупки и увеличить количество заявок.';
+  if (meta) meta.innerHTML = `<div class="meta-case-board"><div class="meta-board-top"><span>04 / META ADS</span><span>КРЕАТИВЫ, КАМПАНИИ И ОПТИМИЗАЦИЯ</span></div><svg class="meta-connectors" viewBox="0 0 1200 760" aria-hidden="true"><path d="M74 462H230V530H390"/><path d="M892 206H1050V310H1135"/><circle cx="230" cy="462" r="6"/><circle cx="1050" cy="310" r="6"/></svg><div class="meta-creatives" aria-label="Лучшие рекламные креативы Meta Ads">${[1, 2, 3, 4].map((index) => `<figure><img src="shepit_assets/meta_ads_creo${index}.png" alt="Рекламный креатив Meta Ads ${index}" /><figcaption>КРЕАТИВ 0${index}</figcaption></figure>`).join('')}</div><figure class="meta-dashboard-real"><img src="shepit_assets/new_meta_stats.png" alt="Обновлённая таблица результатов рекламных кампаний Meta Ads" /><figcaption>META ADS / РЕАЛЬНЫЕ РЕЗУЛЬТАТЫ КАМПАНИЙ</figcaption></figure><aside class="meta-usage"><span>ЧТО ИСПОЛЬЗОВАЛИ</span><ul><li>Рассрочка без переплат</li><li>Первый взнос 0%</li><li>Несколько форматов домов</li><li>Образ жизни и локация</li><li>Офферы для разных сегментов аудитории</li></ul></aside><div class="meta-optimization"><span>СТОИМОСТЬ ЛИДА СНИЖЕНА В 3.27 РАЗА</span><div class="meta-compare"><article><small>ПЕРВАЯ КАМПАНИЯ</small><b>45 <i>лидов</i></b><p>Бюджет 33 995 грн<br />Стоимость лида 755 грн</p></article><article><small>ПОСЛЕ ОПТИМИЗАЦИИ</small><b>73 <i>лида</i></b><p>Бюджет 16 884 грн<br />Стоимость лида 231 грн</p></article></div><div class="meta-deltas"><span>−50% бюджета</span><b>↓</b><span>−69% стоимости лида</span></div><div class="meta-cpl-drop"><span>СТОИМОСТЬ ЛИДА СНИЖЕНА</span><b><s>755 грн</s><i>→</i>231 грн</b><strong>В 3.27 РАЗА ДЕШЕВЛЕ</strong></div><p class="meta-optimization-note">При меньшем бюджете удалось увеличить объём заявок благодаря оптимизации рекламной кампании.</p></div></div>`;
+
+  const analytics = templateRoot.querySelector('.case-story-analytics .analytics-map');
+  const analyticsSection = templateRoot.querySelector('.case-story-analytics');
+  const analyticsTitle = analyticsSection?.querySelector('.case-story-copy h2');
+  const analyticsIntro = analyticsSection?.querySelector('.case-story-copy p');
+  if (analyticsTitle) analyticsTitle.innerHTML = shepitStoryTitles.analytics;
+  if (analyticsIntro) analyticsIntro.textContent = 'Настроили GA4, Google Tag Manager, Meta Pixel и систему событий, чтобы видеть весь путь пользователя — от первого перехода до отправки заявки.';
+  if (analytics) analytics.innerHTML = `<div class="analytics-board"><div class="analytics-board-top"><span>05 / GOOGLE ANALYTICS 4</span><span>РАБОЧИЙ ДАШБОРД</span></div><svg class="analytics-connectors" viewBox="0 0 1000 700" aria-hidden="true"><path d="M78 594H250V474H418"/><path d="M724 112V225H883V344"/><circle cx="250" cy="474" r="6"/><circle cx="724" cy="225" r="6"/></svg><figure class="analytics-main-screen"><img src="shepit_assets/GA4_stats.png" alt="Статистика Google Analytics 4" /><figcaption>ДАШБОРД СТАТИСТИКИ</figcaption></figure><figure class="analytics-traffic-screen"><img src="shepit_assets/GA4_trafic.png" alt="Источники трафика в Google Analytics 4" /><figcaption>ИСТОЧНИКИ ТРАФИКА</figcaption></figure><figure class="analytics-pages-screen"><img src="shepit_assets/GA4_pages_view.png" alt="Просмотры страниц в Google Analytics 4" /><figcaption>СТРАНИЦЫ И ВОВЛЕЧЕНИЕ</figcaption></figure><figure class="analytics-events-screen"><img src="shepit_assets/GA4_events.png" alt="События Google Analytics 4" /><figcaption>СОБЫТИЯ</figcaption></figure><span class="analytics-tech-note">GA4 / GTM / META PIXEL<br />ПУТЬ ПОЛЬЗОВАТЕЛЯ</span></div>`;
+  const analyticsChecklist = analyticsSection?.querySelector('.case-checklist');
+  if (analyticsChecklist) analyticsChecklist.outerHTML = '<div class="analytics-tracking"><span>ЧТО ОТСЛЕЖИВАЕМ</span><ul><li>Источники трафика</li><li>Поведение пользователей</li><li>События и взаимодействия</li><li>Отправку форм</li><li>Эффективность рекламных кампаний</li></ul></div><div class="analytics-result"><span>РЕЗУЛЬТАТ</span><p>Теперь можно понять:</p><ul><li>откуда приходит каждый пользователь;</li><li>какие страницы работают лучше всего;</li><li>где люди уходят;</li><li>какие кампании приводят реальные заявки.</li></ul></div>';
+
+  templateRoot.querySelectorAll('.case-story-summary').forEach((section) => {
+    const kicker = section.querySelector('.case-kicker');
+    const title = section.querySelector('.case-story-copy h2');
+    const intro = section.querySelector('.case-story-copy p');
+    if (kicker) kicker.textContent = '07 / ИТОГИ';
+    if (title) title.innerHTML = shepitStoryTitles.summary;
+    if (intro) intro.textContent = 'Что получил клиент после комплексного запуска проекта?';
+  });
 }
 
 document.querySelectorAll('[data-product-slider]').forEach((slider) => {

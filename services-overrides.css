@@ -1,0 +1,390 @@
+/* Final service overrides: six equal panels and a true one-column mobile flow. */
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0 !important;
+}
+
+/* RESET Journal: section navigation is explicit; article links carry the hover state. */
+.journal-intro h2 {
+  max-width: 510px;
+}
+
+.journal-all-link {
+  justify-content: space-between;
+  min-width: 242px;
+  box-sizing: border-box;
+  padding: 15px 17px;
+  border: 0;
+  color: #fff;
+  background: var(--azure);
+  font-size: 12px;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.journal-all-link:hover,
+.journal-all-link:focus-visible {
+  color: #fff;
+  background: #0a4859;
+  outline: 0;
+  transform: translateY(-2px);
+}
+
+.journal-all-link span {
+  color: #fff;
+}
+
+.journal-group,
+.journal-group:hover {
+  min-height: 178px;
+  padding: 25px 20px;
+  background: transparent;
+}
+
+.journal-group.journal-accent,
+.journal-group.journal-accent:hover {
+  padding: 25px 20px;
+  color: #fff;
+  background: var(--azure);
+}
+
+.journal-group.journal-accent > span,
+.journal-group.journal-accent li::before,
+.journal-group.journal-accent ol li,
+.journal-group.journal-accent ol a {
+  color: #c7e5ea;
+}
+
+.journal-group ol a {
+  display: inline;
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .2s ease, text-decoration-color .2s ease;
+}
+
+.journal-group ol a:hover,
+.journal-group ol a:focus-visible {
+  color: var(--azure);
+  outline: 0;
+  text-decoration: underline;
+}
+
+.journal-group.journal-accent ol a:hover,
+.journal-group.journal-accent ol a:focus-visible {
+  color: #fff;
+}
+
+.journal-category-link {
+  grid-column: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  align-self: end;
+  width: max-content;
+  min-width: 154px;
+  margin-top: 3px;
+  padding: 10px 12px;
+  border: 1px solid #718998;
+  color: #102133;
+  font-size: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.journal-category-link span {
+  margin-left: 18px;
+  font-size: 15px;
+  line-height: 1;
+}
+
+.journal-category-link:hover,
+.journal-category-link:focus-visible {
+  border-color: var(--azure);
+  color: #fff;
+  background: var(--azure);
+  outline: 0;
+}
+
+.journal-group.journal-accent .journal-category-link {
+  border-color: rgba(255,255,255,.55);
+  color: #fff;
+}
+
+.journal-group.journal-accent .journal-category-link:hover,
+.journal-group.journal-accent .journal-category-link:focus-visible {
+  border-color: #fff;
+  color: var(--azure);
+  background: #fff;
+}
+
+/* Journal alternates Azure and Azure Light to make each section legible as a unit. */
+.journal-group:not(.journal-accent) {
+  box-sizing: border-box;
+  border: 1px solid var(--azure-light);
+  border-right: 0;
+  border-left: 0;
+  background: var(--azure-light);
+}
+
+.journal-group:not(.journal-accent) > span {
+  color: var(--azure);
+}
+
+.journal-group:not(.journal-accent) .journal-category-link {
+  border-color: var(--azure);
+}
+
+.journal-group:not(.journal-accent) .journal-category-link:hover,
+.journal-group:not(.journal-accent) .journal-category-link:focus-visible {
+  color: #fff;
+  background: var(--azure);
+}
+
+/* Final CTA and footer: the page closes with a direct next step. */
+.diagnostic-intro h2 {
+  max-width: 570px;
+}
+
+/* Keep the final CTA compact: each desktop column owns its height. */
+@media (min-width: 1024px) {
+  .diagnostic-layout {
+    align-items: start;
+  }
+
+  .diagnostic-signal {
+    min-height: 520px;
+    align-self: start;
+  }
+
+  .diagnostic-form {
+    min-height: 0;
+    align-self: start;
+  }
+}
+
+.diagnostic-form h3 em {
+  color: var(--azure);
+}
+
+/* Footer uses the same readable scale as the page content. */
+.footer-brand {
+  font-size: 38px;
+  letter-spacing: 0;
+}
+
+.footer-brand i {
+  margin-top: 7px;
+  font-size: 9px;
+}
+
+.footer-statement {
+  font-size: clamp(22px, 1.65vw, 30px);
+  letter-spacing: 0;
+}
+
+.footer-nav {
+  gap: 12px;
+}
+
+.footer-nav a,
+.footer-contact a {
+  font-size: clamp(15px, 1.05vw, 18px);
+}
+
+.footer-bottom {
+  padding: 26px 0 30px;
+  font-size: clamp(12px, .85vw, 16px);
+  letter-spacing: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-brand {
+    font-size: 32px;
+  }
+
+  .footer-statement {
+    font-size: 21px;
+  }
+
+  .footer-nav a,
+  .footer-contact a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.footer-bottom a:hover,
+.footer-bottom a:focus-visible {
+  color: #a9d6de;
+  outline: 0;
+}
+
+.services-grid > .service-card {
+  box-sizing: border-box;
+}
+
+/* Desktop rhythm: cards 01, 04 and 05 are the azure accents. */
+.services-grid > .service-card--dark {
+  background: var(--azure);
+}
+
+@media (max-width: 767px) {
+  .journal-intro h2 {
+    max-width: none;
+  }
+
+  .journal-all-link {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 30px;
+  }
+
+  .journal-group,
+  .journal-group:hover,
+  .journal-group.journal-accent,
+  .journal-group.journal-accent:hover {
+    min-height: 0;
+    padding: 22px 14px;
+  }
+
+  .journal-group:not(.journal-accent) {
+    border-right: 0;
+    border-left: 0;
+  }
+
+  .journal-category-link {
+    grid-column: auto;
+    margin-top: 4px;
+  }
+
+  .services-section .platforms-copy {
+    position: static;
+    width: 100%;
+  }
+
+  .services-section .platforms-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 34px;
+  }
+
+  .services-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    margin: 0;
+  }
+
+  .services-grid > .service-card,
+  .services-grid > .service-card:nth-child(even),
+  .services-grid > .service-card:nth-last-child(-n + 2) {
+    grid-column: 1;
+    min-height: auto;
+    padding: 22px 20px 24px;
+    border-right: 0;
+    border-bottom: 1px solid #aebfc6;
+  }
+
+  .services-grid > .service-card:last-child {
+    border-bottom: 0;
+  }
+
+  .services-grid .service-index {
+    display: block;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    font-size: 9px;
+  }
+
+  .services-grid .service-icon {
+    width: 33px;
+    height: 33px;
+  }
+
+  .services-grid h3 {
+    margin-top: 9px;
+    font-size: 25px;
+  }
+
+  .services-grid p {
+    font-size: 13px;
+  }
+
+  .services-grid > .service-card::after {
+    right: 14px;
+    bottom: 13px;
+  }
+
+  /* Mobile rhythm: cards 01, 03 and 05 are the azure accents. */
+  .services-grid > .service-card:nth-child(3) {
+    color: #f4f8f9;
+    background: var(--azure);
+  }
+
+  .services-grid > .service-card:nth-child(3) .service-index,
+  .services-grid > .service-card:nth-child(3) .service-icon {
+    color: var(--azure-light);
+  }
+
+  .services-grid > .service-card:nth-child(3) p {
+    color: #c8d9dd;
+  }
+
+  .services-grid > .service-card:nth-child(3)::after {
+    width: 40px;
+    background: var(--azure-light);
+  }
+
+  .services-grid > .service-card:nth-child(4) {
+    color: #102133;
+    background: rgba(238, 243, 244, .3);
+  }
+
+  .services-grid > .service-card:nth-child(4) .service-index,
+  .services-grid > .service-card:nth-child(4) .service-icon {
+    color: #0d6579;
+  }
+
+  .services-grid > .service-card:nth-child(4) p {
+    color: #50626d;
+  }
+
+  .services-grid > .service-card:nth-child(4)::after {
+    width: 18px;
+    background: #9ebbc4;
+  }
+
+  /* Keep the result card and its CTA in one vertical flow. */
+  .case-navigator-section .navigator-panel .panel-result-stack {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    width: 100%;
+  }
+
+  .case-navigator-section .navigator-panel .panel-result-stack > .panel-result,
+  .case-navigator-section .navigator-panel .panel-result-stack > .panel-cta {
+    grid-column: 1;
+    grid-row: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .case-navigator-section .navigator-panel .panel-result-stack > .panel-cta {
+    min-height: 76px;
+    padding: 18px 20px;
+    font-size: 14px;
+  }
+}
