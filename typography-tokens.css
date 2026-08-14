@@ -1,0 +1,737 @@
+/* Site typography experiment: semantic headings use a compact shared scale.
+   Presentations deliberately remain outside this system. */
+:root {
+  --type-h1: clamp(50px, 6.25vw, 96px);
+  --type-h2: clamp(40px, 4.5vw, 72px);
+  --type-h3: clamp(24px, 2vw, 32px);
+  --type-h4: clamp(18px, 1.45vw, 22px);
+  /* Case pages use the same hierarchy, with a compact but distinct case scale.
+     At every viewport H1 remains larger than the section-level H2. */
+  --type-case-title: clamp(43px, 4.8vw, 72px);
+  --type-case-h2: clamp(36px, 3.7vw, 60px);
+  --type-case-h3: clamp(22px, 2vw, 30px);
+  /* One shared, readable size for labels, captions and technical UI text. */
+  --type-micro: clamp(12px, .8vw, 12px);
+  --type-case-meta: clamp(12px, .9vw, 12px);
+  /* Supporting prose and lists deliberately use the same site-wide steps. */
+  --type-description: clamp(16px, 1.35vw, 19px);
+  --type-list: clamp(14px, 1vw, 14px);
+  --type-case-lead: clamp(14px, 1.1vw, 14px);
+  --type-lead: clamp(16px, 1.35vw, 16px);
+  --type-body: clamp(14px, 1.1vw, 18px);
+  --type-method-copy: clamp(14px, .95vw, 15px);
+  --type-fact-title: clamp(17px, 1.35vw, 19px);
+  --type-fact-copy: clamp(14px, 1vw, 16px);
+  --type-meta: clamp(12px, .9vw, 12px);
+  --cta-height: 62px;
+  --cta-padding-inline: 26px;
+  --cta-font-size: clamp(14px, 1.05vw, 15px);
+  --cta-shadow-rest-x: 6px;
+  --cta-shadow-rest-y: 7px;
+  --cta-shadow-front-x: 8px;
+  --cta-shadow-front-y: 10px;
+  --cta-shadow-back-x: 15px;
+  --cta-shadow-back-y: 17px;
+  --leading-h1: .96;
+  --leading-h2: .96;
+  --leading-h3: 1.08;
+  --leading-h4: 1.2;
+  --leading-description: 1.55;
+  --leading-list: 1.45;
+  --leading-meta: 1.35;
+  --tracking-meta: .07em;
+}
+
+:is(.site-shell, .case-page) h1 {
+  font-size: var(--type-h1);
+  font-weight: 600;
+  line-height: var(--leading-h1);
+}
+
+:is(.site-shell, .case-page) h2 {
+  font-size: var(--type-h2);
+  font-weight: 600;
+  line-height: var(--leading-h2);
+}
+
+:is(.site-shell, .case-page) h3 {
+  font-size: var(--type-h3);
+  font-weight: 500;
+  line-height: var(--leading-h3);
+}
+
+:is(.site-shell, .case-page) h4 {
+  font-size: var(--type-h4);
+  font-weight: 500;
+  line-height: var(--leading-h4);
+}
+
+.case-page .case-template-copy h1,
+.site-shell .case-template-copy h2 {
+  font-size: var(--type-case-title);
+  line-height: .96;
+}
+
+/* The Shepit template has legacy component selectors, so it needs an equally
+   specific token override rather than a second, independent type scale. */
+.case-template-shepit .case-template-copy h1,
+.site-shell .case-template-shepit .case-template-copy h2 {
+  font-size: var(--type-case-title);
+}
+
+/* Case context is content, not decoration: it remains legible on small screens. */
+:is(.site-shell, .case-page) .case-template-kicker {
+  font-size: var(--type-case-meta);
+}
+
+:is(.site-shell, .case-page) .case-template-lead {
+  font-size: var(--type-case-lead);
+}
+
+/* Reuse the footer's wordmark in every visible site header. */
+.site-header .brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--surface);
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.site-header .brand-mark-light {
+  color: currentColor;
+}
+
+.site-header .brand-mark-accent {
+  color: #82b8c1;
+}
+
+/* The header is a full-width surface; its container should not read as a second colour. */
+.case-page {
+  background: var(--navy-deep);
+}
+
+.case-page .case-page-header {
+  background: transparent;
+}
+
+.case-page .case-story-copy > p,
+.case-page .case-story-title > p,
+.case-page .strategy-principles article p,
+.case-page .crm-note,
+.case-page .google-work p,
+.case-page .meta-optimization-note {
+  font-size: var(--type-description);
+  line-height: var(--leading-description);
+  letter-spacing: 0;
+}
+
+/* Lists and result labels remain subordinate, but never become micro-copy. */
+.case-page .strategy-principles > div > span,
+.case-page .case-checklist li,
+.case-page .case-template-results li,
+.case-page .meta-usage li,
+.case-page .google-key-results span,
+.case-page .google-kpis small,
+.case-page .site-product-details li,
+.case-page .meta-compare p {
+  font-size: var(--type-list);
+  line-height: var(--leading-list);
+  letter-spacing: 0;
+}
+
+/* The case template uses only four semantic text rhythms. */
+.case-page .case-template-copy > h1,
+.case-page .case-story h2,
+.case-page .case-story h3,
+.case-page .case-story h4 {
+  letter-spacing: 0;
+}
+
+.case-page .case-template-copy > h1 {
+  line-height: var(--leading-h1);
+}
+
+.case-page .case-story h2 {
+  font-size: var(--type-case-h2);
+  line-height: var(--leading-h2);
+}
+
+.case-page .case-story h3 {
+  font-size: var(--type-case-h3);
+  line-height: var(--leading-h3);
+}
+
+.case-page .case-story h4 {
+  line-height: var(--leading-h4);
+}
+
+.case-page .case-template-lead,
+.case-page .summary-conclusion > p,
+.case-page .crm-case-note,
+.case-page .meta-optimization-note {
+  font-size: var(--type-description);
+  line-height: var(--leading-description);
+  letter-spacing: 0;
+}
+
+.case-page .case-template-meta,
+.case-page .case-template-kicker,
+.case-page .case-story-meta,
+.case-page .case-kicker,
+.case-page .case-story-title > span,
+.case-page .case-template-media figcaption,
+.case-page .case-asset figcaption,
+.case-page .meta-usage > span,
+.case-page .google-work > span {
+  font-size: var(--type-case-meta);
+  line-height: var(--leading-meta);
+  letter-spacing: var(--tracking-meta);
+}
+
+/* Case-story headings and result cards participate in the shared hierarchy. */
+.case-page .case-story h2 {
+  font-size: var(--type-case-h2);
+  line-height: var(--leading-h2);
+}
+
+.case-page .site-product-details > span {
+  font-size: var(--type-case-meta);
+}
+
+.case-page .site-outcome-grid b {
+  font-size: clamp(32px, 8vw, 42px);
+  line-height: .92;
+}
+
+.case-page .site-outcome-grid p {
+  font-size: var(--type-case-lead);
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.site-device-controls {
+  display: none;
+}
+
+/* These icons are reserved for the compact mobile rendition of the hero footer. */
+.site-shell .path-item svg,
+.site-shell .metric-icon {
+  display: none;
+}
+
+/* A fact keeps semantic H3 markup while using the compact type scale of its component. */
+.site-shell .experience-facts {
+  padding: 0;
+  list-style: none;
+}
+
+.site-shell .section-meta {
+  font-size: var(--type-meta);
+}
+
+.site-shell .experience-copy > p {
+  font-size: var(--type-lead);
+  line-height: 1.58;
+}
+
+.site-shell .system-results-section .outcomes-intro h2 {
+  font-size: var(--type-h2);
+}
+
+.site-shell .system-results-section .outcomes-intro > p {
+  font-size: var(--type-lead);
+  line-height: 1.58;
+}
+
+.site-shell .methodology-flow h3 {
+  font-size: var(--type-h3);
+  line-height: var(--leading-h3);
+}
+
+.site-shell .methodology-flow article > div > p,
+.site-shell .methodology-flow aside p {
+  font-size: var(--type-method-copy);
+}
+
+.site-shell .experience-facts > li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 5px 8px;
+  padding: 20px 0;
+  border-bottom: 1px solid #b7c7cd;
+}
+
+.site-shell .experience-facts > li > span {
+  grid-row: 1 / span 2;
+  color: var(--azure);
+  font-size: var(--type-micro);
+}
+
+.site-shell .experience-facts h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: var(--type-fact-title);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.site-shell .experience-facts p {
+  grid-column: 2;
+  margin: 0;
+  color: #50616c;
+  font-size: var(--type-fact-copy);
+  line-height: 1.5;
+}
+
+/* Primary CTA system: one visible support layer at rest, a second revealed on intent. */
+.site-shell .button,
+.site-shell .panel-cta,
+.site-shell .diagnostic-submit,
+.site-shell .journal-all-link,
+body:not(.case-page) .case-studies-stage .case-template-cta,
+.case-page .site-product-details > a,
+.case-page .summary-conclusion > a {
+  --cta-surface: var(--azure);
+  --cta-surface-hover: #11738a;
+  --cta-foreground: #fff;
+  --cta-shadow-front: #a9d6de;
+  --cta-shadow-back: #5f9bab;
+  position: relative;
+  isolation: isolate;
+  min-height: var(--cta-height);
+  padding-inline: var(--cta-padding-inline);
+  border: 1px solid transparent;
+  color: var(--cta-foreground);
+  background: var(--cta-surface);
+  font-size: var(--cta-font-size);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow:
+    var(--cta-shadow-rest-x) var(--cta-shadow-rest-y) 0 var(--cta-shadow-front),
+    var(--cta-shadow-rest-x) var(--cta-shadow-rest-y) 0 var(--cta-shadow-back);
+  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+
+/* Case sequence navigation: desktop remains compact; mobile gets two calm rows. */
+.case-page-nav-layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.case-nav-previous,
+.case-nav-next-control {
+  display: none;
+}
+
+.case-nav-home {
+  justify-self: start;
+}
+
+.case-nav-title {
+  justify-self: end;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .case-page-nav {
+    height: auto;
+    padding-block: 18px 20px;
+  }
+
+  .case-page-nav-layout {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    gap: 18px 10px;
+  }
+
+  .case-nav-previous,
+  .case-nav-next-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-height: 28px;
+    color: var(--azure-light);
+    font-size: var(--type-list);
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  .case-nav-previous {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .case-nav-next-control {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .case-nav-previous svg,
+  .case-nav-next-control svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+  }
+
+  .case-nav-position {
+    grid-column: 2;
+    color: var(--surface);
+    font-size: var(--type-list);
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+
+  .case-nav-home,
+  .case-nav-title {
+    align-self: start;
+    color: var(--surface);
+    font-size: var(--type-list);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1.35;
+  }
+
+  .case-nav-home {
+    grid-column: 1 / span 2;
+    justify-self: start;
+  }
+
+  .case-nav-title {
+    grid-column: 3;
+    justify-self: end;
+    max-width: 15ch;
+  }
+}
+
+.site-shell .button:hover,
+.site-shell .button:focus-visible,
+.site-shell .panel-cta:hover,
+.site-shell .panel-cta:focus-visible,
+.site-shell .diagnostic-submit:hover,
+.site-shell .diagnostic-submit:focus-visible,
+.site-shell .journal-all-link:hover,
+.site-shell .journal-all-link:focus-visible,
+body:not(.case-page) .case-studies-stage .case-template-cta:hover,
+body:not(.case-page) .case-studies-stage .case-template-cta:focus-visible,
+.case-page .site-product-details > a:hover,
+.case-page .site-product-details > a:focus-visible,
+.case-page .summary-conclusion > a:hover,
+.case-page .summary-conclusion > a:focus-visible {
+  color: var(--cta-foreground);
+  background: var(--cta-surface-hover);
+  outline: 0;
+  transform: translate(-3px, -3px);
+  box-shadow:
+    var(--cta-shadow-front-x) var(--cta-shadow-front-y) 0 var(--cta-shadow-front),
+    var(--cta-shadow-back-x) var(--cta-shadow-back-y) 0 var(--cta-shadow-back);
+}
+
+/* Case CTAs use the shared visual language but remain anchored to the media frame. */
+body:not(.case-page) .case-studies-stage .case-template-cta {
+  position: absolute;
+}
+
+.site-shell .button-secondary {
+  --cta-surface: #142f40;
+  --cta-surface-hover: #1b3d4d;
+  --cta-foreground: #edf4f5;
+  --cta-shadow-front: #8eb4bf;
+  --cta-shadow-back: #4d7180;
+}
+
+.site-shell .hero-actions .button {
+  min-height: var(--cta-height);
+  background: var(--cta-surface);
+}
+
+.site-shell .button-outline-light {
+  --cta-surface: var(--azure-light);
+  --cta-surface-hover: #eff9fa;
+  --cta-foreground: var(--navy);
+  --cta-shadow-front: #74a7b4;
+  --cta-shadow-back: #315667;
+}
+
+.site-shell .button-outline-dark {
+  --cta-shadow-front: #b7d1d7;
+  --cta-shadow-back: #86aab3;
+}
+
+.site-shell .panel-cta,
+.site-shell .diagnostic-submit {
+  --cta-shadow-front: #9fcbd4;
+  --cta-shadow-back: #487989;
+}
+
+.site-shell .panel-cta b,
+.site-shell .diagnostic-submit b,
+.site-shell .journal-all-link span,
+body:not(.case-page) .case-studies-stage .case-template-cta span,
+.case-page .site-product-details > a b,
+.case-page .summary-conclusion > a span {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.site-shell .journal-all-link span {
+  color: currentColor;
+}
+
+.site-shell .diagnostic-submit b {
+  display: inline;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  color: currentColor;
+  background: transparent;
+}
+
+.case-page .site-product-details > a b {
+  display: inline;
+  width: auto;
+  height: auto;
+  color: currentColor;
+  background: transparent;
+}
+
+@media (max-width: 767px) {
+  :root {
+    /* Preserve the semantic step even on the narrowest phones. */
+    --type-h1: clamp(43px, 11.5vw, 50px);
+    --type-h2: clamp(36px, 9vw, 42px);
+    --type-h3: clamp(22px, 6vw, 28px);
+    --type-case-title: clamp(43px, 10.5vw, 48px);
+    --type-case-h2: clamp(36px, 9vw, 40px);
+    --type-case-h3: clamp(22px, 6vw, 28px);
+    --cta-height: 58px;
+    --cta-padding-inline: 20px;
+    --cta-font-size: 14px;
+    --cta-shadow-rest-x: 5px;
+    --cta-shadow-rest-y: 6px;
+    --cta-shadow-front-x: 7px;
+    --cta-shadow-front-y: 9px;
+    --cta-shadow-back-x: 12px;
+    --cta-shadow-back-y: 14px;
+  }
+
+  /* A case cover contains real content on mobile, so it must grow with it. */
+  .case-page .case-page-cover {
+    height: auto;
+    min-height: 0;
+  }
+
+  /* The two product mockups become separate, legible slides on mobile. */
+  .case-page .shepit-product-stage[data-device-slider] {
+    display: block;
+    min-height: 0;
+    padding: 28px 0;
+    margin-top: 44px;
+  }
+
+  .case-page .shepit-product-stage[data-device-slider] .product-orbit,
+  .case-page .shepit-product-stage[data-device-slider] .product-links {
+    display: none;
+  }
+
+  .case-page .site-device-slide {
+    display: none;
+  }
+
+  .case-page .site-device-slide.is-active {
+    display: block;
+  }
+
+  .case-page .shepit-product-stage .shepit-desktop-preview {
+    width: auto;
+    margin: 0;
+    padding: 10px;
+    box-shadow: 12px 13px 0 #c3d7da;
+  }
+
+  .case-page .shepit-product-stage .shepit-desktop-preview img {
+    width: 100%;
+    height: auto;
+  }
+
+  .case-page .shepit-product-stage .shepit-mobile-preview {
+    width: min(100%, 270px);
+    margin: 0 auto;
+    padding: 8px;
+    border-width: 7px;
+    box-shadow: 12px 14px 0 #c3d7da;
+  }
+
+  .case-page .shepit-product-stage .shepit-mobile-preview img {
+    width: 100%;
+    height: auto;
+  }
+
+  .case-page .site-device-controls {
+    display: grid;
+    position: relative;
+    z-index: 6;
+    grid-template-columns: 1fr 42px;
+    gap: 10px;
+    align-items: center;
+    margin: 24px 0 48px;
+    color: var(--azure);
+    font-size: var(--type-case-meta);
+    font-weight: 600;
+    letter-spacing: .07em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .case-page .site-device-controls button {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border: 1px solid #8fb0b9;
+    border-radius: 50%;
+    color: var(--azure);
+    background: transparent;
+    padding: 0;
+    line-height: 0;
+    touch-action: manipulation;
+    cursor: pointer;
+  }
+
+  .case-page .site-device-controls svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+  }
+
+  .case-page .site-device-controls button:active {
+    color: var(--surface);
+    background: var(--azure);
+  }
+
+  .site-shell .experience-facts > li {
+    grid-template-columns: 26px 1fr;
+  }
+
+  .site-shell .footer-label {
+    font-size: var(--type-list);
+    font-weight: 600;
+  }
+
+  /* Hero footer becomes two compact service rows and three centered fact rows. */
+  .site-shell .system-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
+    justify-content: stretch;
+  }
+
+  .site-shell .system-path .path-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    color: var(--surface);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: color .18s ease, transform .18s ease;
+  }
+
+  .site-shell .system-path .path-item:hover,
+  .site-shell .system-path .path-item:focus-visible {
+    color: var(--azure-light);
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.025);
+  }
+
+  .site-shell .path-item svg {
+    display: block;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    color: var(--azure-light);
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.55;
+  }
+
+  .site-shell .hero-metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-block: 28px;
+  }
+
+  .site-shell .hero-metrics > .hero-metric {
+    display: grid;
+    grid-template-columns: 26px max-content;
+    align-items: center;
+    justify-content: start;
+    gap: 12px;
+  }
+
+  .site-shell .hero-metrics {
+    padding-inline: 12px;
+  }
+
+  .site-shell .metric-icon {
+    display: block;
+    width: 26px;
+    height: 26px;
+    color: var(--azure-light);
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.45;
+  }
+
+  .site-shell .hero-metrics .metric-copy {
+    display: grid;
+    gap: 5px;
+    text-align: left;
+  }
+
+  .site-shell .hero-metrics > .hero-metric strong {
+    font-size: 25px;
+    line-height: 1;
+  }
+
+  .site-shell .hero-metrics > .hero-metric span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-shell .system-path {
+    gap: 16px 12px;
+  }
+
+  .site-shell .system-path .path-item {
+    font-size: 16px;
+  }
+
+  .site-shell .hero-metrics > .hero-metric {
+    grid-template-columns: 24px max-content;
+    gap: 10px;
+  }
+
+  .site-shell .hero-metrics > .hero-metric strong {
+    font-size: 23px;
+  }
+}

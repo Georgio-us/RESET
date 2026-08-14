@@ -1,9 +1,5 @@
 /* Final service overrides: six equal panels and a true one-column mobile flow. */
 
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: 0 !important;
-}
-
 /* RESET Journal: section navigation is explicit; article links carry the hover state. */
 .journal-intro h2 {
   max-width: 510px;
@@ -17,7 +13,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 0;
   color: #fff;
   background: var(--azure);
-  font-size: 12px;
+  font-size: var(--type-list);
   transition: background .2s ease, transform .2s ease;
 }
 
@@ -87,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 12px;
   border: 1px solid #718998;
   color: #102133;
-  font-size: 10px;
+  font-size: var(--type-micro);
   font-weight: 600;
   text-decoration: none;
   transition: color .2s ease, border-color .2s ease, background .2s ease;
@@ -176,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-brand i {
   margin-top: 7px;
-  font-size: 9px;
+  font-size: var(--type-micro);
 }
 
 .footer-statement {
@@ -214,7 +210,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .footer-bottom {
-    font-size: 12px;
+    font-size: var(--type-list);
   }
 }
 
@@ -305,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 0;
     padding: 0;
     border: 0;
-    font-size: 9px;
+    font-size: var(--type-micro);
   }
 
   .services-grid .service-icon {
@@ -319,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .services-grid p {
-    font-size: 13px;
+    font-size: var(--type-list);
   }
 
   .services-grid > .service-card::after {
@@ -383,8 +379,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .case-navigator-section .navigator-panel .panel-result-stack > .panel-cta {
-    min-height: 76px;
-    padding: 18px 20px;
-    font-size: 14px;
+    min-height: var(--cta-height);
+    padding: 0 var(--cta-padding-inline);
+    font-size: var(--cta-font-size);
   }
 }

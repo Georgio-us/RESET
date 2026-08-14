@@ -4,21 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="RESET — системы роста для недвижимости." />
+    <link rel="canonical" href="/ru/" />
+    <link rel="alternate" hreflang="ru" href="/ru/" />
+    <link rel="alternate" hreflang="uk" href="/uk/" />
+    <link rel="alternate" hreflang="en" href="/en/" />
+    <link rel="alternate" hreflang="es" href="/es/" />
+    <link rel="alternate" hreflang="x-default" href="/ru/" />
     <title>RESET — Real Estate Set</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="services-overrides.css" />
+    <link rel="stylesheet" href="typography-tokens.css" />
     <script src="app.js" defer></script>
+    <script src="i18n.js" defer></script>
   </head>
   <body>
     <main class="site-shell">
       <section class="hero" aria-labelledby="hero-title">
         <header class="site-header container">
           <a class="brand" href="#top" aria-label="RESET — на главную">
-            <span class="brand-name">RESET</span>
-            <span class="brand-subtitle">REAL ESTATE SET</span>
+            <span class="brand-name"><span class="brand-mark-light">RE</span><span class="brand-mark-accent">SET</span></span>
           </a>
 
           <nav class="navigation" aria-label="Основная навигация">
@@ -29,8 +36,8 @@
 
           <div class="header-actions">
             <div class="language-switcher" aria-label="Язык сайта">
-              <button class="is-active" type="button" aria-current="true">RU</button>
-              <button type="button" disabled>UA</button>
+              <button class="is-active" type="button" data-locale="ru" aria-current="true">RU</button>
+              <button type="button" data-locale="uk">UA</button>
               <button type="button" disabled>EN</button>
               <button type="button" disabled>ES</button>
             </div>
@@ -72,12 +79,15 @@
         <footer class="hero-footer container">
           <p class="footer-label">ЧЕТЫРЕ ОСНОВНЫХ НАПРАВЛЕНИЯ</p>
           <div class="system-path" aria-label="Контур роста">
-            <a href="#case-index">Meta Ads</a><i></i><a href="#case-index">Google Ads</a><i></i><a href="#case-index">Разработка сайтов</a><i></i><a href="#case-index">AI и автоматизация</a>
+            <a class="path-item path-item-meta" href="#case-index"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16c2.6-8 5.1-10 7-10 3.7 0 3.1 12 5.5 12 1.9 0 3.6-3.1 5.5-8" /></svg><span>Meta Ads</span></a><i></i>
+            <a class="path-item path-item-google" href="#case-index"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 18 7-12 7 12zM12 6l7 12" /><circle cx="17.5" cy="17.5" r="2.5" /></svg><span>Google Ads</span></a><i></i>
+            <a class="path-item path-item-site" href="#case-index"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="15" rx="2" /><path d="M3 8h18M7 6h.01M10 6h.01M8 12l-2 2 2 2M12 16l2-2-2-2" /></svg><span>Разработка сайтов</span></a><i></i>
+            <a class="path-item path-item-ai" href="#case-index"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" /><circle cx="5" cy="7" r="1.5" /><circle cx="19" cy="7" r="1.5" /><circle cx="5" cy="17" r="1.5" /><circle cx="19" cy="17" r="1.5" /><path d="m7 8 3 2M17 8l-3 2M7 16l3-2M17 16l-3-2" /></svg><span>AI и автоматизация</span></a>
           </div>
           <div class="hero-metrics" aria-label="Ключевые факты">
-            <div><strong>С 2017</strong><span>в недвижимости</span></div>
-            <div><strong>Международный</strong><span>опыт работы</span></div>
-            <div><strong>Разрабатываем</strong><span>собственные решения</span></div>
+            <div class="hero-metric"><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1" /><path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h6" /></svg><div class="metric-copy"><strong>С 2017</strong><span>в недвижимости</span></div></div>
+            <div class="hero-metric"><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" /><path d="M4 12h16M12 4c2.4 2.2 3.6 4.9 3.6 8S14.4 17.8 12 20M12 4C9.6 6.2 8.4 8.9 8.4 12S9.6 17.8 12 20" /></svg><div class="metric-copy"><strong>Международный</strong><span>опыт работы</span></div></div>
+            <div class="hero-metric"><svg class="metric-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h14" /><circle cx="9" cy="6" r="2" /><circle cx="15" cy="12" r="2" /><circle cx="11" cy="18" r="2" /></svg><div class="metric-copy"><strong>Разрабатываем</strong><span>собственные решения</span></div></div>
           </div>
         </footer>
       </section>
@@ -97,10 +107,10 @@
           </figure>
           <div class="experience-copy">
             <p>Наша команда объединяет опыт работы в недвижимости, маркетинге и управлении строительными проектами, поэтому мы смотрим не на отдельный рекламный канал, а на всю систему привлечения клиента.</p>
-            <div class="experience-facts">
-              <div><span>01</span><strong>Рынок</strong><p>Понимаем логику объекта, спроса и клиента.</p></div>
-              <div><span>02</span><strong>Процесс</strong><p>Находим слабые места между рекламой, сайтом и обработкой заявок.</p></div>
-            </div>
+            <ul class="experience-facts">
+              <li><span aria-hidden="true">01</span><h3>Рынок</h3><p>Понимаем логику объекта, спроса и клиента.</p></li>
+              <li><span aria-hidden="true">02</span><h3>Процесс</h3><p>Находим слабые места между рекламой, сайтом и обработкой заявок.</p></li>
+            </ul>
             <a class="button button-outline-dark" href="#case-index">Смотреть кейсы <span aria-hidden="true">↗</span></a>
           </div>
           <p class="experience-side-note">НЕ ИЩЕМ БЫСТРУЮ УСЛУГУ.<br />СОБИРАЕМ РЕШЕНИЕ ПОД ЗАДАЧУ.</p>
@@ -531,14 +541,14 @@
             <div class="section-meta"><span>07 / RESET JOURNAL</span><span class="meta-line"></span><span>ПРАКТИКА И РАЗБОРЫ</span></div>
             <h2 id="journal-title">Практические разборы<br />для рынка <em>недвижимости.</em></h2>
             <p>Материалы о разработке сайтов, рекламе, SEO, AI и digital-инструментах для недвижимости. На основе реальных задач, проектов и внедрений RESET.</p>
-            <a class="journal-link journal-all-link" href="journal.html">Смотреть все материалы <span>→</span></a>
+            <a class="journal-link journal-all-link" href="materials/">Смотреть все материалы <span>→</span></a>
           </div>
 
           <div class="journal-groups" aria-label="Разделы RESET Journal">
             <article class="journal-group journal-accent">
               <span>01 / РАЗРАБОТКА</span><h3>Основа, на которой не теряются лиды.</h3>
-              <ol><li><a href="journal.html#landing-or-site">Лендинг или сайт: что нужно вашему проекту?</a></li><li><a href="journal.html#cms-or-custom">Конструктор, CMS или самописная разработка</a></li><li><a href="journal.html#ai-development-cost">Сколько стоит разработка в эру AI</a></li></ol>
-              <a class="journal-category-link" href="journal.html#development">Перейти в раздел <span>→</span></a>
+              <ol><li><a href="materials/development/landing-ili-sait/">Лендинг или сайт: что нужно вашему проекту?</a></li><li><a href="materials/development/">Конструктор, CMS или самописная разработка</a></li><li><a href="materials/development/">Сколько стоит разработка в эру AI</a></li></ol>
+              <a class="journal-category-link" href="materials/development/">Перейти в раздел <span>→</span></a>
             </article>
             <article class="journal-group">
               <span>02 / ДИЗАЙН</span><h3>Визуал как часть воронки.</h3>
@@ -604,7 +614,7 @@
     <footer class="site-footer">
       <div class="container footer-layout">
         <a class="footer-brand" href="#top">RE<span>SET</span><i>REAL ESTATE SET</i></a>
-        <p class="footer-statement">Системный рост<br />для недвижимости.</p>
+        <p class="footer-statement">Системный<br />рост для<br />недвижимости.</p>
         <nav class="footer-nav" aria-label="Навигация в подвале"><a href="#approach">Подход</a><a href="#services">Услуги</a><a href="#case-index">Кейсы</a><a href="#contact">Диагностика</a><a href="#journal-title">Journal</a></nav>
         <div class="footer-contact"><a href="mailto:hello@reset.agency">hello@reset.agency</a><a href="https://t.me/Georgio_P" target="_blank" rel="noreferrer">Telegram ↗</a></div>
         <div class="footer-bottom"><span>© 2017–2026 RESET</span><a href="privacy.html">Политика конфиденциальности</a><a href="sitemap.html">Карта сайта</a></div>

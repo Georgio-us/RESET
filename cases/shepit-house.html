@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
     <script src="../app.js" defer></script>
+    <script src="../i18n.js" defer></script>
   </head>
   <body class="case-page">
     <header class="site-header case-page-header container">
       <a class="brand" href="../index.html" aria-label="RESET — на главную">
-        <span class="brand-name">RESET</span>
-        <span class="brand-subtitle">REAL ESTATE SET</span>
+        <span class="brand-name"><span class="brand-mark-light">RE</span><span class="brand-mark-accent">SET</span></span>
       </a>
       <nav class="navigation" aria-label="Основная навигация">
         <a href="../index.html#system">Система</a>
@@ -24,8 +24,8 @@
       </nav>
       <div class="header-actions">
         <div class="language-switcher" aria-label="Язык сайта">
-          <button class="is-active" type="button" aria-current="true">RU</button>
-          <button type="button" disabled>UA</button>
+          <button class="is-active" type="button" data-locale="ru" aria-current="true">RU</button>
+          <button type="button" data-locale="uk">UA</button>
           <button type="button" disabled>EN</button>
           <button type="button" disabled>ES</button>
         </div>
@@ -72,7 +72,7 @@
     </main>
     <section class="case-story case-story-strategy" id="strategy"><div class="container case-story-grid"><div class="case-story-meta"><span>01 / СТРАТЕГИЯ</span><i></i><small>ТОЧКА ВХОДА</small></div><div class="case-story-copy"><h2>Не продать<br />красивую картинку.<br /><em>Собрать систему.</em></h2><p>Стартовали с исследования спроса, конкурентного поля и клиентского пути. Стратегия связала позиционирование коттеджного городка, коммуникацию, рекламу и последующую работу менеджера.</p></div><div class="strategy-principles"><div><b>01</b><strong>Понять покупателя</strong><span>Сценарий выбора дома, барьеры и триггеры решения.</span></div><div><b>02</b><strong>Объяснить продукт</strong><span>Ясный объект, преимущества и следующий шаг.</span></div><div><b>03</b><strong>Не потерять спрос</strong><span>Связать рекламу, сайт, аналитику и CRM.</span></div></div></div></section>
 
-    <section class="case-story case-story-site" id="site"><div class="container"><div class="case-story-title"><span>02 / САЙТ</span><h2>Первый контакт<br />с проектом — <em>не форма.</em></h2><p>Сайт объясняет ценность дома, помогает выбрать участок и переводит интерес в конкретное действие.</p></div><div class="site-devices"><div class="site-browser"><div class="device-top"><i></i><i></i><i></i><span>shepithouse.ua</span></div><div class="site-screen"><b>SHEPIT<br />HOUSE</b><span>КОТТЕДЖНЫЙ ГОРОДОК<br />В КИЕВСКОЙ ОБЛАСТИ</span><button>Выбрать дом ↗</button></div></div><div class="site-phone"><div></div><b>SH</b><span>ВЫБРАТЬ<br />ДОМ</span></div><p>DESKTOP + MOBILE<br />ОДИН СЦЕНАРИЙ ПОЛЬЗОВАТЕЛЯ</p></div></div></section>
+    <section class="case-story case-story-site" id="site"><div class="container"><div class="case-story-title"><span>02 / САЙТ</span><h2>Первый контакт<br />с проектом — <em>не форма.</em></h2><p>Сайт объясняет ценность дома, помогает выбрать участок и переводит интерес в конкретное действие.</p></div><div class="site-devices" data-device-slider data-autoplay="1000" aria-label="Версии сайта SHEPIT HOUSE"><div class="site-device-slide is-active" data-device-slide data-device-label="Десктопная версия"><div class="site-browser"><div class="device-top"><i></i><i></i><i></i><span>shepithouse.ua</span></div><div class="site-screen"><b>SHEPIT<br />HOUSE</b><span>КОТТЕДЖНЫЙ ГОРОДОК<br />В КИЕВСКОЙ ОБЛАСТИ</span><button>Выбрать дом ↗</button></div></div></div><div class="site-device-slide" data-device-slide data-device-label="Мобильная / адаптивная версия"><div class="site-phone"><div></div><b>SH</b><span>ВЫБРАТЬ<br />ДОМ</span></div></div><div class="site-device-controls" aria-label="Управление слайдером"><span aria-live="polite" data-device-label-output>Мобильная / адаптивная версия</span><button type="button" data-device-next aria-label="Следующая версия"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button></div><p>DESKTOP + MOBILE<br />ОДИН СЦЕНАРИЙ ПОЛЬЗОВАТЕЛЯ</p></div></div></section>
 
     <section class="case-story case-story-performance" id="google-ads"><div class="container case-story-grid"><div class="case-story-copy"><span class="case-kicker">03 / GOOGLE ADS</span><h2>Спрос, который<br /><em>можно объяснить.</em></h2><p>Кампании собраны вокруг реальных намерений: покупка дома, локация, формат жизни и финансовые условия.</p></div><div class="performance-board"><div class="board-top"><span>GOOGLE ADS / PERFORMANCE</span><b>АКТИВНО</b></div><div class="performance-main"><strong>1 320</strong><span>кликов за период</span><i>↗ +18.4%</i></div><svg viewBox="0 0 600 150" aria-hidden="true"><polyline points="0,122 45,105 80,112 125,80 170,95 215,51 260,68 305,43 350,70 395,38 440,53 485,25 530,47 600,18" fill="none" stroke="#b9dce5" stroke-width="3" /></svg><div class="performance-metrics"><span><b>27.5K</b>показов</span><span><b>4.82%</b>CTR</span><span><b>45</b>лидов</span></div></div></div></section>
 

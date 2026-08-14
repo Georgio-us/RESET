@@ -1,3 +1,35 @@
+const routeLocale = location.pathname.match(/^\/(ru|uk|en|es)(?:\/|$)/)?.[1] || 'ru';
+const routePath = location.pathname.replace(/^\/(?:ru|uk|en|es)(?=\/|$)/, '').replace(/index\.html$/, '').replace(/\.html$/, '/') || '/';
+
+if (document.body.classList.contains('case-page') && !document.querySelector('link[href$="typography-tokens.css"]')) {
+  const typographyStyles = document.createElement('link');
+  typographyStyles.rel = 'stylesheet';
+  typographyStyles.href = '../typography-tokens.css';
+  document.head.append(typographyStyles);
+}
+
+if (!document.querySelector('link[rel="canonical"]')) {
+  const canonical = document.createElement('link');
+  canonical.rel = 'canonical';
+  canonical.href = `/${routeLocale}${routePath}`;
+  document.head.append(canonical);
+  ['ru', 'uk', 'en', 'es'].forEach((language) => {
+    const alternate = document.createElement('link');
+    alternate.rel = 'alternate'; alternate.hreflang = language; alternate.href = `/${language}${routePath}`;
+    document.head.append(alternate);
+  });
+  const defaultAlternate = document.createElement('link');
+  defaultAlternate.rel = 'alternate'; defaultAlternate.hreflang = 'x-default'; defaultAlternate.href = `/ru${routePath}`;
+  document.head.append(defaultAlternate);
+}
+
+if ((new URLSearchParams(location.search).get('lang') === 'uk' || /^\/uk(?:\/|$)/.test(location.pathname)) && !document.querySelector('script[src$="i18n.js"]')) {
+  const i18nScript = document.createElement('script');
+  i18nScript.src = location.pathname.includes('/cases/') ? '../i18n.js' : 'i18n.js';
+  i18nScript.defer = true;
+  document.head.append(i18nScript);
+}
+
 const tabs = document.querySelectorAll('.navigator-tab');
 const panels = document.querySelectorAll('.navigator-panel');
 const navigatorPrevious = document.querySelector('[data-navigator-prev]');
@@ -123,7 +155,7 @@ if (false && shepitAssets) {
 
 if (shepitAssets) {
   const siteVisual = document.querySelector('.site-devices');
-  if (siteVisual) siteVisual.innerHTML = `<div class="shepit-product-stage"><i class="product-orbit orbit-one"></i><i class="product-orbit orbit-two"></i><svg class="product-links" viewBox="0 0 1000 520" aria-hidden="true"><path d="M250 260V470H40"/><path d="M610 80V180H805V330"/><circle cx="250" cy="260" r="7"/><circle cx="805" cy="330" r="7"/></svg><figure class="shepit-desktop-preview"><img src="shepit_assets/website.png" alt="Десктопная версия сайта SHEPIT HOUSE" /><figcaption>ДЕСКТОПНАЯ ВЕРСИЯ / SHEPIT HOUSE</figcaption></figure><figure class="shepit-mobile-preview"><img src="shepit_assets/mobile.png" alt="Мобильная версия сайта SHEPIT HOUSE" /><figcaption>МОБИЛЬНАЯ ВЕРСИЯ / АДАПТИВ</figcaption></figure><aside class="site-product-details"><span>ЧТО СДЕЛАЛИ</span><ul><li>Многостраничный сайт</li><li>Интерактивный генплан</li><li>Каталог домов и карточки объектов</li><li>Планировки и калькулятор рассрочки</li><li>CTA и формы заявок</li></ul></aside><div class="site-product-stats"><b>14+<small>страниц</small></b><b>ДЕСКТОП<small>+ МОБИЛЬНАЯ ВЕРСИЯ</small></b><b>ИНТЕРАКТИВНЫЙ<small>ГЕНПЛАН</small></b><b>ФОРМЫ<small>ЗАЯВОК</small></b></div><span class="site-tech-note">ИНТЕРФЕЙС ПРОДУКТА<br />САЙТ / ПУТЬ ЗАЯВКИ</span></div>`;
+  if (siteVisual) siteVisual.innerHTML = `<div class="shepit-product-stage" data-device-slider data-autoplay="1000" aria-label="Версии сайта SHEPIT HOUSE"><i class="product-orbit orbit-one"></i><i class="product-orbit orbit-two"></i><svg class="product-links" viewBox="0 0 1000 520" aria-hidden="true"><path d="M250 260V470H40"/><path d="M610 80V180H805V330"/><circle cx="250" cy="260" r="7"/><circle cx="805" cy="330" r="7"/></svg><figure class="shepit-desktop-preview site-device-slide is-active" data-device-slide data-device-label="Десктопная версия"><img src="shepit_assets/website.png" alt="Десктопная версия сайта SHEPIT HOUSE" /><figcaption>ДЕСКТОПНАЯ ВЕРСИЯ / SHEPIT HOUSE</figcaption></figure><figure class="shepit-mobile-preview site-device-slide" data-device-slide data-device-label="Мобильная / адаптивная версия"><img src="shepit_assets/mobile.png" alt="Мобильная версия сайта SHEPIT HOUSE" /><figcaption>МОБИЛЬНАЯ ВЕРСИЯ / АДАПТИВ</figcaption></figure><div class="site-device-controls" aria-label="Управление слайдером"><span aria-live="polite" data-device-label-output>Мобильная / адаптивная версия</span><button type="button" data-device-next aria-label="Следующая версия"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button></div><aside class="site-product-details"><span>ЧТО СДЕЛАЛИ</span><ul><li>Многостраничный сайт</li><li>Интерактивный генплан</li><li>Каталог домов и карточки объектов</li><li>Планировки и калькулятор рассрочки</li><li>CTA и формы заявок</li></ul></aside><div class="site-product-stats"><b>14+<small>страниц</small></b><b>ДЕСКТОП<small>+ МОБИЛЬНАЯ ВЕРСИЯ</small></b><b>ИНТЕРАКТИВНЫЙ<small>ГЕНПЛАН</small></b><b>ФОРМЫ<small>ЗАЯВОК</small></b></div><span class="site-tech-note">ИНТЕРФЕЙС ПРОДУКТА<br />САЙТ / ПУТЬ ЗАЯВКИ</span></div>`;
   const siteDetails = siteVisual?.querySelector('.site-product-details');
   if (siteDetails) siteDetails.innerHTML = '<span>ЧТО ПОЛУЧИЛ ПРОЕКТ</span><div class="site-outcome-grid"><article><b>14+</b><p>отдельных URL-страниц<br />и SEO-структура сайта</p></article><article><b>02</b><p>версии интерфейса:<br />Desktop + Mobile</p></article><article><b>01</b><p>интерактивный<br />генплан проекта</p></article><article><b>MAP</b><p>интеграция с картой<br />и геолокацией</p></article><article><b>UI</b><p>планировки с переключением<br />дизайн-проекта</p></article><article><b>CAT</b><p>каталог домов<br />и калькулятор</p></article></div><a href="https://shepithouse.ua" target="_blank" rel="noreferrer">Посмотреть сайт <b>↗</b></a>';
   const siteStats = siteVisual?.querySelector('.site-product-stats');
@@ -170,7 +202,7 @@ if (shepitAssets) {
   const summaryIntro = summaryCopy?.querySelector('p');
   if (summaryIntro) summaryIntro.textContent = 'Что получил клиент после комплексного запуска проекта?';
   const summaryResults = document.querySelector('#summary .summary-results');
-  if (summaryResults) summaryResults.outerHTML = '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 247 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
+  if (summaryResults) summaryResults.outerHTML = '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 231 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
 }
 
 if (factorAssets) {
@@ -199,23 +231,29 @@ if (factorAssets) {
 }
 
 const casePageNavigation = {
-  'an-factor.html': { position: '02 / 08', title: 'AN FACTOR', next: 'estyle-spain.html', nextLabel: 'АГЕНТСТВО НЕДВИЖИМОСТИ / SEO / ИСПАНИЯ' },
-  'estyle-spain.html': { position: '03 / 08', title: 'ESTYLE SPAIN', next: 'nivellux.html', nextLabel: 'РЕМОНТНО-СТРОИТЕЛЬНАЯ КОМПАНИЯ / DIGITAL / ИСПАНИЯ' },
-  'nivellux.html': { position: '04 / 08', title: 'NIVELLUX', next: 'irina-uzhelovskaya.html', nextLabel: 'ЛИЧНЫЙ БРЕНД / ОБРАЗОВАНИЕ / УКРАИНА' },
-  'irina-uzhelovskaya.html': { position: '05 / 08', title: 'IRINA UZHELOVSKAYA', next: 'dominanta-spain.html', nextLabel: 'МЕЖДУНАРОДНОЕ АГЕНТСТВО / MARKET ENTRY / ИСПАНИЯ' },
-  'dominanta-spain.html': { position: '06 / 08', title: 'DOMINANTA SPAIN', next: 'ai-sales-assistant.html', nextLabel: 'ESTYLESPAIN / AI ПРОДУКТ / НЕДВИЖИМОСТЬ' },
-  'ai-sales-assistant.html': { position: '07 / 08', title: 'AI SALES ASSISTANT', next: 'telegram-ai-crm.html', nextLabel: 'DELMAR · HELPING · DOMSTAR / SAAS / НЕДВИЖИМОСТЬ' },
-  'telegram-ai-crm.html': { position: '08 / 08', title: 'TELEGRAM AI CRM', next: 'shepit-house.html', nextLabel: 'ДЕВЕЛОПЕР КОТТЕДЖНОГО ГОРОДКА / REAL ESTATE / УКРАИНА' },
+  'shepit-house.html': { position: '01 / 08', title: 'SHEPIT HOUSE', previous: 'telegram-ai-crm.html', next: 'an-factor.html', nextLabel: 'АГЕНТСТВО НЕДВИЖИМОСТИ / META ADS / УКРАИНА' },
+  'an-factor.html': { position: '02 / 08', title: 'AN FACTOR', previous: 'shepit-house.html', next: 'estyle-spain.html', nextLabel: 'АГЕНТСТВО НЕДВИЖИМОСТИ / SEO / ИСПАНИЯ' },
+  'estyle-spain.html': { position: '03 / 08', title: 'ESTYLE SPAIN', previous: 'an-factor.html', next: 'nivellux.html', nextLabel: 'РЕМОНТНО-СТРОИТЕЛЬНАЯ КОМПАНИЯ / DIGITAL / ИСПАНИЯ' },
+  'nivellux.html': { position: '04 / 08', title: 'NIVELLUX', previous: 'estyle-spain.html', next: 'irina-uzhelovskaya.html', nextLabel: 'ЛИЧНЫЙ БРЕНД / ОБРАЗОВАНИЕ / УКРАИНА' },
+  'irina-uzhelovskaya.html': { position: '05 / 08', title: 'IRINA UZHELOVSKAYA', previous: 'nivellux.html', next: 'dominanta-spain.html', nextLabel: 'МЕЖДУНАРОДНОЕ АГЕНТСТВО / MARKET ENTRY / ИСПАНИЯ' },
+  'dominanta-spain.html': { position: '06 / 08', title: 'DOMINANTA SPAIN', previous: 'irina-uzhelovskaya.html', next: 'ai-sales-assistant.html', nextLabel: 'ESTYLESPAIN / AI ПРОДУКТ / НЕДВИЖИМОСТЬ' },
+  'ai-sales-assistant.html': { position: '07 / 08', title: 'AI SALES ASSISTANT', previous: 'dominanta-spain.html', next: 'telegram-ai-crm.html', nextLabel: 'DELMAR · HELPING · DOMSTAR / SAAS / НЕДВИЖИМОСТЬ' },
+  'telegram-ai-crm.html': { position: '08 / 08', title: 'TELEGRAM AI CRM', previous: 'ai-sales-assistant.html', next: 'shepit-house.html', nextLabel: 'ДЕВЕЛОПЕР КОТТЕДЖНОГО ГОРОДКА / REAL ESTATE / УКРАИНА' },
 };
 
 const currentCaseFile = window.location.pathname.split('/').pop();
 const currentCaseNavigation = casePageNavigation[currentCaseFile];
 
 if (document.body.classList.contains('case-page') && currentCaseNavigation && !document.querySelector('.case-page-header')) {
-  document.body.insertAdjacentHTML('afterbegin', `<header class="site-header case-page-header container"><a class="brand" href="../index.html" aria-label="RESET — на главную"><span class="brand-name">RESET</span><span class="brand-subtitle">REAL ESTATE SET</span></a><nav class="navigation" aria-label="Основная навигация"><a href="../index.html#system">Система</a><a href="../index.html#system">Решения</a><a href="../index.html#case-index">Кейсы</a></nav><div class="header-actions"><div class="language-switcher" aria-label="Язык сайта"><button class="is-active" type="button" aria-current="true">RU</button><button type="button" disabled>UA</button><button type="button" disabled>EN</button><button type="button" disabled>ES</button></div><a class="menu-link" href="../index.html#contact">Обсудить задачу <span aria-hidden="true">↗</span></a></div></header><nav class="case-breadcrumbs" aria-label="Хлебные крошки"><div class="container"><a href="../index.html">Главная</a><span>/</span><a href="../index.html#case-index">Кейсы</a><span>/</span><b>${currentCaseNavigation.title}</b></div></nav>`);
+  document.body.insertAdjacentHTML('afterbegin', `<header class="site-header case-page-header container"><a class="brand" href="../index.html" aria-label="RESET — на главную"><span class="brand-name"><span class="brand-mark-light">RE</span><span class="brand-mark-accent">SET</span></span></a><nav class="navigation" aria-label="Основная навигация"><a href="../index.html#system">Система</a><a href="../index.html#system">Решения</a><a href="../index.html#case-index">Кейсы</a></nav><div class="header-actions"><div class="language-switcher" aria-label="Язык сайта"><button class="is-active" type="button" data-locale="ru" aria-current="true">RU</button><button type="button" data-locale="uk">UA</button><button type="button" disabled>EN</button><button type="button" disabled>ES</button></div><a class="menu-link" href="../index.html#contact">Обсудить задачу <span aria-hidden="true">↗</span></a></div></header><nav class="case-breadcrumbs" aria-label="Хлебные крошки"><div class="container"><a href="../index.html">Главная</a><span>/</span><a href="../index.html#case-index">Кейсы</a><span>/</span><b>${currentCaseNavigation.title}</b></div></nav>`);
 
-  const caseNav = document.querySelector('.case-page-nav');
-  if (caseNav) caseNav.innerHTML = `<div class="container case-page-nav-layout"><a href="../index.html#case-index">← Смотреть все кейсы</a><span>${currentCaseNavigation.position}</span><a href="${currentCaseNavigation.next}">Следующий кейс: <b>${currentCaseNavigation.nextLabel}</b> →</a></div>`;
+}
+
+const caseNav = document.querySelector('.case-page-nav');
+if (document.body.classList.contains('case-page') && currentCaseNavigation && caseNav) {
+  const arrowLeft = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>';
+  const arrowRight = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>';
+  caseNav.innerHTML = `<div class="container case-page-nav-layout"><a class="case-nav-previous" href="${currentCaseNavigation.previous}">${arrowLeft}<span>Предыдущий кейс</span></a><span class="case-nav-position">${currentCaseNavigation.position}</span><a class="case-nav-next-control" href="${currentCaseNavigation.next}"><span>Следующий кейс</span>${arrowRight}</a><a class="case-nav-home" href="../index.html">Вернуться на главную</a><a class="case-nav-title" href="${currentCaseNavigation.next}">${currentCaseNavigation.nextLabel}</a></div>`;
 }
 
 const caseStoryTemplates = {
@@ -247,7 +285,7 @@ if (templatesForCurrentCase && currentCaseNav && !document.querySelector('[data-
 const templateRoot = document.querySelector('[data-case-templates]');
 // CANONICAL SHEPIT HOUSE TEMPLATE: this is the final, rendered case section.
 // Reuse it unchanged first; alter its content only in a follow-up case-specific task.
-const templateSummary = () => '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 247 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
+const templateSummary = () => '<div class="summary-scorecard"><div class="summary-metrics"><article><b>100+</b><span>лидов привлечено<br />из Google Ads и Meta Ads</span></article><article class="summary-featured"><b>в 3 раза</b><span>снижена стоимость лида<br />после оптимизации Meta Ads<br /><small>с 755 грн до 231 грн</small></span></article><article><b>7.59%</b><span>CTR лучших коммерческих<br />поисковых запросов Google Ads</span></article><article><b>1000+</b><span>посетителей сайта<br />за период запуска проекта</span></article><article><b>GA4 + CRM</b><span>все обращения и действия пользователей<br />отслеживаются и фиксируются<br />в единой системе</span></article><article><b>14+</b><span>страниц сайта, интерактивный генплан,<br />каталог домов и калькулятор</span></article></div><div class="summary-conclusion"><p>В результате проект получил полноценную digital-систему: сайт, рекламу, аналитику и CRM, которые работают как единый процесс. Каждый этап — от первого клика до обращения клиента — измеряется и управляется.</p><a href="../index.html#contact">Обсудить проект <span>↗</span></a></div></div>';
 
 if (templateRoot) {
   templateRoot.querySelectorAll('.case-story-strategy').forEach((section) => {
@@ -269,7 +307,7 @@ if (templateRoot) {
   const siteIntro = siteSection?.querySelector('.case-story-title p');
   if (siteTitle) siteTitle.innerHTML = shepitStoryTitles.site;
   if (siteIntro) siteIntro.textContent = 'Сайт объясняет ценность дома, помогает выбрать участок и переводит интерес в конкретное действие.';
-  if (site) site.innerHTML = `<div class="shepit-product-stage"><i class="product-orbit orbit-one"></i><i class="product-orbit orbit-two"></i><svg class="product-links" viewBox="0 0 1000 520" aria-hidden="true"><path d="M250 260V470H40"/><path d="M610 80V180H805V330"/><circle cx="250" cy="260" r="7"/><circle cx="805" cy="330" r="7"/></svg><figure class="shepit-desktop-preview"><img src="shepit_assets/website.png" alt="Десктопная версия сайта SHEPIT HOUSE" /><figcaption>ДЕСКТОПНАЯ ВЕРСИЯ / SHEPIT HOUSE</figcaption></figure><figure class="shepit-mobile-preview"><img src="shepit_assets/mobile.png" alt="Мобильная версия сайта SHEPIT HOUSE" /><figcaption>МОБИЛЬНАЯ ВЕРСИЯ / АДАПТИВ</figcaption></figure><aside class="site-product-details"><span>ЧТО ПОЛУЧИЛ ПРОЕКТ</span><div class="site-outcome-grid"><article><b>14+</b><p>отдельных URL-страниц<br />и SEO-структура сайта</p></article><article><b>02</b><p>версии интерфейса:<br />Desktop + Mobile</p></article><article><b>01</b><p>интерактивный<br />генплан проекта</p></article><article><b>MAP</b><p>интеграция с картой<br />и геолокацией</p></article><article><b>UI</b><p>планировки с переключением<br />дизайн-проекта</p></article><article><b>CAT</b><p>каталог домов<br />и калькулятор</p></article></div><a href="https://shepithouse.ua" target="_blank" rel="noreferrer">Посмотреть сайт <b>↗</b></a></aside><div class="site-product-stats"><b>14+<small>уникальных страниц</small></b><b>2<small>версии: Desktop + Mobile</small></b><b>ИНТЕРАКТИВНЫЙ<small>генплан</small></b><b>КАТАЛОГ<small>домов</small></b><span class="site-tech-note">ИНТЕРФЕЙС ПРОДУКТА<br />САЙТ / ПУТЬ ЗАЯВКИ</span></div></div>`;
+  if (site) site.innerHTML = `<div class="shepit-product-stage" data-device-slider data-autoplay="1000" aria-label="Версии сайта SHEPIT HOUSE"><i class="product-orbit orbit-one"></i><i class="product-orbit orbit-two"></i><svg class="product-links" viewBox="0 0 1000 520" aria-hidden="true"><path d="M250 260V470H40"/><path d="M610 80V180H805V330"/><circle cx="250" cy="260" r="7"/><circle cx="805" cy="330" r="7"/></svg><figure class="shepit-desktop-preview site-device-slide is-active" data-device-slide data-device-label="Десктопная версия"><img src="shepit_assets/website.png" alt="Десктопная версия сайта SHEPIT HOUSE" /><figcaption>ДЕСКТОПНАЯ ВЕРСИЯ / SHEPIT HOUSE</figcaption></figure><figure class="shepit-mobile-preview site-device-slide" data-device-slide data-device-label="Мобильная / адаптивная версия"><img src="shepit_assets/mobile.png" alt="Мобильная версия сайта SHEPIT HOUSE" /><figcaption>МОБИЛЬНАЯ ВЕРСИЯ / АДАПТИВ</figcaption></figure><div class="site-device-controls" aria-label="Управление слайдером"><span aria-live="polite" data-device-label-output>Мобильная / адаптивная версия</span><button type="button" data-device-next aria-label="Следующая версия"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg></button></div><aside class="site-product-details"><span>ЧТО ПОЛУЧИЛ ПРОЕКТ</span><div class="site-outcome-grid"><article><b>14+</b><p>отдельных URL-страниц<br />и SEO-структура сайта</p></article><article><b>02</b><p>версии интерфейса:<br />Desktop + Mobile</p></article><article><b>01</b><p>интерактивный<br />генплан проекта</p></article><article><b>MAP</b><p>интеграция с картой<br />и геолокацией</p></article><article><b>UI</b><p>планировки с переключением<br />дизайн-проекта</p></article><article><b>CAT</b><p>каталог домов<br />и калькулятор</p></article></div><a href="https://shepithouse.ua" target="_blank" rel="noreferrer">Посмотреть сайт <b>↗</b></a></aside><div class="site-product-stats"><b>14+<small>уникальных страниц</small></b><b>2<small>версии: Desktop + Mobile</small></b><b>ИНТЕРАКТИВНЫЙ<small>генплан</small></b><b>КАТАЛОГ<small>домов</small></b><span class="site-tech-note">ИНТЕРФЕЙС ПРОДУКТА<br />САЙТ / ПУТЬ ЗАЯВКИ</span></div></div>`;
 
   const google = templateRoot.querySelector('.case-story-performance .performance-board');
   const googleSection = templateRoot.querySelector('.case-story-performance');
@@ -341,6 +379,28 @@ document.querySelectorAll('[data-product-slider]').forEach((slider) => {
   slider.addEventListener('mouseleave', restart);
   show(0);
   restart();
+});
+
+document.querySelectorAll('[data-device-slider]').forEach((slider) => {
+  const slides = [...slider.querySelectorAll('[data-device-slide]')];
+  const next = slider.querySelector('[data-device-next]');
+  const output = slider.querySelector('[data-device-label-output]');
+  let active = 0;
+
+  const show = (index) => {
+    active = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === active;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+    const nextSlide = slides[(active + 1) % slides.length];
+    if (output) output.textContent = nextSlide.dataset.deviceLabel || '';
+    if (next) next.setAttribute('aria-label', `Показать: ${nextSlide.dataset.deviceLabel || 'следующую версию'}`);
+  };
+
+  next?.addEventListener('click', () => show(active + 1));
+  show(0);
 });
 
 if (caseStudiesSlider) {
