@@ -91,6 +91,18 @@ const translateHtml = async (source, locale) => {
   // Locales are fully static now, so loading it would overwrite translated text.
   html = html.replace(/\s*<script[^>]+src="[^"]*i18n\.js"[^>]*><\/script>/gi, '');
   html = html.replace(/<html lang="[^"]+">/i, `<html lang="${locale}">`);
+  // Product names, country labels and the hero verb are editorial strings, not
+  // material for machine translation.
+  html = html.replace(/>U\.A\.</g, '>UA<');
+  if (locale === 'en') html = html.replace('Setting it up<br />', 'Setting up<br />');
+  if (locale === 'es') {
+    html = html
+      .replace('Configurarlo<br />', 'Configurar<br />')
+      .replace(/RE<span([^>]*)>CONJUNTO<\/span>/g, 'RE<span$1>SET</span>')
+      .replace(/>CONJUNTO INMOBILIARIO</g, '>REAL ESTATE SET<')
+      .replace(/>CONJUNTO</g, '>SET<')
+      .replaceAll('REINICIAR', 'RESET');
+  }
   return html;
 };
 

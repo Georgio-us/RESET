@@ -1696,6 +1696,7 @@ a { color: inherit; text-decoration: none; }button { font: inherit; }
 .hero-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; padding-top: clamp(64px, 8vh, 132px); padding-bottom: 80px; }.hero-copy { grid-column: 1 / span 7; align-self: center; padding-bottom: 14px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 25px; color: var(--azure-light); }.eyebrow-mark { width: 24px; height: 1px; background: currentColor; }
 h1 { max-width: 780px; margin: 0; font-size: clamp(50px, 6.25vw, 96px); font-weight: 600; line-height: .92; }.hero-lead { max-width: 480px; margin: 42px 0 0; color: var(--muted-dark); font-size: 18px; line-height: 1.45; }
+html[lang="en"] #hero-title { line-height: .86; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 28px; margin-top: 38px; }.button { min-height: 48px; display: inline-flex; align-items: center; justify-content: center; gap: 17px; padding: 0 21px; font-size: var(--type-list); font-weight: 500; transition: background .2s ease, color .2s ease, border-color .2s ease; }
 .button-primary { color: #fff; background: var(--azure); border: 1px solid var(--azure); }.button-primary:hover { background: #136c82; border-color: #136c82; }
 .button-secondary { color: var(--surface); border: 1px solid var(--line-dark); }.button-secondary:hover { border-color: var(--azure-light); color: var(--azure-light); }
