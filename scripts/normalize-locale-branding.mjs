@@ -14,5 +14,11 @@ for (const locale of ['ru', 'uk', 'en', 'es']) for (const file of await walk(joi
     .replace(/RE<span([^>]*)>CONJUNTO<\/span>/g, 'RE<span$1>SET</span>')
     .replace(/>CONJUNTO INMOBILIARIO</g, '>REAL ESTATE SET<')
     .replace(/>CONJUNTO</g, '>SET<').replaceAll('REINICIAR', 'RESET');
+  if (locale === 'es' && file.endsWith('/es/index.html')) html = html
+    .replace(/>Metaanuncios</g, '>Meta Ads<')
+    .replace(/>Anuncios de Google</g, '>Google Ads<')
+    .replace(/>Desarrollo de sitios web</g, '>Sitios web<')
+    .replace(/>IA y automatización</g, '>AI, automatización<')
+    .replace(/ESTRUCTURA<br \/>SE ENCUENTRA CON EL CRECIMIENTO/g, 'STRUCTURE<br />MEETS GROWTH');
   await writeFile(file, html);
 }
