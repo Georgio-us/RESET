@@ -91,6 +91,8 @@ testimonialItems.forEach((item) => {
 
 const leadModal = document.querySelector('#lead-modal');
 const leadModalForm = leadModal?.querySelector('[data-lead-form]');
+const leadModalContent = leadModal?.querySelector('[data-lead-modal-content]');
+const leadModalSuccess = leadModal?.querySelector('[data-lead-modal-success]');
 let leadModalTrigger = null;
 
 const leadCountries = {
@@ -187,6 +189,11 @@ const submitLead = async (form) => {
     window.dispatchEvent(new CustomEvent('reset:lead-submitted', { detail: payload }));
     form.classList.add('is-sent');
     submit.innerHTML = 'Запрос принят <b aria-hidden="true">✓</b>';
+    if (form === leadModalForm) {
+      leadModalContent.hidden = true;
+      leadModalSuccess.hidden = false;
+      leadModal.querySelector('[data-lead-close]')?.focus();
+    }
   } catch (submitError) {
     error.textContent = submitError.message || 'Не удалось отправить заявку. Попробуйте ещё раз.';
     submit.disabled = false;
@@ -216,6 +223,8 @@ const openLeadModal = (trigger) => {
   leadModalTrigger = trigger;
   leadModalForm.reset();
   leadModalForm.classList.remove('is-sent');
+  leadModalContent.hidden = false;
+  leadModalSuccess.hidden = true;
   leadModalForm.querySelector('.form-error').textContent = '';
   const submit = leadModalForm.querySelector('.diagnostic-submit');
   submit.innerHTML = 'Отправить запрос <b aria-hidden="true">↗</b>';

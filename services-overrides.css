@@ -278,6 +278,30 @@
   gap: 17px;
 }
 
+.lead-modal__success {
+  padding: 26px 0 12px;
+}
+
+.lead-modal__success .form-top {
+  margin-bottom: 52px;
+}
+
+.lead-modal__success h2 {
+  margin: 0;
+}
+
+.lead-modal__success > p {
+  max-width: 520px;
+  margin: 28px 0 44px;
+  color: #55707a;
+  font-size: var(--type-list);
+  line-height: 1.45;
+}
+
+.lead-modal__success .diagnostic-submit {
+  width: 100%;
+}
+
 .lead-form .form-success {
   display: none;
   margin: 0;

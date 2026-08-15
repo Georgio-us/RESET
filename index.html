@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="services-overrides.css" />
     <link rel="stylesheet" href="typography-tokens.css" />
+    <script src="arrow-icons.js" defer></script>
     <script src="app.js" defer></script>
     <script src="i18n.js" defer></script>
   </head>
@@ -620,10 +621,11 @@
       <div class="lead-modal__backdrop" data-lead-close></div>
       <section class="lead-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
         <button class="lead-modal__close" type="button" data-lead-close aria-label="Закрыть форму">×</button>
-        <div class="form-top"><span>ВАШ ЗАПРОС</span></div>
-        <h2 id="lead-modal-title">Давайте разберём<br /><em>вашу задачу.</em></h2>
-        <p>Оставьте контакт — вернёмся с вопросами и следующим шагом.</p>
-        <form class="lead-form" data-lead-form>
+        <div class="lead-modal__content" data-lead-modal-content>
+          <div class="form-top"><span>ВАШ ЗАПРОС</span></div>
+          <h2 id="lead-modal-title">Давайте разберём<br /><em>вашу задачу.</em></h2>
+          <p>Оставьте контакт — вернёмся с вопросами и следующим шагом.</p>
+          <form class="lead-form" data-lead-form>
           <input name="source" type="hidden" value="" />
           <input name="countryCode" type="hidden" value="ua" />
           <label><span>Имя</span><input name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться?" /></label>
@@ -647,8 +649,15 @@
           <button class="diagnostic-submit" type="submit">Отправить запрос <b aria-hidden="true">↗</b></button>
           <small class="lead-privacy">Отправляя форму, вы принимаете <a href="privacy.html">политику конфиденциальности</a>.</small>
           <p class="form-success" role="status" aria-live="polite">Запрос зафиксирован. Вернёмся с уточняющими вопросами.</p>
-          <p class="form-error" role="alert" aria-live="polite"></p>
-        </form>
+            <p class="form-error" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+        <section class="lead-modal__success" data-lead-modal-success hidden aria-live="polite">
+          <div class="form-top"><span>ЗАПРОС ПРИНЯТ</span></div>
+          <h2>Спасибо.<br /><em>Мы на связи.</em></h2>
+          <p>Запрос уже у команды. Вернёмся к вам по указанному контакту, чтобы уточнить детали и предложить следующий шаг.</p>
+          <button class="diagnostic-submit" type="button" data-lead-close>Вернуться на сайт</button>
+        </section>
       </section>
     </div>
 

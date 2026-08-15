@@ -226,6 +226,11 @@ const serveStatic = async (request, response) => {
       'Content-Type': mimeTypes[extension] || 'application/octet-stream',
       'X-Content-Type-Options': 'nosniff',
     });
+    if (extension === '.html') {
+      const document = await readFile(filePath, 'utf8');
+      response.end(document.replace('</head>', '<script src="/arrow-icons.js" defer></script></head>'));
+      return;
+    }
     response.end(await readFile(filePath));
   } catch {
     response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
