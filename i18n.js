@@ -5,6 +5,7 @@
   window.RESET_I18N_LOADED = true;
   const localeFromPath = location.pathname.match(/^\/(ru|uk|en|es)(?:\/|$)/)?.[1];
   const locale = localeFromPath || new URLSearchParams(location.search).get('lang') || localStorage.getItem('reset-locale') || 'ru';
+  const isStaticUkrainian = document.documentElement.lang === 'uk';
   const uk = {
     'RESET — системы роста для недвижимости.': 'RESET — системи зростання для нерухомості.',
     'Язык сайта': 'Мова сайту', 'Основная навигация': 'Основна навігація', 'Система': 'Система', 'Решения': 'Рішення', 'Кейсы': 'Кейси',
@@ -91,7 +92,14 @@
       url.searchParams.delete('lang');
       location.href = url;
     }));
-    if (locale === 'uk') applyUkrainian();
+    if (locale === 'uk' && !isStaticUkrainian) applyUkrainian();
+    if (isStaticUkrainian) {
+      document.querySelectorAll('[data-locale]').forEach((button) => {
+        const active = button.dataset.locale === 'uk';
+        button.classList.toggle('is-active', active);
+        if (active) button.setAttribute('aria-current', 'true'); else button.removeAttribute('aria-current');
+      });
+    }
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initializeLocale);
   else initializeLocale();

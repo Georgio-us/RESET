@@ -211,8 +211,20 @@ const serveStatic = async (request, response) => {
     return;
   }
 
-  const requestedPath = pathname.endsWith('/') ? `${pathname}index.html` : pathname;
-  const filePath = resolve(root, `.${normalize(requestedPath)}`);
+  if (pathname === '/') {
+    response.writeHead(301, { Location: '/ru/', 'Cache-Control': 'no-store' });
+    response.end();
+    return;
+  }
+
+  const localeMatch = pathname.match(/^\/(ru|uk|en|es)(?:\/(.*))?$/);
+  const locale = localeMatch?.[1];
+  const localePath = localeMatch?.[2] || '';
+  const requestedPath = (locale ? `/${localePath}` : pathname).endsWith('/')
+    ? `${locale ? `/${localePath}` : pathname}index.html`
+    : (locale ? `/${localePath}` : pathname);
+  const localizedPath = locale ? `/${locale}${requestedPath}` : requestedPath;
+  const filePath = resolve(root, `.${normalize(localizedPath)}`);
   if (!filePath.startsWith(root)) {
     response.writeHead(403).end('Forbidden');
     return;
@@ -233,8 +245,35 @@ const serveStatic = async (request, response) => {
     }
     response.end(await readFile(filePath));
   } catch {
-    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-    response.end('Страница не найдена');
+    // Localized documents use the same public assets as the source site.
+    // A request such as /uk/styles.css or /uk/assets/… therefore falls back
+    // to the root asset without making untranslated HTML pages available.
+    if (locale && !requestedPath.endsWith('.html')) {
+      try {
+        const sourceAssetPath = resolve(root, `.${normalize(requestedPath)}`);
+        const assetStats = await stat(sourceAssetPath);
+        if (assetStats.isFile()) {
+          const extension = extname(sourceAssetPath).toLowerCase();
+          response.writeHead(200, {
+            'Content-Type': mimeTypes[extension] || 'application/octet-stream',
+            'X-Content-Type-Options': 'nosniff',
+          });
+          response.end(await readFile(sourceAssetPath));
+          return;
+        }
+      } catch {
+        // Respond with the standard 404 below.
+      }
+    }
+    const notFoundPath = locale ? resolve(root, `${locale}/404.html`) : resolve(root, '404.html');
+    try {
+      const document = await readFile(notFoundPath, 'utf8');
+      response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
+      response.end(document.replace('</head>', '<script src="/arrow-icons.js" defer></script></head>'));
+    } catch {
+      response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      response.end('Страница не найдена');
+    }
   }
 };
 

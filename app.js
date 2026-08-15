@@ -1,6 +1,22 @@
 const routeLocale = location.pathname.match(/^\/(ru|uk|en|es)(?:\/|$)/)?.[1] || 'ru';
 const routePath = location.pathname.replace(/^\/(?:ru|uk|en|es)(?=\/|$)/, '').replace(/index\.html$/, '').replace(/\.html$/, '/') || '/';
 
+// Keep the language control functional on every static page.  The locale is
+// encoded in the path so that each language has a crawlable, shareable URL.
+document.querySelectorAll('.language-switcher button').forEach((button, index) => {
+  const locale = button.dataset.locale || ['ru', 'uk', 'en', 'es'][index];
+  if (!locale) return;
+  button.dataset.locale = locale;
+  button.disabled = false;
+  const active = locale === routeLocale;
+  button.classList.toggle('is-active', active);
+  if (active) button.setAttribute('aria-current', 'true'); else button.removeAttribute('aria-current');
+  button.addEventListener('click', () => {
+    if (locale === routeLocale) return;
+    location.assign(`/${locale}${routePath}`);
+  });
+});
+
 if (document.body.classList.contains('case-page') && !document.querySelector('link[href$="typography-tokens.css"]')) {
   const typographyStyles = document.createElement('link');
   typographyStyles.rel = 'stylesheet';
