@@ -89,16 +89,185 @@ testimonialItems.forEach((item) => {
   });
 });
 
-const diagnosticForm = document.querySelector('#diagnostic-form');
+const leadModal = document.querySelector('#lead-modal');
+const leadModalForm = leadModal?.querySelector('[data-lead-form]');
+let leadModalTrigger = null;
 
-diagnosticForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (!diagnosticForm.checkValidity()) {
-    diagnosticForm.reportValidity();
+const leadCountries = {
+  ua: { prefix: '+38', flag: '🇺🇦' },
+  es: { prefix: '+34', flag: '🇪🇸' },
+  other: { prefix: '+1', flag: '🌐' },
+};
+
+const setLeadCountry = (countryCode) => {
+  if (!leadModalForm) return;
+  const country = leadCountries[countryCode] || leadCountries.ua;
+  leadModalForm.elements.countryCode.value = countryCode in leadCountries ? countryCode : 'ua';
+  leadModal.querySelector('[data-country-flag]').textContent = country.flag;
+  leadModal.querySelector('[data-country-prefix]').textContent = country.prefix;
+};
+
+const setLeadContactMethod = (method) => {
+  if (!leadModal || !leadModalForm) return;
+  const isEmail = method === 'email';
+  leadModal.querySelectorAll('[data-contact-method]').forEach((button) => {
+    const active = button.dataset.contactMethod === method;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  leadModal.querySelector('[data-country-field]').hidden = isEmail;
+  const contact = leadModalForm.elements.contact;
+  contact.type = isEmail ? 'email' : 'tel';
+  contact.autocomplete = isEmail ? 'email' : 'tel';
+  contact.inputMode = isEmail ? 'email' : 'tel';
+  contact.placeholder = isEmail ? 'you@email.com' : 'Номер телефона';
+  leadModalForm.dataset.contactMethod = method;
+};
+
+const contactSettings = {
+  phone: { type: 'tel', autocomplete: 'tel', inputmode: 'tel', placeholder: '+38 0XX XXX XX XX' },
+  telegram: { type: 'text', autocomplete: 'off', inputmode: 'text', placeholder: '@username или номер телефона' },
+  whatsapp: { type: 'tel', autocomplete: 'tel', inputmode: 'tel', placeholder: '+38 0XX XXX XX XX' },
+  email: { type: 'email', autocomplete: 'email', inputmode: 'email', placeholder: 'name@company.com' },
+};
+
+const configureContactField = (form) => {
+  const method = form.querySelector('[name="contactMethod"]');
+  const contact = form.querySelector('[name="contact"]');
+  if (!method || !contact) return;
+  const settings = contactSettings[method.value] || contactSettings.phone;
+  Object.entries(settings).forEach(([property, value]) => { contact[property] = value; });
+};
+
+const serializeLead = (form) => Object.fromEntries(new FormData(form).entries());
+
+const getClientContext = () => {
+  const parameters = new URLSearchParams(location.search);
+  const utm = Object.fromEntries(['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content']
+    .map((key) => [key, parameters.get(key)])
+    .filter(([, item]) => item));
+  const mobile = matchMedia('(max-width: 767px)').matches;
+  return {
+    device: mobile ? 'Мобильное устройство' : 'Компьютер',
+    screen: `${window.screen.width}×${window.screen.height}`,
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    referrer: document.referrer || '',
+    utm,
+  };
+};
+
+const submitLead = async (form) => {
+  if (!form.checkValidity()) {
+    form.reportValidity();
     return;
   }
-  diagnosticForm.classList.add('is-sent');
-  diagnosticForm.querySelector('.diagnostic-submit').innerHTML = 'Запрос принят <b>✓</b>';
+
+  const payload = {
+    ...serializeLead(form),
+    contactMethod: form.dataset.contactMethod || form.elements.contactMethod?.value || 'phone',
+    locale: routeLocale,
+    page: location.href,
+    client: getClientContext(),
+  };
+  const submit = form.querySelector('.diagnostic-submit');
+  const error = form.querySelector('.form-error');
+  const initialButton = submit.innerHTML;
+  error.textContent = '';
+  submit.disabled = true;
+  submit.textContent = 'Отправляем…';
+
+  try {
+    const response = await fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!response.ok || !result.ok) throw new Error(result.message || 'Не удалось отправить заявку.');
+    window.dispatchEvent(new CustomEvent('reset:lead-submitted', { detail: payload }));
+    form.classList.add('is-sent');
+    submit.innerHTML = 'Запрос принят <b aria-hidden="true">✓</b>';
+  } catch (submitError) {
+    error.textContent = submitError.message || 'Не удалось отправить заявку. Попробуйте ещё раз.';
+    submit.disabled = false;
+    submit.innerHTML = initialButton;
+  }
+};
+
+document.querySelectorAll('.diagnostic-form, .lead-form').forEach((form) => {
+  configureContactField(form);
+  form.querySelector('[name="contactMethod"]')?.addEventListener('change', () => configureContactField(form));
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    submitLead(form);
+  });
+});
+
+const closeLeadModal = () => {
+  if (!leadModal) return;
+  leadModal.hidden = true;
+  leadModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('lead-modal-open');
+  leadModalTrigger?.focus();
+};
+
+const openLeadModal = (trigger) => {
+  if (!leadModal || !leadModalForm) return;
+  leadModalTrigger = trigger;
+  leadModalForm.reset();
+  leadModalForm.classList.remove('is-sent');
+  leadModalForm.querySelector('.form-error').textContent = '';
+  const submit = leadModalForm.querySelector('.diagnostic-submit');
+  submit.innerHTML = 'Отправить запрос <b aria-hidden="true">↗</b>';
+  submit.disabled = false;
+  leadModalForm.elements.source.value = trigger.dataset.leadSource || 'cta';
+  setLeadCountry(routeLocale === 'es' ? 'es' : 'ua');
+  setLeadContactMethod('phone');
+  leadModal.hidden = false;
+  leadModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('lead-modal-open');
+  requestAnimationFrame(() => leadModalForm.elements.name.focus());
+};
+
+document.querySelectorAll('[data-lead-modal]').forEach((trigger) => {
+  trigger.addEventListener('click', () => openLeadModal(trigger));
+});
+
+leadModal?.querySelectorAll('[data-contact-method]').forEach((button) => {
+  button.addEventListener('click', () => setLeadContactMethod(button.dataset.contactMethod));
+});
+
+leadModal?.querySelector('[data-country-toggle]')?.addEventListener('click', () => {
+  const menu = leadModal.querySelector('[data-country-menu]');
+  const toggle = leadModal.querySelector('[data-country-toggle]');
+  const expanded = toggle.getAttribute('aria-expanded') === 'true';
+  menu.hidden = expanded;
+  toggle.setAttribute('aria-expanded', String(!expanded));
+});
+
+leadModal?.querySelectorAll('[data-country-code]').forEach((button) => {
+  button.addEventListener('click', () => {
+    setLeadCountry(button.dataset.countryCode);
+    leadModal.querySelector('[data-country-menu]').hidden = true;
+    leadModal.querySelector('[data-country-toggle]').setAttribute('aria-expanded', 'false');
+    leadModalForm.elements.contact.focus();
+  });
+});
+
+document.addEventListener('click', (event) => {
+  const country = leadModal?.querySelector('.lead-country');
+  if (country && !country.contains(event.target)) {
+    leadModal.querySelector('[data-country-menu]').hidden = true;
+    leadModal.querySelector('[data-country-toggle]').setAttribute('aria-expanded', 'false');
+  }
+});
+
+leadModal?.querySelectorAll('[data-lead-close]').forEach((trigger) => {
+  trigger.addEventListener('click', closeLeadModal);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && leadModal && !leadModal.hidden) closeLeadModal();
 });
 
 const caseStudiesSlider = document.querySelector('[data-case-studies-slider]');
