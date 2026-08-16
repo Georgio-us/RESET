@@ -61,7 +61,7 @@ const countryLabels = {
 
 const localeLabels = {
   ru: 'RU',
-  uk: 'UK',
+  uk: 'UA',
   en: 'EN',
   es: 'ES',
 };
@@ -232,6 +232,14 @@ const serveStatic = async (request, response) => {
     return;
   }
 
+  // `/uk/` is the ISO language-code URL for Ukrainian. `/ua/` remains a
+  // friendly alias for visitors who use the country abbreviation instead.
+  if (pathname === '/ua' || pathname.startsWith('/ua/')) {
+    response.writeHead(301, { Location: `${pathname.replace(/^\/ua(?=\/|$)/, '/uk')}${url.search}`, 'Cache-Control': 'no-store' });
+    response.end();
+    return;
+  }
+
   if (pathname === '/') {
     response.writeHead(301, { Location: '/ru/', 'Cache-Control': 'no-store' });
     response.end();
@@ -299,6 +307,13 @@ const serveStatic = async (request, response) => {
 };
 
 createServer(async (request, response) => {
+  const requestHost = String(request.headers.host || '').split(':')[0].toLowerCase();
+  if (requestHost === 'www.resetdigital.agency') {
+    response.writeHead(301, { Location: `https://resetdigital.agency${request.url || '/'}`, 'Cache-Control': 'no-store' });
+    response.end();
+    return;
+  }
+
   if (request.method === 'POST' && request.url?.split('?')[0] === '/api/leads') {
     await handleLead(request, response);
     return;
