@@ -1,6 +1,6 @@
 # RESET — production-план и текущий статус
 
-Дата обновления: 2026-08-15.
+Дата обновления: 2026-08-16.
 
 ## Текущий статус
 
@@ -14,10 +14,13 @@
 - [x] Созданы `robots.txt`, XML `sitemap.xml` (128 canonical URL), локализованные 404 и видимая карта сайта.
 - [x] Добавлены Open Graph, Twitter Card и JSON-LD: `ProfessionalService`, `CreativeWork`, `Article`, `CollectionPage`, `BreadcrumbList`.
 - [x] Формы отправляют заявки на серверный endpoint; Telegram-секреты не находятся в браузере.
+- [x] Создан отдельный собственный аккаунт GA4 `RESET Digital` и ресурс `RESET — resetdigital.agency`.
+- [x] На production подключён поток `RESET — Web` (`G-TW7GHVZLVD`); Realtime подтверждает `page_view`, секции, скролл, навигацию, язык и события формы.
+- [x] Новый ресурс GA4 связан с доменным ресурсом Search Console `resetdigital.agency`.
 
 ### Осталось до уверенного production-запуска
 
-- [ ] Добавить cookie-consent: `necessary`, `analytics`, `marketing`; сохранять выбор и не загружать GTM/GA4/Meta Pixel до согласия.
+- [~] Аналитический consent готов: GA4 не отправляет события до согласия, рекламные хранилища Google запрещены. Перед Meta Pixel или GTM доработать баннер до категорий `necessary`, `analytics`, `marketing`.
 - [ ] Заменить плейсхолдеры в privacy: ФИО/ФОП, email, адрес/страна, сроки хранения и правовое основание.
 - [ ] Прогнать production-проверку формы: успешная заявка, ошибка, защита от спама, получение в Telegram.
 - [ ] Проверить реальный домен: HTTP → HTTPS, www ↔ основной хост, `/` → `/ru/`, статусы 200/301/404.
@@ -27,7 +30,9 @@
 
 - [ ] Ручная редакторская вычитка UK/EN/ES; текущие статические переводы можно улучшать итеративно.
 - [ ] Уникальная редакторская полировка title/description для каждого кейса и статьи.
-- [ ] Подключить GTM, GA4 и Meta Pixel после получения идентификаторов; отправить sitemap в Search Console.
+- [~] GA4 и Search Console подключены. Дождаться до 24 часов появления событий в стандартных отчётах GA4, отметить `generate_lead` как key event и зарегистрировать пользовательские параметры из `docs/ga4-event-map.md`.
+- [ ] Подключить GTM и Meta Pixel только перед началом рекламных кампаний и после добавления категории marketing в consent.
+- [ ] Убедиться, что XML sitemap отправлен в Search Console.
 - [ ] Lighthouse, Rich Results Test, Bing Webmaster Tools и регулярный SEO-мониторинг.
 
 ## Цель
@@ -126,7 +131,7 @@ Schema.org:
 
 ### 4. Правовые страницы и cookies
 
-Статус: **privacy-шаблон создан; требуются реальные реквизиты оператора данных и cookie-consent.**
+Статус: **privacy-шаблон создан; аналитический consent реализован. Требуются реальные реквизиты оператора данных и категории consent перед рекламными пикселями.**
 
 Подготовить:
 
@@ -169,9 +174,9 @@ submitted_at: ISO-8601
 
 ### 6. Аналитика
 
-Статус: **ожидает идентификаторы GTM/GA4; Meta Pixel будет добавлен после получения Pixel ID.**
+Статус: **GA4 подключён к собственному аккаунту RESET Digital, поток `G-TW7GHVZLVD` получает production-события; Search Console связан с этим ресурсом.**
 
-Базовый стек: GA4 + Google Tag Manager. Meta Pixel и рекламные теги — только с cookie-consent и при реальной необходимости.
+Текущий стек: прямой GA4-тег с Consent Mode. GTM не требуется до появления нескольких рекламных/сторонних тегов. Meta Pixel и рекламные теги — только с marketing-consent и при реальной необходимости.
 
 Обязательные события:
 
@@ -180,8 +185,8 @@ submitted_at: ISO-8601
 | `page_view` | `page_location`, `locale`, `page_type` |
 | `cta_click` | `cta_name`, `destination`, `page_type`, `locale` |
 | `form_start` | `form_name`, `page_url` |
-| `form_submit` | `form_name`, `page_url`, `locale` |
-| `form_success` | `form_name`, `locale` |
+| `lead_form_open` | `lead_source`, `language` |
+| `generate_lead` | `lead_source`, `contact_method`, `language` |
 | `case_open` | `case_slug`, `position` |
 | `article_open` | `article_slug`, `article_category` |
 | `article_toc_click` | `article_slug`, `section_id` |
@@ -192,6 +197,15 @@ submitted_at: ISO-8601
 | `language_switch` | `from_locale`, `to_locale` |
 
 Не передавать в аналитику имя, телефон, email, текст заявки или другие персональные данные.
+
+Более полная и актуальная карта фактически реализованных событий находится в `docs/ga4-event-map.md`.
+
+Осталось в интерфейсе GA4:
+
+- подождать до 24 часов, пока события из Realtime появятся в «Недавних событиях»;
+- после успешной тестовой заявки отметить `generate_lead` звёздочкой как key event;
+- зарегистрировать event-scoped custom dimensions из карты событий;
+- не включать Google signals, аудитории и рекламные интеграции до запуска рекламы и доработки marketing-consent.
 
 ### 7. Railway и Cloudflare
 
@@ -239,7 +253,7 @@ Cloudflare:
 - `robots.txt`, sitemap, 404, privacy и cookie-consent опубликованы;
 - нет сломанных ссылок, пустых `alt` у смысловых изображений и заголовков вне иерархии;
 - форма доставляет тестовую заявку в Telegram и не раскрывает секреты в браузере;
-- аналитика фиксирует ключевые действия без персональных данных;
+- GA4 в собственном аккаунте фиксирует ключевые действия без персональных данных, а `generate_lead` отмечен как key event после появления в интерфейсе;
 - DNS, HTTPS и редиректы Cloudflare/Railway проверены;
 - Search Console и GA4 созданы и доступны владельцу.
 
