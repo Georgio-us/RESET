@@ -728,3 +728,7 @@ body.lead-modal-open {
     font-size: var(--cta-font-size);
   }
 }
+/* Navigator scenario-specific imagery. */
+.visual-via { background: linear-gradient(145deg, rgba(7,24,39,.28), rgba(7,24,39,.82)), url('assets/navigator-sales-followup.png') center / cover; }
+.visual-shepit { background: linear-gradient(145deg, rgba(7,24,39,.32), rgba(7,24,39,.82)), url('assets/navigator-system-integration.png') center / cover; }
+.visual-audit { background: linear-gradient(145deg, rgba(7,24,39,.3), rgba(7,24,39,.82)), url('assets/navigator-start-diagnostic.png') center / cover; }
