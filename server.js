@@ -8,7 +8,7 @@ const port = Number(process.env.PORT || 3000);
 const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
 const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const maxBodySize = 20_000;
-const analyticsMeasurementId = 'G-GB9GJ27QFJ';
+const analyticsMeasurementId = 'G-TW7GHVZLVD';
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
