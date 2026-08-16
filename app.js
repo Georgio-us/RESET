@@ -1,5 +1,60 @@
 const routeLocale = location.pathname.match(/^\/(ru|uk|en|es)(?:\/|$)/)?.[1] || 'ru';
 const routePath = location.pathname.replace(/^\/(?:ru|uk|en|es)(?=\/|$)/, '').replace(/index\.html$/, '').replace(/\.html$/, '/') || '/';
+const analyticsConsentKey = 'reset-analytics-consent';
+const analyticsCopy = {
+  ru: { text: 'Мы используем аналитические cookies, чтобы понимать, как работает сайт и улучшать его.', accept: 'Принять', reject: 'Отклонить', policy: 'Политика конфиденциальности' },
+  uk: { text: 'Ми використовуємо аналітичні cookies, щоб розуміти, як працює сайт, і покращувати його.', accept: 'Прийняти', reject: 'Відхилити', policy: 'Політика конфіденційності' },
+  en: { text: 'We use analytics cookies to understand how the website works and improve it.', accept: 'Accept', reject: 'Decline', policy: 'Privacy policy' },
+  es: { text: 'Usamos cookies analíticas para entender cómo funciona el sitio y mejorarlo.', accept: 'Aceptar', reject: 'Rechazar', policy: 'Política de privacidad' },
+};
+
+const trackAnalytics = (eventName, parameters = {}) => {
+  if (localStorage.getItem(analyticsConsentKey) !== 'granted' || typeof window.gtag !== 'function') return;
+  window.gtag('event', eventName, { language: routeLocale, ...parameters });
+};
+
+const trackPageView = () => trackAnalytics('page_view', {
+  page_location: location.href,
+  page_path: location.pathname,
+  page_title: document.title,
+});
+
+const setAnalyticsConsent = (state) => {
+  localStorage.setItem(analyticsConsentKey, state);
+  if (typeof window.gtag === 'function') {
+    window.gtag('consent', 'update', {
+      analytics_storage: state === 'granted' ? 'granted' : 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+    });
+  }
+  if (state === 'granted') trackPageView();
+};
+
+const renderAnalyticsConsent = () => {
+  if (localStorage.getItem(analyticsConsentKey)) {
+    trackPageView();
+    return;
+  }
+  const copy = analyticsCopy[routeLocale] || analyticsCopy.ru;
+  const banner = document.createElement('aside');
+  banner.className = 'analytics-consent';
+  banner.setAttribute('role', 'dialog');
+  banner.setAttribute('aria-label', copy.text);
+  banner.innerHTML = `<p>${copy.text} <a href="/${routeLocale}/privacy.html">${copy.policy}</a></p><div><button class="analytics-consent__reject" type="button">${copy.reject}</button><button class="analytics-consent__accept" type="button">${copy.accept}</button></div>`;
+  banner.querySelector('.analytics-consent__accept').addEventListener('click', () => {
+    setAnalyticsConsent('granted');
+    banner.remove();
+  });
+  banner.querySelector('.analytics-consent__reject').addEventListener('click', () => {
+    setAnalyticsConsent('denied');
+    banner.remove();
+  });
+  document.body.append(banner);
+};
+
+renderAnalyticsConsent();
 
 // Keep the language control functional on every static page.  The locale is
 // encoded in the path so that each language has a crawlable, shareable URL.
@@ -202,6 +257,10 @@ const submitLead = async (form) => {
     });
     const result = await response.json().catch(() => ({}));
     if (!response.ok || !result.ok) throw new Error(result.message || 'Не удалось отправить заявку.');
+    trackAnalytics('generate_lead', {
+      lead_source: payload.source || 'form',
+      contact_method: payload.contactMethod,
+    });
     window.dispatchEvent(new CustomEvent('reset:lead-submitted', { detail: payload }));
     form.classList.add('is-sent');
     submit.innerHTML = 'Запрос принят <b aria-hidden="true">✓</b>';
@@ -224,6 +283,11 @@ document.querySelectorAll('.diagnostic-form, .lead-form').forEach((form) => {
     event.preventDefault();
     submitLead(form);
   });
+  form.addEventListener('input', () => {
+    if (form.dataset.analyticsStarted) return;
+    form.dataset.analyticsStarted = 'true';
+    trackAnalytics('form_start', { lead_source: form.elements.source?.value || 'form' });
+  }, { once: true });
 });
 
 const closeLeadModal = () => {
@@ -251,6 +315,7 @@ const openLeadModal = (trigger) => {
   leadModal.hidden = false;
   leadModal.setAttribute('aria-hidden', 'false');
   document.body.classList.add('lead-modal-open');
+  trackAnalytics('lead_form_open', { lead_source: trigger.dataset.leadSource || 'cta' });
   requestAnimationFrame(() => leadModalForm.elements.name.focus());
 };
 
@@ -289,6 +354,15 @@ document.addEventListener('click', (event) => {
 
 leadModal?.querySelectorAll('[data-lead-close]').forEach((trigger) => {
   trigger.addEventListener('click', closeLeadModal);
+});
+
+document.addEventListener('click', (event) => {
+  const contactLink = event.target.closest('a[href^="mailto:"], a[href^="tel:"], a[href*="t.me/"]');
+  if (!contactLink) return;
+  const href = contactLink.getAttribute('href') || '';
+  trackAnalytics('contact_click', {
+    contact_type: href.startsWith('mailto:') ? 'email' : href.startsWith('tel:') ? 'phone' : 'telegram',
+  });
 });
 
 document.addEventListener('keydown', (event) => {

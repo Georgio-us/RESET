@@ -8,6 +8,7 @@ const port = Number(process.env.PORT || 3000);
 const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
 const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const maxBodySize = 20_000;
+const analyticsMeasurementId = 'G-GB9GJ27QFJ';
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -23,6 +24,26 @@ const mimeTypes = {
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
 };
+
+const injectHeadScripts = (document) => document.replace('</head>', `<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = window.gtag || gtag;
+try {
+  const storedConsent = localStorage.getItem('reset-analytics-consent');
+  gtag('consent', 'default', {
+    analytics_storage: storedConsent === 'granted' ? 'granted' : 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    wait_for_update: 500,
+  });
+} catch {
+  gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', wait_for_update: 500 });
+}
+gtag('js', new Date());
+gtag('config', '${analyticsMeasurementId}', { send_page_view: false, anonymize_ip: true });
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}"></script><script src="/arrow-icons.js" defer></script></head>`);
 
 const sourceLabels = {
   hero: 'Первый экран — «Разобрать задачу»',
@@ -240,7 +261,7 @@ const serveStatic = async (request, response) => {
     });
     if (extension === '.html') {
       const document = await readFile(filePath, 'utf8');
-      response.end(document.replace('</head>', '<script src="/arrow-icons.js" defer></script></head>'));
+      response.end(injectHeadScripts(document));
       return;
     }
     response.end(await readFile(filePath));
@@ -269,7 +290,7 @@ const serveStatic = async (request, response) => {
     try {
       const document = await readFile(notFoundPath, 'utf8');
       response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
-      response.end(document.replace('</head>', '<script src="/arrow-icons.js" defer></script></head>'));
+      response.end(injectHeadScripts(document));
     } catch {
       response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       response.end('Страница не найдена');
