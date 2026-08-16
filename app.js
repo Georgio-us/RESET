@@ -9,8 +9,9 @@ const analyticsCopy = {
 };
 
 const trackAnalytics = (eventName, parameters = {}) => {
-  if (localStorage.getItem(analyticsConsentKey) !== 'granted' || typeof window.gtag !== 'function') return;
+  if (localStorage.getItem(analyticsConsentKey) !== 'granted' || typeof window.gtag !== 'function') return false;
   window.gtag('event', eventName, { language: routeLocale, ...parameters });
+  return true;
 };
 
 const trackPageView = () => trackAnalytics('page_view', {
@@ -18,6 +19,17 @@ const trackPageView = () => trackAnalytics('page_view', {
   page_path: location.pathname,
   page_title: document.title,
 });
+
+const analyticsText = (value, fallback = 'unknown') => String(value || fallback)
+  .replace(/\s+/g, ' ')
+  .trim()
+  .slice(0, 100) || fallback;
+
+const analyticsSectionId = (element) => {
+  const section = element?.closest('section, footer, header');
+  if (!section) return 'other';
+  return analyticsText(section.id || section.getAttribute('aria-labelledby') || section.classList[0], 'other');
+};
 
 const setAnalyticsConsent = (state) => {
   localStorage.setItem(analyticsConsentKey, state);
@@ -29,7 +41,10 @@ const setAnalyticsConsent = (state) => {
       ad_personalization: 'denied',
     });
   }
-  if (state === 'granted') trackPageView();
+  if (state === 'granted') {
+    trackPageView();
+    window.dispatchEvent(new Event('reset:analytics-granted'));
+  }
 };
 
 const renderAnalyticsConsent = () => {
@@ -68,6 +83,7 @@ document.querySelectorAll('.language-switcher button').forEach((button, index) =
   if (active) button.setAttribute('aria-current', 'true'); else button.removeAttribute('aria-current');
   button.addEventListener('click', () => {
     if (locale === routeLocale) return;
+    trackAnalytics('language_change', { language_from: routeLocale, language_to: locale });
     location.assign(`/${locale}${routePath}`);
   });
 });
@@ -117,6 +133,12 @@ const setActiveNavigatorTab = (tab, shouldScroll = false) => {
     panel.classList.toggle('is-active', active);
     panel.hidden = !active;
   });
+  if (shouldScroll) {
+    trackAnalytics('scenario_select', {
+      scenario: analyticsText(target),
+      scenario_label: analyticsText(tab.textContent),
+    });
+  }
   if (shouldScroll) tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
 };
 
@@ -270,6 +292,10 @@ const submitLead = async (form) => {
       leadModal.querySelector('[data-lead-close]')?.focus();
     }
   } catch (submitError) {
+    trackAnalytics('form_submit_error', {
+      lead_source: payload.source || 'form',
+      error_type: submitError?.name === 'TypeError' ? 'network' : 'server',
+    });
     error.textContent = submitError.message || 'Не удалось отправить заявку. Попробуйте ещё раз.';
     submit.disabled = false;
     submit.innerHTML = initialButton;
@@ -288,6 +314,22 @@ document.querySelectorAll('.diagnostic-form, .lead-form').forEach((form) => {
     form.dataset.analyticsStarted = 'true';
     trackAnalytics('form_start', { lead_source: form.elements.source?.value || 'form' });
   }, { once: true });
+  form.addEventListener('focusin', (event) => {
+    const field = event.target.closest('input, textarea, select');
+    if (!field || field.dataset.analyticsInteracted) return;
+    field.dataset.analyticsInteracted = 'true';
+    trackAnalytics('form_field_interaction', {
+      lead_source: form.elements.source?.value || 'form',
+      field_name: analyticsText(field.name || field.type, 'unknown'),
+    });
+  });
+  form.addEventListener('invalid', (event) => {
+    const field = event.target;
+    trackAnalytics('form_validation_error', {
+      lead_source: form.elements.source?.value || 'form',
+      field_name: analyticsText(field.name || field.type, 'unknown'),
+    });
+  }, true);
 });
 
 const closeLeadModal = () => {
@@ -362,7 +404,100 @@ document.addEventListener('click', (event) => {
   const href = contactLink.getAttribute('href') || '';
   trackAnalytics('contact_click', {
     contact_type: href.startsWith('mailto:') ? 'email' : href.startsWith('tel:') ? 'phone' : 'telegram',
+    cta_location: analyticsSectionId(contactLink),
   });
+});
+
+// Behaviour events intentionally contain only controlled labels — never form values or contact data.
+document.addEventListener('click', (event) => {
+  const target = event.target.closest('a, button');
+  if (!target || target.matches('.analytics-consent button')) return;
+  const label = analyticsText(target.getAttribute('aria-label') || target.textContent);
+  const location = analyticsSectionId(target);
+
+  if (target.matches('.service-card, .service-card *')) {
+    const card = target.closest('.service-card');
+    trackAnalytics('service_interest', {
+      service_name: analyticsText(card?.querySelector('h3')?.textContent),
+      section_id: location,
+    });
+  }
+
+  if (target.matches('.case-template-cta, .case-template-cta *')) {
+    const slide = target.closest('[data-case-slide]');
+    trackAnalytics('case_open', {
+      case_name: analyticsText(slide?.dataset.caseName),
+      cta_location: location,
+    });
+  }
+
+  if (target.matches('a[href], button')) {
+    const isNavigation = target.closest('.navigation, .site-footer, .case-breadcrumbs, .language-switcher');
+    if (isNavigation) {
+      trackAnalytics('navigation_click', {
+        navigation_area: target.closest('.navigation') ? 'header' : target.closest('.site-footer') ? 'footer' : target.closest('.case-breadcrumbs') ? 'breadcrumbs' : 'language',
+        target_label: label,
+      });
+    }
+  }
+
+  if (target.matches('.button, .panel-cta, .menu-link, .case-template-cta')) {
+    trackAnalytics('cta_click', {
+      cta_label: label,
+      cta_location: location,
+      target_type: target.dataset.leadModal !== undefined ? 'lead_form' : target.tagName.toLowerCase(),
+    });
+  }
+});
+
+const seenSections = new Set();
+const observedSections = document.querySelectorAll('main > section, .hero');
+let sectionObserver;
+const recordSectionView = (section) => {
+  const sectionId = analyticsSectionId(section);
+  if (seenSections.has(sectionId)) return;
+  if (!trackAnalytics('section_view', { section_id: sectionId })) return;
+  seenSections.add(sectionId);
+  sectionObserver?.unobserve(section);
+};
+if ('IntersectionObserver' in window) {
+  sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      recordSectionView(entry.target);
+    });
+  }, { threshold: 0.5 });
+  observedSections.forEach((section) => sectionObserver.observe(section));
+}
+
+const scrollMilestones = [25, 50, 75, 90];
+const reachedScrollMilestones = new Set();
+let scrollTicking = false;
+const measureScrollDepth = () => {
+  scrollTicking = false;
+  const available = document.documentElement.scrollHeight - window.innerHeight;
+  if (available <= 0) return;
+  const depth = Math.round((window.scrollY / available) * 100);
+  scrollMilestones.forEach((milestone) => {
+    if (depth < milestone || reachedScrollMilestones.has(milestone)) return;
+    if (trackAnalytics('scroll_depth', { percent_scrolled: milestone })) {
+      reachedScrollMilestones.add(milestone);
+    }
+  });
+};
+window.addEventListener('scroll', () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  window.requestAnimationFrame(measureScrollDepth);
+}, { passive: true });
+
+window.addEventListener('reset:analytics-granted', () => {
+  observedSections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+    if (visibleHeight >= Math.min(rect.height, window.innerHeight) * 0.5) recordSectionView(section);
+  });
+  measureScrollDepth();
 });
 
 document.addEventListener('keydown', (event) => {
@@ -686,7 +821,7 @@ if (caseStudiesSlider) {
   let activeCaseIndex = 0;
   let pointerStartX = null;
 
-  const showCase = (nextIndex, direction = 'next') => {
+  const showCase = (nextIndex, direction = 'next', trackSelection = false) => {
     activeCaseIndex = (nextIndex + caseSlides.length) % caseSlides.length;
 
     caseSlides.forEach((slide, index) => {
@@ -706,17 +841,23 @@ if (caseStudiesSlider) {
     currentCase.textContent = String(activeCaseIndex + 1).padStart(2, '0');
     totalCases.textContent = `/ ${String(caseSlides.length).padStart(2, '0')}`;
     activeCaseTitle.textContent = activeSlide.dataset.caseName;
+    if (trackSelection) {
+      trackAnalytics('case_select', {
+        case_name: analyticsText(activeSlide.dataset.caseName),
+        direction,
+      });
+    }
   };
 
-  previousCase.addEventListener('click', () => showCase(activeCaseIndex - 1, 'prev'));
-  nextCase.addEventListener('click', () => showCase(activeCaseIndex + 1, 'next'));
+  previousCase.addEventListener('click', () => showCase(activeCaseIndex - 1, 'prev', true));
+  nextCase.addEventListener('click', () => showCase(activeCaseIndex + 1, 'next', true));
 
   caseStudiesSlider.querySelectorAll('a[href^="#"]').forEach((link) => {
     const targetIndex = caseSlides.findIndex((slide) => `#${slide.id}` === link.getAttribute('href'));
     if (targetIndex < 0) return;
     link.addEventListener('click', (event) => {
       event.preventDefault();
-      showCase(targetIndex, targetIndex < activeCaseIndex ? 'prev' : 'next');
+      showCase(targetIndex, targetIndex < activeCaseIndex ? 'prev' : 'next', true);
     });
   });
 
@@ -729,6 +870,6 @@ if (caseStudiesSlider) {
     const distance = event.clientX - pointerStartX;
     pointerStartX = null;
     if (Math.abs(distance) < 60) return;
-    showCase(activeCaseIndex + (distance < 0 ? 1 : -1), distance < 0 ? 'next' : 'prev');
+    showCase(activeCaseIndex + (distance < 0 ? 1 : -1), distance < 0 ? 'next' : 'prev', true);
   });
 }
