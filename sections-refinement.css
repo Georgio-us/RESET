@@ -1,0 +1,58 @@
+/* RESET: one visible backing at rest; separated layers on hover; compressed on press. */
+.home-dev .dev-actions .button,
+.home-dev .dev-header-cta{box-shadow:6px 7px 0 var(--cta-shadow-front,#a9d6de),6px 7px 0 var(--cta-shadow-back,#5f9bab);transform:translate(0);transition:transform .2s,box-shadow .2s,background .2s}
+.home-dev .dev-actions .button-primary{background:#0d5e73!important}
+.home-dev .dev-actions .button-secondary{--cta-shadow-front:#8eb4bf;--cta-shadow-back:#4d7180;border:1px solid #b9dce5!important}
+@media(hover:hover){.home-dev .dev-actions .button:hover,.home-dev .dev-header-cta:hover{transform:translate(-3px,-3px);box-shadow:8px 10px 0 var(--cta-shadow-front,#a9d6de),15px 17px 0 var(--cta-shadow-back,#5f9bab)}}
+.home-dev .dev-actions .button:active,.home-dev .dev-header-cta:active{transform:translate(5px,6px);box-shadow:1px 1px 0 var(--cta-shadow-front,#a9d6de),1px 1px 0 var(--cta-shadow-back,#5f9bab)}
+/* A drawn process: four stages on one architectural grid. */
+.home-dev .dev-method{padding:96px 0;background:#eaf0ef;color:#132e3d;position:relative;overflow:hidden}
+.home-dev .dev-method .dev-section-head{max-width:none;border-top:1px solid #a9bdc3;padding-top:24px;display:grid;grid-template-columns:1fr 2.15fr;gap:32px}
+.home-dev .dev-section-head h2{font-size:clamp(38px,4.5vw,66px)!important;line-height:1.04!important;letter-spacing:-.045em!important;font-weight:600!important}
+.home-dev .dev-section-head h2 em{font-style:normal;color:#417b8b}
+.home-dev .dev-method .dev-label{padding-top:8px;font-size:11px!important;letter-spacing:.12em}
+.home-dev .dev-steps{gap:0;margin-top:56px;border:1px solid #b7c9cb;background:#f3f6f4}
+.home-dev .dev-steps article{position:relative;border:0;border-right:1px solid #b7c9cb;padding:25px 26px 30px;overflow:hidden}
+.home-dev .dev-steps article:last-child{border-right:0;background:#d8e7e8}
+.home-dev .dev-step-number{font-size:13px;letter-spacing:.12em;color:#417b8b;display:flex;align-items:center;justify-content:space-between}
+.home-dev .dev-step-number:after{content:'→';font-size:23px;line-height:1;color:#688e9c}
+.home-dev .dev-steps article:last-child .dev-step-number:after{content:'↗'}
+.method-drawing{width:100%;height:140px;display:block;margin:20px 0 24px;fill:none;stroke:#7297a1;stroke-width:1.2}
+.method-drawing .accent{stroke:#0d5e73;stroke-width:3}
+.home-dev .dev-steps h3{font-size:clamp(19px,1.8vw,26px)!important;letter-spacing:-.035em;margin:0 0 15px!important;font-weight:600;line-height:1.15!important}
+.home-dev .dev-steps p{font-size:15px;line-height:1.55;color:#4b6470;max-width:270px}
+/* Work index: editorial covers, true project assets, clear task-level entries. */
+.home-dev .dev-portfolio{padding:96px 0;background:#0b2132;color:#edf3f4}
+.home-dev .dev-portfolio .dev-section-head{display:grid;grid-template-columns:1fr 1fr;max-width:none;gap:0 60px;border-top:1px solid #34505e;padding-top:24px}
+.home-dev .dev-portfolio .dev-section-head>.dev-label{grid-column:1/-1;color:#a8ccd4;font-size:11px!important;letter-spacing:.12em;margin-bottom:28px}
+.home-dev .dev-portfolio .dev-section-head h2 em{color:#a9cfd8}
+.home-dev .dev-portfolio .dev-section-head>p:last-child{align-self:end;color:#a4bdc9;max-width:370px;margin:0 0 5px;font-size:17px}
+.home-dev .dev-filters{margin:44px 0 40px;gap:0;border-top:1px solid #34505e;border-bottom:1px solid #34505e}
+.home-dev .dev-filters button{border:0;border-right:1px solid #34505e;min-height:52px;padding:14px 24px;color:#bad0d9;font-size:14px;transition:background .2s,color .2s}
+.home-dev .dev-filters button[aria-pressed=true]{background:#b9dce5;color:#102d3e}
+.home-dev .dev-filters button:hover{background:#275165;color:#fff}
+.home-dev .dev-work-grid{gap:48px 32px;counter-reset:work}
+.home-dev .dev-work-card{counter-increment:work;border-bottom:1px solid #34505e;padding-bottom:28px;display:flex;flex-direction:column}
+.home-dev .dev-work-image{background:#cbdcde;aspect-ratio:1.55;border:1px solid #52717d;isolation:isolate}
+.home-dev .dev-work-image>span{border-radius:0;background:#123448;color:#d9edef;border:1px solid #7099a8;bottom:20px;right:20px;width:46px;height:46px;box-shadow:4px 4px 0 #86aebc;transition:transform .2s,box-shadow .2s}
+.home-dev .dev-work-image:hover>span{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #86aebc}
+.home-dev .dev-image-meta{background:#ccdcdd;padding:22px 32px;box-sizing:border-box}
+.home-dev .dev-image-meta>img{object-fit:contain;object-position:center;filter:drop-shadow(6px 8px 0 #456b7e30)}
+.home-dev .dev-image-google{background:#e4ebeb}
+.home-dev .dev-image-google>img{padding:26px;object-fit:contain}
+.home-dev .work-cover-website{padding:24px 32px 0;background:#b4cacd}
+.home-dev .work-cover-website>img{object-fit:contain;object-position:center;background:#122a29;box-shadow:8px 8px 0 #46667540;border:5px solid #f0f5f3;box-sizing:border-box}
+.home-dev .dev-image-ai{background:#163e52}
+.home-dev .dev-image-ai>img{padding:24px;object-fit:contain}
+.home-dev .dev-work-copy{padding:23px 0 0;position:relative}
+.home-dev .dev-work-copy .dev-label{color:#9ebfcc;font-size:11px!important;letter-spacing:.09em;padding-right:35px;margin-bottom:14px}
+.home-dev .dev-work-copy:after{content:counter(work,decimal-leading-zero);position:absolute;right:0;top:22px;color:#7395a5;font-size:12px}
+.home-dev .dev-work-copy h3{font-size:clamp(25px,2.35vw,34px)!important;font-weight:500!important;line-height:1.12!important;letter-spacing:-.035em!important;max-width:510px;margin-bottom:15px!important}
+.home-dev .dev-work-copy>p:last-child{color:#a6bdc9;font-size:15px;line-height:1.6;max-width:470px}
+@media(max-width:1000px){.home-dev .dev-steps{grid-template-columns:1fr 1fr}.home-dev .dev-steps article:nth-child(2){border-right:0}.home-dev .dev-steps article:nth-child(-n+2){border-bottom:1px solid #b7c9cb}.home-dev .dev-method .dev-section-head{grid-template-columns:1fr 2fr}.home-dev .dev-filters button{padding-inline:18px}}
+@media(max-width:700px){.home-dev .dev-method,.home-dev .dev-portfolio{padding:56px 0}.home-dev .dev-method .dev-section-head,.home-dev .dev-portfolio .dev-section-head{display:block;padding-top:18px}.home-dev .dev-section-head h2{font-size:39px!important}.home-dev .dev-method .dev-label{margin-bottom:24px}.home-dev .dev-steps{grid-template-columns:1fr;margin-top:32px}.home-dev .dev-steps article{padding:22px 22px 24px 94px;min-height:120px;border-right:0;border-bottom:1px solid #b7c9cb}.home-dev .dev-steps article:last-child{border-bottom:0}.home-dev .dev-step-number{position:absolute;left:20px;top:23px;width:53px}.method-drawing{position:absolute;left:12px;top:44px;width:72px;height:80px;margin:0}.home-dev .dev-steps h3{font-size:24px!important;overflow-wrap:normal}.home-dev .dev-steps p{font-size:14px}.home-dev .dev-portfolio .dev-section-head>p:last-child{font-size:15px;margin-top:24px;max-width:300px}.home-dev .dev-filters{margin:30px 0;display:grid;grid-template-columns:repeat(3,1fr)}.home-dev .dev-filters button{font-size:12px;padding:13px 7px;border-bottom:1px solid #34505e}.home-dev .dev-work-grid{grid-template-columns:1fr;gap:30px}.home-dev .dev-work-image{aspect-ratio:1.35}.home-dev .dev-work-copy h3{font-size:29px!important}.home-dev .dev-work-copy>p:last-child{font-size:14px}.home-dev .dev-image-meta{padding:20px}.home-dev .work-cover-website{padding:20px 22px 0}}
+@media(prefers-reduced-motion:reduce){.home-dev .dev-actions .button,.home-dev .dev-header-cta,.home-dev .dev-work-image>span{transition:none}}
+/* Telegram catalogue cover: complete screen with a restrained device bezel. */
+.home-dev .dev-work-image.dev-image-ai{display:flex;align-items:center;justify-content:center;padding:24px;background:#163e52}
+.home-dev .dev-work-image.dev-image-ai>img{width:auto;height:100%;max-width:80%;object-fit:contain;padding:0;border:5px solid #0b2132;border-radius:22px;box-shadow:8px 10px 0 #769ca43d;transform:none}
+@media(max-width:700px){.home-dev .dev-work-image.dev-image-ai{aspect-ratio:1.1;padding:24px}.home-dev .dev-work-image.dev-image-ai>img{max-width:75%;border-radius:20px}}

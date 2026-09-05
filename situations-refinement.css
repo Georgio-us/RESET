@@ -1,0 +1,29 @@
+/* The situation selector answers one question and offers one next action. */
+.home-dev .navigator-compact{padding-block:88px;background:#e5eeee;color:#142f40}
+.home-dev .navigator-compact .navigator-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:36px 64px;align-items:start}
+.home-dev .navigator-compact .navigator-head{grid-column:1/-1;max-width:none;display:grid;grid-template-columns:1fr 1.15fr;gap:16px 64px}
+.home-dev .navigator-compact .navigator-head .section-meta{grid-column:1/-1}
+.home-dev .navigator-compact .navigator-head h2{font-size:clamp(36px,4vw,58px);line-height:1.06;margin:10px 0 0;letter-spacing:-.04em}
+.home-dev .navigator-compact .navigator-head>p{align-self:end;max-width:380px;font-size:17px;line-height:1.6;color:#4c6a79;margin:0}
+.home-dev .navigator-compact .navigator-tabs{grid-column:1;grid-row:2;display:flex;flex-direction:column;gap:0;border-top:1px solid #9bb6c1;margin:0}
+.home-dev .navigator-compact .navigator-tab{width:100%;min-height:64px;padding:19px 18px;text-align:left;white-space:normal;border:0;border-bottom:1px solid #9bb6c1;background:transparent;color:#264a5b;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:none}
+.home-dev .navigator-compact .navigator-tab.is-active{background:#153c50;color:#edf5f6}
+.home-dev .navigator-compact .navigator-tab span{font-size:12px;opacity:.7}
+.home-dev .navigator-compact .navigator-controls{display:none}
+.home-dev .navigator-compact .navigator-panels{grid-column:2;grid-row:2;min-width:0}
+.home-dev .navigator-compact .navigator-panel{display:none;min-height:0;padding:32px;background:#123246;color:#edf5f6;border:1px solid #416777;box-shadow:8px 9px 0 #b8ced2}
+.home-dev .navigator-compact .navigator-panel.is-active{display:flex;flex-direction:column;gap:0}
+.situation-mark{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;color:#a9cfd8;font-size:11px;letter-spacing:.1em}
+.situation-icon{width:44px;height:44px;color:#a9cfd8}
+.home-dev .navigator-compact .navigator-panel h3{font-size:clamp(28px,2.7vw,39px);line-height:1.1;letter-spacing:-.03em;margin:0 0 18px;color:#edf5f6;max-width:510px}
+.situation-check{font-size:16px;line-height:1.65;color:#bbd0da;margin:0 0 26px}
+.situation-next{border-top:1px solid #4c6d7e;padding-top:22px;margin-bottom:26px}
+.situation-next>span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#a9cfd8}
+.situation-next p{font-size:16px;line-height:1.6;margin:10px 0 0;color:#edf5f6}
+.home-dev .navigator-compact .panel-cta{position:static;display:flex;width:100%;justify-content:space-between;align-items:center;min-height:54px;padding:16px 20px;background:#b9dce5;color:#123246;border:0;font-size:14px;margin:0;box-shadow:5px 6px 0 #6b96a5}
+@media(max-width:767px){.home-dev .navigator-compact{padding-block:48px}.home-dev .navigator-compact .navigator-layout{display:block}.home-dev .navigator-compact .navigator-head{display:block}.home-dev .navigator-compact .navigator-head h2{font-size:36px;margin-top:24px}.home-dev .navigator-compact .navigator-head>p{font-size:15px;margin-top:20px}.home-dev .navigator-compact .navigator-tabs{margin-top:28px;display:flex;flex-direction:row;overflow:auto;scroll-snap-type:x mandatory;gap:8px;border:0;padding-bottom:12px}.home-dev .navigator-compact .navigator-tab{flex:0 0 78%;min-height:64px;border:1px solid #9bb6c1;scroll-snap-align:start;font-size:15px;padding:14px 16px}.home-dev .navigator-compact .navigator-panels{margin-top:12px;padding-right:7px}.home-dev .navigator-compact .navigator-panel{padding:24px;box-shadow:6px 7px 0 #b8ced2}.home-dev .navigator-compact .navigator-panel h3{font-size:29px}.situation-mark{margin-bottom:22px}.situation-check,.situation-next p{font-size:15px}.situation-icon{width:36px;height:36px}}
+.home-dev .navigator-compact .navigator-tab{border-radius:0;transform:none}
+.home-dev .navigator-compact .navigator-panel::before,.home-dev .navigator-compact .navigator-panel::after{display:none}
+.home-dev .navigator-compact .navigator-head h2 em{color:#0d5e73}
+.home-dev .navigator-compact .navigator-head .section-meta{color:#426b7c}
+.home-dev .navigator-compact .navigator-head .section-meta span{color:inherit}
