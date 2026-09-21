@@ -1,0 +1,439 @@
+/* Lower homepage: one rhythm from services through Journal. */
+.home-dev .services-section {
+  padding-block: 112px;
+  border-top: 1px solid #b8c9cd;
+  border-bottom: 1px solid #b8c9cd;
+  background: #dfe9eb;
+}
+
+.home-dev .services-section .platforms-layout {
+  grid-template-rows: auto 1fr;
+  gap: 0 40px;
+}
+
+.home-dev .services-section .platforms-copy {
+  grid-column: 1 / span 4;
+  grid-row: 1;
+  position: static;
+  padding-top: 22px;
+  border-top: 1px solid #91aab2;
+}
+
+.home-dev .services-section .platforms-copy h2 {
+  max-width: 520px;
+  font-size: clamp(42px, 4.15vw, 64px);
+}
+
+.home-dev .services-section .platforms-copy p {
+  max-width: 420px;
+}
+
+.home-dev .services-section .services-grid {
+  grid-column: 6 / -1;
+  grid-row: 1 / span 2;
+  border-color: #9fb5bb;
+  background: rgba(255,255,255,.24);
+}
+
+.home-dev .services-grid > .service-card,
+.home-dev .services-grid > .service-card--dark {
+  min-height: 228px;
+  padding: 27px 28px 30px;
+  border-color: #a7bbc0;
+  color: #102536;
+  background: rgba(245,248,247,.58);
+}
+
+.home-dev .services-grid > .service-card:nth-child(3n + 1) {
+  background: #c8dde1;
+}
+
+.home-dev .services-grid > .service-card--dark .service-index,
+.home-dev .services-grid > .service-card--dark .service-icon,
+.home-dev .services-grid .service-index,
+.home-dev .services-grid .service-icon {
+  color: #0d6579;
+}
+
+.home-dev .services-grid > .service-card--dark p,
+.home-dev .services-grid p {
+  color: #4f6570;
+}
+
+.home-dev .services-grid > .service-card::after,
+.home-dev .services-grid > .service-card--dark::after {
+  width: 30px;
+  background: #6d9ba6;
+}
+
+.home-dev .services-cta {
+  grid-column: 1 / span 4;
+  grid-row: 2;
+  align-self: start;
+  justify-self: start;
+  min-width: 280px;
+  margin-top: 38px;
+}
+
+.home-dev .experience-section.experience-section-light {
+  padding-block: 112px;
+  border-bottom: 1px solid #c5d2d5;
+  background: #f4f7f6;
+}
+
+.home-dev .experience-section::before,
+.home-dev .experience-oversize {
+  display: none;
+}
+
+.home-dev .experience-layout {
+  grid-template-rows: auto;
+  gap: 28px;
+}
+
+.home-dev .experience-heading {
+  grid-column: 1 / span 4;
+  padding-top: 22px;
+  border-top: 1px solid #9fb3b9;
+}
+
+.home-dev .experience-heading h2 {
+  font-size: clamp(43px, 4.35vw, 66px) !important;
+}
+
+.home-dev .experience-image {
+  grid-column: 5 / span 4;
+  min-height: 520px;
+  max-height: none;
+}
+
+.home-dev .experience-copy {
+  grid-column: 9 / span 4;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 22px 0 0;
+  border-top: 1px solid #9fb3b9;
+}
+
+.home-dev .experience-copy > p {
+  max-width: 420px;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.home-dev .experience-facts {
+  margin: auto 0 30px;
+  border-color: #b4c5ca;
+}
+
+.home-dev .experience-facts li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 4px 10px;
+  padding: 18px 0;
+  border-bottom: 1px solid #b4c5ca;
+}
+
+.home-dev .experience-facts li > span {
+  grid-row: 1 / span 2;
+  color: #0d6579;
+  font-size: 11px;
+}
+
+.home-dev .experience-facts h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.home-dev .experience-facts li p {
+  margin: 0;
+  color: #556a73;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.home-dev .experience-side-note {
+  display: none;
+}
+
+.home-dev .testimonials-section {
+  padding-block: 112px;
+  background: #0c2032;
+}
+
+.home-dev .testimonials-layout {
+  gap: 24px 28px;
+}
+
+.home-dev .testimonials-head {
+  grid-column: 1 / span 4;
+  padding-top: 22px;
+  border-top: 1px solid #466071;
+}
+
+.home-dev .testimonials-head h2 {
+  max-width: 500px;
+  font-size: clamp(43px, 4.3vw, 66px);
+}
+
+.home-dev .testimonial-featured {
+  grid-column: 5 / -1;
+  min-height: 390px;
+  box-sizing: border-box;
+  padding: 50px 52px 42px;
+  background: #1c3a52;
+  box-shadow: 14px 16px 0 rgba(4,13,22,.28);
+}
+
+.home-dev .testimonial-featured blockquote {
+  max-width: 760px;
+  font-size: clamp(25px, 2.45vw, 37px);
+}
+
+.home-dev .testimonial-list {
+  grid-column: 5 / -1;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  border: 1px solid #3c586a;
+}
+
+.home-dev .testimonial-item,
+.home-dev .testimonial-item.is-selected {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  min-height: 58px;
+  padding: 0;
+  border: 0;
+  border-right: 1px solid #3c586a;
+  color: #a9d6de;
+  background: transparent;
+  transition: color .2s ease, background .2s ease;
+}
+
+.home-dev .testimonial-item:last-child {
+  border-right: 0;
+}
+
+.home-dev .testimonial-item > span {
+  align-self: auto;
+  padding: 0;
+  color: inherit;
+  font-size: 12px;
+}
+
+.home-dev .testimonial-item > div,
+.home-dev .testimonial-item > b {
+  display: none;
+}
+
+.home-dev .testimonial-item:hover,
+.home-dev .testimonial-item:focus-visible {
+  padding: 0;
+  color: #fff;
+  background: #244b63;
+}
+
+.home-dev .testimonial-item.is-selected {
+  color: #102536;
+  background: #b9dce5;
+}
+
+.home-dev .testimonial-proof {
+  grid-column: 1 / span 4;
+  align-self: end;
+  padding-top: 20px;
+  border-color: #466071;
+}
+
+.home-dev .journal-section {
+  padding-block: 128px;
+  background: #eef3f2;
+}
+
+.home-dev .journal-layout {
+  gap: 0 54px;
+}
+
+.home-dev .journal-intro {
+  grid-column: 1 / span 4;
+  padding-top: 22px;
+  border-top: 1px solid #9fb3b9;
+}
+
+.home-dev .journal-intro h2 {
+  margin-top: 31px;
+  font-size: clamp(42px, 4.2vw, 64px) !important;
+}
+
+.home-dev .journal-intro p {
+  max-width: 410px;
+  margin-top: 32px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.home-dev .journal-groups {
+  grid-column: 6 / -1;
+  display: grid;
+  gap: 18px;
+  border: 0;
+}
+
+.home-dev .journal-group,
+.home-dev .journal-group:hover,
+.home-dev .journal-group.journal-accent,
+.home-dev .journal-group.journal-accent:hover {
+  grid-template-columns: 112px 1fr;
+  gap: 18px 28px;
+  min-height: 0;
+  padding: 30px 32px;
+  border: 1px solid #aec0c4;
+  color: #102536;
+  background: #f7f9f8;
+  transition: border-color .2s ease;
+}
+
+.home-dev .journal-group:hover,
+.home-dev .journal-group.journal-accent:hover {
+  border-color: #5c8792;
+}
+
+.home-dev .journal-group.journal-accent > span,
+.home-dev .journal-group.journal-accent li::before,
+.home-dev .journal-group.journal-accent ol li,
+.home-dev .journal-group.journal-accent ol a,
+.home-dev .journal-group > span {
+  color: #0d6579;
+}
+
+.home-dev .journal-group h3 {
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.08;
+}
+
+.home-dev .journal-group ol {
+  grid-column: 2;
+  display: grid;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.home-dev .journal-category-link {
+  grid-column: 2;
+  margin-top: 8px;
+}
+
+.home-dev .journal-group.journal-accent .journal-category-link {
+  border-color: #0d6579;
+  color: #102536;
+}
+
+@media (max-width: 1000px) {
+  .home-dev .services-section .platforms-layout {
+    gap: 36px 24px;
+  }
+  .home-dev .services-section .platforms-copy,
+  .home-dev .services-cta {
+    grid-column: 1 / span 3;
+  }
+  .home-dev .services-section .services-grid {
+    grid-column: 4 / -1;
+  }
+  .home-dev .services-section .platforms-copy h2 {
+    font-size: 38px;
+    overflow-wrap: normal;
+  }
+  .home-dev .experience-heading { grid-column: 1 / span 3; }
+  .home-dev .experience-image { grid-column: 4 / span 3; }
+  .home-dev .experience-copy { grid-column: 7 / span 2; }
+  .home-dev .experience-copy > p { font-size: 14px; }
+  .home-dev .experience-heading h2 { font-size: 43px !important; }
+  .home-dev .testimonials-head,
+  .home-dev .testimonial-proof { grid-column: 1 / span 3; }
+  .home-dev .testimonial-featured,
+  .home-dev .testimonial-list { grid-column: 4 / -1; }
+  .home-dev .testimonials-head h2 { font-size: 42px; }
+  .home-dev .journal-layout { gap: 0 28px; }
+  .home-dev .journal-intro { grid-column: 1 / span 3; }
+  .home-dev .journal-groups { grid-column: 4 / -1; }
+  .home-dev .journal-intro h2 { font-size: 36px !important; }
+  .home-dev .journal-group,
+  .home-dev .journal-group:hover,
+  .home-dev .journal-group.journal-accent,
+  .home-dev .journal-group.journal-accent:hover { padding: 26px 24px; }
+}
+
+@media (max-width: 700px) {
+  .home-dev .services-section,
+  .home-dev .experience-section.experience-section-light,
+  .home-dev .testimonials-section,
+  .home-dev .journal-section {
+    padding-block: 58px;
+  }
+  .home-dev .services-section .platforms-layout {
+    display: flex;
+    gap: 30px;
+  }
+  .home-dev .services-section .platforms-copy { padding-top: 18px; }
+  .home-dev .services-section .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .home-dev .services-grid > .service-card,
+  .home-dev .services-grid > .service-card--dark {
+    min-height: 0;
+    padding: 23px 22px 26px;
+    border-right: 0;
+    border-bottom: 1px solid #a7bbc0;
+  }
+  .home-dev .services-grid > .service-card:last-child { border-bottom: 0; }
+  .home-dev .services-cta {
+    order: 3;
+    width: 100%;
+    min-width: 0;
+    margin-top: 0;
+  }
+  .home-dev .experience-layout { display: flex; gap: 28px; }
+  .home-dev .experience-heading { padding-top: 18px; }
+  .home-dev .experience-image {
+    display: block;
+    order: 2;
+    min-height: 390px;
+  }
+  .home-dev .experience-copy { order: 3; padding-top: 18px; }
+  .home-dev .experience-facts { margin: 30px 0; }
+  .home-dev .testimonials-layout { gap: 28px; }
+  .home-dev .testimonials-head { padding-top: 18px; }
+  .home-dev .testimonial-featured {
+    min-height: 360px;
+    padding: 42px 24px 30px;
+    box-shadow: 8px 10px 0 rgba(4,13,22,.28);
+  }
+  .home-dev .testimonial-featured blockquote { font-size: 24px; }
+  .home-dev .testimonial-list {
+    width: 100%;
+    grid-template-columns: repeat(6, minmax(48px, 1fr));
+    overflow-x: auto;
+  }
+  .home-dev .testimonial-proof { display: none; }
+  .home-dev .journal-layout { display: flex; gap: 38px; }
+  .home-dev .journal-intro { padding-top: 18px; }
+  .home-dev .journal-groups { gap: 14px; }
+  .home-dev .journal-group,
+  .home-dev .journal-group:hover,
+  .home-dev .journal-group.journal-accent,
+  .home-dev .journal-group.journal-accent:hover {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px 22px;
+  }
+  .home-dev .journal-group ol,
+  .home-dev .journal-category-link { grid-column: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-dev .testimonial-item,
+  .home-dev .journal-group { transition: none; }
+}

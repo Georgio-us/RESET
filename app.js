@@ -171,6 +171,7 @@ const testimonialRole = document.querySelector('.testimonial-role');
 const testimonialIndex = document.querySelector('.testimonial-index');
 
 testimonialItems.forEach((item) => {
+  item.setAttribute('aria-pressed', String(item.classList.contains('is-selected')));
   item.addEventListener('click', () => {
     const testimonial = testimonials[item.dataset.testimonial];
     if (!testimonial) return;
@@ -178,7 +179,11 @@ testimonialItems.forEach((item) => {
     testimonialName.textContent = testimonial.name;
     testimonialRole.textContent = testimonial.role;
     testimonialIndex.textContent = testimonial.index;
-    testimonialItems.forEach((entry) => entry.classList.toggle('is-selected', entry === item));
+    testimonialItems.forEach((entry) => {
+      const selected = entry === item;
+      entry.classList.toggle('is-selected', selected);
+      entry.setAttribute('aria-pressed', String(selected));
+    });
   });
 });
 
