@@ -1,0 +1,148 @@
+#!/usr/bin/env python3
+"""Build the current advertising and Estate CRM case pages in every locale."""
+
+from __future__ import annotations
+
+import html
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+LOCALES = ("ru", "uk", "en", "es")
+
+UI = {
+    "ru": {"cases": "Кейсы", "services": "Услуги", "contact": "Обсудить задачу", "back": "← Все кейсы", "proof": "Подтверждение результата", "creative": "Креативы", "product": "Интерфейс продукта", "cta": "Есть похожая задача?", "cta_text": "Покажите нам проект и текущие цифры. Предложим следующий шаг и объясним, на чём его строим.", "button": "Обсудить задачу ↗", "home": "/ru/"},
+    "uk": {"cases": "Кейси", "services": "Послуги", "contact": "Обговорити задачу", "back": "← Усі кейси", "proof": "Підтвердження результату", "creative": "Креативи", "product": "Інтерфейс продукту", "cta": "Є схоже завдання?", "cta_text": "Покажіть нам проєкт і поточні цифри. Запропонуємо наступний крок і пояснимо, на чому його будуємо.", "button": "Обговорити задачу ↗", "home": "/uk/"},
+    "en": {"cases": "Cases", "services": "Services", "contact": "Discuss a project", "back": "← All cases", "proof": "Proof of performance", "creative": "Creative work", "product": "Product interface", "cta": "Working on a similar challenge?", "cta_text": "Show us the project and current numbers. We will suggest the next step and explain the reasoning behind it.", "button": "Discuss a project ↗", "home": "/en/"},
+    "es": {"cases": "Casos", "services": "Servicios", "contact": "Hablar del proyecto", "back": "← Todos los casos", "proof": "Prueba del resultado", "creative": "Creatividades", "product": "Interfaz del producto", "cta": "¿Tienes un reto parecido?", "cta_text": "Enséñanos el proyecto y sus cifras actuales. Propondremos el siguiente paso y explicaremos el criterio.", "button": "Hablar del proyecto ↗", "home": "/es/"},
+}
+
+CASES = {
+    "an-factor": {
+        "kind": "ads", "client": "FACTOR", "service": "Meta Ads", "place": "Odesa / Ukraine",
+        "hero": "/cases/factor_assets/creo_cuvee.png",
+        "proof_images": ["/cases/factor_assets/factor_filial_1_2026.webp", "/cases/factor_assets/factor_filial_4_2026.webp"],
+        "gallery": ["/cases/factor_assets/creo_cuvee.png", "/cases/factor_assets/creo_NY.png", "/cases/factor_assets/creo_price.png"],
+        "copy": {
+            "ru": {"title": "142 заявки для двух филиалов агентства недвижимости.", "lead": "Перезапустили Meta Ads для FACTOR и собрали отдельную подачу для двух филиалов. Кампании привели 142 обращения при средней стоимости $6,91.", "metrics": [("142", "заявки по двум филиалам"), ("$6,91", "средняя стоимость заявки"), ("$2,72", "лучший CPL креатива")], "section": "Один бренд, две локальные рекламные системы.", "cards": [("Разделили филиалы", "Каждый филиал получил собственные кампании, офферы и контроль результата."), ("Проверяли спрос креативами", "Сравнивали предложения об объектах, цене и сценариях покупки."), ("Масштабировали рабочее", "Сильные связки получили больший бюджет после подтверждения стоимости заявки.")], "proof_text": [("76", "заявок получил первый филиал при среднем CPL $6,27."), ("66", "заявок получил четвёртый филиал при среднем CPL $7,65."), ("$2,72", "лучший результат отдельного рекламного креатива.")], "conclusion": "FACTOR получил управляемый канал обращений для двух филиалов. Кампании можно развивать отдельно, сохраняя общую логику бренда."},
+            "uk": {"title": "142 заявки для двох філій агентства нерухомості.", "lead": "Перезапустили Meta Ads для FACTOR і зібрали окрему подачу для двох філій. Кампанії принесли 142 звернення із середньою вартістю $6,91.", "metrics": [("142", "заявки за двома філіями"), ("$6,91", "середня вартість заявки"), ("$2,72", "найкращий CPL креативу")], "section": "Один бренд, дві локальні рекламні системи.", "cards": [("Розділили філії", "Кожна філія отримала власні кампанії, офери та контроль результату."), ("Перевіряли попит креативами", "Порівнювали пропозиції про об’єкти, ціну та сценарії купівлі."), ("Масштабували робоче", "Сильні зв’язки отримали більший бюджет після підтвердження вартості заявки.")], "proof_text": [("76", "заявок отримала перша філія із середнім CPL $6,27."), ("66", "заявок отримала четверта філія із середнім CPL $7,65."), ("$2,72", "найкращий результат окремого рекламного креативу.")], "conclusion": "FACTOR отримав керований канал звернень для двох філій. Кампанії можна розвивати окремо, зберігаючи спільну логіку бренду."},
+            "en": {"title": "142 leads for two real estate agency branches.", "lead": "We relaunched Meta Ads for FACTOR with a dedicated setup for each branch. The campaigns generated 142 enquiries at an average CPL of $6.91.", "metrics": [("142", "leads across two branches"), ("$6.91", "average cost per lead"), ("$2.72", "best creative CPL")], "section": "One brand, two local acquisition systems.", "cards": [("Separated the branches", "Each branch received its own campaigns, offers and performance control."), ("Tested demand through creatives", "We compared property, price and buying-scenario propositions."), ("Scaled proven combinations", "Strong ad combinations received more budget once lead cost was confirmed.")], "proof_text": [("76", "leads for branch one at an average CPL of $6.27."), ("66", "leads for branch four at an average CPL of $7.65."), ("$2.72", "the best result from an individual creative.")], "conclusion": "FACTOR received a manageable enquiry channel for two branches. Each campaign can grow independently while staying within one brand logic."},
+            "es": {"title": "142 leads para dos oficinas de una agencia inmobiliaria.", "lead": "Relanzamos Meta Ads para FACTOR con una estructura específica para cada oficina. Las campañas generaron 142 contactos con un CPL medio de $6,91.", "metrics": [("142", "leads entre dos oficinas"), ("$6,91", "coste medio por lead"), ("$2,72", "mejor CPL de una creatividad")], "section": "Una marca, dos sistemas locales de captación.", "cards": [("Separamos las oficinas", "Cada oficina recibió campañas, ofertas y control de resultados propios."), ("Probamos la demanda", "Comparamos propuestas basadas en inmuebles, precio y escenarios de compra."), ("Escalamos lo validado", "Las combinaciones sólidas recibieron más presupuesto al confirmar el coste por lead.")], "proof_text": [("76", "leads para la primera oficina con un CPL medio de $6,27."), ("66", "leads para la cuarta oficina con un CPL medio de $7,65."), ("$2,72", "el mejor resultado de una creatividad individual.")], "conclusion": "FACTOR obtuvo un canal gestionable de contactos para dos oficinas. Las campañas pueden crecer por separado bajo una misma lógica de marca."},
+        },
+    },
+    "shepit-meta-ads": {
+        "kind": "ads", "client": "SHEPIT HOUSE", "service": "Meta Ads", "place": "Kyiv region / Ukraine",
+        "hero": "/cases/shepit_assets/meta_ads_creo1.png",
+        "proof_images": ["/cases/shepit_assets/shepit_leads_2026.webp", "/cases/shepit_assets/shepit_leads_creo_2026.webp"],
+        "gallery": ["/cases/shepit_assets/meta_ads_creo1.png", "/cases/shepit_assets/meta_ads_creo2.png", "/cases/shepit_assets/meta_ads_creo3.png"],
+        "copy": {
+            "ru": {"title": "215 заявок на дома. CPL кампаний снизился до $5,74.", "lead": "Для загородного проекта SHEPIT HOUSE последовательно обновляли офферы, креативы и настройки кампаний. Каждая итерация снижала стоимость обращения.", "metrics": [("215", "заявок в актуальных кампаниях"), ("$9,52", "средний CPL по трём кампаниям"), ("$5,15", "CPL ведущего креатива")], "section": "Продажа домов через последовательные рекламные итерации.", "cards": [("Показали продукт", "В креативах раскрыли дома, окружение проекта и ключевые условия покупки."), ("Сравнили офферы", "Каждая кампания проверяла новую подачу и давала данные для следующего запуска."), ("Снизили стоимость", "CPL кампаний последовательно прошёл путь $16,79 → $10,19 → $5,74.")], "proof_text": [("99", "заявок принесла самая результативная из трёх текущих кампаний."), ("$5,74", "стоимость заявки в кампании с лучшей экономикой."), ("96", "заявок получил ведущий креатив при CPL $5,15.")], "conclusion": "SHEPIT HOUSE получил устойчивую рекламную основу: 215 обращений и подтверждённую связку, которую можно масштабировать.", "source": "Суммы пересчитаны по согласованному курсу 45 ₴/$; исходные данные сохранены на скриншотах."},
+            "uk": {"title": "215 заявок на будинки. CPL кампаній знизився до $5,74.", "lead": "Для заміського проєкту SHEPIT HOUSE послідовно оновлювали офери, креативи й налаштування кампаній. Кожна ітерація знижувала вартість звернення.", "metrics": [("215", "заявок в актуальних кампаніях"), ("$9,52", "середній CPL за трьома кампаніями"), ("$5,15", "CPL провідного креативу")], "section": "Продаж будинків через послідовні рекламні ітерації.", "cards": [("Показали продукт", "У креативах розкрили будинки, оточення проєкту та ключові умови купівлі."), ("Порівняли офери", "Кожна кампанія перевіряла нову подачу й давала дані для наступного запуску."), ("Знизили вартість", "CPL кампаній послідовно пройшов шлях $16,79 → $10,19 → $5,74.")], "proof_text": [("99", "заявок принесла найрезультативніша з трьох поточних кампаній."), ("$5,74", "вартість заявки в кампанії з найкращою економікою."), ("96", "заявок отримав провідний креатив за CPL $5,15.")], "conclusion": "SHEPIT HOUSE отримав стійку рекламну основу: 215 звернень і підтверджену зв’язку, яку можна масштабувати.", "source": "Суми перераховано за погодженим курсом 45 ₴/$; вихідні дані збережено на скриншотах."},
+            "en": {"title": "215 house enquiries. Campaign CPL fell to $5.74.", "lead": "For the SHEPIT HOUSE residential project, we iterated on offers, creatives and campaign settings. Each round lowered the cost of an enquiry.", "metrics": [("215", "leads in the current campaigns"), ("$9.52", "average CPL across three campaigns"), ("$5.15", "leading creative CPL")], "section": "Selling homes through successive ad iterations.", "cards": [("Presented the product", "The creatives showed the homes, project setting and key purchase conditions."), ("Compared offers", "Each campaign tested a new angle and supplied data for the next launch."), ("Lowered acquisition cost", "Campaign CPL progressed from $16.79 to $10.19 and then $5.74.")], "proof_text": [("99", "leads from the strongest of the three current campaigns."), ("$5.74", "lead cost in the campaign with the best economics."), ("96", "leads from the leading creative at a CPL of $5.15.")], "conclusion": "SHEPIT HOUSE gained a reliable advertising foundation: 215 enquiries and a validated combination ready to scale.", "source": "Figures converted at the agreed exchange rate of UAH 45 per USD; source values remain visible in the screenshots."},
+            "es": {"title": "215 solicitudes de casas. El CPL bajó hasta $5,74.", "lead": "Para el proyecto residencial SHEPIT HOUSE iteramos ofertas, creatividades y ajustes de campaña. Cada ronda redujo el coste de contacto.", "metrics": [("215", "leads en las campañas actuales"), ("$9,52", "CPL medio de tres campañas"), ("$5,15", "CPL de la creatividad líder")], "section": "Venta de viviendas mediante iteraciones publicitarias.", "cards": [("Mostramos el producto", "Las creatividades presentaron las casas, el entorno y las condiciones clave de compra."), ("Comparamos ofertas", "Cada campaña probó un enfoque nuevo y aportó datos para el siguiente lanzamiento."), ("Reducimos el coste", "El CPL de las campañas pasó de $16,79 a $10,19 y finalmente a $5,74.")], "proof_text": [("99", "leads de la campaña más eficaz de las tres actuales."), ("$5,74", "coste por lead de la campaña con mejor rendimiento."), ("96", "leads de la creatividad líder con un CPL de $5,15.")], "conclusion": "SHEPIT HOUSE obtuvo una base publicitaria sólida: 215 contactos y una combinación validada lista para escalar.", "source": "Importes convertidos al cambio acordado de 45 UAH por USD; los datos de origen permanecen en las capturas."},
+        },
+    },
+    "delmar-meta-ads": {
+        "kind": "ads", "client": "DELMAR", "service": "Meta Ads", "place": "Odesa / Ukraine",
+        "hero": "/cases/delmar_meta_assets/delmar_creo1.webp",
+        "proof_images": ["/cases/delmar_meta_assets/delmar_leads.webp", "/cases/delmar_meta_assets/delmar_leads_creo.webp"],
+        "gallery": ["/cases/delmar_meta_assets/delmar_creo1.webp", "/cases/delmar_meta_assets/delmar_creo2.webp", "/cases/delmar_meta_assets/delmar_creo3.webp"],
+        "copy": {
+            "ru": {"title": "103 заявки на недвижимость по $6,79.", "lead": "Для агентства Delmar собрали Meta Ads вокруг конкретных объектов и понятных условий покупки. Кампании дали 103 обращения при расходе $698,90.", "metrics": [("103", "заявки из Meta Ads"), ("$6,79", "средняя стоимость заявки"), ("$2,52", "лучший CPL креатива")], "section": "Три разных оффера, одна понятная цель — обращение.", "cards": [("Готовые объекты", "Показывали дефицит предложения и конкретную стартовую стоимость."), ("Инвестиционная подача", "Раскрывали цену объекта и потенциальный ежемесячный доход."), ("Доступный первый платёж", "Снижали барьер входа через понятную сумму первого взноса.")], "proof_text": [("64", "заявки принесла самая объёмная кампания при CPL $5,88."), ("$4,08", "CPL креатива, который дал 20 обращений."), ("$2,52", "лучший CPL: 14 заявок с одного объявления.")], "conclusion": "Delmar получил рекламную систему, которая продаёт разные типы объектов через отдельные сильные офферы."},
+            "uk": {"title": "103 заявки на нерухомість по $6,79.", "lead": "Для агентства Delmar зібрали Meta Ads навколо конкретних об’єктів і зрозумілих умов купівлі. Кампанії дали 103 звернення за витрат $698,90.", "metrics": [("103", "заявки з Meta Ads"), ("$6,79", "середня вартість заявки"), ("$2,52", "найкращий CPL креативу")], "section": "Три різні офери, одна зрозуміла мета — звернення.", "cards": [("Готові об’єкти", "Показували дефіцит пропозиції та конкретну стартову вартість."), ("Інвестиційна подача", "Розкривали ціну об’єкта й потенційний щомісячний дохід."), ("Доступний перший платіж", "Знижували бар’єр входу через зрозумілу суму першого внеску.")], "proof_text": [("64", "заявки принесла наймасштабніша кампанія за CPL $5,88."), ("$4,08", "CPL креативу, який дав 20 звернень."), ("$2,52", "найкращий CPL: 14 заявок з одного оголошення.")], "conclusion": "Delmar отримав рекламну систему, що продає різні типи об’єктів через окремі сильні офери."},
+            "en": {"title": "103 real estate leads at $6.79 each.", "lead": "For Delmar, we built Meta Ads around specific properties and clear purchase terms. The campaigns generated 103 enquiries on $698.90 of spend.", "metrics": [("103", "leads from Meta Ads"), ("$6.79", "average cost per lead"), ("$2.52", "best creative CPL")], "section": "Three distinct offers with one clear goal: an enquiry.", "cards": [("Ready properties", "We used limited availability and a concrete starting price."), ("Investment angle", "The proposition combined property price with potential monthly income."), ("Accessible first payment", "A clear initial payment lowered the entry barrier.")], "proof_text": [("64", "leads from the highest-volume campaign at a CPL of $5.88."), ("$4.08", "CPL of the creative that produced 20 enquiries."), ("$2.52", "the best CPL: 14 leads from one ad.")], "conclusion": "Delmar received an ad system that sells different property types through focused, strong offers."},
+            "es": {"title": "103 leads inmobiliarios a $6,79.", "lead": "Para Delmar construimos Meta Ads alrededor de inmuebles concretos y condiciones de compra claras. Las campañas generaron 103 contactos con una inversión de $698,90.", "metrics": [("103", "leads desde Meta Ads"), ("$6,79", "coste medio por lead"), ("$2,52", "mejor CPL de una creatividad")], "section": "Tres ofertas distintas con un objetivo claro: el contacto.", "cards": [("Inmuebles listos", "Mostramos la disponibilidad limitada y un precio inicial concreto."), ("Enfoque de inversión", "La propuesta unió el precio del inmueble con el ingreso mensual potencial."), ("Primera aportación accesible", "Una cuota inicial clara redujo la barrera de entrada.")], "proof_text": [("64", "leads de la campaña de mayor volumen con un CPL de $5,88."), ("$4,08", "CPL de la creatividad que produjo 20 contactos."), ("$2,52", "el mejor CPL: 14 leads desde un anuncio.")], "conclusion": "Delmar obtuvo un sistema publicitario que vende distintos tipos de inmueble mediante ofertas claras y específicas."},
+        },
+    },
+    "delmar-custom-crm": {
+        "kind": "crm", "client": "DELMAR", "service": "Estate CRM", "place": "Real estate operations",
+        "hero": "/cases/estate_crm_assets/dashboard4.webp",
+        "proof_images": ["/cases/estate_crm_assets/funnel.webp", "/cases/estate_crm_assets/properties.webp"],
+        "gallery": ["/cases/estate_crm_assets/dashboard1.webp", "/cases/estate_crm_assets/properties.webp", "/cases/estate_crm_assets/integrations.webp", "/cases/estate_crm_assets/dashboard4.webp"],
+        "copy": {
+            "ru": {"title": "Заявки, объекты и команда — в одной Estate CRM.", "lead": "Для Delmar разработали кастомную CRM под реальную работу агентства: от входящей заявки и подбора объекта до задач менеджеров и контроля руководителя.", "metrics": [("109", "активных сделок на дашборде"), ("115", "доступных объектов в системе"), ("7", "сценариев интеграции")], "section": "Операционная система агентства недвижимости.", "cards": [("Воронка и задачи", "Менеджер видит этап сделки, ответственного, следующий шаг и просроченные задачи."), ("Объекты и подборки", "Каталог хранит карточки объектов и помогает быстро собрать подборку для клиента."), ("Контроль команды", "Дашборд показывает сделки, контакты, объекты и точки, которые требуют внимания.")], "proof_text": [("109", "активных сделок распределены по этапам воронки."), ("24", "выполненные задачи видны руководителю на общем дашборде."), ("7", "сценариев связывают CRM с Meta, Telegram, таблицами и импортом данных.")], "conclusion": "Estate CRM объединяет продажи и базу недвижимости Delmar. Руководитель контролирует команду, а менеджер ведёт клиента и отправляет подборки в одном интерфейсе."},
+            "uk": {"title": "Заявки, об’єкти й команда — в одній Estate CRM.", "lead": "Для Delmar розробили кастомну CRM під реальну роботу агентства: від вхідної заявки й підбору об’єкта до завдань менеджерів і контролю керівника.", "metrics": [("109", "активних угод на дашборді"), ("115", "доступних об’єктів у системі"), ("7", "сценаріїв інтеграції")], "section": "Операційна система агентства нерухомості.", "cards": [("Воронка й завдання", "Менеджер бачить етап угоди, відповідального, наступний крок і прострочені завдання."), ("Об’єкти й добірки", "Каталог зберігає картки об’єктів і допомагає швидко зібрати добірку для клієнта."), ("Контроль команди", "Дашборд показує угоди, контакти, об’єкти й точки, що потребують уваги.")], "proof_text": [("109", "активних угод розподілені за етапами воронки."), ("24", "виконані завдання видно керівнику на спільному дашборді."), ("7", "сценаріїв пов’язують CRM з Meta, Telegram, таблицями та імпортом даних.")], "conclusion": "Estate CRM об’єднує продажі й базу нерухомості Delmar. Керівник контролює команду, а менеджер веде клієнта й надсилає добірки в одному інтерфейсі."},
+            "en": {"title": "Leads, properties and the team in one Estate CRM.", "lead": "We built a custom CRM around Delmar’s real workflow: from an incoming enquiry and property selection to manager tasks and team oversight.", "metrics": [("109", "active deals on the dashboard"), ("115", "available properties in the system"), ("7", "integration scenarios")], "section": "An operating system for a real estate agency.", "cards": [("Pipeline and tasks", "Managers see the deal stage, owner, next action and overdue tasks."), ("Properties and selections", "The catalogue stores property cards and helps build a client selection quickly."), ("Team control", "The dashboard surfaces deals, contacts, properties and items that need attention.")], "proof_text": [("109", "active deals distributed across pipeline stages."), ("24", "completed tasks visible to management on the shared dashboard."), ("7", "scenarios connect the CRM with Meta, Telegram, spreadsheets and data imports.")], "conclusion": "Estate CRM brings Delmar’s sales operation and property database together. Managers control the team while agents guide clients and share selections in one interface."},
+            "es": {"title": "Leads, inmuebles y equipo en un solo Estate CRM.", "lead": "Desarrollamos una CRM a medida para el flujo real de Delmar: desde la solicitud y selección de inmuebles hasta las tareas de los agentes y el control del equipo.", "metrics": [("109", "operaciones activas en el panel"), ("115", "inmuebles disponibles en el sistema"), ("7", "escenarios de integración")], "section": "Un sistema operativo para la agencia inmobiliaria.", "cards": [("Embudo y tareas", "El agente ve la fase, el responsable, la siguiente acción y las tareas vencidas."), ("Inmuebles y selecciones", "El catálogo guarda fichas y permite preparar rápidamente una selección para el cliente."), ("Control del equipo", "El panel muestra operaciones, contactos, inmuebles y puntos que necesitan atención.")], "proof_text": [("109", "operaciones activas distribuidas por las etapas del embudo."), ("24", "tareas completadas visibles para dirección en el panel general."), ("7", "escenarios conectan la CRM con Meta, Telegram, hojas e importación de datos.")], "conclusion": "Estate CRM reúne la operación comercial y la base de inmuebles de Delmar. Dirección controla el equipo y cada agente acompaña al cliente y comparte selecciones desde una interfaz."},
+        },
+    },
+}
+
+
+def esc(value: str) -> str:
+    return html.escape(value, quote=True)
+
+
+def alternates(slug: str) -> str:
+    rows = [f'<link rel="alternate" hreflang="{loc}" href="https://resetdigital.agency/{loc}/cases/{slug}.html">' for loc in LOCALES]
+    rows.append(f'<link rel="alternate" hreflang="x-default" href="https://resetdigital.agency/ru/cases/{slug}.html">')
+    return "\n    ".join(rows)
+
+
+def render(slug: str, case: dict, locale: str) -> str:
+    ui = UI[locale]
+    c = case["copy"][locale]
+    canonical = f"https://resetdigital.agency/{locale}/cases/{slug}.html"
+    metrics = "".join(f'<div class="sales-metric"><strong>{esc(a)}</strong><span>{esc(b)}</span></div>' for a, b in c["metrics"])
+    cards = "".join(f'<article class="sales-card"><span>0{i}</span><h3>{esc(a)}</h3><p>{esc(b)}</p></article>' for i, (a, b) in enumerate(c["cards"], 1))
+    proof_figs = "".join(f'<figure><img src="{src}" alt="{esc(case["client"])} — {esc(ui["proof"])} {i}" loading="lazy"><figcaption>{esc(ui["proof"])} {i}</figcaption></figure>' for i, src in enumerate(case["proof_images"], 1))
+    insights = "".join(f'<div class="sales-insight"><strong>{esc(a)}</strong><p>{esc(b)}</p></div>' for a, b in c["proof_text"])
+    gallery = "".join(f'<figure><img src="{src}" alt="{esc(case["client"])} — {esc(ui["creative"] if case["kind"] == "ads" else ui["product"])} {i}" loading="lazy"><figcaption>{esc(ui["creative"] if case["kind"] == "ads" else ui["product"])} / 0{i}</figcaption></figure>' for i, src in enumerate(case["gallery"], 1))
+    gallery_class = "sales-gallery-grid" if case["kind"] == "ads" else "sales-product-grid"
+    source = f'<p class="sales-source">{esc(c["source"])}</p>' if c.get("source") else ""
+    schema = {"@context": "https://schema.org", "@type": "CreativeWork", "name": c["title"], "description": c["lead"], "url": canonical, "creator": {"@type": "Organization", "name": "RESET"}, "about": [case["client"], case["service"], "real estate"]}
+    return f'''<!doctype html>
+<html lang="{locale}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{esc(c['lead'])}">
+  <title>{esc(c['title'])} — RESET</title>
+  <link rel="canonical" href="{canonical}">
+  {alternates(slug)}
+  <link rel="stylesheet" href="/case-sales.css">
+  <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
+</head>
+<body class="sales-case">
+  <header class="sales-header"><a class="sales-brand" href="{ui['home']}">RE<span>SET</span></a><a class="sales-back" href="{ui['home']}#case-index">{esc(ui['back'])}</a><nav><a href="{ui['home']}#case-index" aria-current="page">{esc(ui['cases'])}</a><a href="{ui['home']}#services">{esc(ui['services'])}</a><a href="{ui['home']}#contact">{esc(ui['contact'])}</a></nav></header>
+  <main>
+    <section class="sales-hero">
+      <div class="sales-meta"><span>{esc(case['client'])}</span><i></i><span>{esc(case['service'])}</span><i></i><span>{esc(case['place'])}</span></div>
+      <div class="sales-hero-grid">
+        <div><p class="sales-kicker">RESET / CASE STUDY</p><h1>{esc(c['title'])}</h1><p class="sales-lead">{esc(c['lead'])}</p></div>
+        <figure class="sales-hero-visual{' contain' if case['kind'] == 'crm' else ''}"><img src="{case['hero']}" alt="{esc(case['client'])} — {esc(case['service'])}"><figcaption class="sales-visual-tag">{esc(case['client'])} / {esc(case['service'])}</figcaption></figure>
+      </div>
+      <div class="sales-metrics">{metrics}</div>
+    </section>
+    <section class="sales-story">
+      <div class="sales-section-head"><p class="sales-eyebrow">RESET / APPROACH</p><h2>{esc(c['section'])}</h2></div>
+      <div class="sales-cards">{cards}</div>
+    </section>
+    <section class="sales-proof">
+      <div class="sales-section-head"><p class="sales-eyebrow">DATA / RESULT</p><h2>{esc(ui['proof'])}.</h2></div>
+      <div class="sales-proof-grid"><div>{proof_figs}</div><div class="sales-insights">{insights}<div class="sales-insight"><p>{esc(c['conclusion'])}</p>{source}</div></div></div>
+    </section>
+    <section class="sales-gallery">
+      <div class="sales-section-head"><p class="sales-eyebrow">{esc(case['client'])} / {esc(case['service'])}</p><h2>{esc(ui['creative'] if case['kind'] == 'ads' else ui['product'])}.</h2></div>
+      <div class="{gallery_class}">{gallery}</div>
+    </section>
+    <section class="sales-cta" id="contact"><h2>{esc(ui['cta'])}</h2><div><p>{esc(ui['cta_text'])}</p><a class="sales-button" href="{ui['home']}#contact">{esc(ui['button'])}</a></div></section>
+  </main>
+  <footer class="sales-footer"><span>© 2017–2026 RESET</span><a href="mailto:hello@reset.agency">hello@reset.agency</a></footer>
+</body>
+</html>
+'''
+
+
+def main() -> None:
+    for slug, case in CASES.items():
+        for locale in LOCALES:
+            path = ROOT / locale / "cases" / f"{slug}.html"
+            path.write_text(render(slug, case, locale), encoding="utf-8")
+        # Root case URLs mirror the Russian version for compatibility with old links.
+        (ROOT / "cases" / f"{slug}.html").write_text(render(slug, case, "ru"), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
