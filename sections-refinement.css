@@ -61,6 +61,11 @@
 /* Wide software previews keep the interface legible without a decorative device frame. */
 .home-dev .dev-work-image.dev-image-product{display:flex;align-items:center;justify-content:center;padding:18px;background:#d6e3e4}
 .home-dev .dev-work-image.dev-image-product>img{width:100%;height:100%;max-width:none;object-fit:contain;object-position:center;padding:0;border:0;border-radius:0;box-shadow:none;transform:none}
+.home-dev .dev-work-image.dev-image-widget{display:flex;align-items:center;justify-content:center;padding:20px;background:#dce8ea;overflow:hidden}
+.home-dev .dev-work-image.dev-image-widget:before,.home-dev .dev-work-image.dev-image-widget:after{content:'';position:absolute;left:50%;top:50%;translate:-50% -50%;width:76%;aspect-ratio:1;border:1px solid #6999a8;border-radius:50%;opacity:.75}
+.home-dev .dev-work-image.dev-image-widget:after{width:54%;border-style:dashed;opacity:.42}
+.home-dev .dev-work-image.dev-image-widget>img{position:relative;z-index:1;width:auto;height:92%;max-width:58%;object-fit:contain;padding:0;border:5px solid #0b2538;border-radius:24px;box-shadow:9px 11px 0 #668b9740;transform:none}
+.home-dev .dev-work-image.dev-image-widget>span{z-index:2}
 @media(max-width:700px){.home-dev .dev-work-image.dev-image-ai{aspect-ratio:1.1;padding:20px}.home-dev .dev-work-image.dev-image-ai:before{width:78%}.home-dev .dev-work-image.dev-image-ai:after{width:56%}.home-dev .dev-work-image.dev-image-ai>img{height:88%;max-width:66%;border-radius:20px}.home-dev .dev-work-image.dev-image-product{aspect-ratio:1.6;padding:12px}}
 
 /* Draft case covers make the future catalog visible without inventing results. */
