@@ -15,6 +15,7 @@ COPY = {
         "crm": ("Estate CRM: от заявки до подборки объекта", "Кастомная система Delmar объединяет воронку, каталог недвижимости, работу менеджеров и контроль руководителя."),
         "notion": ("База партнёров, объектов и расчётов в Notion", "Рабочая система для запуска направления Dominanta в Малаге и Валенсии."),
         "architecture": ("Генплан жилого проекта на 57 гектарах", "Зонирование, маршруты, ландшафт и визуальная концепция участка в Болгарии."),
+        "villa3d": ("От планировки к 3D-модели виллы", "Экспликации, объёмная модель и основа для фотореалистичной презентации проекта."),
         "hero": "заявки для<br>двух филиалов", "avg": "Средняя стоимость заявки",
     },
     "uk": {
@@ -24,6 +25,7 @@ COPY = {
         "crm": ("Заявки, об’єкти й команда — в Estate CRM", "Кастомна CRM Delmar: воронка, добірки об’єктів, дашборд та інтеграції."),
         "notion": ("База партнерів, об’єктів і розрахунків у Notion", "Робоча система для запуску напряму Dominanta в Малазі та Валенсії."),
         "architecture": ("Генплан житлового проєкту на 57 гектарах", "Зонування, маршрути, ландшафт і візуальна концепція ділянки в Болгарії."),
+        "villa3d": ("Від планування до 3D-моделі вілли", "Експлікації, об’ємна модель і основа для фотореалістичної презентації проєкту."),
         "hero": "заявки для<br>двох філій", "avg": "Середня вартість заявки",
     },
     "en": {
@@ -33,6 +35,7 @@ COPY = {
         "crm": ("Leads, properties and team in Estate CRM", "Delmar’s custom CRM: pipeline, property selections, dashboard and integrations."),
         "notion": ("Partners, properties and calculations in Notion", "A workspace for launching Dominanta in Málaga and Valencia."),
         "architecture": ("A 57-hectare residential masterplan", "Zoning, routes, landscape and the visual concept for a site in Bulgaria."),
+        "villa3d": ("From floor plans to a 3D villa model", "Room schedules, a spatial model and the base for a photorealistic presentation."),
         "hero": "leads for<br>two branches", "avg": "Average cost per lead",
     },
     "es": {
@@ -42,6 +45,7 @@ COPY = {
         "crm": ("Leads, inmuebles y equipo en Estate CRM", "CRM a medida de Delmar: embudo, selecciones, panel e integraciones."),
         "notion": ("Socios, inmuebles y cálculos en Notion", "Un sistema de trabajo para lanzar Dominanta en Málaga y Valencia."),
         "architecture": ("Plan maestro residencial de 57 hectáreas", "Zonificación, recorridos, paisaje y concepto visual para un terreno en Bulgaria."),
+        "villa3d": ("De los planos al modelo 3D de una villa", "Cuadros de superficies, modelo volumétrico y base para una presentación fotorrealista."),
         "hero": "leads para<br>dos oficinas", "avg": "Coste medio por lead",
     },
 }
@@ -84,6 +88,9 @@ def update(path: Path, lang: str) -> None:
     architecture = card(lang, "bulgaria-masterplan", "architecture", "BULGARIA / MASTERPLAN", "/cases/architecture_assets/masterplan-close.webp", *c["architecture"])
     architecture = architecture.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-site"')
     source = replace_card(source, "bulgaria-masterplan", architecture)
+    villa3d = card(lang, "bulgaria-villa-3d", "architecture", "BULGARIA / VILLA 3D", "/cases/villa_3d_assets/villa-render.webp", *c["villa3d"])
+    villa3d = villa3d.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-site"')
+    source = replace_card(source, "bulgaria-villa-3d", villa3d)
 
     # The selected-work hero keeps its existing visual system and receives current data.
     hero_pattern = re.compile(r'(<article class="dev-feature dev-feature-meta".*?<div class="hero-result"><h2><strong>).*?(</strong><span>).*?(</span></h2><div class="hero-cpl"><b>).*?(</b><span>).*?(</span>)', re.S)
