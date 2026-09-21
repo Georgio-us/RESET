@@ -8,6 +8,7 @@
     selected = (index + slides.length) % slides.length;
     slides.forEach((slide, i) => { slide.hidden = i !== selected; });
     selectors.forEach((button, i) => button.setAttribute('aria-pressed', String(i === selected)));
+    showcase.querySelector('.dev-feature-tabs')?.setAttribute('data-feature-count', `${String(selected + 1).padStart(2, '0')} / ${String(slides.length).padStart(2, '0')}`);
     showcase.querySelector('[data-feature-status]').textContent = `${selected + 1} / ${slides.length}: ${slides[selected].querySelector('h2').textContent}`;
     if (typeof trackAnalytics === 'function') trackAnalytics('case_preview_select', { case_name: selectors[selected].textContent });
   }
@@ -32,7 +33,10 @@
   filters.forEach(button => button.addEventListener('click', () => {
     const category = button.dataset.workFilter;
     filters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    cards.forEach(card => { card.hidden = category !== 'all' && card.dataset.workCategory !== category; });
+    cards.forEach(card => {
+      const categories = card.dataset.workCategory.split(/\s+/).filter(Boolean);
+      card.hidden = category !== 'all' && !categories.includes(category);
+    });
     document.querySelector('[data-work-status]').textContent = `${button.textContent}: ${cards.filter(card => !card.hidden).length}`;
     if (typeof trackAnalytics === 'function') trackAnalytics('case_filter', { category });
   }));
