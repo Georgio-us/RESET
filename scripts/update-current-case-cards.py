@@ -76,8 +76,8 @@ def replace_card(source: str, slug: str, replacement: str) -> str:
 def update(path: Path, lang: str) -> None:
     c = COPY[lang]
     source = path.read_text(encoding="utf-8")
-    source = replace_card(source, "an-factor", "".join(card(lang, "an-factor", "ads", "FACTOR / Meta Ads", "/cases/factor_assets/creo_cuvee.png", *c["factor"])))
-    source = replace_card(source, "shepit-meta-ads", "".join(card(lang, "shepit-meta-ads", "ads", "SHEPIT HOUSE / Meta Ads", "/cases/shepit_assets/meta_ads_creo1.png", *c["shepit"])))
+    source = replace_card(source, "an-factor", "".join(card(lang, "an-factor", "ads", "FACTOR / Meta Ads", "/cases/factor_assets/Factor1_creo_2.webp", *c["factor"])))
+    source = replace_card(source, "shepit-meta-ads", "".join(card(lang, "shepit-meta-ads", "ads", "SHEPIT HOUSE / Meta Ads", "/cases/shepit_assets/Shepit_creo_3.webp", *c["shepit"])))
     source = replace_card(source, "delmar-meta-ads", "".join(card(lang, "delmar-meta-ads", "ads", "DELMAR / Meta Ads", "/cases/delmar_meta_assets/delmar_creo1.webp", *c["delmar"])))
     crm = card(lang, "delmar-custom-crm", "crm", "DELMAR / Estate CRM", "/cases/estate_crm_assets/dashboard4.webp", *c["crm"])
     crm = crm.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-product"')
@@ -91,6 +91,11 @@ def update(path: Path, lang: str) -> None:
     villa3d = card(lang, "bulgaria-villa-3d", "architecture", "BULGARIA / VILLA 3D", "/cases/villa_3d_assets/villa-render.webp", *c["villa3d"])
     villa3d = villa3d.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-site"')
     source = replace_card(source, "bulgaria-villa-3d", villa3d)
+
+    source = source.replace('/cases/shepit_assets/new_google_advertising_example.png', '/cases/shepit_assets/shepit_google.webp')
+    nivellux_hero = '/cases/nivellux_assets/nivellux_hero_es.webp' if lang in ('en', 'es') else '/cases/nivellux_assets/nivellux_hero_ru.webp'
+    source = source.replace('/assets/reset-valencia-renovation.webp', nivellux_hero)
+    source = source.replace('/cases/factor_assets/creo_cuvee.png', '/cases/factor_assets/Factor1_creo_2.webp')
 
     # The selected-work hero keeps its existing visual system and receives current data.
     hero_pattern = re.compile(r'(<article class="dev-feature dev-feature-meta".*?<div class="hero-result"><h2><strong>).*?(</strong><span>).*?(</span></h2><div class="hero-cpl"><b>).*?(</b><span>).*?(</span>)', re.S)
