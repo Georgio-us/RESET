@@ -13,6 +13,7 @@ COPY = {
         "shepit": ("215 заявок на дома", "CPL кампаний снизился до $5,74; ведущий креатив — $5,15."),
         "delmar": ("103 заявки на недвижимость по $6,79", "Три оффера для объектов, инвестиций и доступного первого платежа."),
         "crm": ("Estate CRM: от заявки до подборки объекта", "Кастомная система Delmar объединяет воронку, каталог недвижимости, работу менеджеров и контроль руководителя."),
+        "notion": ("База партнёров, объектов и расчётов в Notion", "Рабочая система для запуска направления Dominanta в Малаге и Валенсии."),
         "hero": "заявки для<br>двух филиалов", "avg": "Средняя стоимость заявки",
     },
     "uk": {
@@ -20,6 +21,7 @@ COPY = {
         "shepit": ("215 заявок на будинки", "CPL кампаній знизився до $5,74; провідний креатив — $5,15."),
         "delmar": ("103 заявки на нерухомість по $6,79", "Три офери для об’єктів, інвестицій і доступного першого платежу."),
         "crm": ("Заявки, об’єкти й команда — в Estate CRM", "Кастомна CRM Delmar: воронка, добірки об’єктів, дашборд та інтеграції."),
+        "notion": ("База партнерів, об’єктів і розрахунків у Notion", "Робоча система для запуску напряму Dominanta в Малазі та Валенсії."),
         "hero": "заявки для<br>двох філій", "avg": "Середня вартість заявки",
     },
     "en": {
@@ -27,6 +29,7 @@ COPY = {
         "shepit": ("215 enquiries for residential homes", "Campaign CPL fell to $5.74; leading creative CPL: $5.15."),
         "delmar": ("103 real estate leads at $6.79", "Three offers for properties, investment and an accessible first payment."),
         "crm": ("Leads, properties and team in Estate CRM", "Delmar’s custom CRM: pipeline, property selections, dashboard and integrations."),
+        "notion": ("Partners, properties and calculations in Notion", "A workspace for launching Dominanta in Málaga and Valencia."),
         "hero": "leads for<br>two branches", "avg": "Average cost per lead",
     },
     "es": {
@@ -34,6 +37,7 @@ COPY = {
         "shepit": ("215 solicitudes de viviendas", "El CPL bajó hasta $5,74; creatividad líder: $5,15."),
         "delmar": ("103 leads inmobiliarios a $6,79", "Tres ofertas para inmuebles, inversión y una primera aportación accesible."),
         "crm": ("Leads, inmuebles y equipo en Estate CRM", "CRM a medida de Delmar: embudo, selecciones, panel e integraciones."),
+        "notion": ("Socios, inmuebles y cálculos en Notion", "Un sistema de trabajo para lanzar Dominanta en Málaga y Valencia."),
         "hero": "leads para<br>dos oficinas", "avg": "Coste medio por lead",
     },
 }
@@ -70,6 +74,9 @@ def update(path: Path, lang: str) -> None:
     crm = card(lang, "delmar-custom-crm", "crm", "DELMAR / Estate CRM", "/cases/estate_crm_assets/dashboard4.webp", *c["crm"])
     crm = crm.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-ai"')
     source = replace_card(source, "delmar-custom-crm", crm)
+    notion = card(lang, "dominanta-spain", "crm", "DOMINANTA / NOTION", "/cases/notion_assets/developers_database.webp", *c["notion"])
+    notion = notion.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-ai"')
+    source = replace_card(source, "dominanta-spain", notion)
 
     # The selected-work hero keeps its existing visual system and receives current data.
     hero_pattern = re.compile(r'(<article class="dev-feature dev-feature-meta".*?<div class="hero-result"><h2><strong>).*?(</strong><span>).*?(</span></h2><div class="hero-cpl"><b>).*?(</b><span>).*?(</span>)', re.S)
