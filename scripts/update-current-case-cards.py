@@ -95,6 +95,10 @@ def update(path: Path, lang: str) -> None:
     source = source.replace('/cases/shepit_assets/new_google_advertising_example.png', '/cases/shepit_assets/shepit_google.webp')
     nivellux_hero = '/cases/nivellux_assets/nivellux_hero_es.webp' if lang in ('en', 'es') else '/cases/nivellux_assets/nivellux_hero_ru.webp'
     source = source.replace('/assets/reset-valencia-renovation.webp', nivellux_hero)
+    source = source.replace(
+        f'class="dev-work-image dev-image-site" href="/{lang}/cases/nivellux.html"',
+        f'class="dev-work-image dev-image-product" href="/{lang}/cases/nivellux.html"',
+    )
     source = source.replace('/cases/factor_assets/creo_cuvee.png', '/cases/factor_assets/Factor1_creo_2.webp')
 
     # The selected-work hero keeps its existing visual system and receives current data.
