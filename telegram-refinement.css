@@ -1,129 +1,150 @@
-/* Preserve the Telegram mockups; give the experience a single focal point. */
-.telegram-refined .case-page-cover .case-template-results{display:none}
-.telegram-refined .case-page-cover .case-template-tools{display:none}
-.telegram-refined .case-page-cover .case-template-copy{grid-column:1 / span 6}
-.telegram-refined .case-page-cover .case-template-media{grid-column:8 / span 5}
-.telegram-refined .case-template-copy h1{font-size:clamp(42px,4.7vw,70px);line-height:1.04;letter-spacing:-.04em}
-.telegram-demo-link{display:inline-flex;align-items:center;gap:36px;margin-top:28px;padding:19px 24px;background:#0d5e73;color:#f1f5f5;text-decoration:none;box-shadow:6px 7px 0 #a9d6de;transition:transform .2s,box-shadow .2s}
-.telegram-demo-link:hover{transform:translate(-3px,-3px);box-shadow:8px 10px 0 #a9d6de,15px 17px 0 #5f9bab}
-.telegram-refined .product-workflow{padding-block:76px;background:#e8f0f0}
-.telegram-refined .workflow-heading h2{margin-bottom:30px}
-.telegram-role-switch{grid-column:1/-1;display:flex;align-items:center;border-top:1px solid #9cb7c1;border-bottom:1px solid #9cb7c1;margin-bottom:20px}
-.telegram-role-switch button{min-width:150px;min-height:58px;padding:16px 24px;border:0;border-right:1px solid #9cb7c1;font:inherit;background:transparent;color:#345869;cursor:pointer}
-.telegram-role-switch button[aria-pressed=true]{background:#143b4e;color:#e6f2f3}
-.telegram-role-switch p{margin:0 24px;color:#526d7b;font-size:14px;line-height:1.5}
-.telegram-refined .workflow-panel{padding:12px 0 0;border:0;min-height:0}
-.telegram-refined .workflow-panel[hidden]{display:none!important}
-.telegram-refined .workflow-agent .workflow-device-stage{grid-column:1/span 7;grid-row:1}
-.telegram-refined .workflow-agent .workflow-copy{grid-column:9/span 4;grid-row:1}
-.telegram-refined .workflow-stage-label{display:none}
-.telegram-refined .workflow-orbit:after{display:none}
-.telegram-refined .workflow-copy>span{display:none}
-.telegram-refined .workflow-copy-item{border:0;padding-top:0}
-.telegram-refined .workflow-controls button{min-width:44px;min-height:44px}
-.telegram-details{padding-block:35px 50px}
-.telegram-details>details{border-top:1px solid #456372}
-.telegram-details>details:last-child{border-bottom:1px solid #456372}
-.telegram-details summary,.telegram-refined .product-includes summary{display:flex;align-items:center;justify-content:space-between;gap:20px;list-style:none;cursor:pointer;padding:24px 0;font-size:20px}
-.telegram-details summary::-webkit-details-marker,.product-includes summary::-webkit-details-marker{display:none}
-.telegram-details summary span,.product-includes summary span{font-size:25px;color:#8cb6c5}
-.telegram-details details[open]>summary span{transform:rotate(45deg)}
-.telegram-details .case-story{padding-block:48px}
-.telegram-details .container{width:100%;max-width:none;padding-inline:24px}
-.telegram-refined .product-offer,.telegram-refined .product-adoption{padding-block:72px}
-.telegram-refined .product-includes>span{display:none}
-.telegram-refined .product-includes{border-top:1px solid #426273;border-bottom:1px solid #426273}
-.telegram-refined .product-includes summary{font-size:17px;color:#c0d9e2}
-.telegram-refined :is(a,button,summary):focus-visible{outline:3px solid #55a8bd;outline-offset:5px}
-@media(max-width:767px){.telegram-refined .case-page-cover .case-template-copy,.telegram-refined .case-page-cover .case-template-media{grid-column:1/-1}.telegram-refined .case-template-copy h1{font-size:42px!important}.telegram-refined .product-workflow{padding-block:48px}.telegram-role-switch{flex-wrap:wrap}.telegram-role-switch button{width:50%;min-width:0}.telegram-role-switch p{width:100%;padding:16px 0;margin:0;font-size:13px}.telegram-refined .workflow-panel{gap:24px}.telegram-refined .workflow-agent .workflow-device-stage{order:0}.telegram-refined .workflow-agent .workflow-copy{order:1}.telegram-details .container{padding-inline:16px}.telegram-details summary{font-size:18px}.telegram-refined .product-offer,.telegram-refined .product-adoption{padding-block:48px}}
-@media(prefers-reduced-motion:reduce){.telegram-demo-link{transition:none}.telegram-refined .workflow-screen,.telegram-refined .workflow-copy-item{transition:none;animation:none}}
-/* Mobile-first finish: one demo in the cover, intrinsic screen proportions. */
-.telegram-refined .case-page-cover .case-template-layout{align-items:center}
-.telegram-refined .case-page-cover .case-template-copy{grid-column:1/span 6;grid-row:2;align-self:center}
-.telegram-refined .telegram-hero-demo{grid-column:8/span 5;grid-row:2;padding:0;background:transparent;min-width:0}
-.telegram-demo-layout{display:block}
-.telegram-refined .telegram-role-switch{margin:0 0 20px;display:grid;grid-template-columns:1fr 1fr}
-.telegram-refined .telegram-role-switch button{min-width:0;width:100%;font-size:15px;min-height:52px}
-.telegram-refined .telegram-role-switch p{grid-column:1/-1;margin:0;padding:13px 0;font-size:12px}
-.telegram-refined .telegram-hero-demo .workflow-panel{display:flex;flex-direction:column;gap:22px;padding:0}
-.telegram-refined .telegram-hero-demo .workflow-device-stage{position:relative;width:100%;min-height:0;padding:24px 20px 18px;display:grid;justify-items:center;overflow:hidden;background:#d2e2e7;order:0}
-.telegram-refined .telegram-hero-demo .workflow-screen{position:relative;top:auto;left:auto;width:218px;max-width:100%;padding:0;border:6px solid #102536;border-radius:27px;transform:none!important;box-shadow:9px 11px 0 #7397a43b;display:none;margin:0;overflow:hidden}
-.telegram-refined .telegram-hero-demo .workflow-screen.is-active{display:block}
-.telegram-refined .telegram-hero-demo .workflow-screen img{width:100%;height:auto;max-height:none;border-radius:20px;object-fit:contain}
-.telegram-refined .telegram-hero-demo .workflow-controls{position:relative;inset:auto;display:flex;justify-content:center;align-items:center;gap:18px;margin:22px 0 0;z-index:3}
-.telegram-refined .telegram-hero-demo .workflow-copy{width:100%;order:1;min-height:145px}
-.telegram-refined .telegram-hero-demo .workflow-copy-item h3{font-size:26px;max-width:none;margin:10px 0 12px;line-height:1.13}
-.telegram-refined .telegram-hero-demo .workflow-copy-item p{max-width:none;font-size:14px;line-height:1.55}
-.telegram-refined .telegram-hero-demo .workflow-orbit{width:390px;height:390px;top:45%;left:50%;transform:translate(-50%,-50%)}
-.telegram-capabilities{background:#102b3b;color:#e9f2f4;padding:64px 0}
-.telegram-eyebrow{color:#a9cfd8;font-size:12px;letter-spacing:.08em;margin:0 0 20px}
-.telegram-capabilities h2{font-size:clamp(32px,3.8vw,54px);line-height:1.06;letter-spacing:-.035em;max-width:800px;margin:0 0 35px}
-.telegram-capability-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
-.telegram-capability-grid article{padding:24px 0;border-top:1px solid #426474}
-.telegram-capability-grid h3{color:#eaf3f4;font-size:22px;line-height:1.2;margin:0 0 12px}
-.telegram-capability-grid p{color:#b2cad4;font-size:15px;line-height:1.6;margin:0;max-width:530px}
-.telegram-refined .product-offer{border-top:1px solid #426474}
-.telegram-refined .product-offer .case-story-meta{grid-column:1/-1}
-.telegram-refined .product-includes summary{color:#e7f2f4}
-.telegram-refined .product-pricing{box-shadow:none}
-.telegram-refined .product-agencies article{min-height:0;box-shadow:none}
-.telegram-refined .product-agencies h3{margin:20px 0}
-.telegram-refined .product-agencies p{margin-top:20px}
-@media(max-width:767px){
-.telegram-refined .case-page-cover .case-template-layout{display:flex;flex-direction:column;gap:24px;padding-block:28px 40px}
-.telegram-refined .case-page-cover .case-template-meta{width:100%}
-.telegram-refined .case-page-cover .case-template-copy{width:100%}
-.telegram-refined .case-template-kicker{display:none}
-.telegram-refined .case-template-copy h1{font-size:36px!important;line-height:1.06!important;margin:0 0 18px}
-.telegram-refined .case-template-lead{font-size:15px;line-height:1.6;margin:0}
-.telegram-refined .telegram-hero-demo{width:100%;padding:0}
-.telegram-refined .telegram-role-switch{margin-bottom:14px}
-.telegram-refined .telegram-role-switch p{display:none}
-.telegram-refined .telegram-hero-demo .workflow-device-stage{padding:22px 16px 16px}
-.telegram-refined .telegram-hero-demo .workflow-screen{width:min(230px,78%);border-width:5px}
-.telegram-refined .telegram-hero-demo .workflow-copy{min-height:145px}
-.telegram-refined .telegram-hero-demo .workflow-copy-item h3{font-size:24px}
-.telegram-refined .telegram-hero-demo .workflow-copy-item p{font-size:14px}
-.telegram-capabilities{padding:40px 0}
-.telegram-capabilities h2{font-size:32px;margin-bottom:24px}
-.telegram-capability-grid{grid-template-columns:1fr}
-.telegram-capability-grid article{padding:20px 0}
-.telegram-capability-grid h3{font-size:21px}
-.telegram-capability-grid p{font-size:14px}
-.telegram-refined .product-offer .case-story-grid{display:block}
-.telegram-refined .product-offer-copy h2{font-size:33px;line-height:1.08}
-.telegram-refined .product-offer-copy>p{font-size:15px;margin-top:18px}
-.telegram-refined .product-includes{margin-top:24px}
-.telegram-refined .product-pricing{margin-top:28px;padding:20px}
-.telegram-refined .product-price{min-height:0;padding:20px 0;align-items:center}
-.telegram-refined .product-price b{font-size:32px}
-.telegram-refined .product-pricing-note{font-size:14px}
-.telegram-refined .product-adoption-heading h2{font-size:32px;line-height:1.08}
-.telegram-refined .product-agencies{margin-top:26px;gap:14px}
-.telegram-refined .product-agencies article{padding:20px}
-.telegram-refined .product-agencies h3{font-size:30px;margin:14px 0}
+/* VIA Properties keeps the full product-case composition and adds one clear role switch. */
+.telegram-refined .product-workflow .workflow-heading {
+  grid-column: 1 / -1;
+  text-align: center;
 }
-.telegram-refined .case-template-layout::after{display:none}
-.telegram-refined .product-offer .case-story-meta,.telegram-refined .product-offer .case-story-meta span{color:#b9dce5}
-.telegram-refined .product-includes[open]>summary span{transform:rotate(45deg)}
-/* Desktop composition: content-sized cover prevents the demo from being clipped. */
-.telegram-feature-icon{display:none}
-@media(min-width:768px){
-.telegram-refined .case-page-cover{height:auto;min-height:0}
-.telegram-refined .case-page-cover .case-template-layout{height:auto;grid-template-rows:auto auto;row-gap:42px;padding-block:42px 96px;align-items:start}
-.telegram-refined .case-page-cover .case-template-copy{align-self:start;padding-top:64px}
-.telegram-refined .telegram-hero-demo{align-self:start}
-.telegram-refined .telegram-hero-demo .workflow-copy{min-height:165px}
-.telegram-refined .telegram-capabilities{padding-block:96px}
-.telegram-feature-icon{display:block;width:36px;height:36px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round;color:#a9cfd8;flex-shrink:0}
-.telegram-capability-grid article{display:grid;grid-template-columns:44px 1fr;column-gap:20px;row-gap:12px;padding-block:30px}
-.telegram-capability-grid article>.telegram-feature-icon{grid-column:1;grid-row:1/span 2;margin-top:2px}
-.telegram-capability-grid h3,.telegram-capability-grid p{grid-column:2;margin:0}
-.telegram-refined .product-offer{padding-block:96px}
-.telegram-refined .product-offer .product-pricing{align-self:start;margin-top:20px}
-.telegram-refined .product-includes summary{cursor:default}
-.telegram-refined .product-includes summary>span{display:none}
-.telegram-refined .product-includes li{display:flex;align-items:center;gap:14px;padding-block:19px;font-size:15px;line-height:1.4}
-.telegram-refined .product-includes li::before{display:none}
-.telegram-refined .product-includes li>.telegram-feature-icon{width:25px;height:25px}
+
+.telegram-refined .product-workflow .workflow-heading h2 {
+  max-width: 900px;
+  margin: 22px auto 46px;
+}
+
+.telegram-role-switch {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(760px, 100%);
+  margin: 0 auto 46px;
+  border: 1px solid #9cb7c1;
+  background: rgba(244, 248, 248, .45);
+}
+
+.telegram-role-switch button {
+  min-height: 72px;
+  padding: 18px 28px;
+  border: 0;
+  border-right: 1px solid #9cb7c1;
+  color: #345869;
+  background: transparent;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease;
+}
+
+.telegram-role-switch button:nth-child(2) {
+  border-right: 0;
+}
+
+.telegram-role-switch button[aria-pressed="true"] {
+  color: #eef6f7;
+  background: #143b4e;
+}
+
+.telegram-role-switch p {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 16px 22px;
+  border-top: 1px solid #9cb7c1;
+  color: #526d7b;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.telegram-refined .workflow-panel[hidden] {
+  display: none !important;
+}
+
+.telegram-refined .workflow-panel {
+  padding-top: 0;
+}
+
+.telegram-refined .workflow-agent {
+  border-bottom: 0;
+}
+
+.telegram-refined .case-page-nav-layout {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.35fr);
+  gap: 32px;
+}
+
+.telegram-refined .case-page-nav-layout > span {
+  white-space: nowrap;
+}
+
+.telegram-refined .case-page-nav-layout > a:last-child {
+  justify-self: end;
+  text-align: right;
+}
+
+.telegram-refined :is(a, button):focus-visible {
+  outline: 3px solid #55a8bd;
+  outline-offset: 5px;
+}
+
+@media (max-width: 767px) {
+  .telegram-refined .ai-product-stage {
+    min-height: 1160px;
+  }
+
+  .telegram-refined .ai-product-tags {
+    bottom: 24px;
+  }
+
+  .telegram-refined .product-workflow .workflow-heading {
+    text-align: left;
+  }
+
+  .telegram-refined .product-workflow .workflow-heading h2 {
+    margin: 18px 0 30px;
+  }
+
+  .telegram-role-switch {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .telegram-role-switch button {
+    min-height: 58px;
+    padding: 14px 16px;
+    font-size: 16px;
+  }
+
+  .telegram-role-switch p {
+    padding: 13px 16px;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .telegram-refined .workflow-panel,
+  .telegram-refined .workflow-agent {
+    padding-top: 0;
+  }
+
+  .telegram-refined .case-page-nav-layout {
+    grid-template-columns: 1fr auto;
+    gap: 12px 18px;
+  }
+
+  .telegram-refined .case-page-nav-layout > a:first-child {
+    grid-column: 1;
+  }
+
+  .telegram-refined .case-page-nav-layout > span {
+    grid-column: 2;
+  }
+
+  .telegram-refined .case-page-nav-layout > a:last-child {
+    grid-column: 1 / -1;
+    justify-self: start;
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .telegram-role-switch button {
+    transition: none;
+  }
 }

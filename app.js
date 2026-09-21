@@ -91,7 +91,7 @@ document.querySelectorAll('.language-switcher button').forEach((button, index) =
 if (document.body.classList.contains('case-page') && !document.querySelector('link[href$="typography-tokens.css"]')) {
   const typographyStyles = document.createElement('link');
   typographyStyles.rel = 'stylesheet';
-  typographyStyles.href = '../typography-tokens.css';
+  typographyStyles.href = '/typography-tokens.css';
   document.head.append(typographyStyles);
 }
 
@@ -657,7 +657,7 @@ if (document.body.classList.contains('case-page') && currentCaseNavigation && !d
 }
 
 const caseNav = document.querySelector('.case-page-nav');
-if (document.body.classList.contains('case-page') && currentCaseNavigation && caseNav) {
+if (document.body.classList.contains('case-page') && currentCaseNavigation && caseNav && !document.body.classList.contains('telegram-refined')) {
   const arrowLeft = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>';
   const arrowRight = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" /></svg>';
   caseNav.innerHTML = `<div class="container case-page-nav-layout"><a class="case-nav-previous" href="${currentCaseNavigation.previous}">${arrowLeft}<span>Предыдущий кейс</span></a><span class="case-nav-position">${currentCaseNavigation.position}</span><a class="case-nav-next-control" href="${currentCaseNavigation.next}"><span>Следующий кейс</span>${arrowRight}</a><a class="case-nav-home" href="../index.html">Вернуться на главную</a><a class="case-nav-title" href="${currentCaseNavigation.next}">${currentCaseNavigation.nextLabel}</a></div>`;
