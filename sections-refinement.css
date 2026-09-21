@@ -55,7 +55,10 @@
 /* Telegram catalogue cover: complete screen with a restrained device bezel. */
 .home-dev .dev-work-image.dev-image-ai{display:flex;align-items:center;justify-content:center;padding:24px;background:#163e52}
 .home-dev .dev-work-image.dev-image-ai>img{width:auto;height:100%;max-width:80%;object-fit:contain;padding:0;border:5px solid #0b2132;border-radius:22px;box-shadow:8px 10px 0 #769ca43d;transform:none}
-@media(max-width:700px){.home-dev .dev-work-image.dev-image-ai{aspect-ratio:1.1;padding:24px}.home-dev .dev-work-image.dev-image-ai>img{max-width:75%;border-radius:20px}}
+/* Wide software previews keep the interface legible without a decorative device frame. */
+.home-dev .dev-work-image.dev-image-product{display:flex;align-items:center;justify-content:center;padding:18px;background:#d6e3e4}
+.home-dev .dev-work-image.dev-image-product>img{width:100%;height:100%;max-width:none;object-fit:contain;object-position:center;padding:0;border:0;border-radius:0;box-shadow:none;transform:none}
+@media(max-width:700px){.home-dev .dev-work-image.dev-image-ai{aspect-ratio:1.1;padding:24px}.home-dev .dev-work-image.dev-image-ai>img{max-width:75%;border-radius:20px}.home-dev .dev-work-image.dev-image-product{aspect-ratio:1.6;padding:12px}}
 
 /* Draft case covers make the future catalog visible without inventing results. */
 .home-dev .dev-placeholder-cover{position:relative;display:block;background:#16384a;color:#dff0f1;text-decoration:none;overflow:hidden}
