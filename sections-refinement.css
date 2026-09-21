@@ -56,3 +56,13 @@
 .home-dev .dev-work-image.dev-image-ai{display:flex;align-items:center;justify-content:center;padding:24px;background:#163e52}
 .home-dev .dev-work-image.dev-image-ai>img{width:auto;height:100%;max-width:80%;object-fit:contain;padding:0;border:5px solid #0b2132;border-radius:22px;box-shadow:8px 10px 0 #769ca43d;transform:none}
 @media(max-width:700px){.home-dev .dev-work-image.dev-image-ai{aspect-ratio:1.1;padding:24px}.home-dev .dev-work-image.dev-image-ai>img{max-width:75%;border-radius:20px}}
+
+/* Draft case covers make the future catalog visible without inventing results. */
+.home-dev .dev-placeholder-cover{position:relative;display:block;background:#16384a;color:#dff0f1;text-decoration:none;overflow:hidden}
+.home-dev .dev-placeholder-cover:before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0,transparent 79px,#a7cbd310 80px),repeating-linear-gradient(0deg,transparent 0,transparent 79px,#a7cbd310 80px)}
+.home-dev .dev-placeholder-cover.placeholder-ads{background:#1a4151}.home-dev .dev-placeholder-cover.placeholder-development{background:#12364a}.home-dev .dev-placeholder-cover.placeholder-crm{background:#184657}.home-dev .dev-placeholder-cover.placeholder-seo{background:#20505b}.home-dev .dev-placeholder-cover.placeholder-architecture{background:#264957}
+.home-dev .draft-cover-copy{position:absolute;z-index:2;left:28px;top:27px;bottom:26px;display:flex;flex-direction:column;align-items:flex-start}
+.home-dev .draft-cover-copy small{font-size:10px;letter-spacing:.12em;color:#9fc2cc}.home-dev .draft-cover-copy b{margin-top:auto;font:600 clamp(30px,4vw,58px)/.9 Arial,sans-serif;letter-spacing:-.055em}.home-dev .draft-cover-copy em{margin-top:18px;font-style:normal;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#9fc2cc}
+.home-dev .draft-card-drawing{position:absolute;right:4%;bottom:4%;width:55%;height:76%;fill:none;stroke:#8eb5c0;stroke-width:1.2;opacity:.42}
+.home-dev .dev-work-card-draft .dev-work-copy .dev-label{color:#86afbd}
+@media(max-width:700px){.home-dev .draft-cover-copy{left:20px;top:20px;bottom:20px}.home-dev .draft-cover-copy b{font-size:38px}.home-dev .draft-card-drawing{width:62%;right:-4%}}

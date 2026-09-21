@@ -11,8 +11,8 @@ class Element {
 function setup() {
   const slides = [0, 1, 2].map(i => { const e = new Element(); e.hidden = i !== 0; e.querySelector = () => ({ textContent: `Project ${i}` }); return e; });
   const selectors = slides.map((_, i) => new Element({ featureSelect: String(i) }, `Project ${i}`));
-  const filters = ['all', 'ads', 'development', 'crm', 'seo'].map(workFilter => new Element({ workFilter }, workFilter));
-  const cards = ['ads', 'development', 'ads', 'ads', 'development crm', 'seo', 'crm'].map(workCategory => new Element({ workCategory }));
+  const filters = ['all', 'ads', 'development', 'crm', 'seo', 'architecture'].map(workFilter => new Element({ workFilter }, workFilter));
+  const cards = ['ads', 'development', 'ads', 'ads', 'development crm', 'seo', 'crm', 'ads', 'crm', 'crm', 'seo', 'development', 'architecture', 'architecture'].map(workCategory => new Element({ workCategory }));
   const next = new Element(), prev = new Element(), status = new Element(), filterStatus = new Element(), showcase = new Element();
   showcase.querySelectorAll = key => key === '[data-feature]' ? slides : selectors;
   showcase.querySelector = key => ({ '[data-feature-prev]':prev, '[data-feature-next]':next, '[data-feature-status]':status, '.dev-feature-tabs':new Element() })[key];
