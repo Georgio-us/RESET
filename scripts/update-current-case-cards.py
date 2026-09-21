@@ -14,6 +14,7 @@ COPY = {
         "delmar": ("103 заявки на недвижимость по $6,79", "Три оффера для объектов, инвестиций и доступного первого платежа."),
         "crm": ("Estate CRM: от заявки до подборки объекта", "Кастомная система Delmar объединяет воронку, каталог недвижимости, работу менеджеров и контроль руководителя."),
         "notion": ("База партнёров, объектов и расчётов в Notion", "Рабочая система для запуска направления Dominanta в Малаге и Валенсии."),
+        "architecture": ("Генплан жилого проекта на 57 гектарах", "Зонирование, маршруты, ландшафт и визуальная концепция участка в Болгарии."),
         "hero": "заявки для<br>двух филиалов", "avg": "Средняя стоимость заявки",
     },
     "uk": {
@@ -22,6 +23,7 @@ COPY = {
         "delmar": ("103 заявки на нерухомість по $6,79", "Три офери для об’єктів, інвестицій і доступного першого платежу."),
         "crm": ("Заявки, об’єкти й команда — в Estate CRM", "Кастомна CRM Delmar: воронка, добірки об’єктів, дашборд та інтеграції."),
         "notion": ("База партнерів, об’єктів і розрахунків у Notion", "Робоча система для запуску напряму Dominanta в Малазі та Валенсії."),
+        "architecture": ("Генплан житлового проєкту на 57 гектарах", "Зонування, маршрути, ландшафт і візуальна концепція ділянки в Болгарії."),
         "hero": "заявки для<br>двох філій", "avg": "Середня вартість заявки",
     },
     "en": {
@@ -30,6 +32,7 @@ COPY = {
         "delmar": ("103 real estate leads at $6.79", "Three offers for properties, investment and an accessible first payment."),
         "crm": ("Leads, properties and team in Estate CRM", "Delmar’s custom CRM: pipeline, property selections, dashboard and integrations."),
         "notion": ("Partners, properties and calculations in Notion", "A workspace for launching Dominanta in Málaga and Valencia."),
+        "architecture": ("A 57-hectare residential masterplan", "Zoning, routes, landscape and the visual concept for a site in Bulgaria."),
         "hero": "leads for<br>two branches", "avg": "Average cost per lead",
     },
     "es": {
@@ -38,6 +41,7 @@ COPY = {
         "delmar": ("103 leads inmobiliarios a $6,79", "Tres ofertas para inmuebles, inversión y una primera aportación accesible."),
         "crm": ("Leads, inmuebles y equipo en Estate CRM", "CRM a medida de Delmar: embudo, selecciones, panel e integraciones."),
         "notion": ("Socios, inmuebles y cálculos en Notion", "Un sistema de trabajo para lanzar Dominanta en Málaga y Valencia."),
+        "architecture": ("Plan maestro residencial de 57 hectáreas", "Zonificación, recorridos, paisaje y concepto visual para un terreno en Bulgaria."),
         "hero": "leads para<br>dos oficinas", "avg": "Coste medio por lead",
     },
 }
@@ -77,6 +81,9 @@ def update(path: Path, lang: str) -> None:
     notion = card(lang, "dominanta-spain", "crm", "DOMINANTA / NOTION", "/cases/notion_assets/developers_database.webp", *c["notion"])
     notion = notion.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-ai"')
     source = replace_card(source, "dominanta-spain", notion)
+    architecture = card(lang, "bulgaria-masterplan", "architecture", "BULGARIA / MASTERPLAN", "/cases/architecture_assets/masterplan-close.webp", *c["architecture"])
+    architecture = architecture.replace('class="dev-work-image dev-image-meta"', 'class="dev-work-image dev-image-site"')
+    source = replace_card(source, "bulgaria-masterplan", architecture)
 
     # The selected-work hero keeps its existing visual system and receives current data.
     hero_pattern = re.compile(r'(<article class="dev-feature dev-feature-meta".*?<div class="hero-result"><h2><strong>).*?(</strong><span>).*?(</span></h2><div class="hero-cpl"><b>).*?(</b><span>).*?(</span>)', re.S)

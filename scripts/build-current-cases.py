@@ -79,6 +79,75 @@ CASES = {
             "es": {"title": "Una base de conocimiento y cálculo para entrar en el mercado español.", "lead": "Para Dominanta creamos un espacio de trabajo en Notion para colaborar con promotoras de Málaga y Valencia. El agente accede a socios, promociones, inmuebles y cálculos para asesorar al cliente desde un único sistema.", "metrics": [("Socios", "promotoras, regiones y condiciones de colaboración"), ("Inmuebles", "promociones, unidades, precios y características"), ("Cálculos", "ROI, hipoteca e impuestos para cada escenario")], "section": "Cómo trabaja una agencia con un mercado nuevo dentro de Notion.", "cards": [("Registra colaboraciones", "La información de las promotoras vive en una base con regiones, proyectos, precios de entrada y enlaces de trabajo."), ("Conecta tres niveles", "Cada promotora abre sus promociones y cada promoción enlaza sus unidades y características actuales."), ("Facilita el asesoramiento", "El agente utiliza calculadoras de rentabilidad, hipoteca e impuestos al preparar la propuesta del cliente.")], "proof_heading": "Tres niveles: promotora, promoción e inmueble.", "proof_captions": ["Ficha de la promotora y promociones relacionadas en Málaga y Valencia", "Base de inmuebles con precio, superficie, habitaciones, planta y promoción"], "proof_text": [("01 / PROMOTORA", "La ficha guarda su geografía, precio de entrada, comentarios y acceso a las promociones."), ("02 / PROMOCIÓN", "Las promociones se agrupan por ciudad, fase de construcción, tipo de inmueble y precio de entrada."), ("03 / INMUEBLE", "Los listados dan al agente opciones concretas con superficie, habitaciones, planta, precio y otros parámetros.")], "gallery_captions": ["La calculadora de ROI usa indicadores de Tinsa Market, ubicación, tipo de inmueble y fase del proyecto", "La calculadora hipotecaria usa entrada, residencia, ingresos, edad y plazo del préstamo", "La calculadora fiscal muestra ITP o AJD, notaría y registro"], "conclusion": "El equipo obtuvo un entorno claro para lanzar su línea española. Un agente nuevo puede estudiar socios, localizar un inmueble y preparar la parte financiera de la oferta en un solo espacio."},
         },
     },
+    "bulgaria-masterplan": {
+        "kind": "architecture", "client": "KALOFER SITE", "service": "Masterplan", "place": "Kalofer / Bulgaria",
+        "hero": "/cases/architecture_assets/photorealistic-site.webp",
+        "hero_fit": "cover",
+        "proof_images": [
+            "/cases/architecture_assets/axo-base.webp",
+            "/cases/architecture_assets/axo-landscape.webp",
+            "/cases/architecture_assets/masterplan-3d.webp",
+        ],
+        "gallery": [
+            "/cases/architecture_assets/masterplan-explication.webp",
+            "/cases/architecture_assets/masterplan-close.webp",
+            "/cases/architecture_assets/masterplan-overview.webp",
+        ],
+        "copy": {
+            "ru": {
+                "title": "Генплан жилого проекта на 57 гектарах в Болгарии.",
+                "lead": "Для горного участка возле Калофера разработали концепцию жилого проекта: разместили дома, дороги, веломаршруты, парковки, общественные и рекреационные зоны, затем собрали генеральный план и визуальную подачу для заказчика.",
+                "metrics": [("57 га", "площадь проектируемой территории"), ("20 домов", "жилые кластеры в составе концепции"), ("14 зон", "объекты и сценарии в экспликации")],
+                "section": "Территория получила структуру, по которой можно развивать проект.",
+                "cards": [("Прочитали рельеф", "Разместили застройку и маршруты с учётом перепада высот, существующего ландшафта и лесного окружения."), ("Собрали зонирование", "Связали жилые кластеры с общественными, спортивными, рекреационными и сервисными зонами."), ("Подготовили подачу", "Перевели проектную схему в генплан с экспликацией и визуальную концепцию для обсуждения с заказчиком.")],
+                "proof_heading": "От геометрии участка к ландшафтной концепции.",
+                "proof_captions": ["Базовая аксонометрия фиксирует геометрию участка, дороги и расположение функциональных зон", "Ландшафтный слой показывает лесное окружение и связь застройки с природным контекстом", "Объёмная схема объединяет жилые кластеры, маршруты, водоём и общественные функции"],
+                "proof_text": [("01 / РЕЛЬЕФ", "Отметки участка находятся в диапазоне 774–884 м. Планировка учитывает склон и сохраняет большую часть территории под озеленение."), ("02 / СЦЕНАРИИ", "В концепции предусмотрены жильё, парковки, велодорожка, спорт, общественное пространство, рекреация и сервисные функции."), ("03 / СВЯЗНОСТЬ", "Дороги, въезд, пешеходные и велосипедные маршруты собраны в единую схему движения по территории.")],
+                "gallery_heading": "Генплан и визуальная концепция.",
+                "gallery_captions": ["Основной генплан с экспликацией, балансом территории и размещением 14 функциональных зон", "Приближённый вид показывает посадку домов, дорожную сеть и общественное ядро в рельефе", "Общий вид территории используется как дополнительная иллюстрация масштаба и взаимного расположения зон"],
+                "conclusion": "Заказчик получил цельную концепцию участка: понятное зонирование, баланс площадей, маршруты и визуальную модель, на которой можно обсуждать следующий этап проектирования.",
+            },
+            "uk": {
+                "title": "Генплан житлового проєкту на 57 гектарах у Болгарії.",
+                "lead": "Для гірської ділянки біля Калофера розробили концепцію житлового проєкту: розмістили будинки, дороги, веломаршрути, паркування, громадські й рекреаційні зони, а потім зібрали генеральний план і візуальну подачу для замовника.",
+                "metrics": [("57 га", "площа проєктованої території"), ("20 будинків", "житлові кластери у складі концепції"), ("14 зон", "об’єкти та сценарії в експлікації")],
+                "section": "Територія отримала структуру для подальшого розвитку проєкту.",
+                "cards": [("Проаналізували рельєф", "Розмістили забудову й маршрути з урахуванням перепаду висот, наявного ландшафту та лісового оточення."), ("Зібрали зонування", "Пов’язали житлові кластери з громадськими, спортивними, рекреаційними й сервісними зонами."), ("Підготували подачу", "Перетворили проєктну схему на генплан з експлікацією та візуальну концепцію для обговорення із замовником.")],
+                "proof_heading": "Від геометрії ділянки до ландшафтної концепції.",
+                "proof_captions": ["Базова аксонометрія фіксує геометрію ділянки, дороги й розташування функціональних зон", "Ландшафтний шар показує лісове оточення та зв’язок забудови з природним контекстом", "Об’ємна схема об’єднує житлові кластери, маршрути, водойму й громадські функції"],
+                "proof_text": [("01 / РЕЛЬЄФ", "Відмітки ділянки перебувають у діапазоні 774–884 м. Планування враховує схил і зберігає більшу частину території під озеленення."), ("02 / СЦЕНАРІЇ", "Концепція охоплює житло, паркування, велодоріжку, спорт, громадський простір, рекреацію та сервісні функції."), ("03 / ЗВ’ЯЗНІСТЬ", "Дороги, в’їзд, пішохідні й велосипедні маршрути зібрані в єдину схему руху територією.")],
+                "gallery_heading": "Генплан і візуальна концепція.",
+                "gallery_captions": ["Основний генплан з експлікацією, балансом території та розміщенням 14 функціональних зон", "Наближений вид показує посадку будинків, дорожню мережу й громадське ядро в рельєфі", "Загальний вид території додатково показує масштаб і взаємне розташування зон"],
+                "conclusion": "Замовник отримав цілісну концепцію ділянки: зрозуміле зонування, баланс площ, маршрути й візуальну модель для обговорення наступного етапу проєктування.",
+            },
+            "en": {
+                "title": "A 57-hectare residential masterplan in Bulgaria.",
+                "lead": "For a mountain site near Kalofer, we developed a residential concept covering homes, roads, cycling routes, parking, public space and recreation, then assembled the masterplan and its visual presentation for the client.",
+                "metrics": [("57 ha", "total site under design"), ("20 homes", "residential clusters in the concept"), ("14 zones", "functions defined in the legend")],
+                "section": "A clear site structure for the next stage of development.",
+                "cards": [("Read the terrain", "We placed development and routes around the elevation change, existing landscape and forest setting."), ("Built the zoning", "Residential clusters connect to public, sport, recreation and service areas."), ("Prepared the presentation", "The planning scheme became an annotated masterplan and a visual concept for client review.")],
+                "proof_heading": "From site geometry to a landscape concept.",
+                "proof_captions": ["The base axonometric drawing establishes site geometry, roads and the position of functional zones", "The landscape layer shows the forest setting and the relationship between buildings and nature", "The spatial scheme combines housing clusters, routes, water and public functions"],
+                "proof_text": [("01 / TERRAIN", "The site ranges from 774 to 884 metres in elevation. The layout works with the slope and retains most of the land as green space."), ("02 / USES", "The concept includes homes, parking, cycling, sport, public space, recreation and supporting services."), ("03 / CONNECTIONS", "Roads, the entrance, pedestrian links and cycle routes form one movement system across the site.")],
+                "gallery_heading": "Masterplan and visual concept.",
+                "gallery_captions": ["The main masterplan combines the legend, land balance and placement of 14 functional zones", "The closer view shows home placement, the road network and the public centre within the terrain", "The overview supports the presentation of scale and the relationship between zones"],
+                "conclusion": "The client received one coherent site concept with zoning, area balance, routes and a visual model ready for the next design discussion.",
+            },
+            "es": {
+                "title": "Plan maestro de un proyecto residencial de 57 hectáreas en Bulgaria.",
+                "lead": "Para un terreno de montaña cerca de Kalofer desarrollamos una propuesta residencial con viviendas, carreteras, rutas ciclistas, aparcamiento, espacios públicos y zonas recreativas, y preparamos el plan general y su presentación visual para el cliente.",
+                "metrics": [("57 ha", "superficie total del proyecto"), ("20 viviendas", "agrupaciones residenciales de la propuesta"), ("14 zonas", "funciones definidas en la leyenda")],
+                "section": "Una estructura clara para desarrollar la siguiente etapa del proyecto.",
+                "cards": [("Analizamos el relieve", "Situamos la edificación y los recorridos según el desnivel, el paisaje existente y el entorno forestal."), ("Ordenamos los usos", "Conectamos las agrupaciones residenciales con zonas públicas, deportivas, recreativas y de servicios."), ("Preparamos la presentación", "La propuesta se convirtió en un plan con leyenda y una visualización para revisarla con el cliente.")],
+                "proof_heading": "De la geometría del terreno al concepto paisajístico.",
+                "proof_captions": ["La axonometría base fija la geometría del terreno, las vías y la posición de las zonas funcionales", "La capa paisajística muestra el bosque y la relación de la edificación con el contexto natural", "El esquema volumétrico reúne viviendas, recorridos, agua y funciones públicas"],
+                "proof_text": [("01 / RELIEVE", "Las cotas del terreno van de 774 a 884 metros. La ordenación trabaja con la pendiente y conserva la mayor parte como espacio verde."), ("02 / USOS", "La propuesta incluye vivienda, aparcamiento, ciclismo, deporte, espacio público, recreación y servicios."), ("03 / CONEXIONES", "Las vías, el acceso, los recorridos peatonales y ciclistas forman un único sistema de movimiento.")],
+                "gallery_heading": "Plan maestro y concepto visual.",
+                "gallery_captions": ["El plan principal reúne la leyenda, el balance de superficies y la ubicación de 14 zonas funcionales", "La vista cercana muestra las viviendas, la red viaria y el centro público dentro del relieve", "La vista general apoya la lectura de la escala y la relación entre las zonas"],
+                "conclusion": "El cliente recibió una propuesta coherente del terreno con zonificación, balance de superficies, recorridos y un modelo visual para avanzar a la siguiente fase de diseño.",
+            },
+        },
+    },
 }
 
 
@@ -125,7 +194,7 @@ def render(slug: str, case: dict, locale: str) -> str:
       <div class="sales-meta"><span>{esc(case['client'])}</span><i></i><span>{esc(case['service'])}</span><i></i><span>{esc(case['place'])}</span></div>
       <div class="sales-hero-grid">
         <div><p class="sales-kicker">RESET / CASE STUDY</p><h1>{esc(c['title'])}</h1><p class="sales-lead">{esc(c['lead'])}</p></div>
-        <figure class="sales-hero-visual{' contain' if case['kind'] != 'ads' else ''}"><img src="{case['hero']}" alt="{esc(case['client'])} — {esc(case['service'])}"><figcaption class="sales-visual-tag">{esc(case['client'])} / {esc(case['service'])}</figcaption></figure>
+        <figure class="sales-hero-visual{' contain' if case.get('hero_fit', 'contain' if case['kind'] != 'ads' else 'cover') == 'contain' else ''}"><img src="{case['hero']}" alt="{esc(case['client'])} — {esc(case['service'])}"><figcaption class="sales-visual-tag">{esc(case['client'])} / {esc(case['service'])}</figcaption></figure>
       </div>
       <div class="sales-metrics">{metrics}</div>
     </section>
@@ -138,7 +207,7 @@ def render(slug: str, case: dict, locale: str) -> str:
       <div class="sales-proof-grid"><div>{proof_figs}</div><div class="sales-insights">{insights}<div class="sales-insight"><p>{esc(c['conclusion'])}</p>{source}</div></div></div>
     </section>
     <section class="sales-gallery" id="product-interface">
-      <div class="sales-section-head"><p class="sales-eyebrow">{esc(case['client'])} / {esc(case['service'])}</p><h2>{esc(ui['creative'] if case['kind'] == 'ads' else ui['product'])}.</h2></div>
+      <div class="sales-section-head"><p class="sales-eyebrow">{esc(case['client'])} / {esc(case['service'])}</p><h2>{esc(c.get('gallery_heading', (ui['creative'] if case['kind'] == 'ads' else ui['product']) + '.'))}</h2></div>
       <div class="{gallery_class}">{gallery}</div>
     </section>
     <section class="sales-cta" id="contact"><h2>{esc(ui['cta'])}</h2><div><p>{esc(ui['cta_text'])}</p><a class="sales-button" href="{ui['home']}#contact">{esc(ui['button'])}</a></div></section>
