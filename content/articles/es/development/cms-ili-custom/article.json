@@ -1,0 +1,16 @@
+{
+  "locale": "es",
+  "category": "development",
+  "slug": "cms-ili-custom",
+  "status": "draft",
+  "title": "Constructor, CMS o desarrollo personalizado",
+  "seoTitle": "Constructor, CMS o desarrollo personalizado — RESET",
+  "description": "Cómo elegir una tecnología según la tarea, y no según la moda. En esta versión inicial, analizamos la cuestión a través del prisma de la tarea real del pro",
+  "deck": "Cómo elegir una tecnología según la tarea, y no según la moda. En esta versión inicial, analizamos la cuestión a través del prisma de la tarea real del pro",
+  "datePublished": null,
+  "hero": {
+    "src": "/assets/reset-valencia-renovation.png",
+    "alt": "Constructor, CMS o desarrollo personalizado"
+  },
+  "related": []
+}

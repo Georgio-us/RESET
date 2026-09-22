@@ -42,6 +42,7 @@ for (const locale of locales) {
     ].join('\n    ');
 
     let html = await readFile(file, 'utf8');
+  if (html.includes('data-article-template=')) continue;
     html = html.replace(/<html lang="[^"]+">/, `<html lang="${locale}">`);
     if (/<link rel="canonical"/i.test(html)) {
       html = html.replace(/\s*<link rel="canonical"[^>]*\/?>(?:\s*<link rel="alternate"[^>]*\/?>)*/g, `\n    ${seoLinks}\n    `);

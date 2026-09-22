@@ -1,4 +1,4 @@
-import { readdir, writeFile } from 'node:fs/promises';
+import { readdir, readFile, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
 const root = new URL('../', import.meta.url).pathname;
@@ -14,7 +14,10 @@ for (const locale of locales) {
   for (const file of await walk(join(root, locale))) {
     const route = relative(join(root, locale), file).replace(/\\/g, '/');
     if (route === '404.html' || route === 'sitemap.html' || route === 'privacy.html') continue;
-    const url = route === 'index.html' ? `${origin}/${locale}/` : `${origin}/${locale}/${route}`;
+    const html = await readFile(file, 'utf8');
+    if (/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(html)) continue;
+    const canonical = html.match(/<link[^>]*rel="canonical"[^>]*href="([^"]+)"/)?.[1];
+    const url = canonical || (route === 'index.html' ? `${origin}/${locale}/` : `${origin}/${locale}/${route}`);
     entries.push(`  <url><loc>${url}</loc></url>`);
   }
 }

@@ -1,0 +1,13 @@
+import { mkdir,writeFile } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+const args=Object.fromEntries(process.argv.slice(2).reduce((r,v,i,a)=>v.startsWith('--')?[...r,[v.slice(2),a[i+1]]]:r,[]));
+const {slug,category,title,locale='ru'}=args;
+if(!title||!slug||!category||!['ru','uk','en','es'].includes(locale)||![slug,category].every(s=>/^[a-z0-9-]+$/.test(s)))throw Error('Usage: npm run new:article -- --locale ru --category development --slug topic --title "Название"');
+const dir=resolve(fileURLToPath(new URL('../content/articles/',import.meta.url)),locale,category,slug);
+if(existsSync(dir))throw Error('Article already exists');
+await mkdir(dir,{recursive:true});
+await writeFile(resolve(dir,'article.json'),JSON.stringify({locale,category,slug,status:'draft',title,description:title,deck:'',related:[],blocks:{}},null,2)+'\n');
+await writeFile(resolve(dir,'body.html.inc'),'<h2 id="context">'+({ru:'С чего начать',uk:'З чого почати',en:'Where to start',es:'Por dónde empezar'}[locale])+'</h2>\n<p></p>\n');
+console.log(`Created ${dir}. Edit the content, then run npm run build:articles.`);

@@ -4,7 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:articles": "node scripts/build-articles.mjs",
+    "check:articles": "node scripts/build-articles.mjs --check",
+    "new:article": "node scripts/new-article.mjs",
+    "test": "node --test scripts/*.test.mjs"
   },
   "engines": {
     "node": ">=20"

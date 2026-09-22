@@ -1,0 +1,16 @@
+{
+  "locale": "es",
+  "category": "market",
+  "slug": "rynok-evropy",
+  "status": "draft",
+  "title": "Mercado europeo: lo que es importante para la agencia y el desarrollador",
+  "seoTitle": "Mercado europeo: lo que es importante para la agencia y el desarrollador — RESET",
+  "description": "Contexto para trabajar en nuevas regiones. En esta versión inicial analizamos el tema a través del prisma de la tarea real del proyecto: qué debería cambia",
+  "deck": "Contexto para trabajar en nuevas regiones. En esta versión inicial analizamos el tema a través del prisma de la tarea real del proyecto: qué debería cambia",
+  "datePublished": null,
+  "hero": {
+    "src": "/assets/reset-architecture-valencia.png",
+    "alt": "Mercado europeo: lo que es importante para la agencia y el desarrollador"
+  },
+  "related": []
+}

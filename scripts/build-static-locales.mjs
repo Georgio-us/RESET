@@ -112,6 +112,7 @@ if (!sourceFiles.length) throw new Error('No source HTML pages matched the reque
 for (const sourceFile of sourceFiles) {
   const route = relative(root, sourceFile);
   const source = await readFile(sourceFile, 'utf8');
+  if (source.includes('data-article-template=')) continue;
   for (const locale of outputLocales) {
     const destination = join(root, locale, route);
     await mkdir(dirname(destination), { recursive: true });

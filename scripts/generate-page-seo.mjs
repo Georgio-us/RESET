@@ -22,6 +22,7 @@ for (const locale of locales) {
     const urlPath = route === 'index.html' ? `/${locale}/` : `/${locale}/${route}`;
     const url = `${origin}${urlPath}`;
     let html = await readFile(file, 'utf8');
+  if (html.includes('data-article-template=')) continue;
     const h1 = text(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]) || 'RESET';
     const paragraphs = [...html.matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/gi)].map((match) => text(match[1]));
     const description = (paragraphs.find((item) => item.length > 70) || h1).slice(0, 155);

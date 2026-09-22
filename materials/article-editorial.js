@@ -39,12 +39,8 @@ if (root) {
   root.querySelectorAll('[data-ed-share]').forEach(link => link.href = urls[link.dataset.edShare]);
   const status = root.querySelector('[data-copy-status]');
   root.querySelector('[data-ed-copy]').addEventListener('click', async () => {
-    try { await navigator.clipboard.writeText(canonical); status.textContent = 'Ссылка скопирована'; }
-    catch { status.textContent = 'Скопируйте адрес страницы из строки браузера.'; }
+    try { await navigator.clipboard.writeText(canonical); status.textContent = root.dataset.copySuccess || 'Ссылка скопирована'; }
+    catch { status.textContent = root.dataset.copyError || 'Скопируйте адрес страницы из строки браузера.'; }
   });
-  const form = document.querySelector('#estimate [data-reset-form]');
-  if (form) {
-    form.elements.source.value = 'article-ai-development';
-    form.elements.message.placeholder = 'Что хотите создать, какие интеграции нужны, есть ли прототип?';
-  }
+
 }

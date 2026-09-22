@@ -159,3 +159,9 @@
  .editorial section { break-inside:auto; }
  .editorial h2,.editorial h3 { break-after:avoid; }
 }
+/* Shared article content, including migrated editorial images. */
+.editorial .ed-content img { max-width:100%; height:auto; }
+.editorial .ed-content figure { margin-inline:0; }
+.editorial .ed-draft { display:inline-block; padding:8px 12px; border:1px solid currentColor; font-size:13px; }
+.editorial .ed-note-box { padding:24px; border-left:3px solid var(--color-accent); background:var(--color-white); }
+.editorial .ed-cover-grid:not(:has(>figure)) { grid-template-columns:1fr; }
