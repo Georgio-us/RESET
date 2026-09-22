@@ -7,22 +7,16 @@ document.addEventListener('DOMContentLoaded',()=>{
   const title=root.querySelector('[data-widget-title]');
   const text=root.querySelector('[data-widget-text]');
   const progress=[...root.querySelectorAll('[data-widget-progress]')];
-  const languageButtons=[...root.querySelectorAll('[data-widget-lang]')];
-  let language=root.dataset.language||'ru';
-  let current=0;
-  const render=()=>{
-    const step=steps[current];
-    steps.forEach((item,index)=>item.setAttribute('aria-pressed',String(index===current)));
-    progress.forEach((item,index)=>item.classList.toggle('active',index===current));
-    languageButtons.forEach(item=>item.setAttribute('aria-pressed',String(item.dataset.widgetLang===language)));
-    image.src=step.dataset[language==='es'?'srcEs':'srcRu'];
-    image.alt=step.dataset[language==='es'?'altEs':'altRu'];
-    image.classList.toggle('is-launcher',current===0);
-    number.textContent=String(current+1).padStart(2,'0');
-    title.textContent=step.dataset[language==='es'?'titleEs':'titleRu'];
-    text.textContent=step.dataset[language==='es'?'textEs':'textRu'];
+  const render=index=>{
+    const step=steps[index];
+    steps.forEach((item,i)=>item.setAttribute('aria-pressed',String(i===index)));
+    progress.forEach((item,i)=>item.classList.toggle('active',i===index));
+    image.src=step.dataset.src;
+    image.alt=step.dataset.alt;
+    number.textContent=String(index+1).padStart(2,'0');
+    title.textContent=step.dataset.title;
+    text.textContent=step.dataset.text;
   };
-  steps.forEach((step,index)=>step.addEventListener('click',()=>{current=index;render()}));
-  languageButtons.forEach(button=>button.addEventListener('click',()=>{language=button.dataset.widgetLang;render()}));
-  render();
+  steps.forEach((step,index)=>step.addEventListener('click',()=>render(index)));
+  render(0);
 });
