@@ -1,0 +1,89 @@
+{
+  "categories": [
+    "marketing",
+    "development",
+    "ai"
+  ],
+  "labels": {
+    "ru": [
+      "Маркетинг недвижимости",
+      "Разработка сайтов",
+      "CRM и AI-автоматизация"
+    ],
+    "uk": [
+      "Маркетинг нерухомості",
+      "Розробка сайтів",
+      "CRM та AI-автоматизація"
+    ],
+    "en": [
+      "Real estate marketing",
+      "Website development",
+      "CRM and AI automation"
+    ],
+    "es": [
+      "Marketing inmobiliario",
+      "Desarrollo web",
+      "CRM y automatización con IA"
+    ]
+  },
+  "intros": {
+    "ru": [
+      "Google Ads, Facebook, Instagram и поисковое продвижение сайтов недвижимости.",
+      "Стоимость, выбор формата и технологии создания сайта.",
+      "Выбор CRM, обработка заявок и внедрение AI-ассистентов."
+    ],
+    "uk": [
+      "Google Ads, Facebook, Instagram і пошукове просування сайтів нерухомості.",
+      "Вартість, вибір формату та технології створення сайту.",
+      "Вибір CRM, обробка заявок і впровадження AI-асистентів."
+    ],
+    "en": [
+      "Google Ads, Facebook, Instagram and search visibility for real estate websites.",
+      "Website costs, formats and development technologies.",
+      "CRM selection, enquiry processing and AI assistants."
+    ],
+    "es": [
+      "Google Ads, Facebook, Instagram y posicionamiento de webs inmobiliarias.",
+      "Costes, formatos y tecnologías para crear una web.",
+      "Selección de CRM, gestión de consultas y asistentes de IA."
+    ]
+  },
+  "articles": [
+    {
+      "category": "marketing",
+      "slug": "google-ads-nedvizhimost-2026"
+    },
+    {
+      "category": "marketing",
+      "slug": "meta-ads-nedvizhimost-2026"
+    },
+    {
+      "category": "marketing",
+      "slug": "seo-nedvizhimost-2026"
+    },
+    {
+      "category": "development",
+      "slug": "stoimost-razrabotki-v-eru-ai"
+    },
+    {
+      "category": "development",
+      "slug": "landing-ili-sait"
+    },
+    {
+      "category": "development",
+      "slug": "cms-ili-custom"
+    },
+    {
+      "category": "ai",
+      "slug": "crm-dlya-agentstva-nedvizhimosti"
+    },
+    {
+      "category": "ai",
+      "slug": "ai-v-nedvizhimosti"
+    },
+    {
+      "category": "ai",
+      "slug": "rieltory-i-ai-agenty"
+    }
+  ]
+}

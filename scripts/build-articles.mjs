@@ -12,7 +12,7 @@ for(const a of all){
  if(!/^(ru|uk|en|es)$/.test(a.locale)||![a.category,a.slug].every(s=>/^[a-z0-9-]+$/.test(s)))throw Error('Invalid article path');
  if(a.hero&&(!a.hero.alt||!existsSync(resolve(root,'.'+a.hero.src))))throw Error(`Missing image or alt: ${a.file}`);
  const body=await readFile(resolve(dirname(a.file),'body.html.inc'),'utf8');
- const html=renderArticle(a,body,all,p=>existsSync(resolve(root,'.'+p+(p.endsWith('/')?'index.html':''))));
+ const html=renderArticle(a,body,all,p=>all.some(item=>articlePath(item)===p)||existsSync(resolve(root,'.'+p+(p.endsWith('/')?'index.html':''))));
  for(const p of [articlePath(a),...(a.locale==='ru'?[articlePath(a).replace('/ru/','/')]:[])]){
   const out=resolve(root,'.'+p,'index.html');outputs++;
   const old=existsSync(out)?await readFile(out,'utf8'):'';
