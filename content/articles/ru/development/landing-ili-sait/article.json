@@ -2,15 +2,20 @@
   "locale": "ru",
   "category": "development",
   "slug": "landing-ili-sait",
-  "status": "draft",
+  "status": "published",
   "title": "Лендинг или многостраничный сайт: что выбрать для рекламы и SEO",
   "seoTitle": "Лендинг или многостраничный сайт: что выбрать для рекламы и SEO | RESET",
-  "description": "Лендинг или многостраничный сайт: что выбрать для рекламы и SEO. Стоимость, выбор формата и технологии создания сайта.",
-  "deck": "Лендинг или многостраничный сайт: что выбрать для рекламы и SEO. Стоимость, выбор формата и технологии создания сайта.",
-  "datePublished": null,
+  "description": "Чем лендинг отличается от многостраничного сайта, что выбрать для рекламы и SEO. CMS, интеграции и примеры стоимости проектов RESET.",
+  "deck": "Как выбрать формат под бизнес-задачу, рекламу и SEO. Объясняем различия, разбираем CMS и интеграции, показываем стоимость на примерах проектов RESET.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-team-architecture.png",
-    "alt": "Лендинг или сайт:что нужно вашемупроекту?"
+    "src": "/assets/reset-team-architecture.webp",
+    "alt": "Два специалиста обсуждают план проекта за столом с ноутбуком",
+    "caption": "Редакционная иллюстрация."
   },
-  "related": []
+  "related": [
+    "ru/development/stoimost-razrabotki-v-eru-ai",
+    "ru/marketing/seo-nedvizhimost-2026",
+    "ru/marketing/google-ads-nedvizhimost-2026"
+  ]
 }
