@@ -10,7 +10,8 @@
     "new:article": "node scripts/new-article.mjs",
     "test": "node --test scripts/*.test.mjs",
     "build:journal": "node scripts/build-journal.mjs",
-    "build:seo": "node scripts/prepare-seo-release.mjs"
+    "build:seo": "node scripts/prepare-seo-release.mjs",
+    "build:ui": "node scripts/build-shared-ui.mjs"
   },
   "engines": {
     "node": ">=20"

@@ -5,24 +5,24 @@
 .telegram-refined .case-template-copy h1{max-width:660px;font-size:clamp(49px,4.5vw,72px);line-height:.94}
 .telegram-refined .case-template-lead{max-width:545px;font-size:17px;line-height:1.58}
 .telegram-refined .case-template-tools{gap:8px;margin-top:30px}
-.telegram-refined .case-template-tools .case-tool{min-height:38px;padding:8px 12px;border:1px solid rgba(13,94,115,.3);border-radius:0;background:rgba(241,246,246,.48);box-shadow:none}
+.telegram-refined .case-template-tools .case-tool{min-height:38px;padding:8px 12px;border:1px solid var(--tone-rgba-13-94-115-3);border-radius:0;background:var(--tone-rgba-241-246-246-48);box-shadow:none}
 .telegram-refined .case-template-tools .case-tool b{font-size:12px;letter-spacing:.02em}
 .telegram-refined .case-template-tools .case-tool::before{display:none!important}
-.telegram-refined .case-page-cover .case-template-media{grid-column:7/-1;display:grid;width:100%;height:610px;place-items:center;overflow:hidden;border:1px solid #abc2c9;background:rgba(229,239,241,.7)}
+.telegram-refined .case-page-cover .case-template-media{grid-column:7/-1;display:grid;width:100%;height:610px;place-items:center;overflow:hidden;border:1px solid var(--tone-abc2c9);background:var(--tone-rgba-229-239-241-7)}
 .telegram-refined .case-page-cover .case-template-media::before,.telegram-refined .case-page-cover .case-template-media::after,.telegram-refined .case-page-cover .case-template-layout::after{display:none}
-.telegram-refined .case-page-cover .case-template-media img{position:static;width:auto;max-width:calc(100% - 72px);height:540px;max-height:calc(100% - 50px);padding:8px;border:10px solid #102536;border-radius:42px;box-sizing:border-box;background:#102536;box-shadow:18px 20px 0 rgba(73,111,124,.2);object-fit:contain;filter:none}
+.telegram-refined .case-page-cover .case-template-media img{position:static;width:auto;max-width:calc(100% - 72px);height:540px;max-height:calc(100% - 50px);padding:8px;border:10px solid var(--tone-102536);border-radius:42px;box-sizing:border-box;background:var(--tone-102536);box-shadow:18px 20px 0 var(--tone-rgba-73-111-124-2);object-fit:contain;filter:none}
 .telegram-refined .case-story{padding-block:88px}
 .telegram-refined .product-technical-task .case-story-copy{grid-column:1/span 5;align-self:start}
 .telegram-refined .product-technical-task .case-story-copy h2{margin-top:25px}
-.telegram-refined .product-task-principles{grid-column:7/-1;display:block;border-top:1px solid #496879}
-.telegram-refined .product-task-principles article,.telegram-refined .product-task-principles .product-task-priority{display:grid;grid-template-columns:118px minmax(180px,.85fr) minmax(230px,1.15fr);align-items:center;gap:18px;min-height:112px;margin:0;padding:22px 0;border:0;border-bottom:1px solid #496879;background:transparent;box-shadow:none}
+.telegram-refined .product-task-principles{grid-column:7/-1;display:block;border-top:1px solid var(--tone-496879)}
+.telegram-refined .product-task-principles article,.telegram-refined .product-task-principles .product-task-priority{display:grid;grid-template-columns:118px minmax(180px,.85fr) minmax(230px,1.15fr);align-items:center;gap:18px;min-height:112px;margin:0;padding:22px 0;border:0;border-bottom:1px solid var(--tone-496879);background:transparent;box-shadow:none}
 .telegram-refined .product-task-principles article>span{color:var(--azure-light)}
 .telegram-refined .product-task-principles h3,.telegram-refined .product-task-principles .product-task-priority h3{max-width:none;margin:0;font-size:22px;line-height:1.12}
 .telegram-refined .product-task-principles p,.telegram-refined .product-task-principles .product-task-priority p{max-width:360px;margin:0;font-size:14px;line-height:1.5}
 .telegram-refined .product-task-priority::before{display:none}
 .telegram-refined .product-interface .case-story-title{grid-column:1/span 6;max-width:720px;margin-top:28px}
-.telegram-refined .ai-product-stage{position:relative;grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center;min-height:620px;margin-top:56px;overflow:hidden;border-top:1px solid #a8c3ca;border-bottom:1px solid #a8c3ca;background:transparent}
-.telegram-refined .ai-phone{position:relative;top:auto;left:auto;grid-column:2/span 4;justify-self:center;width:300px;height:562px;margin:0;padding:8px;border:10px solid #101a22;border-radius:40px;box-sizing:border-box;background:#101a22;box-shadow:18px 20px 0 rgba(55,91,105,.2);transform:none}
+.telegram-refined .ai-product-stage{position:relative;grid-column:1/-1;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));align-items:center;min-height:620px;margin-top:56px;overflow:hidden;border-top:1px solid var(--tone-a8c3ca);border-bottom:1px solid var(--tone-a8c3ca);background:transparent}
+.telegram-refined .ai-phone{position:relative;top:auto;left:auto;grid-column:2/span 4;justify-self:center;width:300px;height:562px;margin:0;padding:8px;border:10px solid var(--tone-101a22);border-radius:40px;box-sizing:border-box;background:var(--tone-101a22);box-shadow:18px 20px 0 var(--tone-rgba-55-91-105-2);transform:none}
 .telegram-refined .ai-phone img{width:100%;height:100%;object-fit:contain}
 .telegram-refined .ai-product-features{position:static;grid-column:7/span 5;width:auto;transform:none}
 .telegram-refined .ai-product-features ul{margin-top:22px}
@@ -32,9 +32,9 @@
 .telegram-refined .product-workflow .workflow-heading h2{max-width:700px;margin:24px 0 34px;font-size:clamp(39px,3.7vw,56px)}
 .telegram-role-switch{grid-column:8/-1;align-self:end;justify-self:end;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(460px,100%);margin:0 0 34px;border:0;background:transparent}
 .telegram-role-label{grid-column:1/-1;margin-bottom:10px;color:var(--azure);font-size:var(--type-micro);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.telegram-role-switch button{min-height:52px;padding:13px 20px;border:1px solid #9cb7c1;color:#345869;background:rgba(244,248,248,.45);font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:color .2s ease,background .2s ease}
+.telegram-role-switch button{min-height:52px;padding:13px 20px;border:1px solid var(--tone-9cb7c1);color:var(--tone-345869);background:var(--tone-rgba-244-248-248-45);font:inherit;font-size:15px;font-weight:500;cursor:pointer;transition:color .2s ease,background .2s ease}
 .telegram-role-switch button+button{border-left:0}
-.telegram-role-switch button[aria-pressed=true]{color:#eef6f7;background:#143b4e}
+.telegram-role-switch button[aria-pressed=true]{color:var(--tone-eef6f7);background:var(--tone-143b4e)}
 .telegram-refined .workflow-panel[hidden]{display:none!important}
 .telegram-refined .workflow-panel,.telegram-refined .workflow-agent{min-height:550px;padding:36px 0 0;border-bottom:0}
 .telegram-refined .workflow-device-stage,.telegram-refined .workflow-agent .workflow-device-stage{min-height:520px}
@@ -45,27 +45,27 @@
 .telegram-refined .product-includes{margin-top:42px}
 .telegram-refined .product-includes ul{grid-template-columns:1fr;max-width:620px}
 .telegram-refined .product-includes li{min-height:52px;padding:15px 0;font-size:15px}
-.telegram-refined .product-pricing{grid-column:8/-1;align-self:start;padding:31px;box-shadow:16px 18px 0 rgba(0,14,23,.24)}
+.telegram-refined .product-pricing{grid-column:8/-1;align-self:start;padding:31px;box-shadow:16px 18px 0 var(--tone-rgba-0-14-23-24)}
 .telegram-refined .product-pricing a,.telegram-refined .product-adoption-cta{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
-.telegram-refined .product-pricing a{margin:30px 12px 12px 0;box-shadow:6px 6px 0 #0d5e73,12px 12px 0 rgba(185,220,229,.18)}
-.telegram-refined .product-pricing a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 #0d5e73,15px 15px 0 rgba(185,220,229,.18)}
-.telegram-refined .product-adoption-cta{margin-right:13px;margin-bottom:13px;box-shadow:7px 7px 0 #a9d6de,13px 13px 0 rgba(13,94,115,.18)}
-.telegram-refined .product-adoption-cta:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 #a9d6de,16px 16px 0 rgba(13,94,115,.18)}
+.telegram-refined .product-pricing a{margin:30px 12px 12px 0;box-shadow:6px 6px 0 var(--color-accent),12px 12px 0 var(--tone-rgba-185-220-229-18)}
+.telegram-refined .product-pricing a:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--color-accent),15px 15px 0 var(--tone-rgba-185-220-229-18)}
+.telegram-refined .product-adoption-cta{margin-right:13px;margin-bottom:13px;box-shadow:7px 7px 0 var(--tone-a9d6de),13px 13px 0 var(--tone-rgba-13-94-115-18)}
+.telegram-refined .product-adoption-cta:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 var(--tone-a9d6de),16px 16px 0 var(--tone-rgba-13-94-115-18)}
 .telegram-refined .case-page-nav-layout{grid-template-columns:minmax(0,1fr) auto minmax(0,1.35fr);gap:32px}
 .telegram-refined .case-page-nav-layout>span{white-space:nowrap}
 .telegram-refined .case-page-nav-layout>a:last-child{justify-self:end;text-align:right}
-.telegram-refined :is(a,button):focus-visible{outline:3px solid #55a8bd;outline-offset:5px}
+.telegram-refined :is(a,button):focus-visible{outline:3px solid var(--tone-55a8bd);outline-offset:5px}
 @media(max-width:1023px) and (min-width:768px){.telegram-refined .case-page-cover .case-template-copy{grid-column:1/span 4}.telegram-refined .case-page-cover .case-template-media{grid-column:5/-1;height:560px}.telegram-refined .product-task-principles article,.telegram-refined .product-task-principles .product-task-priority{grid-template-columns:92px 1fr}.telegram-refined .product-task-principles p{grid-column:2}}
 @media(max-width:767px){
-.telegram-refined .case-page-cover{min-height:0}.telegram-refined .case-page-cover .case-template-layout{min-height:0;padding-block:28px 48px;gap:28px}.telegram-refined .case-page-cover .case-template-copy,.telegram-refined .case-page-cover .case-template-media{width:100%}.telegram-refined .case-template-copy h1{font-size:clamp(40px,11vw,48px)}.telegram-refined .case-template-lead{font-size:15px}.telegram-refined .case-page-cover .case-template-media{height:430px;min-height:430px}.telegram-refined .case-page-cover .case-template-media img{max-width:calc(100% - 48px);height:382px;max-height:calc(100% - 34px);padding:6px;border-width:8px;border-radius:32px;box-shadow:12px 14px 0 rgba(73,111,124,.2)}
+.telegram-refined .case-page-cover{min-height:0}.telegram-refined .case-page-cover .case-template-layout{min-height:0;padding-block:28px 48px;gap:28px}.telegram-refined .case-page-cover .case-template-copy,.telegram-refined .case-page-cover .case-template-media{width:100%}.telegram-refined .case-template-copy h1{font-size:clamp(40px,11vw,48px)}.telegram-refined .case-template-lead{font-size:15px}.telegram-refined .case-page-cover .case-template-media{height:430px;min-height:430px}.telegram-refined .case-page-cover .case-template-media img{max-width:calc(100% - 48px);height:382px;max-height:calc(100% - 34px);padding:6px;border-width:8px;border-radius:32px;box-shadow:12px 14px 0 var(--tone-rgba-73-111-124-2)}
 .telegram-refined .case-story{padding-block:72px}.telegram-refined .product-task-principles{margin-top:40px}.telegram-refined .product-task-principles article,.telegram-refined .product-task-principles .product-task-priority{display:block;min-height:0;padding:23px 0}.telegram-refined .product-task-principles h3,.telegram-refined .product-task-principles .product-task-priority h3{margin-top:13px;font-size:24px}.telegram-refined .product-task-principles p,.telegram-refined .product-task-principles .product-task-priority p{margin-top:10px}
 .telegram-refined .product-interface .case-story-title{grid-column:1/-1}.telegram-refined .ai-product-stage{display:flex;min-height:0;flex-direction:column;gap:42px;margin-top:42px;padding:32px 0}.telegram-refined .ai-phone{width:min(78vw,292px);height:auto;aspect-ratio:300/562;flex:0 0 auto}.telegram-refined .ai-product-features{width:100%}.telegram-refined .ai-product-features li{padding:14px 0;font-size:15px}
 .telegram-refined .product-workflow .workflow-heading{grid-column:1/-1}.telegram-refined .product-workflow .workflow-heading h2{margin:20px 0 27px;font-size:39px}.telegram-role-switch{grid-column:1/-1;justify-self:stretch;width:100%;margin-bottom:25px}.telegram-role-switch button{min-height:50px}.telegram-refined .workflow-panel,.telegram-refined .workflow-agent{min-height:0;gap:24px;padding-top:26px}.telegram-refined .workflow-device-stage,.telegram-refined .workflow-agent .workflow-device-stage{min-height:485px}.telegram-refined .workflow-screen{top:48px;width:220px}.telegram-refined .workflow-orbit{width:410px;height:410px}
-.telegram-refined .product-offer-copy,.telegram-refined .product-pricing{grid-column:1/-1}.telegram-refined .product-pricing{margin-top:36px;padding:24px}.telegram-refined .product-pricing a{margin-right:8px;margin-bottom:8px;box-shadow:5px 5px 0 #0d5e73,9px 9px 0 rgba(185,220,229,.18)}.telegram-refined .product-adoption-cta{margin-right:9px;margin-bottom:9px;box-shadow:5px 5px 0 #a9d6de,9px 9px 0 rgba(13,94,115,.18)}
+.telegram-refined .product-offer-copy,.telegram-refined .product-pricing{grid-column:1/-1}.telegram-refined .product-pricing{margin-top:36px;padding:24px}.telegram-refined .product-pricing a{margin-right:8px;margin-bottom:8px;box-shadow:5px 5px 0 var(--color-accent),9px 9px 0 var(--tone-rgba-185-220-229-18)}.telegram-refined .product-adoption-cta{margin-right:9px;margin-bottom:9px;box-shadow:5px 5px 0 var(--tone-a9d6de),9px 9px 0 var(--tone-rgba-13-94-115-18)}
 .telegram-refined .case-page-nav-layout{grid-template-columns:1fr auto;gap:12px 18px}.telegram-refined .case-page-nav-layout>a:first-child{grid-column:1}.telegram-refined .case-page-nav-layout>span{grid-column:2}.telegram-refined .case-page-nav-layout>a:last-child{grid-column:1/-1;justify-self:start;text-align:left}}
 @media(prefers-reduced-motion:reduce){.telegram-role-switch button,.telegram-refined .product-pricing a,.telegram-refined .product-adoption-cta{transition:none}}
 
 /* Case chrome audit: align the product case with the published case header. */
-body.telegram-refined .site-header.case-page-header{width:100%;max-width:none;height:88px;padding:0 max(28px,4vw);color:#102536;background:#f7f8f6!important;border-bottom:1px solid #849da64d}
-body.telegram-refined .case-page-header .brand-name{color:#102536!important}body.telegram-refined .case-page-header .navigation a{color:#526c78!important}body.telegram-refined .case-page-header .navigation a:hover{color:#102536!important}body.telegram-refined .case-page-header .language-switcher button{color:#718690!important}body.telegram-refined .case-page-header .language-switcher button.is-active{color:#102536!important}body.telegram-refined .case-page-header .menu-link{padding:0;color:#526c78!important;border:0;background:transparent;box-shadow:none}body.telegram-refined .case-breadcrumbs{background:#e8f0ef}
-.telegram-refined .case-page-header .language-switcher a{color:#718690;text-decoration:none;font-size:11px}.telegram-refined .case-page-header .language-switcher a.is-active{color:#102536;border-bottom:1px solid #102536}
+body.telegram-refined .site-header.case-page-header{width:100%;max-width:none;height:88px;padding:0 max(28px,4vw);color:var(--tone-102536);background:var(--tone-f7f8f6)!important;border-bottom:1px solid var(--tone-849da64d)}
+body.telegram-refined .case-page-header .brand-name{color:var(--tone-102536)!important}body.telegram-refined .case-page-header .navigation a{color:var(--tone-526c78)!important}body.telegram-refined .case-page-header .navigation a:hover{color:var(--tone-102536)!important}body.telegram-refined .case-page-header .language-switcher button{color:var(--tone-718690)!important}body.telegram-refined .case-page-header .language-switcher button.is-active{color:var(--tone-102536)!important}body.telegram-refined .case-page-header .menu-link{padding:0;color:var(--tone-526c78)!important;border:0;background:transparent;box-shadow:none}body.telegram-refined .case-breadcrumbs{background:var(--tone-e8f0ef)}
+.telegram-refined .case-page-header .language-switcher a{color:var(--tone-718690);text-decoration:none;font-size:11px}.telegram-refined .case-page-header .language-switcher a.is-active{color:var(--tone-102536);border-bottom:1px solid var(--tone-102536)}

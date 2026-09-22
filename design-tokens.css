@@ -970,3 +970,11 @@
   --tone-rgba-99-196-216-12: rgba(99,196,216,.12);
   --tone-rgba-99-196-216-16: rgba(99,196,216,.16);
 }
+
+/* Readability floors: body copy 16px, captions 14px, technical labels 12px. */
+:root {
+  --case-text-body: 16px;
+  --case-text-caption: 14px;
+  --case-text-label: 12px;
+  --case-media-limit: 560px;
+}

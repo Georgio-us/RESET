@@ -3,6 +3,8 @@ import { canonicalRedirect } from './seo-routing.js';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { existsSync } from 'node:fs';
+import { renderSiteUI } from './site-ui.js';
 import { normalizeLead, contactLines } from './lead-data.js';
 
 const root = resolve(fileURLToPath(new URL('.', import.meta.url)));
@@ -27,7 +29,7 @@ const mimeTypes = {
   '.woff2': 'font/woff2',
 };
 
-const injectHeadScripts = (document) => document.replace('</head>', `<script>
+const injectHeadScripts = (document) => document.replace(/<script src="\/arrow-icons.js(?:\?[^"]*)?" defer><\/script>/g, '').replace('</head>', `<script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 window.gtag = window.gtag || gtag;
@@ -45,7 +47,7 @@ try {
 }
 gtag('js', new Date());
 gtag('config', '${analyticsMeasurementId}', { send_page_view: false, anonymize_ip: true });
-</script><script async src="https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}"></script><script src="/arrow-icons.js" defer></script></head>`);
+</script><script async src="https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}"></script><script src="/arrow-icons.js?v=20260922-ui6" defer></script></head>`);
 
 const sourceLabels = {
   'article-ai-development': 'Статья: стоимость разработки с AI',
@@ -108,7 +110,6 @@ const getCountry = (request, lead) => {
 };
 
 const createTelegramMessage = (lead, request) => {
-  const method = lead.contactMethod === 'email' ? 'Email' : 'Телефон';
   const locale = localeLabels[lead.locale] || 'Не определён';
   const page = value(lead.page, 1_000) || 'Не указана';
   const client = lead.client && typeof lead.client === 'object' ? lead.client : {};
@@ -269,7 +270,7 @@ const serveStatic = async (request, response) => {
     });
     if (extension === '.html') {
       const document = await readFile(filePath, 'utf8');
-      response.end(injectHeadScripts(document));
+      response.end(injectHeadScripts(renderSiteUI(document, { locale: locale || document.match(/<html[^>]*lang="(ru|uk|en|es)"/)?.[1] || 'ru', path: pathname, exists: target => existsSync(resolve(root, `.${target.endsWith('/') ? target + 'index.html' : target}`)) })));
       return;
     }
     response.end(await readFile(filePath));
@@ -298,7 +299,7 @@ const serveStatic = async (request, response) => {
     try {
       const document = await readFile(notFoundPath, 'utf8');
       response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
-      response.end(injectHeadScripts(document));
+      response.end(injectHeadScripts(renderSiteUI(document, { locale: locale || 'ru', path: pathname, exists: () => false })));
     } catch {
       response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
       response.end('Страница не найдена');

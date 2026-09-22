@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded',()=>{
   const root=document.querySelector('[data-widget-demo]');
   if(!root)return;
+  const manual = document.body.classList.contains('widget-reviewed');
   const steps=[...root.querySelectorAll('[data-widget-step]')];
   const image=root.querySelector('[data-widget-image]');
   const number=root.querySelector('[data-widget-number]');
@@ -24,11 +25,11 @@ document.addEventListener('DOMContentLoaded',()=>{
     text.textContent=step.dataset.text;
   };
   const stop=()=>{clearInterval(timer);timer=null;};
-  const start=()=>{stop();if(visible&&!reduce)timer=setInterval(()=>render((selected+1)%steps.length),2800);};
+  const start=()=>{stop();if(visible&&!reduce&&!manual)timer=setInterval(()=>render((selected+1)%steps.length),2800);};
   steps.forEach((step,index)=>step.addEventListener('click',()=>{render(index);start();}));
   new IntersectionObserver(entries=>{
     const now=entries[0].isIntersecting;
-    if(now&&!visible){visible=true;render(0);start();}
+    if(now&&!visible){visible=true;if(!manual)render(0);start();}
     if(!now&&visible){visible=false;stop();}
   },{threshold:.35}).observe(root);
   document.addEventListener('visibilitychange',()=>document.hidden?stop():start());

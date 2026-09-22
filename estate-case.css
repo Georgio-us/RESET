@@ -1,0 +1,129 @@
+/* Estate CRM composition, reviewed independently from the other cases. */
+.estate-case {
+  --estate-space:clamp(24px,5vw,72px);
+  --estate-section:clamp(56px,7vw,104px);
+  --estate-title:clamp(40px,4.4vw,68px);
+}
+.estate-case :is(.sales-hero,.sales-story,.sales-proof,.sales-gallery,.sales-cta) { padding-inline:max(20px,calc((100vw - 1280px)/2)); }
+.estate-case .sales-hero { padding-top:36px; }
+.estate-case .sales-hero-grid { display:block; min-height:0; padding-block:40px 64px; }
+.estate-case .sales-hero-grid>div { display:grid; grid-template-columns:1.3fr 1fr; gap:20px 64px; align-items:end; }
+.estate-case .sales-kicker { grid-column:1/-1; margin:0; }
+.estate-case .sales-hero h1 { font-size:var(--estate-title); line-height:1.04; letter-spacing:-.045em; max-width:780px; text-wrap:balance; }
+.estate-case .sales-hero .sales-lead { font-size:18px; line-height:1.6; margin:0; max-width:460px; }
+.estate-case .sales-hero-visual { margin:48px 0 0; padding:0; border:0; box-shadow:none; background:transparent; overflow:visible; width:100%; }
+.estate-case .browser-frame { border:1px solid var(--color-line-light); border-radius:10px; box-shadow:0 12px 26px var(--tone-9ac2d008); }
+.estate-case .browser-frame-bar { height:34px; gap:6px; padding-inline:14px; background:var(--color-paper); }
+.estate-case .browser-frame-bar span { font-size:12px; color:var(--color-ink-muted); }
+.estate-case .sales-hero-visual .sales-visual-tag { position:static; margin:14px 0 0; border:0; padding:0; background:none; color:var(--color-ink-muted); font-size:12px; letter-spacing:.08em; }
+.estate-case .sales-metrics { margin-inline:calc(max(20px,calc((100vw - 1280px)/2))*-1); padding-inline:max(20px,calc((100vw - 1280px)/2)); }
+.estate-case .sales-metric { padding:28px 24px; }
+.estate-case .sales-metric:first-child { padding-left:0; }
+.estate-case .sales-metric strong { font-size:clamp(28px,3vw,44px); }
+.estate-case :is(.sales-story,.sales-proof,.sales-gallery) { padding-block:var(--estate-section); }
+.estate-case .sales-section-head { grid-template-columns:.55fr 1.45fr; gap:36px; margin-bottom:40px; }
+.estate-case .sales-section-head h2 { font-size:clamp(32px,3.5vw,50px); line-height:1.1; text-wrap:balance; }
+.estate-case .sales-card { min-height:0; }
+.estate-case .sales-card h3 { font-size:24px; }
+.estate-evidence { display:grid; gap:64px; }
+.estate-evidence-row { display:grid; grid-template-columns:minmax(0,2fr) minmax(240px,1fr); gap:48px; align-items:center; }
+.estate-case .sales-proof figure { margin:0; padding:0; border:0; background:transparent; }
+.estate-case .sales-proof figure figcaption { color:var(--color-muted-dark); padding:14px 0 0; font-size:14px; letter-spacing:0; }
+.estate-case .sales-insight { padding:24px 0; border-bottom:0; }
+.estate-case .sales-insight strong { font-size:14px; letter-spacing:.06em; }
+.estate-case .sales-insight p { font-size:16px; line-height:1.65; }
+.estate-case .sales-gallery .sales-insight { border-color:var(--color-line-light); }
+.estate-case .sales-gallery .sales-insight strong { color:var(--color-accent); }
+.estate-case .sales-gallery .sales-insight p { color:var(--color-ink-muted); }
+.estate-case .sales-product-grid figure { width:100%; padding:0; background:none; border:0; overflow:visible; }
+.estate-case .sales-product-grid figcaption { max-width:340px; margin:18px auto 0; padding:0; font-size:14px; text-transform:none; letter-spacing:0; line-height:1.5; }
+.estate-case .sales-cta { padding-block:64px; }
+.estate-case .sales-cta h2 { font-size:clamp(34px,4vw,56px); }
+@media(max-width:760px) {
+ .estate-case .sales-hero { padding-top:24px; }
+ .estate-case .sales-meta { gap:10px; font-size:12px; letter-spacing:.05em; }
+ .estate-case .sales-meta i { width:20px; }
+ .estate-case .sales-hero-grid { padding-block:28px 40px; }
+ .estate-case .sales-hero-grid>div { display:block; }
+ .estate-case .sales-kicker { margin-bottom:18px; }
+ .estate-case .sales-hero h1 { font-size:clamp(36px,9.4vw,52px); line-height:1.06; letter-spacing:-.04em; }
+ .estate-case .sales-hero .sales-lead { margin-top:22px; font-size:16px; }
+ .estate-case .sales-hero-visual { margin-top:32px; }
+ .estate-case .sales-hero-visual .sales-visual-tag { text-align:center; display:block; margin-top:20px; }
+ .estate-case .sales-metrics { grid-template-columns:1fr; padding-block:6px; }
+ .estate-case .sales-metric { display:flex; align-items:center; gap:24px; padding:20px 0; border-right:0; }
+ .estate-case .sales-metric strong { flex:0 0 44%; font-size:28px; }
+ .estate-case .sales-metric span { margin:0; font-size:14px; }
+ .estate-case .sales-section-head { display:block; margin-bottom:28px; }
+ .estate-case .sales-section-head h2 { font-size:32px; margin-top:18px; }
+ .estate-case .sales-cards { grid-template-columns:1fr; }
+ .estate-case .sales-card,.estate-case .sales-card+.sales-card { padding:24px 0; border-right:0; border-bottom:1px solid var(--color-line-light); }
+ .estate-case .sales-card:last-child { border-bottom:0; }
+ .estate-case .sales-card h3 { margin-top:14px; }
+ .estate-evidence { gap:40px; }
+ .estate-evidence-row { display:flex; flex-direction:column; gap:20px; align-items:stretch; }
+ .estate-evidence-row .sales-insight { order:-1; padding:18px 0 0; }
+ .estate-case .sales-proof figure figcaption { font-size:14px; }
+ .estate-case .browser-frame-bar { height:26px; }
+ .estate-case .sales-gallery { padding-block:40px; }
+ .estate-case .sales-gallery .sales-section-head { margin-bottom:8px; }
+ .estate-case .sales-cta { grid-template-columns:1fr; gap:20px; padding-block:48px; }
+}
+/* Shared controls proposed on the reference page before site-wide rollout. */
+.niv-language { position:relative; margin-left:auto; }
+.niv-language summary { display:flex; align-items:center; gap:6px; min-height:44px; padding-inline:10px; list-style:none; cursor:pointer; font-size:14px; }
+.niv-language summary::-webkit-details-marker { display:none; }
+.niv-language nav { position:absolute; z-index:20; top:100%; right:0; min-width:140px; display:grid; padding:8px; background:var(--color-navy); border:1px solid var(--color-line-dark); }
+.niv-language nav a { display:block; padding:12px; color:var(--color-on-dark); text-decoration:none; font-size:14px; }
+.niv-language a[aria-current] { background:var(--color-panel); }
+.estate-case .reset-menu summary { display:grid; place-items:center; width:44px; height:44px; padding:0; }
+.estate-case .reset-menu summary svg { display:block; width:24px; height:24px; }
+.estate-case .reset-form { background:var(--color-paper); color:var(--color-navy); gap:20px; }
+.estate-case .reset-form :is(input,select,textarea) { color:var(--color-navy); border-color:var(--color-input-border); background:var(--color-paper); border-radius:0; box-shadow:none; }
+.estate-case .reset-form select { appearance:none; -webkit-appearance:none; padding-right:40px; height:50px; cursor:pointer; }
+.estate-case .reset-form label:has(select) { position:relative; }
+.estate-case .reset-form label:has(select):after { content:''; position:absolute; right:16px; bottom:19px; width:9px; height:9px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); pointer-events:none; }
+.estate-case .reset-form input[type=checkbox] { appearance:none; -webkit-appearance:none; border:1px solid var(--color-input-border); width:22px; height:22px; position:relative; }
+.estate-case .reset-form input[type=checkbox]:checked { background:var(--color-accent); border-color:var(--color-accent); }
+.estate-case .reset-form input[type=checkbox]:checked:after { content:''; position:absolute; width:6px; height:11px; left:7px; top:2px; border-right:2px solid var(--color-white); border-bottom:2px solid var(--color-white); transform:rotate(45deg); }
+.estate-case .reset-footer { padding-block:36px 24px; }
+.estate-case .reset-footer-inner { grid-template-columns:1fr 1.3fr 1fr; gap:28px; }
+.estate-case .reset-footer .reset-brand { font-size:32px; }
+.estate-case .reset-footer nav { gap:0 24px; }
+.estate-case .reset-footer-bottom { padding-top:20px; gap:8px 24px; }
+@media(max-width:760px) {
+ .estate-case .reset-header-inner { gap:8px; }
+ .estate-case .reset-footer-inner { grid-template-columns:1fr; gap:24px; }
+ .estate-case .reset-footer nav { padding-block:16px; border-top:1px solid var(--color-line-dark); border-bottom:1px solid var(--color-line-dark); }
+ .estate-case .reset-footer-contact { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:8px 22px; }
+ .estate-case .reset-footer-contact>a:first-child { flex-basis:100%; font-size:18px; margin-bottom:4px; }
+ .estate-case .reset-footer-bottom { display:flex; flex-wrap:wrap; gap:4px 18px; }
+ .estate-case .reset-footer-bottom>span { flex-basis:100%; margin-bottom:6px; }
+}
+.estate-case[data-reset-ui] .sales-proof figure figcaption { color:var(--color-muted-dark); font-size:14px; }
+.estate-case[data-reset-ui] .sales-product-grid figcaption { color:var(--color-ink-muted); font-size:14px; }
+.estate-case[data-reset-ui] .sales-hero .sales-lead { font-size:18px; }
+@media(max-width:760px) { .estate-case[data-reset-ui] .sales-hero .sales-lead { font-size:16px; } }
+.estate-case .sales-hero-visual { display:block; aspect-ratio:auto; min-height:0; }
+.estate-case .sales-hero-visual .browser-frame { width:100%; }
+.estate-case .estate-evidence-row { grid-template-columns:minmax(0,2.5fr) minmax(240px,1fr); gap:40px; }
+.estate-case .estate-evidence-row .sales-insights { display:block; }
+.estate-case .estate-outcome { max-width:760px; margin:48px 0 0 auto; border-top:1px solid var(--color-line-dark); }
+.estate-case .sales-product-grid { display:grid; grid-template-columns:1fr; max-width:1080px; gap:64px; }
+.estate-case .sales-product-grid figure { margin:0; }
+.estate-case .sales-product-grid figure:last-child { width:min(100%,960px); }
+.estate-case[data-reset-ui] .sales-product-grid figcaption { max-width:none; text-align:left; margin:16px 0 0; }
+@media(max-width:760px) {
+ .estate-case .sales-hero-visual .sales-visual-tag { text-align:left; }
+ .estate-case .browser-frame { border-radius:6px; box-shadow:none; }
+ .estate-case .browser-frame-bar { height:22px; padding-inline:8px; }
+ .estate-case .browser-frame-bar i { width:4px; height:4px; }
+ .estate-case .browser-frame-bar span { font-size:12px; }
+ .estate-case .estate-outcome { margin-top:32px; }
+ .estate-case .sales-product-grid { gap:36px; }
+ .estate-case .estate-evidence-row { gap:20px; }
+ .estate-case .estate-evidence-row .sales-insights { order:-1; }
+ .estate-case .sales-meta span:last-child { display:none; }
+ .estate-case .sales-meta i:last-of-type { display:none; }
+}
+

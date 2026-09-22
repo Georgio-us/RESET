@@ -118,3 +118,18 @@ document.querySelectorAll('[data-reset-form]').forEach(form => {
 document.querySelectorAll('.section-catalog-card li a').forEach(link => {
   if (!link.querySelector('svg')) link.insertAdjacentHTML('beforeend', '<svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg>');
 });
+
+// Keep the two header disclosures independent and close them on dismissal.
+const headerDisclosures = [...document.querySelectorAll('.reset-header details')];
+headerDisclosures.forEach(details => details.addEventListener('toggle', () => {
+  if (details.open) headerDisclosures.forEach(other => { if (other !== details) other.open = false; });
+}));
+document.addEventListener('click', event => {
+  headerDisclosures.forEach(details => { if (!details.contains(event.target)) details.open = false; });
+});
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  headerDisclosures.forEach(details => {
+    if (details.open) { details.open = false; details.querySelector('summary').focus(); }
+  });
+});

@@ -103,7 +103,7 @@
 }
 
 .site-header .brand-mark-accent {
-  color: #82b8c1;
+  color: var(--tone-82b8c1);
 }
 
 /* The header is a full-width surface; its container should not read as a second colour. */
@@ -259,7 +259,7 @@
   grid-template-columns: 38px 1fr;
   gap: 5px 8px;
   padding: 20px 0;
-  border-bottom: 1px solid #b7c7cd;
+  border-bottom: 1px solid var(--tone-b7c7cd);
 }
 
 .site-shell .experience-facts > li > span {
@@ -279,7 +279,7 @@
 .site-shell .experience-facts p {
   grid-column: 2;
   margin: 0;
-  color: #50616c;
+  color: var(--tone-50616c);
   font-size: var(--type-fact-copy);
   line-height: 1.5;
 }
@@ -293,10 +293,10 @@ body:not(.case-page) .case-studies-stage .case-template-cta,
 .case-page .site-product-details > a,
 .case-page .summary-conclusion > a {
   --cta-surface: var(--azure);
-  --cta-surface-hover: #11738a;
-  --cta-foreground: #fff;
-  --cta-shadow-front: #a9d6de;
-  --cta-shadow-back: #5f9bab;
+  --cta-surface-hover: var(--tone-11738a);
+  --cta-foreground: var(--color-white);
+  --cta-shadow-front: var(--tone-a9d6de);
+  --cta-shadow-back: var(--tone-5f9bab);
   position: relative;
   isolation: isolate;
   min-height: var(--cta-height);
@@ -439,11 +439,11 @@ body:not(.case-page) .case-studies-stage .case-template-cta {
 }
 
 .site-shell .button-secondary {
-  --cta-surface: #142f40;
-  --cta-surface-hover: #1b3d4d;
-  --cta-foreground: #edf4f5;
-  --cta-shadow-front: #8eb4bf;
-  --cta-shadow-back: #4d7180;
+  --cta-surface: var(--tone-142f40);
+  --cta-surface-hover: var(--tone-1b3d4d);
+  --cta-foreground: var(--tone-edf4f5);
+  --cta-shadow-front: var(--tone-8eb4bf);
+  --cta-shadow-back: var(--tone-4d7180);
 }
 
 .site-shell .hero-actions .button {
@@ -453,21 +453,21 @@ body:not(.case-page) .case-studies-stage .case-template-cta {
 
 .site-shell .button-outline-light {
   --cta-surface: var(--azure-light);
-  --cta-surface-hover: #eff9fa;
+  --cta-surface-hover: var(--tone-eff9fa);
   --cta-foreground: var(--navy);
-  --cta-shadow-front: #74a7b4;
-  --cta-shadow-back: #315667;
+  --cta-shadow-front: var(--tone-74a7b4);
+  --cta-shadow-back: var(--tone-315667);
 }
 
 .site-shell .button-outline-dark {
-  --cta-shadow-front: #b7d1d7;
-  --cta-shadow-back: #86aab3;
+  --cta-shadow-front: var(--tone-b7d1d7);
+  --cta-shadow-back: var(--tone-86aab3);
 }
 
 .site-shell .panel-cta,
 .site-shell .diagnostic-submit {
-  --cta-shadow-front: #9fcbd4;
-  --cta-shadow-back: #487989;
+  --cta-shadow-front: var(--tone-9fcbd4);
+  --cta-shadow-back: var(--tone-487989);
 }
 
 .site-shell .panel-cta b,
@@ -553,7 +553,7 @@ body:not(.case-page) .case-studies-stage .case-template-cta span,
     width: auto;
     margin: 0;
     padding: 10px;
-    box-shadow: 12px 13px 0 #c3d7da;
+    box-shadow: 12px 13px 0 var(--tone-c3d7da);
   }
 
   .case-page .shepit-product-stage .shepit-desktop-preview img {
@@ -566,7 +566,7 @@ body:not(.case-page) .case-studies-stage .case-template-cta span,
     margin: 0 auto;
     padding: 8px;
     border-width: 7px;
-    box-shadow: 12px 14px 0 #c3d7da;
+    box-shadow: 12px 14px 0 var(--tone-c3d7da);
   }
 
   .case-page .shepit-product-stage .shepit-mobile-preview img {
@@ -595,7 +595,7 @@ body:not(.case-page) .case-studies-stage .case-template-cta span,
     width: 42px;
     height: 42px;
     place-items: center;
-    border: 1px solid #8fb0b9;
+    border: 1px solid var(--tone-8fb0b9);
     border-radius: 50%;
     color: var(--azure);
     background: transparent;

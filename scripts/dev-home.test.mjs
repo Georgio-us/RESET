@@ -38,3 +38,17 @@ test('keyboard navigation works; vertical touch scrolling does not change a slid
   x.showcase.fire('touchstart', { touches:[{clientX:200,clientY:100}] }); x.showcase.fire('touchend', { changedTouches:[{clientX:120,clientY:400}] }); assert.equal(x.slides[1].hidden,false);
   x.showcase.fire('touchstart', { touches:[{clientX:200,clientY:100}] }); x.showcase.fire('touchend', { changedTouches:[{clientX:100,clientY:105}] }); assert.equal(x.slides[2].hidden,false);
 });
+
+test('every selected project is present in each localized homepage catalog', () => {
+  for (const path of ['index.html', 'ru/index.html', 'uk/index.html', 'en/index.html', 'es/index.html']) {
+    const html = readFileSync(new URL('../' + path, import.meta.url), 'utf8');
+    const slides = [...html.matchAll(/<article class="dev-feature[^>]*>[\s\S]*?<\/article>/g)];
+    const cards = [...html.matchAll(/<article class="dev-work-card[^>]*>[\s\S]*?<\/article>/g)].map(m => m[0]);
+    for (const slide of slides) {
+      const slug = slide[0].match(/data-work-link="([^"]+)"/)[1];
+      assert.ok(cards.some(card => card.includes(`data-work-link="${slug}"`)), `${path}: missing ${slug}`);
+    }
+    assert.equal(cards.length, 15, path);
+    for (const slug of ['estyle-spain','kommo-crm','factor-seo']) assert.ok(cards.some(card => card.includes(`/cases/${slug}.html`)), `${path}: missing restored ${slug}`);
+  }
+});

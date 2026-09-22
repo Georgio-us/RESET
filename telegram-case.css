@@ -1,0 +1,64 @@
+/* VIA Properties: reviewed case layout and complete, manually controlled scenarios. */
+.telegram-reviewed .container { width:calc(100% - 40px); max-width:1280px; }
+.telegram-reviewed .case-page-cover,.telegram-reviewed .case-page-cover .case-template-layout { min-height:0; }
+.telegram-reviewed .case-page-cover .case-template-layout { padding-block:40px 64px; }
+.telegram-reviewed .case-template-copy h1 { font-size:clamp(40px,4.4vw,68px); line-height:1.06; letter-spacing:-.04em; }
+.telegram-reviewed .case-page-cover .case-template-media { height:auto; min-height:0; border:0; background:none; overflow:visible; margin:0; }
+.telegram-reviewed .case-page-cover .case-template-media img { width:290px; max-width:100%; height:auto; max-height:none; padding:0; border:7px solid var(--color-navy); border-radius:30px; box-shadow:7px 9px 0 var(--color-line-light); }
+.telegram-reviewed .case-story { padding-block:clamp(56px,7vw,104px); }
+.telegram-reviewed .product-task-principles article { grid-template-columns:1fr; gap:10px; min-height:0; padding:24px 0; }
+.telegram-reviewed .product-task-principles p { max-width:none; font-size:16px; }
+.telegram-reviewed .workflow-panel { align-items:center; }
+.telegram-reviewed .workflow-device-stage { display:grid; grid-template-columns:1fr; grid-template-rows:auto auto auto; gap:24px; min-height:0; padding:24px; background:none; overflow:visible; }
+.telegram-reviewed .workflow-agent .workflow-device-stage { min-height:0; }
+.telegram-reviewed .workflow-stage-label { position:static; grid-area:1/1; font-size:12px; }
+.telegram-reviewed .workflow-orbit { display:none; }
+.telegram-reviewed .workflow-screen { position:relative; grid-area:2/1; align-self:start; justify-self:center; top:auto; left:auto; width:min(100%,290px); padding:0; border:7px solid var(--color-navy); border-radius:30px; box-shadow:7px 9px 0 var(--color-line-light); transform:none; visibility:hidden; transition:none; }
+.telegram-reviewed .workflow-screen.is-active { transform:none; visibility:visible; }
+.telegram-reviewed .workflow-screen img { border-radius:23px; }
+.telegram-reviewed .workflow-controls { position:static; grid-area:3/1; justify-content:center; margin-top:8px; }
+.telegram-reviewed .workflow-controls button { width:44px; height:44px; }
+.telegram-reviewed .workflow-copy-item p { font-size:16px; line-height:1.6; }
+@media(max-width:767px) {
+ .telegram-reviewed .case-page-cover .case-template-layout { padding-block:28px 48px; }
+ .telegram-reviewed .case-template-copy h1 { font-size:clamp(36px,9.4vw,48px); }
+ .telegram-reviewed .case-template-lead { font-size:16px; }
+ .telegram-reviewed .case-page-cover .case-template-media img { width:min(100%,290px); }
+ .telegram-reviewed .workflow-device-stage,.telegram-reviewed .workflow-agent .workflow-device-stage { padding:0; min-height:0; }
+ .telegram-reviewed .workflow-panel { align-items:stretch; }
+ .telegram-reviewed .workflow-agent .workflow-copy { order:2; }
+ .telegram-reviewed .workflow-agent .workflow-device-stage { order:1; }
+ .telegram-reviewed .workflow-copy-item h3 { font-size:28px; }
+ .telegram-reviewed .case-story-meta { flex-wrap:wrap; gap:12px; }
+}
+/* Shared controls proposed on the reference page before site-wide rollout. */
+.niv-language { position:relative; margin-left:auto; }
+.niv-language summary { display:flex; align-items:center; gap:6px; min-height:44px; padding-inline:10px; list-style:none; cursor:pointer; font-size:14px; }
+.niv-language summary::-webkit-details-marker { display:none; }
+.niv-language nav { position:absolute; z-index:20; top:100%; right:0; min-width:140px; display:grid; padding:8px; background:var(--color-navy); border:1px solid var(--color-line-dark); }
+.niv-language nav a { display:block; padding:12px; color:var(--color-on-dark); text-decoration:none; font-size:14px; }
+.niv-language a[aria-current] { background:var(--color-panel); }
+.telegram-reviewed .reset-menu summary { display:grid; place-items:center; width:44px; height:44px; padding:0; }
+.telegram-reviewed .reset-menu summary svg { display:block; width:24px; height:24px; }
+.telegram-reviewed .reset-form { background:var(--color-paper); color:var(--color-navy); gap:20px; }
+.telegram-reviewed .reset-form :is(input,select,textarea) { color:var(--color-navy); border-color:var(--color-input-border); background:var(--color-paper); border-radius:0; box-shadow:none; }
+.telegram-reviewed .reset-form select { appearance:none; -webkit-appearance:none; padding-right:40px; height:50px; cursor:pointer; }
+.telegram-reviewed .reset-form label:has(select) { position:relative; }
+.telegram-reviewed .reset-form label:has(select):after { content:''; position:absolute; right:16px; bottom:19px; width:9px; height:9px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); pointer-events:none; }
+.telegram-reviewed .reset-form input[type=checkbox] { appearance:none; -webkit-appearance:none; border:1px solid var(--color-input-border); width:22px; height:22px; position:relative; }
+.telegram-reviewed .reset-form input[type=checkbox]:checked { background:var(--color-accent); border-color:var(--color-accent); }
+.telegram-reviewed .reset-form input[type=checkbox]:checked:after { content:''; position:absolute; width:6px; height:11px; left:7px; top:2px; border-right:2px solid var(--color-white); border-bottom:2px solid var(--color-white); transform:rotate(45deg); }
+.telegram-reviewed .reset-footer { padding-block:36px 24px; }
+.telegram-reviewed .reset-footer-inner { grid-template-columns:1fr 1.3fr 1fr; gap:28px; }
+.telegram-reviewed .reset-footer .reset-brand { font-size:32px; }
+.telegram-reviewed .reset-footer nav { gap:0 24px; }
+.telegram-reviewed .reset-footer-bottom { padding-top:20px; gap:8px 24px; }
+@media(max-width:760px) {
+ .telegram-reviewed .reset-header-inner { gap:8px; }
+ .telegram-reviewed .reset-footer-inner { grid-template-columns:1fr; gap:24px; }
+ .telegram-reviewed .reset-footer nav { padding-block:16px; border-top:1px solid var(--color-line-dark); border-bottom:1px solid var(--color-line-dark); }
+ .telegram-reviewed .reset-footer-contact { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:8px 22px; }
+ .telegram-reviewed .reset-footer-contact>a:first-child { flex-basis:100%; font-size:18px; margin-bottom:4px; }
+ .telegram-reviewed .reset-footer-bottom { display:flex; flex-wrap:wrap; gap:4px 18px; }
+ .telegram-reviewed .reset-footer-bottom>span { flex-basis:100%; margin-bottom:6px; }
+}
