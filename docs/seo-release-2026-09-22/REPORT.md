@@ -24,7 +24,17 @@
 
 Статическая проверка нового набора: 73 страницы; canonical совпадает с адресом sitemap; один H1; описание присутствует; внутренние ссылки, якоря и подключённые файлы доступны. Ошибок после исправлений нет. Автотесты сборки и канонических перенаправлений проходят.
 
-Открытый вопрос: https://www.resetdigital.agency/ возвращает 404 на уровне инфраструктуры. Редирект www уже есть в приложении, но запрос до него не доходит. Нужна привязка домена в Railway либо перенаправление www на основной домен на уровне DNS-провайдера/CDN. Требуется авторизация владельца. Основной адрес без www работает.
+После публикации выполнен HTTP-обход 81 адреса. Все 73 адреса нового sitemap отвечают 200, совпадают со своими canonical и не содержат noindex. Проверены переходы /ru и /ru/index.html на /ru/, запрет индексации контрольного черновика и настоящий ответ 404 для отсутствующей страницы. Результаты сохранены в http-after.json.
+
+Адрес www исправлен на уровне Cloudflare. Активное правило «RESET www to canonical HTTPS» с условием http.host eq "www.resetdigital.agency" возвращает 301 на concat("https://resetdigital.agency", http.request.uri.path), Preserve query string включён. Проверка 22 сентября в 15:04 UTC подтверждает 301 как по HTTP, так и по HTTPS; путь и параметры сохранены. Основной домен правило не затрагивает.
+
+Дополнительно www.resetdigital.agency добавлен в Railway на порт 8080. CNAME www в Cloudflare указывает на pntw2sno.up.railway.app с сохранением проксирования; TXT _railway-verify.www сохранён и виден в публичном DNS. Railway при последней проверке ожидал подтверждения DNS, но рабочий редирект теперь выполняется Cloudflare до обращения к Railway и от этого ожидания не зависит.
+
+Контрольные ответы:
+- https://www.resetdigital.agency/ru/materials/development/cms-ili-custom/?seo_check=4 → 301 → https://resetdigital.agency/ru/materials/development/cms-ili-custom/?seo_check=4
+- http://www.resetdigital.agency/ru/?utm_source=check → 301 → https://resetdigital.agency/ru/?utm_source=check
+
+http-after.json содержит обход перед исправлением www; его ответ 404 в этом снимке отражает прежнее состояние. Проверка www после исправления приведена выше. Опубликованный sitemap.xml побайтово совпадает с подготовленной версией из 73 URL.
 
 ## Search Console
 
