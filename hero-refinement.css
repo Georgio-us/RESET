@@ -15,3 +15,12 @@
 .home-dev .dev-feature-tabs button{width:7px;height:7px;padding:0;border:1px solid #83a4b2;border-radius:50%;background:transparent;color:transparent;font-size:0;overflow:hidden}
 .home-dev .dev-feature-tabs button[aria-pressed=true]{border-color:#c9e6e9;background:#c9e6e9}
 .home-dev .dev-feature-tabs button:hover{background:#83a4b2}
+
+/* Ten selected projects share one legible cover system. */
+.hero-case-art-project{display:grid;place-items:center;padding:28px;background:#d9e6e7;box-sizing:border-box}
+.hero-case-art-project:before,.hero-case-art-project:after{content:'';position:absolute;left:50%;top:50%;translate:-50% -50%;width:72%;aspect-ratio:1;border:1px solid #75a2af;border-radius:50%;opacity:.55}
+.hero-case-art-project:after{width:52%;border-style:dashed;opacity:.36}
+.hero-case-art-project>img{z-index:1;width:100%;height:100%;object-fit:contain;filter:drop-shadow(7px 9px 0 #496b7930)}
+.hero-case-art-project.is-meta>img,.hero-case-art-project.is-google>img,.hero-case-art-project.is-site>img,.hero-case-art-project.is-product>img{max-width:90%;max-height:90%}
+.hero-case-art-project.is-ai>img,.hero-case-art-project.is-widget>img{width:auto;height:108%;max-width:55%;border:5px solid #0b2538;border-radius:22px;box-shadow:9px 10px 0 #668b9740;filter:none}
+.home-dev .dev-feature-tabs{max-width:210px;flex-wrap:wrap;row-gap:7px}
