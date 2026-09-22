@@ -25,3 +25,5 @@ for(const locale of Object.keys(texts)){
  }
 }
 console.log('Journal built: 3 sections, 9 topics per locale.');
+
+await import('./prepare-seo-release.mjs');

@@ -1,4 +1,5 @@
 import { createServer } from 'node:http';
+import { canonicalRedirect } from './seo-routing.js';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -222,6 +223,14 @@ const serveStatic = async (request, response) => {
     response.writeHead(400).end('Bad request');
     return;
   }
+
+  const canonicalPath = await canonicalRedirect(pathname, root);
+  if (canonicalPath) {
+    response.writeHead(301, { Location: canonicalPath + url.search, 'Cache-Control': 'no-store' });
+    response.end();
+    return;
+  }
+  if (/^\/(docs|content|templates|scripts)\//.test(pathname)) response.setHeader('X-Robots-Tag', 'noindex, follow');
 
   // `/uk/` is the ISO language-code URL for Ukrainian. `/ua/` remains a
   // friendly alias for visitors who use the country abbreviation instead.
