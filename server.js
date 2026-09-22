@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { normalizeLead, contactLines } from './lead-data.js';
 
 const root = resolve(fileURLToPath(new URL('.', import.meta.url)));
 const port = Number(process.env.PORT || 3000);
@@ -46,6 +47,7 @@ gtag('config', '${analyticsMeasurementId}', { send_page_view: false, anonymize_i
 </script><script async src="https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}"></script><script src="/arrow-icons.js" defer></script></head>`);
 
 const sourceLabels = {
+  'article-ai-development': 'Статья: стоимость разработки с AI',
   hero: 'Первый экран — «Разобрать задачу»',
   methodology: 'Методика RESET — «Разобрать мою задачу»',
   'case-navigator': 'Навигатор ситуации — «Разобрать мою ситуацию»',
@@ -122,8 +124,7 @@ const createTelegramMessage = (lead, request) => {
     '👤 Клиент',
   ];
 
-  if (lead.name) lines.push(`Имя: ${lead.name}`);
-  lines.push(`${method}: ${lead.contact}`);
+  lines.push(...contactLines(lead));
 
   if (lead.message) {
     lines.push('', '💬 Комментарий:', lead.message);
@@ -178,17 +179,7 @@ const handleLead = async (request, response) => {
 
   try {
     const rawLead = await readJson(request);
-    const lead = {
-      source: value(rawLead.source, 60),
-      locale: value(rawLead.locale, 4).toLowerCase(),
-      name: value(rawLead.name, 120),
-      contact: value(rawLead.contact, 180),
-      contactMethod: rawLead.contactMethod === 'email' ? 'email' : 'phone',
-      countryCode: value(rawLead.countryCode, 10).toLowerCase(),
-      message: value(rawLead.message, 2_000),
-      page: value(rawLead.page, 1_000),
-      client: rawLead.client && typeof rawLead.client === 'object' ? rawLead.client : {},
-    };
+    const lead = normalizeLead(rawLead);
 
     if (!lead.contact) {
       replyJson(response, 400, { ok: false, message: 'Укажите контакт для связи.' });
