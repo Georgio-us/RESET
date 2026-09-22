@@ -165,3 +165,7 @@
 .editorial .ed-draft { display:inline-block; padding:8px 12px; border:1px solid currentColor; font-size:13px; }
 .editorial .ed-note-box { padding:24px; border-left:3px solid var(--color-accent); background:var(--color-white); }
 .editorial .ed-cover-grid:not(:has(>figure)) { grid-template-columns:1fr; }
+
+.editorial .ed-table-wrap { max-width:100%; overflow-x:auto; overscroll-behavior-x:contain; }
+.editorial .ed-table-wrap:focus-visible { outline:2px solid var(--color-accent); outline-offset:4px; }
+.editorial .ed-table-wrap .ed-table:has(th:nth-child(4)) { min-width:680px; }

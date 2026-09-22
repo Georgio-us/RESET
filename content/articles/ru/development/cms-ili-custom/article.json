@@ -2,15 +2,20 @@
   "locale": "ru",
   "category": "development",
   "slug": "cms-ili-custom",
-  "status": "draft",
+  "status": "published",
   "title": "Сайт на конструкторе, WordPress или индивидуальная разработка: что выбрать",
   "seoTitle": "Сайт на конструкторе, WordPress или индивидуальная разработка: что выбрать | RESET",
-  "description": "Сайт на конструкторе, WordPress или индивидуальная разработка: что выбрать. Стоимость, выбор формата и технологии создания сайта.",
-  "deck": "Сайт на конструкторе, WordPress или индивидуальная разработка: что выбрать. Стоимость, выбор формата и технологии создания сайта.",
-  "datePublished": null,
+  "description": "Сравниваем конструкторы, WordPress и индивидуальную разработку: CMS, SEO, интеграции, стоимость запуска и поддержки. Подход RESET к выбору платформы.",
+  "deck": "Что учесть до разработки: управление контентом, ограничения платформы, интеграции и расходы после запуска. Сравнение вариантов на основе практики RESET.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "Конструктор, CMS или самописная разработка"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Ноутбук с аналитикой и схема процессов на рабочем столе",
+    "caption": "Редакционная иллюстрация."
   },
-  "related": []
+  "related": [
+    "ru/development/landing-ili-sait",
+    "ru/development/stoimost-razrabotki-v-eru-ai",
+    "ru/marketing/seo-nedvizhimost-2026"
+  ]
 }
