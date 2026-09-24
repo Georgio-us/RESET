@@ -15,6 +15,8 @@ const maxBodySize = 20_000;
 const analyticsMeasurementId = 'G-TW7GHVZLVD';
 
 const mimeTypes = {
+  '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
   '.html': 'text/html; charset=utf-8',
   '.ico': 'image/x-icon',

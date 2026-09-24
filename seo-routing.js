@@ -5,6 +5,7 @@ export async function canonicalRedirect(pathname,root){
  let target=pathname;
  if(target==='/index.html')return '/ru/';
  if(/^\/(materials|cases)\//.test(target))target='/ru'+target;
+ target=target.replace(/^(\/(?:ru|uk|en|es)\/cases\/)ai-sales-assistant\.html$/, '$1telegram-ai-crm.html');
  if(target.endsWith('/index.html'))target=target.slice(0,-10);
  if(/^\/(ru|uk|en|es)(?:\/|$)/.test(target)&&!target.endsWith('/')&&!target.split('/').at(-1).includes('.'))target+='/';
  if(target===pathname)return null;

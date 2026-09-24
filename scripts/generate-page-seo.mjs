@@ -1,3 +1,4 @@
+import {caseBreadcrumb} from '../seo-metadata.js';
 import { readFile, readdir, writeFile } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
@@ -20,7 +21,7 @@ for (const locale of locales) {
     const route = relative(localeRoot, file).replace(/\\/g, '/');
     if (route === '404.html') continue;
     const urlPath = route === 'index.html' ? `/${locale}/` : `/${locale}/${route}`;
-    const url = `${origin}${urlPath}`;
+    const url = `${origin}${urlPath}`.replace(/\/index\.html$/, '/');
     let html = await readFile(file, 'utf8');
   if (html.includes('data-article-template=')) continue;
     const h1 = text(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]) || 'RESET';
@@ -31,10 +32,10 @@ for (const locale of locales) {
       || html.match(/<img[^>]+src="([^"]+)"/i)?.[1];
     const image = existingImage ? new URL(existingImage, url).href : defaultImage;
     const pageType = route.startsWith('materials/') ? (route.split('/').length > 3 ? 'article' : 'website') : 'website';
-    const breadcrumb = route === 'index.html' ? [] : [
+    const breadcrumb = route.startsWith('cases/') ? caseBreadcrumb(locale,url,h1).itemListElement : route === 'index.html' ? [] : [
       { '@type': 'ListItem', position: 1, name: 'RESET', item: `${origin}/${locale}/` },
       ...route.split('/').filter((segment) => segment !== 'index.html').map((segment, index, parts) => ({
-        '@type': 'ListItem', position: index + 2, name: segment.replace(/-/g, ' '), item: `${origin}/${locale}/${parts.slice(0, index + 1).join('/')}/` })),
+        '@type': 'ListItem', position: index + 2, name: segment.replace(/-/g, ' '), item: `${origin}/${locale}/${parts.slice(0, index + 1).join('/')}${segment.endsWith('.html') ? '' : '/'}` })),
     ];
     const schema = route === 'index.html'
       ? { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'RESET', url, description, image, areaServed: ['Ukraine', 'Spain', 'Europe'], availableLanguage: ['ru', 'uk', 'en', 'es'] }

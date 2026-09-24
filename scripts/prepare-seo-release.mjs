@@ -24,4 +24,6 @@ for(const prefix of ['', 'ru/','uk/','en/','es/']){
  }
 }
 console.log(`Indexing policy: ${count} pages updated.`);
+await import('./refresh-case-seo.mjs');
 await import('./generate-sitemap.mjs');
+await import('./generate-html-sitemap.mjs');
