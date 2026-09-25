@@ -73,3 +73,13 @@ test('Google evidence stays paired and interface screenshots keep their device f
     assert.equal((crm.match(/class="browser-frame"/g) || []).length, 5);
   }
 });
+
+test('page asset versions survive shared rendering and repeated builds', () => {
+ const input='<html><head><link rel="stylesheet" href="/widget-case.css?v=20260925-pricing"><script src="/local.js?version=new" defer></script><script src="/unversioned.js" defer></script></head><body data-reset-ui></body></html>';
+ const options={path:'/ru/cases/via-ai-widget.html',exists:()=>true};
+ const output=renderSiteUI(input,options);
+ assert.ok(output.includes('/widget-case.css?v=20260925-pricing'));
+ assert.ok(output.includes('/local.js?version=new'));
+ assert.ok(output.includes('/unversioned.js?v=20260922-ui7'));
+ assert.equal(renderSiteUI(output,options),output);
+});

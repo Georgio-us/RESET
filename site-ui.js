@@ -4,7 +4,8 @@ const escapeAttribute = value => String(value).replace(/[&<>"']/g, char => ({'&'
 export const arrow = '<svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 19 19 5M5 5h14v14"/></svg>';
 export const socialLinks = { telegram: 'https://t.me/Georgio_P', instagram: null, threads: null };
 const brand = (locale) => `<a class="reset-brand" href="/${locale}/" aria-label="RESET">RE<span>SET</span></a>`;
-const versionAssets = html => html.replace(/(<(?:link|script)\b[^>]*(?:href|src)=")([^"?]+\.(?:css|js))(?:\?[^\"]*)?("[^>]*>)/g, (match, before, url, after) => /^(https?:)?\/\//.test(url) ? match : `${before}${url}?v=20260922-ui7${after}`);
+// Preserve explicit asset versions so a page update can invalidate cached CSS/JS.
+const versionAssets = html => html.replace(/(<(?:link|script)\b[^>]*(?:href|src)=")([^"?]+\.(?:css|js))(\?[^" ]*)?("[^>]*>)/g, (match, before, url, query, after) => /^(https?:)?\/\//.test(url) ? match : `${before}${url}${query || '?v=20260922-ui7'}${after}`);
 
 export function contactForm(locale, source) {
   const c = uiCopy[locale];
