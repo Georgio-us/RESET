@@ -1,0 +1,406 @@
+{
+  "labels": {
+    "services": "Services",
+    "home": "Home",
+    "eyebrow": "RESET / REAL ESTATE SERVICES",
+    "includes": "What the work includes",
+    "fit": "When it fits",
+    "process": "How we work",
+    "cases": "Related RESET projects",
+    "caseLink": "View case study",
+    "cost": "Pricing and project scope",
+    "faq": "Before we start",
+    "contact": "Let’s discuss your project",
+    "contactText": "Tell us about your project and current situation. We will clarify the inputs, agree on the scope and prepare a proposal.",
+    "cta": "Discuss your project",
+    "estimate": "Request an estimate",
+    "other": "Other services",
+    "details": "Explore the service",
+    "steps": "From brief to launch",
+    "scope": "Scope agreed before work starts",
+    "indexTitle": "Services for real estate",
+    "indexIntro": "Advertising, websites, CRM, SEO and AI: explore the scope, delivery process and related projects for each service."
+  },
+  "services": [
+    {
+      "slug": "meta-ads",
+      "cases": [
+        "an-factor",
+        "shepit-meta-ads",
+        "delmar-meta-ads"
+      ],
+      "name": "Meta Ads",
+      "title": "Real estate advertising on Facebook and Instagram",
+      "intro": "We develop offers, creative assets and campaigns for agencies and developers. We connect campaign delivery with lead handling to assess both volume and quality.",
+      "fit": "For individual properties, residential developments and agency offers. Best suited to projects with clear purchase terms, available property materials and a team ready to handle enquiries.",
+      "includes": [
+        [
+          "Offer and audiences",
+          "We review the property, purchase terms, location and reasons to choose it, then define offers to test."
+        ],
+        [
+          "Creative assets and landing pages",
+          "We prepare messages and visuals, choose a website or lead form, and check the path to an enquiry."
+        ],
+        [
+          "Campaigns and measurement",
+          "We configure campaigns, events and lead delivery within the agreed permissions and integrations."
+        ],
+        [
+          "Management and optimisation",
+          "We compare campaign combinations, allocate budget and refine ads using sales team feedback."
+        ]
+      ],
+      "steps": [
+        [
+          "Review the starting point",
+          "Properties, previous campaigns, budget, website and lead handling."
+        ],
+        [
+          "Agree on the launch plan",
+          "Offers, creative assets, geography, test budget and evaluation criteria."
+        ],
+        [
+          "Launch the test",
+          "Check lead delivery and collect initial results."
+        ],
+        [
+          "Refine the campaigns",
+          "Review lead cost and quality, then agree on the next steps."
+        ]
+      ],
+      "price": "Pricing depends on the number of properties and markets, creative production and the management scope. Launch preparation and ongoing management are itemised separately in the proposal.",
+      "priceNote": "Ad spend is separate from our fees. Photography and video production are scoped separately.",
+      "faq": [
+        [
+          "Can we advertise without a website?",
+          "Yes, where a lead form suits the task. Before launch we agree where enquiries go and who responds."
+        ],
+        [
+          "Do you guarantee a fixed cost per lead?",
+          "No. Cost depends on the market, offer, competition and budget. Case study results describe previous work, not a promise to repeat that price."
+        ],
+        [
+          "What do you need from us?",
+          "Current properties and prices, purchase terms, photos or video, access to advertising assets and a person responsible for responding to enquiries."
+        ]
+      ]
+    },
+    {
+      "slug": "google-ads",
+      "cases": [
+        "shepit-google-ads",
+        "shepit-website"
+      ],
+      "name": "Google Ads",
+      "title": "Search advertising for real estate",
+      "intro": "We work with searches from people already looking for a property or service. We connect the search query, advertisement and landing page around a specific offer.",
+      "fit": "For projects with relevant search demand and a website where visitors can explore the offer and enquire. We assess demand, geography and landing page readiness before launch.",
+      "includes": [
+        [
+          "Demand and keywords",
+          "We research commercial queries, distinguish user intent and exclude irrelevant topics."
+        ],
+        [
+          "Campaign structure and ads",
+          "We group campaigns by offer and geography, and prepare ads and supporting assets."
+        ],
+        [
+          "Landing pages and events",
+          "We check page relevance, forms and enquiry measurement. Necessary website changes are scoped separately."
+        ],
+        [
+          "Search optimisation",
+          "We review search terms, costs and conversions, then adjust negative keywords, bids and budget allocation."
+        ]
+      ],
+      "steps": [
+        [
+          "Assess demand",
+          "Review the offer, geography, search queries and current website."
+        ],
+        [
+          "Build the structure",
+          "Agree on campaigns, landing pages and the test budget."
+        ],
+        [
+          "Check and launch",
+          "Test conversion events and forms, then activate the campaigns."
+        ],
+        [
+          "Work with the results",
+          "Assess enquiries, exclude irrelevant queries and refine settings."
+        ]
+      ],
+      "price": "Pricing depends on the number of offers, locations, languages and the state of measurement. Setup, management and website changes are itemised separately.",
+      "priceNote": "Google Ads spend is paid separately. New landing pages are not automatically included in campaign management.",
+      "faq": [
+        [
+          "Do we need a website?",
+          "Search ads need a suitable destination. We will review the existing page and identify whether changes are needed."
+        ],
+        [
+          "How do we assess performance?",
+          "Through agreed enquiry events and lead quality. Clicks and CTR help diagnose campaigns; they do not replace enquiries and sales."
+        ],
+        [
+          "What budget do we need?",
+          "We estimate it after reviewing demand, geography and offers. We do not prescribe a universal amount without those inputs."
+        ]
+      ]
+    },
+    {
+      "slug": "website-development",
+      "cases": [
+        "shepit-website",
+        "nivellux"
+      ],
+      "name": "Website development",
+      "title": "Websites for real estate agencies and developments",
+      "intro": "We create landing pages, company websites and property catalogues. We design the journey from discovering an offer to choosing a property and making an enquiry.",
+      "fit": "For a new project, an advertising launch or a website that no longer supports the product and team. We choose the format around content, traffic sources and how listings are updated.",
+      "includes": [
+        [
+          "Structure and content",
+          "We define audiences, pages, materials and the main actions visitors need to take."
+        ],
+        [
+          "Design across devices",
+          "We develop the visual presentation and interface for mobile and desktop within your brand."
+        ],
+        [
+          "Development and connections",
+          "We build pages, forms and agreed integrations with property databases, CRM or other services."
+        ],
+        [
+          "Publication readiness",
+          "We check forms, links and mobile layouts, and configure basic metadata, sitemap and agreed analytics events."
+        ]
+      ],
+      "steps": [
+        [
+          "Choose the format",
+          "Landing page, multi-page website or catalogue, based on the task."
+        ],
+        [
+          "Agree on structure and design",
+          "Define pages, materials, visitor journeys and visual direction."
+        ],
+        [
+          "Develop",
+          "Build the interface and connect the agreed features."
+        ],
+        [
+          "Check and hand over",
+          "Publish the website, verify enquiry handling and explain how to update content."
+        ]
+      ],
+      "price": "Cost is determined by page types and count, languages, catalogue features, content management and integrations. We prepare an estimate after agreeing on structure and materials.",
+      "priceNote": "Domain, hosting and paid services are listed separately. Post-launch support and content production are agreed as part of the scope.",
+      "faq": [
+        [
+          "Can we use our existing website?",
+          "Yes. We first assess what can be kept and which changes would solve the task without rebuilding everything."
+        ],
+        [
+          "Who provides copy and photography?",
+          "At the start we agree which materials your team supplies and what needs to be produced within the project."
+        ],
+        [
+          "Is SEO included in development?",
+          "Technical preparation of the agreed pages is included. Ongoing SEO, keyword expansion and publishing content are separate work."
+        ]
+      ]
+    },
+    {
+      "slug": "crm-automation",
+      "cases": [
+        "delmar-custom-crm",
+        "dominanta-spain"
+      ],
+      "name": "CRM and automation",
+      "title": "CRM and lead automation for real estate",
+      "intro": "We connect enquiries, properties and managers’ workflows. We configure an existing CRM or design a custom system around your agency’s process.",
+      "fit": "When enquiries arrive through different channels, contact history is lost or managers lack a clear view of deals. We start with the team’s process, then choose the tools.",
+      "includes": [
+        [
+          "Process map",
+          "We review lead sources, roles, deal stages and required follow-up actions."
+        ],
+        [
+          "Pipeline and data",
+          "We configure stages, fields, client records and property relationships in the chosen system."
+        ],
+        [
+          "Lead delivery",
+          "We connect agreed forms and sources, and check notifications, assignment and context retention."
+        ],
+        [
+          "Team launch",
+          "We test typical workflows, explain how the system works and set up agreed reports."
+        ]
+      ],
+      "steps": [
+        [
+          "Describe the current workflow",
+          "Identify channels, data and places where enquiries are lost."
+        ],
+        [
+          "Choose the solution",
+          "Compare ready-made CRM capabilities with custom development requirements."
+        ],
+        [
+          "Configure and connect",
+          "Build the pipeline, roles, integrations and agreed data migration."
+        ],
+        [
+          "Test the workflows",
+          "Follow an enquiry through to the manager’s next action and onboard the team."
+        ]
+      ],
+      "price": "Pricing depends on the CRM, integrations, data migration, permissions and custom development. We define the implementation scope before work starts.",
+      "priceNote": "CRM licences, telephony and external services are paid separately. We discuss their need and costs when choosing the solution.",
+      "faq": [
+        [
+          "Do we have to replace our CRM?",
+          "No. If the current system can meet the requirements, we work with its settings and integrations."
+        ],
+        [
+          "Can we migrate our existing database?",
+          "After checking structure and quality, we define what to migrate, how fields map and how to verify the result."
+        ],
+        [
+          "Will automation replace managers?",
+          "It helps transfer data, prompt actions and reduce manual work. Your team remains responsible for conversations and deals."
+        ]
+      ]
+    },
+    {
+      "slug": "seo-analytics",
+      "cases": [
+        "estyle-spain",
+        "shepit-website"
+      ],
+      "name": "SEO and analytics",
+      "title": "SEO and analytics for real estate websites",
+      "intro": "We help search engines understand pages and teams understand enquiry sources. We review the technical foundation, site structure and performance measurement.",
+      "fit": "For websites with crawling or indexing issues, unclear structure or incomplete enquiry data. We define scope after reviewing the website and available reports.",
+      "includes": [
+        [
+          "Technical audit",
+          "We check server responses, canonical URLs, robots, sitemap, duplicates and access to important pages."
+        ],
+        [
+          "Structure and content",
+          "We map search queries to services and properties, and plan pages and internal links."
+        ],
+        [
+          "Measurement setup",
+          "We check or configure GA4, GTM, Search Console and agreed enquiry events."
+        ],
+        [
+          "Improvement plan",
+          "We prioritise changes, agree on implementation and verify the results."
+        ]
+      ],
+      "steps": [
+        [
+          "Collect the inputs",
+          "Website, goals, target locations and analytics access."
+        ],
+        [
+          "Run the review",
+          "Separate technical errors from structure and content tasks."
+        ],
+        [
+          "Implement agreed changes",
+          "Resolve selected issues and configure measurement."
+        ],
+        [
+          "Review the trend",
+          "Check page processing, search traffic and enquiries over comparable periods."
+        ]
+      ],
+      "price": "We can start with a standalone audit or agree on implementation and ongoing work. Pricing depends on site size, languages, technical condition and new page requirements.",
+      "priceNote": "Article production, page development and ongoing work are itemised separately. Indexing times and search rankings are not guaranteed.",
+      "faq": [
+        [
+          "When will the website appear in Google?",
+          "We can remove technical barriers and submit pages for processing. Search engines decide whether and when to index them."
+        ],
+        [
+          "Is installing analytics enough?",
+          "No. We need to define useful events, verify their delivery and distinguish visits from actual enquiries."
+        ],
+        [
+          "Do you guarantee top rankings?",
+          "No. We agree on concrete work and measurement, but do not promise positions controlled by search engines and affected by competition."
+        ]
+      ]
+    },
+    {
+      "slug": "ai-automation",
+      "cases": [
+        "via-ai-widget",
+        "telegram-ai-crm",
+        "delmar-custom-crm"
+      ],
+      "name": "AI and automation",
+      "title": "AI tools for real estate workflows",
+      "intro": "We connect AI to specific tasks: understand a client’s request, find properties in your database and pass the enquiry to a manager. We use existing products or agree on a custom workflow.",
+      "fit": "For agencies with an up-to-date property database and recurring enquiries that follow a clear process. We assess data and automation boundaries before implementation.",
+      "includes": [
+        [
+          "Workflow and boundaries",
+          "We define what the system answers and when it hands the conversation to a person."
+        ],
+        [
+          "Database connection",
+          "We check the source, fields and search rules, and agree on data updates."
+        ],
+        [
+          "Interface and lead delivery",
+          "We choose a website widget or Telegram Mini App and configure branding and enquiry routing."
+        ],
+        [
+          "Response testing",
+          "We test matching and contact delivery on typical requests, including how missing data is handled."
+        ]
+      ],
+      "steps": [
+        [
+          "Choose the task",
+          "Define the channel, data and useful outcome of a conversation."
+        ],
+        [
+          "Agree on the product",
+          "An existing VIA package or a custom workflow."
+        ],
+        [
+          "Connect and test",
+          "Configure the database, interface and lead delivery."
+        ],
+        [
+          "Launch",
+          "Review initial conversations and the agreed scope of improvements."
+        ]
+      ],
+      "price": "Existing product packages are described in the case studies: VIA AI is $400 for Basic and $800 for Extended; VIA Properties starts at $200, or $500 with an admin panel. Custom solutions are estimated by workflow and integrations.",
+      "priceNote": "For VIA AI, these are one-time setup fees. AI and voice service usage is billed separately. See each product page for the package scope.",
+      "faq": [
+        [
+          "Does AI invent properties?",
+          "Property matching uses the connected database. During setup we check how the system handles missing information and no matching results."
+        ],
+        [
+          "Can it connect to our database?",
+          "We first check the format and access method. A supported source and a custom integration require different amounts of work."
+        ],
+        [
+          "Where can we see the product?",
+          "The VIA AI and VIA Properties case studies show interfaces and workflows. Send an enquiry to discuss a demonstration and setup."
+        ]
+      ]
+    }
+  ]
+}

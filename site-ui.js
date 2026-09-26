@@ -44,13 +44,14 @@ export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => t
   if (/presentation/.test(path)) return versionAssets(html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>'));
   const c = uiCopy[locale] || uiCopy.ru;
   const home = `/${locale}/`;
-  const nav = `<a href="${home}#system">${c.how}</a><a href="${home}#case-index">${c.cases}</a><a href="${home}#services">${c.services}</a><a href="${home}materials/">Journal</a>`;
+  const servicesUrl = ['ru','uk','en'].includes(locale) && exists(`${home}services/`) ? `${home}services/` : `${home}#services`;
+  const nav = `<a href="${home}#system">${c.how}</a><a href="${home}#case-index">${c.cases}</a><a href="${servicesUrl}">${c.services}</a><a href="${home}materials/">Journal</a>`;
   const relative = path.replace(/^\/(ru|uk|en|es)(?=\/|$)/, '').replace(/index\.html$/, '') || '/';
   const languages = ['ru', 'uk', 'en', 'es'].map(lang => {
     const target = `/${lang}${relative}`;
     const available = exists(target) || lang === locale;
     const destination = exists(target) ? target : lang === locale ? path : null;
-    const fallback = relative.startsWith('/materials/') ? `/${lang}/materials/` : relative.startsWith('/cases/') ? `/${lang}/#case-index` : `/${lang}/`;
+    const fallback = relative.startsWith('/services/') ? (exists(`/${lang}/services/`) ? `/${lang}/services/` : `/${lang}/#services`) : relative.startsWith('/materials/') ? `/${lang}/materials/` : relative.startsWith('/cases/') ? `/${lang}/#case-index` : `/${lang}/`;
     return `<a href="${escapeAttribute(destination || fallback)}" lang="${lang}" hreflang="${lang}"${lang === locale ? ' aria-current="page"' : ''}${available ? '' : ` title="${c.unavailable}"`}>${lang === 'uk' ? 'UA' : lang.toUpperCase()}</a>`;
   }).join('');
   const presentation = ['ru', 'uk'].includes(locale) ? `<a href="/presentation${locale === 'uk' ? '-uk' : ''}.html">${c.presentation}${arrow}</a>` : '';

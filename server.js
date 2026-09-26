@@ -56,6 +56,13 @@ const sourceLabels = {
   hero: 'Первый экран — «Разобрать задачу»',
   methodology: 'Методика RESET — «Разобрать мою задачу»',
   'case-navigator': 'Навигатор ситуации — «Разобрать мою ситуацию»',
+  'services-index': 'Раздел услуг',
+  'service-meta-ads': 'Услуга: Meta Ads',
+  'service-google-ads': 'Услуга: Google Ads',
+  'service-website-development': 'Услуга: разработка сайтов',
+  'service-crm-automation': 'Услуга: CRM',
+  'service-seo-analytics': 'Услуга: SEO и аналитика',
+  'service-ai-automation': 'Услуга: AI',
   services: 'Услуги — «Подобрать инструмент»',
   'open-form': 'Открытая форма — диагностика',
 };

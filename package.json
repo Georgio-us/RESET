@@ -11,7 +11,8 @@
     "test": "node --test scripts/*.test.mjs",
     "build:journal": "node scripts/build-journal.mjs",
     "build:seo": "node scripts/prepare-seo-release.mjs",
-    "build:ui": "node scripts/build-shared-ui.mjs"
+    "build:ui": "node scripts/build-shared-ui.mjs",
+    "build:services": "node scripts/build-services.mjs"
   },
   "engines": {
     "node": ">=20"
