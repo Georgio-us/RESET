@@ -2,15 +2,17 @@
   "locale": "uk",
   "category": "development",
   "slug": "stoimost-razrabotki-v-eru-ai",
-  "status": "draft",
+  "status": "published",
   "title": "Скільки коштує створення сайту з AI: ціни та склад робіт",
   "seoTitle": "Скільки коштує створення сайту з AI: ціни та склад робіт | RESET",
-  "description": "Скільки коштує створення сайту з AI: ціни та склад робіт. Вартість, вибір формату та технології створення сайту.",
-  "deck": "Скільки коштує створення сайту з AI: ціни та склад робіт. Вартість, вибір формату та технології створення сайту.",
-  "datePublished": null,
+  "description": "Приклади RESET: NIVELLUX $600, SHEPIT HOUSE $1000, Estate CRM DELMAR $2000. Склад робіт і вплив AI на бюджет.",
+  "deck": "Ціни, етапи та підхід RESET. Що стало доступніше й із чого складається бюджет готового продукту.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-architecture-valencia.png",
-    "alt": "Скільки коштує розробка в еру AI"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Стіл із ноутбуком, аналітикою та схемою процесів",
+    "caption": "Від завдання бізнесу до продукту. Редакційна ілюстрація."
   },
-  "related": []
+  "related": [],
+  "dateModified": "2026-09-27"
 }

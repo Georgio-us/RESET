@@ -2,15 +2,21 @@
   "locale": "es",
   "category": "development",
   "slug": "cms-ili-custom",
-  "status": "draft",
+  "status": "published",
   "title": "Constructor web, WordPress o desarrollo a medida: qué elegir",
   "seoTitle": "Constructor web, WordPress o desarrollo a medida: qué elegir | RESET",
-  "description": "Constructor web, WordPress o desarrollo a medida: qué elegir. Costes, formatos y tecnologías para crear una web.",
-  "deck": "Constructor web, WordPress o desarrollo a medida: qué elegir. Costes, formatos y tecnologías para crear una web.",
-  "datePublished": null,
+  "description": "Comparamos constructores, WordPress y desarrollo propio: CMS, SEO, integraciones, lanzamiento y soporte. Cómo elige RESET una plataforma.",
+  "deck": "Qué valorar antes de desarrollar: contenido, límites, integraciones y gastos posteriores. Comparación basada en proyectos de RESET.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "Constructor, CMS o desarrollo personalizado"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Un portátil con analítica y un esquema de procesos sobre una mesa",
+    "caption": "Ilustración editorial."
   },
-  "related": []
+  "related": [
+    "es/development/landing-ili-sait",
+    "es/development/stoimost-razrabotki-v-eru-ai",
+    "es/marketing/seo-nedvizhimost-2026"
+  ],
+  "dateModified": "2026-09-27"
 }

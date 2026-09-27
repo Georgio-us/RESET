@@ -2,15 +2,21 @@
   "locale": "uk",
   "category": "development",
   "slug": "cms-ili-custom",
-  "status": "draft",
-  "title": "Конструктор, WordPress чи індивідуальна розробка сайту: що обрати",
-  "seoTitle": "Конструктор, WordPress чи індивідуальна розробка сайту: що обрати | RESET",
-  "description": "Конструктор, WordPress чи індивідуальна розробка сайту: що обрати. Вартість, вибір формату та технології створення сайту.",
-  "deck": "Конструктор, WordPress чи індивідуальна розробка сайту: що обрати. Вартість, вибір формату та технології створення сайту.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Конструктор, WordPress чи індивідуальна розробка: що вибрати",
+  "seoTitle": "Конструктор, WordPress чи індивідуальна розробка: що вибрати | RESET",
+  "description": "Порівнюємо конструктори, WordPress та індивідуальну розробку: CMS, SEO, інтеграції, запуск і підтримку. Підхід RESET до вибору платформи.",
+  "deck": "Що врахувати до розробки: контент, обмеження платформи, інтеграції та витрати після запуску. Порівняння на основі практики RESET.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "Конструктор, CMS або самописна розробка"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Ноутбук з аналітикою та схема процесів на робочому столі",
+    "caption": "Редакційна ілюстрація."
   },
-  "related": []
+  "related": [
+    "uk/development/landing-ili-sait",
+    "uk/development/stoimost-razrabotki-v-eru-ai",
+    "uk/marketing/seo-nedvizhimost-2026"
+  ],
+  "dateModified": "2026-09-27"
 }

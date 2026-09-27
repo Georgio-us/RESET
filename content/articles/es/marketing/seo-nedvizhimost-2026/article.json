@@ -2,9 +2,16 @@
   "locale": "es",
   "category": "marketing",
   "slug": "seo-nedvizhimost-2026",
-  "status": "draft",
-  "title": "SEO para webs inmobiliarias: estructura y etapas de posicionamiento",
-  "seoTitle": "SEO para webs inmobiliarias: estructura y etapas de posicionamiento | RESET",
-  "description": "SEO para webs inmobiliarias: estructura y etapas de posicionamiento. Google Ads, Facebook, Instagram y posicionamiento de webs inmobiliarias.",
-  "deck": "SEO para webs inmobiliarias: estructura y etapas de posicionamiento. Google Ads, Facebook, Instagram y posicionamiento de webs inmobiliarias."
+  "status": "published",
+  "title": "SEO para webs inmobiliarias: estructura y etapas del posicionamiento",
+  "seoTitle": "SEO para webs inmobiliarias: estructura y etapas del posicionamiento | RESET",
+  "description": "Cómo captar tráfico orgánico inmobiliario en 2026: demanda, estructura web y estrategia SEO.",
+  "deck": "Cómo captar tráfico orgánico inmobiliario en 2026: demanda, estructura web y estrategia SEO.",
+  "datePublished": null,
+  "hero": {
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "SEO inmobiliario en 2026"
+  },
+  "related": [],
+  "dateModified": "2026-09-27"
 }

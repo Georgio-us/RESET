@@ -2,15 +2,133 @@
   "locale": "en",
   "category": "ai",
   "slug": "ai-v-nedvizhimosti",
-  "status": "draft",
-  "title": "Automating real estate enquiries: website, advertising and CRM",
-  "seoTitle": "Automating real estate enquiries: website, advertising and CRM | RESET",
-  "description": "Automating real estate enquiries: website, advertising and CRM. CRM selection, enquiry processing and AI assistants.",
-  "deck": "Automating real estate enquiries: website, advertising and CRM. CRM selection, enquiry processing and AI assistants.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Automating property enquiries: website, advertising and CRM",
+  "seoTitle": "Automating property enquiries: website, advertising and CRM | RESET",
+  "description": "Connect website and ad enquiries to a CRM: ownership, tasks, Telegram alerts and follow-up. RESET workflows and integration costs.",
+  "deck": "How an enquiry becomes a deal with an owner and a next action. Integrations, notifications, processing rules and marketing feedback from RESET projects.",
+  "datePublished": "2026-09-25",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "AI in real estate: where the effect appears"
+    "src": "/cases/estate_crm_assets/integrations.webp",
+    "alt": "Estate CRM integrations screen for Delmar",
+    "caption": "Estate CRM integration interface, developed by RESET."
   },
-  "related": []
+  "related": [
+    "en/ai/crm-dlya-agentstva-nedvizhimosti",
+    "en/marketing/meta-ads-nedvizhimost-2026",
+    "en/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "contactTitle": "Connect advertising, enquiries and agents",
+  "contactText": "Tell us where enquiries arrive, which CRM you use and what is still manual. We will identify integrations and estimate implementation.",
+  "blocks": {
+    "route": {
+      "type": "table",
+      "caption": "A new lead’s route in the Delmar workflow",
+      "columns": [
+        "Event",
+        "System action",
+        "Team outcome"
+      ],
+      "rows": [
+        [
+          "Enquiry received",
+          "Adds it to the CRM and notifies staff",
+          "The team sees the new lead"
+        ],
+        [
+          "Agent claims the enquiry",
+          "Assigns one owner",
+          "Clear responsibility"
+        ],
+        [
+          "Owner assigned",
+          "Creates a calendar task and sends a Telegram alert",
+          "The next step is prepared"
+        ],
+        [
+          "Action becomes due",
+          "Reminds the owner",
+          "The agent returns to the client"
+        ],
+        [
+          "Agent records the outcome",
+          "Updates the enquiry history",
+          "Management and marketing see progress"
+        ]
+      ]
+    },
+    "funnel": {
+      "type": "image",
+      "src": "/cases/estate_crm_assets/funnel.webp",
+      "alt": "Delmar Estate CRM pipeline with deal stages, sources and owners",
+      "width": 1470,
+      "height": 590,
+      "caption": "Delmar Estate CRM: source, owner and deal stage in one workspace."
+    },
+    "metrics": {
+      "type": "table",
+      "caption": "What to track alongside lead volume and cost",
+      "columns": [
+        "Metric",
+        "Question answered"
+      ],
+      "rows": [
+        [
+          "Arrival and first contact times",
+          "How quickly did the team respond?"
+        ],
+        [
+          "Owner and next task",
+          "Who is responsible and what is planned?"
+        ],
+        [
+          "Contact attempts and outcomes",
+          "Was the agreed procedure followed?"
+        ],
+        [
+          "Qualification and deal stage",
+          "Does the request fit and how is it progressing?"
+        ],
+        [
+          "Reason for rejection or postponement",
+          "Why did progress stop and is follow-up needed?"
+        ],
+        [
+          "Source and campaign",
+          "Which channels bring suitable clients?"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "How RESET prices automation",
+      "columns": [
+        "Situation",
+        "Cost and terms"
+      ],
+      "rows": [
+        [
+          "Meta advertising launch",
+          "Agreed automation is included in the advertising scope"
+        ],
+        [
+          "CRM implementation or development",
+          "Agreed workflows are included in the CRM estimate"
+        ],
+        [
+          "Connecting an existing third-party system",
+          "Around $200-500 for agreed scope after diagnosis"
+        ],
+        [
+          "New modules or complex logic",
+          "Quoted individually"
+        ],
+        [
+          "Paid external services",
+          "Licences, telephony and subscriptions are separate"
+        ]
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

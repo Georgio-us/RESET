@@ -2,15 +2,21 @@
   "locale": "en",
   "category": "development",
   "slug": "cms-ili-custom",
-  "status": "draft",
-  "title": "Website builder, WordPress or custom development: which to choose",
-  "seoTitle": "Website builder, WordPress or custom development: which to choose | RESET",
-  "description": "Website builder, WordPress or custom development: which to choose. Website costs, formats and development technologies.",
-  "deck": "Website builder, WordPress or custom development: which to choose. Website costs, formats and development technologies.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Website builder, WordPress or custom development: what to choose",
+  "seoTitle": "Website builder, WordPress or custom development: what to choose | RESET",
+  "description": "Compare builders, WordPress and custom development: CMS, SEO, integrations, launch and maintenance costs. How RESET chooses a platform.",
+  "deck": "What to consider before development: content management, platform limits, integrations and ongoing costs. A comparison based on RESET projects.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "Constructor, CMS or custom development"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "A laptop showing analytics and a workflow diagram on a desk",
+    "caption": "Editorial illustration."
   },
-  "related": []
+  "related": [
+    "en/development/landing-ili-sait",
+    "en/development/stoimost-razrabotki-v-eru-ai",
+    "en/marketing/seo-nedvizhimost-2026"
+  ],
+  "dateModified": "2026-09-27"
 }

@@ -2,9 +2,124 @@
   "locale": "es",
   "category": "ai",
   "slug": "crm-dlya-agentstva-nedvizhimosti",
-  "status": "draft",
-  "title": "CRM para inmobiliarias: solución existente o desarrollo a medida",
-  "seoTitle": "CRM para inmobiliarias: solución existente o desarrollo a medida | RESET",
-  "description": "CRM para inmobiliarias: solución existente o desarrollo a medida. Selección de CRM, gestión de consultas y asistentes de IA.",
-  "deck": "CRM para inmobiliarias: solución existente o desarrollo a medida. Selección de CRM, gestión de consultas y asistentes de IA."
+  "status": "published",
+  "title": "CRM inmobiliario: sistema comercial o desarrollo a medida",
+  "seoTitle": "CRM inmobiliario: sistema comercial o desarrollo a medida | RESET",
+  "description": "Kommo, RealtSoft y CRM propio: configuración desde $250, desarrollo desde $1500, soporte y casos RESET.",
+  "deck": "Cuándo basta un CRM comercial, cuándo elegir uno especializado y cuándo desarrollar. Funciones, costes y ejemplos Shepit House y Delmar.",
+  "datePublished": "2026-09-25",
+  "hero": {
+    "src": "/cases/estate_crm_assets/dashboard4.webp",
+    "alt": "Interfaz Estate CRM desarrollada por RESET para Delmar",
+    "caption": "Estate CRM para Delmar. Desarrollo a medida de RESET."
+  },
+  "related": [
+    "es/marketing/meta-ads-nedvizhimost-2026",
+    "es/development/stoimost-razrabotki-v-eru-ai",
+    "es/development/cms-ili-custom"
+  ],
+  "contactTitle": "Elige CRM según tu operativa",
+  "contactText": "Cuéntanos sobre equipo, fuentes de solicitudes y catálogo. Definiremos alcance y presupuesto.",
+  "blocks": {
+    "comparison": {
+      "type": "table",
+      "caption": "Tres enfoques de CRM inmobiliario",
+      "columns": [
+        "Criterio",
+        "Kommo",
+        "RealtSoft",
+        "CRM propio"
+      ],
+      "rows": [
+        [
+          "Uso principal",
+          "Consultas, operaciones y comunicación",
+          "Clientes e inmuebles",
+          "Procesos del equipo"
+        ],
+        [
+          "Base inmobiliaria",
+          "Requiere modelo y extensiones",
+          "Incluida en el producto especializado",
+          "Campos y relaciones a medida"
+        ],
+        [
+          "Selecciones",
+          "Revisar integraciones",
+          "Herramientas de selección y presentación",
+          "Formato e interfaz acordados"
+        ],
+        [
+          "Cambios",
+          "Ajustes, integraciones y plan",
+          "Capacidades de plataforma",
+          "Funciones acordadas"
+        ],
+        [
+          "Gastos recurrentes",
+          "Licencias, servicios y soporte",
+          "Plan y servicios adicionales",
+          "Infraestructura, servicios y soporte"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "Precios orientativos RESET, dólares estadounidenses",
+      "columns": [
+        "Trabajo",
+        "Precio",
+        "Factores"
+      ],
+      "rows": [
+        [
+          "Configuración básica",
+          "Desde $250",
+          "Embudo, campos y conexiones"
+        ],
+        [
+          "Implantación habitual",
+          "Unos $500",
+          "Presupuesto habitual, sujeto a alcance"
+        ],
+        [
+          "Implantación compleja",
+          "$800-1000 o más",
+          "Integraciones, automatización y migración"
+        ],
+        [
+          "CRM propio",
+          "Desde $1500",
+          "Módulos y procesos"
+        ],
+        [
+          "Estate CRM Delmar",
+          "$1500",
+          "Primera versión, 1,5 meses"
+        ]
+      ]
+    },
+    "catalog": {
+      "type": "image",
+      "src": "/cases/estate_crm_assets/properties.webp",
+      "alt": "Catálogo Estate CRM Delmar con fichas, precios, características y filtros",
+      "width": 2930,
+      "height": 1668,
+      "caption": "Catálogo Estate CRM conectado con el trabajo diario."
+    },
+    "sources": {
+      "type": "sources",
+      "items": [
+        {
+          "title": "Kommo: planes y precios actuales",
+          "url": "https://www.kommo.com/buy/tariff/"
+        },
+        {
+          "title": "RealtSoft: funciones para agencias inmobiliarias",
+          "url": "https://realtsoft.net/ru/"
+        }
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

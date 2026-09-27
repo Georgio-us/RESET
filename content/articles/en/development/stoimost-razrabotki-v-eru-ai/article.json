@@ -2,15 +2,17 @@
   "locale": "en",
   "category": "development",
   "slug": "stoimost-razrabotki-v-eru-ai",
-  "status": "draft",
-  "title": "How much does an AI-assisted website cost? Pricing and scope",
-  "seoTitle": "How much does an AI-assisted website cost? Pricing and scope | RESET",
-  "description": "How much does an AI-assisted website cost? Pricing and scope. Website costs, formats and development technologies.",
-  "deck": "How much does an AI-assisted website cost? Pricing and scope. Website costs, formats and development technologies.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Website development with AI: costs and scope",
+  "seoTitle": "Website development with AI: costs and scope | RESET",
+  "description": "RESET examples: NIVELLUX $600, SHEPIT HOUSE $1000, Estate CRM for DELMAR $2000. Scope and how AI affects the budget.",
+  "deck": "Prices, stages and the RESET approach. What has become more accessible and what makes up a finished product’s budget.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-architecture-valencia.png",
-    "alt": "How much does development cost in the AI era?"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Desk with a laptop, analytics and a workflow diagram",
+    "caption": "From business needs to a working product. Editorial illustration."
   },
-  "related": []
+  "related": [],
+  "dateModified": "2026-09-27"
 }

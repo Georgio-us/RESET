@@ -2,9 +2,16 @@
   "locale": "en",
   "category": "marketing",
   "slug": "seo-nedvizhimost-2026",
-  "status": "draft",
-  "title": "SEO for real estate websites: structure and promotion stages",
-  "seoTitle": "SEO for real estate websites: structure and promotion stages | RESET",
-  "description": "SEO for real estate websites: structure and promotion stages. Google Ads, Facebook, Instagram and search visibility for real estate websites.",
-  "deck": "SEO for real estate websites: structure and promotion stages. Google Ads, Facebook, Instagram and search visibility for real estate websites."
+  "status": "published",
+  "title": "SEO for property websites: structure and stages of growth",
+  "seoTitle": "SEO for property websites: structure and stages of growth | RESET",
+  "description": "How to attract organic traffic in real estate in 2026: search demand, website architecture and a systematic SEO approach.",
+  "deck": "How to attract organic traffic in real estate in 2026: search demand, website architecture and a systematic SEO approach.",
+  "datePublished": null,
+  "hero": {
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Real estate SEO in 2026"
+  },
+  "related": [],
+  "dateModified": "2026-09-27"
 }

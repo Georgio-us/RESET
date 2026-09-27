@@ -2,15 +2,21 @@
   "locale": "es",
   "category": "development",
   "slug": "landing-ili-sait",
-  "status": "draft",
-  "title": "Landing page o web multipágina: qué elegir para publicidad y SEO",
-  "seoTitle": "Landing page o web multipágina: qué elegir para publicidad y SEO | RESET",
-  "description": "Landing page o web multipágina: qué elegir para publicidad y SEO. Costes, formatos y tecnologías para crear una web.",
-  "deck": "Landing page o web multipágina: qué elegir para publicidad y SEO. Costes, formatos y tecnologías para crear una web.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Landing o web con varias páginas: qué elegir para publicidad y SEO",
+  "seoTitle": "Landing o web con varias páginas: qué elegir para publicidad y SEO | RESET",
+  "description": "Diferencias entre una landing y una web con varias páginas: publicidad, SEO, CMS, integraciones y costes de proyectos RESET.",
+  "deck": "Cómo elegir el formato según el negocio, la publicidad y el SEO. Explicamos las diferencias, el CMS y las integraciones con ejemplos de precios de RESET.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-team-architecture.png",
-    "alt": "Página de destino o sitio web:¿Qué hace tu?proyecto?"
+    "src": "/assets/reset-team-architecture.webp",
+    "alt": "Dos especialistas comentan el plan del proyecto en una mesa con un portátil",
+    "caption": "Ilustración editorial."
   },
-  "related": []
+  "related": [
+    "es/development/stoimost-razrabotki-v-eru-ai",
+    "es/marketing/seo-nedvizhimost-2026",
+    "es/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "dateModified": "2026-09-27"
 }

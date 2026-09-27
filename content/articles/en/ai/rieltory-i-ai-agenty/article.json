@@ -2,15 +2,133 @@
   "locale": "en",
   "category": "ai",
   "slug": "rieltory-i-ai-agenty",
-  "status": "draft",
-  "title": "AI assistant for real estate agencies: capabilities, cost and implementation",
-  "seoTitle": "AI assistant for real estate agencies: capabilities, cost and implementation | RESET",
-  "description": "AI assistant for real estate agencies: capabilities, cost and implementation. CRM selection, enquiry processing and AI assistants.",
-  "deck": "AI assistant for real estate agencies: capabilities, cost and implementation. CRM selection, enquiry processing and AI assistants.",
-  "datePublished": null,
+  "status": "published",
+  "title": "AI assistant for a property agency: features, costs and implementation",
+  "seoTitle": "AI assistant for a property agency: features, costs and implementation | RESET",
+  "description": "Property matching, voice consultations and enquiry handover on websites and Telegram. VIA setup from $200 and subscriptions from $20 per month.",
+  "deck": "How VIA AI and VIA Properties advise buyers, match agency listings and send conversation history to an agent. Features, limits, prices and launch preparation.",
+  "datePublished": "2026-09-25",
   "hero": {
-    "src": "/assets/new_google_advertising_example.png",
-    "alt": "Why realtors are already competing with AI agents"
+    "src": "/cases/via_widget_assets/unit_ru.png",
+    "alt": "VIA AI displays a property card during a website conversation",
+    "caption": "VIA AI: property consultation and matching within a website."
   },
-  "related": []
+  "related": [
+    "en/ai/crm-dlya-agentstva-nedvizhimosti",
+    "en/ai/ai-v-nedvizhimosti",
+    "en/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "contactTitle": "Connect an AI assistant to your property database",
+  "contactText": "Tell us about your website, property database and client communication channels. We will suggest a VIA format and estimate data preparation and setup.",
+  "blocks": {
+    "formats": {
+      "type": "table",
+      "caption": "Two VIA formats for working with clients",
+      "columns": [
+        "Criterion",
+        "VIA AI",
+        "VIA Properties"
+      ],
+      "rows": [
+        [
+          "Channel",
+          "Website widget",
+          "Telegram Mini App"
+        ],
+        [
+          "Visitor source",
+          "Website pages, search and advertising",
+          "Links in ads, social posts and messages"
+        ],
+        [
+          "Main journey",
+          "Consultation and matching, followed by agent handover",
+          "Property catalogue, AI consultation and enquiries within Telegram"
+        ],
+        [
+          "Shared foundation",
+          "Connected database and agreed scenarios",
+          "Connected database and agreed scenarios"
+        ],
+        [
+          "Extensions",
+          "Custom dialogue journeys and integrations",
+          "CRM, scenarios and client messaging with extended setup"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "VIA setup and subscription costs, US dollars",
+      "columns": [
+        "Product",
+        "One-time setup",
+        "Recurring payment",
+        "Indicative launch"
+      ],
+      "rows": [
+        [
+          "VIA Properties: basic",
+          "$200",
+          "$20 per month per administrator",
+          "From 3 days"
+        ],
+        [
+          "VIA Properties: extended",
+          "$500",
+          "$20 per month per administrator",
+          "According to agreed scope"
+        ],
+        [
+          "VIA AI: basic",
+          "$400",
+          "$20 per month",
+          "Around a week"
+        ],
+        [
+          "VIA AI: custom scenarios",
+          "$800",
+          "$20 per month",
+          "According to agreed scope"
+        ]
+      ]
+    },
+    "flow": {
+      "type": "table",
+      "caption": "From the first question to agent handover",
+      "columns": [
+        "Step",
+        "Assistant action",
+        "What the agency receives"
+      ],
+      "rows": [
+        [
+          "Initial enquiry",
+          "Identifies the language and clarifies intent",
+          "The client’s objective"
+        ],
+        [
+          "Clarification",
+          "Collects search criteria",
+          "Budget, location and requirements"
+        ],
+        [
+          "Matching",
+          "Shows options from the connected database",
+          "Interest in specific properties"
+        ],
+        [
+          "Contact or viewing request",
+          "Offers the configured handover method",
+          "An enquiry for an agent"
+        ],
+        [
+          "Follow-up",
+          "Sends available context through the configured integration",
+          "Conversation history and summary"
+        ]
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

@@ -2,15 +2,133 @@
   "locale": "es",
   "category": "ai",
   "slug": "ai-v-nedvizhimosti",
-  "status": "draft",
-  "title": "Cómo automatizar consultas inmobiliarias: web, publicidad y CRM",
-  "seoTitle": "Cómo automatizar consultas inmobiliarias: web, publicidad y CRM | RESET",
-  "description": "Cómo automatizar consultas inmobiliarias: web, publicidad y CRM. Selección de CRM, gestión de consultas y asistentes de IA.",
-  "deck": "Cómo automatizar consultas inmobiliarias: web, publicidad y CRM. Selección de CRM, gestión de consultas y asistentes de IA.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Automatizar consultas inmobiliarias: web, publicidad y CRM",
+  "seoTitle": "Automatizar consultas inmobiliarias: web, publicidad y CRM | RESET",
+  "description": "Conecta solicitudes web y publicitarias con CRM: responsables, tareas, Telegram y seguimiento. Procesos y costes de RESET.",
+  "deck": "Cómo una consulta obtiene responsable y siguiente paso. Integraciones, avisos, reglas y evaluación de marketing en proyectos RESET.",
+  "datePublished": "2026-09-25",
   "hero": {
-    "src": "/assets/reset-valencia-renovation.png",
-    "alt": "IA en el sector inmobiliario: dónde aparece el efecto"
+    "src": "/cases/estate_crm_assets/integrations.webp",
+    "alt": "Pantalla de integraciones de Estate CRM para Delmar",
+    "caption": "Integraciones de Estate CRM, desarrollado por RESET."
   },
-  "related": []
+  "related": [
+    "es/ai/crm-dlya-agentstva-nedvizhimosti",
+    "es/marketing/meta-ads-nedvizhimost-2026",
+    "es/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "contactTitle": "Conecta publicidad, solicitudes y agentes",
+  "contactText": "Cuéntanos tus canales, CRM y tareas manuales. Definiremos conexiones y presupuesto de implantación.",
+  "blocks": {
+    "route": {
+      "type": "table",
+      "caption": "Recorrido del contacto en Delmar",
+      "columns": [
+        "Evento",
+        "Acción del sistema",
+        "Resultado"
+      ],
+      "rows": [
+        [
+          "Llega una consulta",
+          "Registra en CRM y avisa",
+          "El equipo ve el contacto"
+        ],
+        [
+          "El agente la toma",
+          "Asigna un responsable",
+          "Responsabilidad clara"
+        ],
+        [
+          "Responsable asignado",
+          "Crea tarea y avisa por Telegram",
+          "Siguiente paso preparado"
+        ],
+        [
+          "Llega el momento",
+          "Recuerda al responsable",
+          "El agente retoma al cliente"
+        ],
+        [
+          "Se registra resultado",
+          "Actualiza historial",
+          "Dirección y marketing ven el avance"
+        ]
+      ]
+    },
+    "funnel": {
+      "type": "image",
+      "src": "/cases/estate_crm_assets/funnel.webp",
+      "alt": "Embudo Estate CRM Delmar con etapas, orígenes y responsables",
+      "width": 1470,
+      "height": 590,
+      "caption": "Estate CRM Delmar: origen, responsable y etapa en una interfaz."
+    },
+    "metrics": {
+      "type": "table",
+      "caption": "Qué revisar además de volumen y coste",
+      "columns": [
+        "Indicador",
+        "Pregunta"
+      ],
+      "rows": [
+        [
+          "Llegada y primer contacto",
+          "¿Cuánto tardó el equipo?"
+        ],
+        [
+          "Responsable y tarea",
+          "¿Quién atiende y qué está previsto?"
+        ],
+        [
+          "Intentos y resultados",
+          "¿Se siguió el protocolo?"
+        ],
+        [
+          "Cualificación y etapa",
+          "¿Encaja la necesidad y cómo avanza?"
+        ],
+        [
+          "Motivo de rechazo o aplazamiento",
+          "¿Por qué se detuvo y necesita seguimiento?"
+        ],
+        [
+          "Origen y campaña",
+          "¿Qué canales atraen clientes adecuados?"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "Cómo presupuesta RESET la automatización",
+      "columns": [
+        "Situación",
+        "Precio y condiciones"
+      ],
+      "rows": [
+        [
+          "Lanzamiento de Meta",
+          "Automatización acordada incluida en publicidad"
+        ],
+        [
+          "Implantación o desarrollo de CRM",
+          "Flujos acordados incluidos en el presupuesto CRM"
+        ],
+        [
+          "Conexión de sistema ajeno",
+          "Unos $200-500 por alcance acordado tras diagnóstico"
+        ],
+        [
+          "Módulos o lógica compleja",
+          "Presupuesto individual"
+        ],
+        [
+          "Servicios externos de pago",
+          "Licencias, telefonía y cuotas aparte"
+        ]
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

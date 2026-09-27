@@ -2,15 +2,21 @@
   "locale": "en",
   "category": "development",
   "slug": "landing-ili-sait",
-  "status": "draft",
+  "status": "published",
   "title": "Landing page or multi-page website: choosing for advertising and SEO",
   "seoTitle": "Landing page or multi-page website: choosing for advertising and SEO | RESET",
-  "description": "Landing page or multi-page website: choosing for advertising and SEO. Website costs, formats and development technologies.",
-  "deck": "Landing page or multi-page website: choosing for advertising and SEO. Website costs, formats and development technologies.",
-  "datePublished": null,
+  "description": "How landing pages and multi-page websites differ, and which to choose for advertising and SEO. CMS, integrations and RESET project costs.",
+  "deck": "Choose a format to match your business, advertising and SEO goals. We explain the differences, CMS and integrations, with costs from RESET projects.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-team-architecture.png",
-    "alt": "Landing page or website:what does yourproject?"
+    "src": "/assets/reset-team-architecture.webp",
+    "alt": "Two specialists discussing a project plan at a table with a laptop",
+    "caption": "Editorial illustration."
   },
-  "related": []
+  "related": [
+    "en/development/stoimost-razrabotki-v-eru-ai",
+    "en/marketing/seo-nedvizhimost-2026",
+    "en/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "dateModified": "2026-09-27"
 }

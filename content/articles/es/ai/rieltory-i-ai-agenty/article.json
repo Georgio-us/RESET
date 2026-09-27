@@ -2,15 +2,133 @@
   "locale": "es",
   "category": "ai",
   "slug": "rieltory-i-ai-agenty",
-  "status": "draft",
-  "title": "Asistente de IA para inmobiliarias: funciones, coste e implementación",
-  "seoTitle": "Asistente de IA para inmobiliarias: funciones, coste e implementación | RESET",
-  "description": "Asistente de IA para inmobiliarias: funciones, coste e implementación. Selección de CRM, gestión de consultas y asistentes de IA.",
-  "deck": "Asistente de IA para inmobiliarias: funciones, coste e implementación. Selección de CRM, gestión de consultas y asistentes de IA.",
-  "datePublished": null,
+  "status": "published",
+  "title": "Asistente de IA inmobiliario: funciones, precio e implantación",
+  "seoTitle": "Asistente de IA inmobiliario: funciones, precio e implantación | RESET",
+  "description": "Selección de inmuebles, consultas de voz y envío de solicitudes en web y Telegram. VIA desde $200 de conexión y $20 al mes.",
+  "deck": "Cómo VIA AI y VIA Properties asesoran, seleccionan inmuebles y entregan el historial al agente. Funciones, límites, precios y preparación.",
+  "datePublished": "2026-09-25",
   "hero": {
-    "src": "/assets/new_google_advertising_example.png",
-    "alt": "Por qué los agentes inmobiliarios ya están compitiendo con los agentes de IA"
+    "src": "/cases/via_widget_assets/unit_ru.png",
+    "alt": "VIA AI muestra una ficha inmobiliaria durante una conversación web",
+    "caption": "VIA AI: consulta y selección de inmuebles en la web."
   },
-  "related": []
+  "related": [
+    "es/ai/crm-dlya-agentstva-nedvizhimosti",
+    "es/ai/ai-v-nedvizhimosti",
+    "es/marketing/google-ads-nedvizhimost-2026"
+  ],
+  "contactTitle": "Conecta un asistente a tu base de inmuebles",
+  "contactText": "Cuéntanos cómo son tu web, base y canales de comunicación. Elegiremos el formato VIA y valoraremos preparación y conexión.",
+  "blocks": {
+    "formats": {
+      "type": "table",
+      "caption": "Dos formatos VIA para atender clientes",
+      "columns": [
+        "Criterio",
+        "VIA AI",
+        "VIA Properties"
+      ],
+      "rows": [
+        [
+          "Canal",
+          "Widget web",
+          "Mini App de Telegram"
+        ],
+        [
+          "Procedencia",
+          "Páginas, buscador y publicidad",
+          "Enlaces en anuncios, redes y mensajes"
+        ],
+        [
+          "Recorrido principal",
+          "Consulta y selección con entrega al agente",
+          "Catálogo, consulta de IA y solicitud en Telegram"
+        ],
+        [
+          "Base común",
+          "Datos conectados y escenarios acordados",
+          "Datos conectados y escenarios acordados"
+        ],
+        [
+          "Ampliación",
+          "Diálogos propios e integraciones",
+          "CRM, escenarios y mensajes con conexión ampliada"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "Conexión y uso de VIA, dólares estadounidenses",
+      "columns": [
+        "Producto",
+        "Conexión inicial",
+        "Pago recurrente",
+        "Plazo orientativo"
+      ],
+      "rows": [
+        [
+          "VIA Properties: básico",
+          "$200",
+          "$20 al mes por administrador",
+          "Desde 3 días"
+        ],
+        [
+          "VIA Properties: ampliado",
+          "$500",
+          "$20 al mes por administrador",
+          "Según alcance acordado"
+        ],
+        [
+          "VIA AI: básico",
+          "$400",
+          "$20 al mes",
+          "Alrededor de una semana"
+        ],
+        [
+          "VIA AI: escenarios propios",
+          "$800",
+          "$20 al mes",
+          "Según alcance acordado"
+        ]
+      ]
+    },
+    "flow": {
+      "type": "table",
+      "caption": "De la primera pregunta a la entrega al agente",
+      "columns": [
+        "Paso",
+        "Acción del asistente",
+        "Qué recibe la agencia"
+      ],
+      "rows": [
+        [
+          "Primera consulta",
+          "Identifica idioma e intención",
+          "Objetivo del cliente"
+        ],
+        [
+          "Concreción",
+          "Recoge criterios",
+          "Presupuesto, ubicación y requisitos"
+        ],
+        [
+          "Selección",
+          "Muestra opciones de la base",
+          "Interés en inmuebles concretos"
+        ],
+        [
+          "Contacto o visita",
+          "Ofrece el envío configurado",
+          "Solicitud para un agente"
+        ],
+        [
+          "Continuación",
+          "Envía contexto mediante la integración",
+          "Historial y resumen"
+        ]
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

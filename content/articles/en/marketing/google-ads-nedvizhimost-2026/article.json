@@ -2,9 +2,16 @@
   "locale": "en",
   "category": "marketing",
   "slug": "google-ads-nedvizhimost-2026",
-  "status": "draft",
-  "title": "Google Ads for real estate: campaign setup and performance measurement",
-  "seoTitle": "Google Ads for real estate: campaign setup and performance measurement | RESET",
-  "description": "Google Ads for real estate: campaign setup and performance measurement. Google Ads, Facebook, Instagram and search visibility for real estate websites.",
-  "deck": "Google Ads for real estate: campaign setup and performance measurement. Google Ads, Facebook, Instagram and search visibility for real estate websites."
+  "status": "published",
+  "title": "Google Ads for real estate: launching campaigns and measuring performance",
+  "seoTitle": "Google Ads for real estate: launching campaigns and measuring performance | RESET",
+  "description": "How Google Ads works for real estate in 2026: search demand, websites, analytics and optimisation.",
+  "deck": "How Google Ads works for real estate in 2026: search demand, websites, analytics and optimisation.",
+  "datePublished": null,
+  "hero": {
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Google Ads for real estate in 2026"
+  },
+  "related": [],
+  "dateModified": "2026-09-27"
 }

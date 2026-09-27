@@ -2,9 +2,124 @@
   "locale": "en",
   "category": "ai",
   "slug": "crm-dlya-agentstva-nedvizhimosti",
-  "status": "draft",
-  "title": "CRM for real estate agencies: ready-made or custom-built",
-  "seoTitle": "CRM for real estate agencies: ready-made or custom-built | RESET",
-  "description": "CRM for real estate agencies: ready-made or custom-built. CRM selection, enquiry processing and AI assistants.",
-  "deck": "CRM for real estate agencies: ready-made or custom-built. CRM selection, enquiry processing and AI assistants."
+  "status": "published",
+  "title": "CRM for a property agency: ready-made or custom development",
+  "seoTitle": "CRM for a property agency: ready-made or custom development | RESET",
+  "description": "Compare Kommo, RealtSoft and custom CRM. RESET setup from $250, development from $1500, maintenance costs and case studies.",
+  "deck": "When a ready-made CRM is enough, when specialist software helps and when custom development makes sense. Features, prices and implementation at Shepit House and Delmar.",
+  "datePublished": "2026-09-25",
+  "hero": {
+    "src": "/cases/estate_crm_assets/dashboard4.webp",
+    "alt": "Estate CRM workspace developed by RESET for Delmar",
+    "caption": "Estate CRM for Delmar. Custom development by RESET."
+  },
+  "related": [
+    "en/marketing/meta-ads-nedvizhimost-2026",
+    "en/development/stoimost-razrabotki-v-eru-ai",
+    "en/development/cms-ili-custom"
+  ],
+  "contactTitle": "Choose a CRM for your agency’s workflow",
+  "contactText": "Tell us about your team, enquiry sources and property database. We will define the scope and estimate implementation.",
+  "blocks": {
+    "comparison": {
+      "type": "table",
+      "caption": "Three approaches to property CRM",
+      "columns": [
+        "Criterion",
+        "Kommo",
+        "RealtSoft",
+        "Custom CRM"
+      ],
+      "rows": [
+        [
+          "Main use",
+          "Enquiries, deals and communication",
+          "Agency clients and properties",
+          "A specific team’s workflows"
+        ],
+        [
+          "Property database",
+          "Needs a planned data model and suitable extensions",
+          "Included in the specialist product",
+          "Built around required fields and relationships"
+        ],
+        [
+          "Client selections",
+          "Check available integrations",
+          "Selection and presentation tools",
+          "Format and interface agreed in the specification"
+        ],
+        [
+          "Changes",
+          "Settings, integrations and plan limits",
+          "Platform settings and capabilities",
+          "Development of agreed features"
+        ],
+        [
+          "Ongoing costs",
+          "Licences, services and support",
+          "Platform plan and additional services",
+          "Infrastructure, services and support"
+        ]
+      ]
+    },
+    "prices": {
+      "type": "table",
+      "caption": "Indicative RESET work costs, US dollars",
+      "columns": [
+        "Work",
+        "Price",
+        "Budget factors"
+      ],
+      "rows": [
+        [
+          "Basic ready-made CRM setup",
+          "From $250",
+          "Pipeline, fields and agreed connections"
+        ],
+        [
+          "Typical implementation",
+          "Around $500",
+          "Usual client budget, refined for each project"
+        ],
+        [
+          "Complex implementation",
+          "$800-1000 or more",
+          "Integrations, automation and migration"
+        ],
+        [
+          "Custom CRM",
+          "From $1500",
+          "Modules and workflows"
+        ],
+        [
+          "Estate CRM for Delmar",
+          "$1500",
+          "Agreed first version, 1.5 months of work"
+        ]
+      ]
+    },
+    "catalog": {
+      "type": "image",
+      "src": "/cases/estate_crm_assets/properties.webp",
+      "alt": "Delmar Estate CRM property catalogue with cards, prices, specifications and filters",
+      "width": 2930,
+      "height": 1668,
+      "caption": "Estate CRM property catalogue, connected to daily team workflows."
+    },
+    "sources": {
+      "type": "sources",
+      "items": [
+        {
+          "title": "Kommo: current plans and pricing",
+          "url": "https://www.kommo.com/buy/tariff/"
+        },
+        {
+          "title": "RealtSoft: CRM features for property agencies",
+          "url": "https://realtsoft.net/ru/"
+        }
+      ]
+    }
+  },
+  "dateModified": "2026-09-27"
 }

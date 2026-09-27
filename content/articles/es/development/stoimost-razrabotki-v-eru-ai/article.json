@@ -2,15 +2,17 @@
   "locale": "es",
   "category": "development",
   "slug": "stoimost-razrabotki-v-eru-ai",
-  "status": "draft",
+  "status": "published",
   "title": "Cuánto cuesta crear una web con IA: precios y alcance",
   "seoTitle": "Cuánto cuesta crear una web con IA: precios y alcance | RESET",
-  "description": "Cuánto cuesta crear una web con IA: precios y alcance. Costes, formatos y tecnologías para crear una web.",
-  "deck": "Cuánto cuesta crear una web con IA: precios y alcance. Costes, formatos y tecnologías para crear una web.",
-  "datePublished": null,
+  "description": "Ejemplos RESET: NIVELLUX $600, SHEPIT HOUSE $1000, Estate CRM DELMAR $2000. Alcance e impacto de la IA en el presupuesto.",
+  "deck": "Precios, etapas y enfoque RESET. Qué resulta más accesible y qué incluye el presupuesto de un producto terminado.",
+  "datePublished": "2026-09-22",
   "hero": {
-    "src": "/assets/reset-architecture-valencia.png",
-    "alt": "¿Cuánto cuesta el desarrollo en la era de la IA?"
+    "src": "/assets/navigator-system-integration.webp",
+    "alt": "Mesa con portátil, analítica y esquema de procesos",
+    "caption": "Del objetivo al producto. Ilustración editorial."
   },
-  "related": []
+  "related": [],
+  "dateModified": "2026-09-27"
 }
