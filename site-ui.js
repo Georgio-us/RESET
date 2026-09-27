@@ -1,3 +1,4 @@
+import { renderBreadcrumbs } from './breadcrumbs.js';
 import { uiCopy } from './ui-copy.js';
 const escapeAttribute = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 
@@ -70,6 +71,6 @@ export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => t
   const modal = `<dialog class="reset-dialog" aria-labelledby="reset-dialog-title"><button class="reset-dialog-close" type="button" aria-label="${c.close}"><svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><h2 id="reset-dialog-title">${c.title}</h2><p>${c.intro}</p>${contactForm(locale, 'cta')}</dialog>`;
   html = html.replace('</body>', modal + '</body>');
   html = html.replace(/<body\b(?: data-reset-ui)?/i, '<body data-reset-ui');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><link rel="stylesheet" href="/shared-ui.css?v=20260922-ui7"><script type="module" src="/shared-ui.js?v=20260922-ui7"></script><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>');
-  return versionAssets(html);
+  html = html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><link rel="stylesheet" href="/shared-ui.css?v=20260927-breadcrumbs"><script type="module" src="/shared-ui.js?v=20260922-ui7"></script><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>');
+  return versionAssets(renderBreadcrumbs(html, {locale,path,exists}));
 }

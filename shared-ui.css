@@ -197,3 +197,13 @@ body.home-dev[data-reset-ui] .services-grid>.service-card :is(p,.service-index,.
 body.home-dev[data-reset-ui] .services-grid>.service-card :is(.service-index,.service-icon) { color:var(--color-accent); }
 body[data-reset-ui] .niv-language { margin-left:0; }
 @media(max-width:1000px) { body[data-reset-ui] .niv-language { margin-left:auto; } }
+
+/* One readable trail across cases, services, journal and utility pages. */
+.reset-breadcrumbs { color:var(--color-ink); background:var(--color-paper); border-bottom:1px solid var(--color-line-light); }
+.reset-breadcrumbs ol { width:min(100% - 48px,1328px); margin:0 auto; padding:16px 0; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 0; list-style:none; font-size:13px; line-height:1.6; }
+.reset-breadcrumbs li { display:inline; max-width:100%; overflow-wrap:anywhere; }
+.reset-breadcrumbs li+li::before { content:'/'; display:inline-block; margin:0 10px; color:var(--color-ink-muted); }
+.reset-breadcrumbs a { color:var(--color-accent); text-decoration:none; padding:6px 0; }
+.reset-breadcrumbs a:hover { text-decoration:underline; text-underline-offset:4px; }
+.reset-breadcrumbs [aria-current] { color:var(--color-ink); }
+@media(max-width:600px) { .reset-breadcrumbs ol { width:calc(100% - 36px); padding:12px 0; font-size:12px; } }
