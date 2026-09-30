@@ -216,3 +216,5 @@ body[data-reset-ui] .reset-footer-provider .reset-provider-title { font-weight:6
 body[data-reset-ui] .reset-footer-provider a { text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
 body[data-reset-ui] .reset-footer-provider a:hover { color:var(--color-on-dark); }
 body[data-reset-ui] .reset-footer-provider a:focus-visible { outline:2px solid var(--color-mineral); outline-offset:3px; }
+body[data-reset-ui]:has(.privacy-provider) .journal-section-head h1 { overflow-wrap:anywhere; hyphens:auto; }
+body[data-reset-ui]:has(.privacy-provider) .journal-section-head .journal-meta { color:var(--color-accent); }
