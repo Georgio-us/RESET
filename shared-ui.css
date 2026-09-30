@@ -207,3 +207,12 @@ body[data-reset-ui] .niv-language { margin-left:0; }
 .reset-breadcrumbs a:hover { text-decoration:underline; text-underline-offset:4px; }
 .reset-breadcrumbs [aria-current] { color:var(--color-ink); }
 @media(max-width:600px) { .reset-breadcrumbs ol { width:calc(100% - 36px); padding:12px 0; font-size:12px; } }
+
+/* Public provider details: secondary to navigation, always visible and readable. */
+body[data-reset-ui] .reset-footer-provider { grid-column:1 / -1; border-top:1px solid var(--color-line-dark); padding-top:18px; max-width:100%; color:var(--color-muted-dark); }
+body[data-reset-ui] .reset-footer-provider p, body[data-reset-ui] .reset-footer-provider a { font-size:13px; line-height:1.65; font-weight:400; color:var(--color-muted-dark); }
+body[data-reset-ui] .reset-footer-provider p { margin:0 0 5px; }
+body[data-reset-ui] .reset-footer-provider .reset-provider-title { font-weight:600; }
+body[data-reset-ui] .reset-footer-provider a { text-decoration:underline; text-underline-offset:3px; white-space:nowrap; }
+body[data-reset-ui] .reset-footer-provider a:hover { color:var(--color-on-dark); }
+body[data-reset-ui] .reset-footer-provider a:focus-visible { outline:2px solid var(--color-mineral); outline-offset:3px; }

@@ -1,4 +1,5 @@
 import { renderBreadcrumbs } from './breadcrumbs.js';
+import { providerDetails } from './provider-details.js';
 import { uiCopy } from './ui-copy.js';
 const escapeAttribute = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 
@@ -60,7 +61,7 @@ export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => t
   header = header.replace(`<nav class="reset-languages" aria-label="${c.language}">${languages}</nav>`, `<details class="niv-language"><summary aria-label="${c.language}">${locale === 'uk' ? 'UA' : locale.toUpperCase()}<svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary><nav aria-label="${c.language}">${languages}</nav></details>`);
   header = header.replace(`<summary>${c.menu}<svg`, `<summary aria-label="${c.menu}"><svg`);
   const socials = [['telegram','Telegram'],['instagram','Instagram'],['threads','Threads']].map(([key,label]) => socialLinks[key] ? `<a href="${escapeAttribute(socialLinks[key])}" target="_blank" rel="noreferrer">${label}${arrow}</a>` : `<span class="reset-social-pending">${label}</span>`).join('');
-  const footer = `<footer class="reset-footer"><div class="reset-shell reset-footer-inner">${brand(locale)}<nav aria-label="${c.menu}">${nav}<a href="${home}#contact" data-reset-contact>${c.discuss}</a></nav><div class="reset-footer-contact"><a href="mailto:hello@reset.agency">hello@reset.agency</a>${socials}</div><div class="reset-footer-bottom"><span>© 2017–2026 RESET</span><a href="${home}privacy.html">${c.policy}</a><a href="${home}sitemap.html">${c.sitemap}</a></div></div></footer>`;
+  const footer = `<footer class="reset-footer"><div class="reset-shell reset-footer-inner">${brand(locale)}<nav aria-label="${c.menu}">${nav}<a href="${home}#contact" data-reset-contact>${c.discuss}</a></nav><div class="reset-footer-contact"><a href="mailto:hello@reset.agency">hello@reset.agency</a>${socials}</div>${providerDetails(locale, true)}<div class="reset-footer-bottom"><span>© 2017–2026 RESET</span><a href="${home}privacy.html">${c.policy}</a><a href="${home}sitemap.html">${c.sitemap}</a></div></div></footer>`;
   if (/<header\b/i.test(html)) html = html.replace(/<header\b[^>]*>[\s\S]*?<\/header>/i, header);
   else html = html.replace(/<body\b[^>]*>/i, '$&' + header);
   const footerPattern = /<footer\b[^>]*class="(?:reset-footer|site-footer|sales-footer|vw-footer|detail-footer|journal-footer)[^"]*"[^>]*>[\s\S]*?<\/footer>/i;
@@ -71,6 +72,6 @@ export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => t
   const modal = `<dialog class="reset-dialog" aria-labelledby="reset-dialog-title"><button class="reset-dialog-close" type="button" aria-label="${c.close}"><svg class="reset-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button><h2 id="reset-dialog-title">${c.title}</h2><p>${c.intro}</p>${contactForm(locale, 'cta')}</dialog>`;
   html = html.replace('</body>', modal + '</body>');
   html = html.replace(/<body\b(?: data-reset-ui)?/i, '<body data-reset-ui');
-  html = html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><link rel="stylesheet" href="/shared-ui.css?v=20260927-breadcrumbs"><script type="module" src="/shared-ui.js?v=20260922-ui7"></script><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>');
+  html = html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><link rel="stylesheet" href="/shared-ui.css?v=20260930-provider"><script type="module" src="/shared-ui.js?v=20260922-ui7"></script><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>');
   return versionAssets(renderBreadcrumbs(html, {locale,path,exists}));
 }
