@@ -1,0 +1,178 @@
+{
+  "ru": {
+    "title": "SHEPIT — Kommo CRM и уведомления о заявках в Telegram",
+    "h": "Заявки — в CRM. Уведомления — в Telegram.",
+    "lead": "Для SHEPIT настроили Kommo под работу отдела продаж: подключили каналы обращений, подготовили воронку и сделали Telegram-бота. Менеджеры ведут сделки в CRM и узнают о новых заявках в рабочем чате.",
+    "flow": [
+      "Facebook и сайт",
+      "Сделка в Kommo",
+      "Уведомление команде"
+    ],
+    "task": "Задача: связать рекламу с работой отдела продаж",
+    "taskText": "У проекта уже были каналы привлечения. Требовалось организовать обработку обращений: собрать заявки в CRM, отразить этапы работы и дать команде дополнительный способ замечать новые обращения без постоянного просмотра системы.",
+    "work": "Что настроили",
+    "steps": [
+      [
+        "Kommo под задачи команды",
+        "Выбрали CRM под рабочие процессы SHEPIT и настроили воронку для обработки входящих обращений."
+      ],
+      [
+        "Каналы и интеграции",
+        "Подключили необходимые интеграции, чтобы команда могла работать с обращениями из используемых каналов в одной системе."
+      ],
+      [
+        "Бот уведомлений",
+        "Сделали Telegram-бота, который отправляет сообщение о новой заявке в рабочую группу отдела продаж."
+      ]
+    ],
+    "pipeline": "Воронка отражает реальную работу с клиентом",
+    "pipelineText": "На скриншоте — этапы от попытки связаться до первого контакта, договорённости о встрече и состоявшейся встречи. По карточке менеджер видит источник обращения, а по этапу — где находится сделка.",
+    "pipelineCap": "Рабочая воронка SHEPIT в Kommo. Данные клиентов, идентификаторы и содержимое карточек скрыты.",
+    "integrations": "Каналы обращений собраны в CRM",
+    "integrationsText": "В рабочем аккаунте установлены Facebook, Instagram, WhatsApp Business и TikTok. Скриншот показывает подключённые интеграции; бот для уведомлений в Telegram работает отдельно от каталожной интеграции Telegram.",
+    "integrationsCap": "Установленные интеграции Kommo в аккаунте проекта.",
+    "telegram": "Новая заявка видна и вне CRM",
+    "telegramText": "Бот отправляет в рабочую группу уведомление с источником обращения, контактными данными и временем поступления. На примере — заявки из Facebook и с сайта SHEPIT. Команде не нужно постоянно держать CRM перед глазами, чтобы заметить новое обращение.",
+    "telegramCap": "Уведомления бота в Telegram. Имена, телефоны и идентификаторы скрыты перед публикацией.",
+    "result": "Результат — рабочий процесс для отдела продаж",
+    "resultText": "Команда SHEPIT работает в настроенной CRM: обращения поступают в систему, сделки распределены по этапам, а уведомления о новых заявках приходят в Telegram.",
+    "cta": "Нужно связать заявки, CRM и команду?",
+    "button": "Обсудить внедрение CRM",
+    "back": "Все кейсы",
+    "open": "Открыть скриншот",
+    "scroll": "На телефоне воронку можно прокрутить по горизонтали.",
+    "card": "Kommo CRM для SHEPIT: воронка, интеграции и бот уведомлений."
+  },
+  "uk": {
+    "title": "SHEPIT — Kommo CRM і сповіщення про заявки в Telegram",
+    "h": "Заявки — у CRM. Сповіщення — у Telegram.",
+    "lead": "Для SHEPIT налаштували Kommo під роботу відділу продажів: підключили канали звернень, підготували воронку та створили Telegram-бота. Менеджери ведуть угоди в CRM і дізнаються про нові заявки в робочому чаті.",
+    "flow": [
+      "Facebook і сайт",
+      "Угода в Kommo",
+      "Сповіщення команді"
+    ],
+    "task": "Завдання: поєднати рекламу з роботою відділу продажів",
+    "taskText": "Проєкт уже мав канали залучення. Потрібно було організувати обробку звернень: зібрати заявки в CRM, відобразити етапи роботи й дати команді додатковий спосіб помічати нові звернення без постійного перегляду системи.",
+    "work": "Що налаштували",
+    "steps": [
+      [
+        "Kommo під завдання команди",
+        "Обрали CRM під робочі процеси SHEPIT і налаштували воронку для обробки вхідних звернень."
+      ],
+      [
+        "Канали та інтеграції",
+        "Підключили необхідні інтеграції, щоб команда могла працювати зі зверненнями з використовуваних каналів в одній системі."
+      ],
+      [
+        "Бот сповіщень",
+        "Створили Telegram-бота, який надсилає повідомлення про нову заявку до робочої групи відділу продажів."
+      ]
+    ],
+    "pipeline": "Воронка відображає реальну роботу з клієнтом",
+    "pipelineText": "На скриншоті — етапи від спроби зв’язатися до першого контакту, домовленості про зустріч і зустрічі, що відбулася. У картці менеджер бачить джерело звернення, а за етапом — де перебуває угода.",
+    "pipelineCap": "Робоча воронка SHEPIT у Kommo. Дані клієнтів, ідентифікатори та вміст карток приховано.",
+    "integrations": "Канали звернень зібрано в CRM",
+    "integrationsText": "У робочому акаунті встановлено Facebook, Instagram, WhatsApp Business і TikTok. Скриншот показує підключені інтеграції; бот сповіщень у Telegram працює окремо від інтеграції Telegram із каталогу.",
+    "integrationsCap": "Встановлені інтеграції Kommo в акаунті проєкту.",
+    "telegram": "Нову заявку видно й поза CRM",
+    "telegramText": "Бот надсилає до робочої групи сповіщення з джерелом звернення, контактними даними й часом надходження. На прикладі — заявки з Facebook і сайту SHEPIT. Команді не потрібно постійно тримати CRM перед очима, щоб помітити нове звернення.",
+    "telegramCap": "Сповіщення бота в Telegram. Імена, телефони й ідентифікатори приховано перед публікацією.",
+    "result": "Результат — робочий процес для відділу продажів",
+    "resultText": "Команда SHEPIT працює в налаштованій CRM: звернення надходять до системи, угоди розподілено за етапами, а сповіщення про нові заявки приходять у Telegram.",
+    "cta": "Потрібно поєднати заявки, CRM і команду?",
+    "button": "Обговорити впровадження CRM",
+    "back": "Усі кейси",
+    "open": "Відкрити скриншот",
+    "scroll": "На телефоні воронку можна прокрутити горизонтально.",
+    "card": "Kommo CRM для SHEPIT: воронка, інтеграції та бот сповіщень."
+  },
+  "en": {
+    "title": "SHEPIT — Kommo CRM and Telegram lead notifications",
+    "h": "Leads in the CRM. Alerts in Telegram.",
+    "lead": "We configured Kommo for SHEPIT’s sales team: connected enquiry channels, set up the pipeline and built a Telegram bot. Managers track deals in the CRM and receive new-lead alerts in their team chat.",
+    "flow": [
+      "Facebook and website",
+      "Deal in Kommo",
+      "Team notification"
+    ],
+    "task": "The task: connect marketing with the sales workflow",
+    "taskText": "The project already had acquisition channels. The team needed a process for handling enquiries: collect leads in the CRM, track sales stages and notice new enquiries without constantly checking the system.",
+    "work": "What we set up",
+    "steps": [
+      [
+        "Kommo for the team’s workflow",
+        "We selected the CRM to fit SHEPIT’s processes and configured a pipeline for incoming enquiries."
+      ],
+      [
+        "Channels and integrations",
+        "We connected the required integrations so the team could handle enquiries from its channels in one system."
+      ],
+      [
+        "Notification bot",
+        "We built a Telegram bot that sends new-lead notifications to the sales team’s working group."
+      ]
+    ],
+    "pipeline": "A pipeline that reflects the sales process",
+    "pipelineText": "The screenshot shows stages from an unanswered call to first contact, a scheduled meeting and a completed meeting. Each card identifies the enquiry source; its stage shows where the deal stands.",
+    "pipelineCap": "SHEPIT’s working pipeline in Kommo. Client data, identifiers and card contents have been redacted.",
+    "integrations": "Enquiry channels connected to the CRM",
+    "integrationsText": "The working account has Facebook, Instagram, WhatsApp Business and TikTok installed. The screenshot shows these integrations; the Telegram notification bot operates separately from the Telegram integration in the catalogue.",
+    "integrationsCap": "Installed Kommo integrations in the project account.",
+    "telegram": "New leads are visible outside the CRM too",
+    "telegramText": "The bot sends the team a notification containing the enquiry source, contact details and submission time. These examples show enquiries from Facebook and the SHEPIT website. The team can notice incoming leads without keeping the CRM open in front of them.",
+    "telegramCap": "Telegram bot notifications. Names, phone numbers and identifiers were redacted before publication.",
+    "result": "The result: a working process for the sales team",
+    "resultText": "SHEPIT’s team uses the configured CRM: enquiries enter the system, deals move through defined stages and new-lead alerts arrive in Telegram.",
+    "cta": "Need to connect your leads, CRM and team?",
+    "button": "Discuss your CRM setup",
+    "back": "All cases",
+    "open": "Open screenshot",
+    "scroll": "On mobile, scroll the pipeline horizontally.",
+    "card": "Kommo CRM for SHEPIT: pipeline, integrations and a notification bot."
+  },
+  "es": {
+    "title": "SHEPIT — Kommo CRM y avisos de nuevos contactos en Telegram",
+    "h": "Contactos en el CRM. Avisos en Telegram.",
+    "lead": "Configuramos Kommo para el equipo comercial de SHEPIT: conectamos los canales de consultas, definimos el embudo y creamos un bot de Telegram. Los gestores trabajan las oportunidades en el CRM y reciben avisos de nuevas consultas en el chat del equipo.",
+    "flow": [
+      "Facebook y web",
+      "Oportunidad en Kommo",
+      "Aviso al equipo"
+    ],
+    "task": "El reto: conectar la captación con el trabajo comercial",
+    "taskText": "El proyecto ya contaba con canales de captación. Faltaba organizar la gestión de consultas: reunir los contactos en el CRM, reflejar las etapas de venta y ofrecer al equipo otra forma de detectar nuevas consultas sin revisar el sistema constantemente.",
+    "work": "Qué configuramos",
+    "steps": [
+      [
+        "Kommo adaptado al equipo",
+        "Elegimos el CRM según los procesos de SHEPIT y configuramos un embudo para gestionar las consultas entrantes."
+      ],
+      [
+        "Canales e integraciones",
+        "Conectamos las integraciones necesarias para que el equipo pudiera gestionar las consultas de sus canales desde un mismo sistema."
+      ],
+      [
+        "Bot de notificaciones",
+        "Creamos un bot de Telegram que envía avisos de nuevas consultas al grupo de trabajo del equipo comercial."
+      ]
+    ],
+    "pipeline": "Un embudo que refleja el proceso comercial",
+    "pipelineText": "La captura muestra las etapas desde una llamada sin respuesta hasta el primer contacto, una reunión concertada y una reunión celebrada. Cada ficha identifica el origen de la consulta; su etapa indica en qué punto está la oportunidad.",
+    "pipelineCap": "Embudo de trabajo de SHEPIT en Kommo. Se han ocultado los datos de clientes, los identificadores y el contenido de las fichas.",
+    "integrations": "Los canales de consultas, conectados al CRM",
+    "integrationsText": "La cuenta de trabajo tiene instalados Facebook, Instagram, WhatsApp Business y TikTok. La captura muestra estas integraciones; el bot de avisos de Telegram funciona por separado de la integración de Telegram del catálogo.",
+    "integrationsCap": "Integraciones de Kommo instaladas en la cuenta del proyecto.",
+    "telegram": "Las nuevas consultas también se ven fuera del CRM",
+    "telegramText": "El bot envía al grupo de trabajo un aviso con el origen de la consulta, los datos de contacto y la hora de recepción. Los ejemplos muestran consultas de Facebook y de la web de SHEPIT. El equipo puede detectar nuevas consultas sin tener el CRM siempre delante.",
+    "telegramCap": "Avisos del bot en Telegram. Los nombres, teléfonos e identificadores se han ocultado antes de publicar.",
+    "result": "El resultado: un proceso de trabajo para el equipo comercial",
+    "resultText": "El equipo de SHEPIT utiliza el CRM configurado: las consultas llegan al sistema, las oportunidades se organizan por etapas y los avisos se reciben en Telegram.",
+    "cta": "¿Necesitas conectar contactos, CRM y equipo?",
+    "button": "Hablemos de tu CRM",
+    "back": "Todos los casos",
+    "open": "Abrir captura",
+    "scroll": "En el móvil, desplaza el embudo horizontalmente.",
+    "card": "Kommo CRM para SHEPIT: embudo, integraciones y bot de avisos."
+  }
+}
