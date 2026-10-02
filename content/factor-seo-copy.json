@@ -1,7 +1,7 @@
 {
   "ru": {
-    "title": "FACTOR — SEO-миграция и 112 посадочных страниц",
-    "h": "От миграции сайта — к системе SEO-посадочных",
+    "title": "FACTOR - SEO-миграция и 112 посадочных страниц",
+    "h": "От миграции сайта - к системе SEO-посадочных",
     "lead": "С 17 августа 2026 года сопровождаем SEO агентства FACTOR: перенос сайта после редизайна, семантика, структура посадочных и правила наполнения. Вместе с технической командой подготовили основу для дальнейшего органического роста.",
     "label": "посадочных страниц запущено",
     "period": "Работа продолжается · основной рынок — Украина",
@@ -30,7 +30,7 @@
         "Запустили 112 страниц, работали с блогом и разработали методологию наполнения: релевантные предложения, актуальные данные и ответы на вопросы покупателей."
       ]
     ],
-    "intent": "Сначала спрос. Затем структура.",
+    "intent": "Сначала спрос Затем структура",
     "intentText": "Из 2 689 формулировок оставили 2 425 для дальнейшей кластеризации. В первом проходе исключили 264: аренду, брендовые и навигационные запросы, запросы продавцов. Разделили спрос на квартиры, дома, новостройки, участки и другие направления.",
     "intentCap": "Рабочая карта интентов по данным Keyword Planner. Это этап исследования, а не количество опубликованных страниц.",
     "faq": "Контент, который помогает выбрать",
@@ -46,8 +46,8 @@
     "card": "Миграция, семантика и запуск 112 SEO-посадочных."
   },
   "uk": {
-    "title": "FACTOR — SEO-міграція та 112 посадкових сторінок",
-    "h": "Від міграції сайту — до системи SEO-сторінок",
+    "title": "FACTOR - SEO-міграція та 112 посадкових сторінок",
+    "h": "Від міграції сайту - до системи SEO-сторінок",
     "lead": "Із 17 серпня 2026 року супроводжуємо SEO агентства FACTOR: перенесення сайту після редизайну, семантика, структура посадкових сторінок і правила наповнення. Разом із технічною командою підготували основу для подальшого органічного зростання.",
     "label": "посадкових сторінок запущено",
     "period": "Робота триває · основний ринок — Україна",
@@ -76,7 +76,7 @@
         "Запустили 112 сторінок, працювали з блогом і розробили методологію наповнення: релевантні пропозиції, актуальні дані та відповіді на запитання покупців."
       ]
     ],
-    "intent": "Спочатку попит. Потім структура.",
+    "intent": "Спочатку попит Потім структура",
     "intentText": "Із 2 689 формулювань залишили 2 425 для подальшої кластеризації. Під час першого проходу виключили 264: оренду, брендові й навігаційні запити та запити продавців. Розділили попит на квартири, будинки, новобудови, ділянки й інші напрями.",
     "intentCap": "Робоча карта намірів за даними Keyword Planner. Це етап дослідження, а не кількість опублікованих сторінок.",
     "faq": "Контент, який допомагає обрати",
@@ -92,7 +92,7 @@
     "card": "Міграція, семантика та запуск 112 SEO-сторінок."
   },
   "en": {
-    "title": "FACTOR — SEO migration and 112 landing pages",
+    "title": "FACTOR - SEO migration and 112 landing pages",
     "h": "From site migration to a structured SEO launch",
     "lead": "Since 17 August 2026, we have supported FACTOR’s SEO: a website migration following a redesign, keyword research, landing-page structure and content guidelines. Working alongside the technical team, we built a foundation for further organic growth.",
     "label": "landing pages launched",
@@ -122,7 +122,7 @@
         "We launched 112 pages, worked on the blog and developed content guidelines covering relevant listings, up-to-date data and answers to buyers’ questions."
       ]
     ],
-    "intent": "Demand first. Structure next.",
+    "intent": "Demand first Structure next",
     "intentText": "Of 2,689 search phrases, we retained 2,425 for further clustering. The first pass excluded 264 rental, branded, navigational and seller queries. We grouped demand into apartments, houses, new developments, land and other categories.",
     "intentCap": "Working intent map based on Keyword Planner data. This is a research stage, not a count of published pages. Original working document in Russian.",
     "faq": "Content that helps buyers decide",
@@ -138,7 +138,7 @@
     "card": "Migration, keyword research and 112 SEO landing pages launched."
   },
   "es": {
-    "title": "FACTOR — migración SEO y 112 páginas de destino",
+    "title": "FACTOR - migración SEO y 112 páginas de destino",
     "h": "De la migración web a una estructura de páginas SEO",
     "lead": "Desde el 17 de agosto de 2026 acompañamos el SEO de FACTOR: migración tras el rediseño, investigación de palabras clave, estructura de páginas y criterios de contenido. Junto al equipo técnico, preparamos la base para seguir creciendo en búsqueda orgánica.",
     "label": "páginas de destino publicadas",
@@ -168,7 +168,7 @@
         "Publicamos 112 páginas, trabajamos en el blog y desarrollamos criterios de contenido: oferta relevante, datos actualizados y respuestas a las preguntas de los compradores."
       ]
     ],
-    "intent": "Primero la demanda. Después la estructura.",
+    "intent": "Primero la demanda Después la estructura",
     "intentText": "De 2.689 expresiones de búsqueda, seleccionamos 2.425 para su agrupación posterior. En la primera revisión excluimos 264 consultas de alquiler, marca, navegación y vendedores. Organizamos la demanda por pisos, casas, obra nueva, terrenos y otras categorías.",
     "intentCap": "Mapa de intenciones basado en datos de Keyword Planner. Es una fase de investigación, no un recuento de páginas publicadas. Documento original en ruso.",
     "faq": "Contenido que ayuda a elegir",

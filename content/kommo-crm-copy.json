@@ -1,7 +1,7 @@
 {
   "ru": {
-    "title": "SHEPIT — Kommo CRM и уведомления о заявках в Telegram",
-    "h": "Заявки — в CRM. Уведомления — в Telegram.",
+    "title": "SHEPIT - Kommo CRM и уведомления о заявках в Telegram",
+    "h": "Заявки - в CRM Уведомления - в Telegram",
     "lead": "Для SHEPIT настроили Kommo под работу отдела продаж: подключили каналы обращений, подготовили воронку и сделали Telegram-бота. Менеджеры ведут сделки в CRM и узнают о новых заявках в рабочем чате.",
     "flow": [
       "Facebook и сайт",
@@ -34,7 +34,7 @@
     "telegram": "Новая заявка видна и вне CRM",
     "telegramText": "Бот отправляет в рабочую группу уведомление с источником обращения, контактными данными и временем поступления. На примере — заявки из Facebook и с сайта SHEPIT. Команде не нужно постоянно держать CRM перед глазами, чтобы заметить новое обращение.",
     "telegramCap": "Уведомления бота в Telegram. Имена, телефоны и идентификаторы скрыты перед публикацией.",
-    "result": "Результат — рабочий процесс для отдела продаж",
+    "result": "Результат - рабочий процесс для отдела продаж",
     "resultText": "Команда SHEPIT работает в настроенной CRM: обращения поступают в систему, сделки распределены по этапам, а уведомления о новых заявках приходят в Telegram.",
     "cta": "Нужно связать заявки, CRM и команду?",
     "button": "Обсудить внедрение CRM",
@@ -44,8 +44,8 @@
     "card": "Kommo CRM для SHEPIT: воронка, интеграции и бот уведомлений."
   },
   "uk": {
-    "title": "SHEPIT — Kommo CRM і сповіщення про заявки в Telegram",
-    "h": "Заявки — у CRM. Сповіщення — у Telegram.",
+    "title": "SHEPIT - Kommo CRM і сповіщення про заявки в Telegram",
+    "h": "Заявки - у CRM Сповіщення - у Telegram",
     "lead": "Для SHEPIT налаштували Kommo під роботу відділу продажів: підключили канали звернень, підготували воронку та створили Telegram-бота. Менеджери ведуть угоди в CRM і дізнаються про нові заявки в робочому чаті.",
     "flow": [
       "Facebook і сайт",
@@ -78,7 +78,7 @@
     "telegram": "Нову заявку видно й поза CRM",
     "telegramText": "Бот надсилає до робочої групи сповіщення з джерелом звернення, контактними даними й часом надходження. На прикладі — заявки з Facebook і сайту SHEPIT. Команді не потрібно постійно тримати CRM перед очима, щоб помітити нове звернення.",
     "telegramCap": "Сповіщення бота в Telegram. Імена, телефони й ідентифікатори приховано перед публікацією.",
-    "result": "Результат — робочий процес для відділу продажів",
+    "result": "Результат - робочий процес для відділу продажів",
     "resultText": "Команда SHEPIT працює в налаштованій CRM: звернення надходять до системи, угоди розподілено за етапами, а сповіщення про нові заявки приходять у Telegram.",
     "cta": "Потрібно поєднати заявки, CRM і команду?",
     "button": "Обговорити впровадження CRM",
@@ -88,8 +88,8 @@
     "card": "Kommo CRM для SHEPIT: воронка, інтеграції та бот сповіщень."
   },
   "en": {
-    "title": "SHEPIT — Kommo CRM and Telegram lead notifications",
-    "h": "Leads in the CRM. Alerts in Telegram.",
+    "title": "SHEPIT - Kommo CRM and Telegram lead notifications",
+    "h": "Leads in the CRM Alerts in Telegram",
     "lead": "We configured Kommo for SHEPIT’s sales team: connected enquiry channels, set up the pipeline and built a Telegram bot. Managers track deals in the CRM and receive new-lead alerts in their team chat.",
     "flow": [
       "Facebook and website",
@@ -132,8 +132,8 @@
     "card": "Kommo CRM for SHEPIT: pipeline, integrations and a notification bot."
   },
   "es": {
-    "title": "SHEPIT — Kommo CRM y avisos de nuevos contactos en Telegram",
-    "h": "Contactos en el CRM. Avisos en Telegram.",
+    "title": "SHEPIT - Kommo CRM y avisos de nuevos contactos en Telegram",
+    "h": "Contactos en el CRM Avisos en Telegram",
     "lead": "Configuramos Kommo para el equipo comercial de SHEPIT: conectamos los canales de consultas, definimos el embudo y creamos un bot de Telegram. Los gestores trabajan las oportunidades en el CRM y reciben avisos de nuevas consultas en el chat del equipo.",
     "flow": [
       "Facebook y web",
