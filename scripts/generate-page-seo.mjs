@@ -27,7 +27,7 @@ for (const locale of locales) {
     const h1 = text(html.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i)?.[1]) || 'RESET';
     const paragraphs = [...html.matchAll(/<p(?:\s[^>]*)?>([\s\S]*?)<\/p>/gi)].map((match) => text(match[1]));
     const description = (paragraphs.find((item) => item.length > 70) || h1).slice(0, 155);
-    const pageTitle = route === 'index.html' ? (html.match(/<title>([^<]+)<\/title>/i)?.[1] || `RESET — ${h1}`) : `${h1} — RESET`;
+    const pageTitle = route === 'index.html' ? (html.match(/<title>([^<]+)<\/title>/i)?.[1] || `RESET - ${h1}`) : `${h1} - RESET`;
     const existingImage = html.match(/<meta property="og:image" content="([^"]+)"/i)?.[1]
       || html.match(/<img[^>]+src="([^"]+)"/i)?.[1];
     const image = existingImage ? new URL(existingImage, url).href : defaultImage;

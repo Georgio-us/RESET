@@ -1,4 +1,4 @@
-import { normalizeHeadings } from './heading-style.js';
+import { normalizeHeadings, normalizeTextDashes } from './heading-style.js';
 import { renderBreadcrumbs } from './breadcrumbs.js';
 import { providerDetails } from './provider-details.js';
 import { uiCopy } from './ui-copy.js';
@@ -41,7 +41,7 @@ function replaceElement(html, opening, replacement) {
 }
 
 export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => true } = {}) {
-  html = normalizeHeadings(html);
+  html = normalizeTextDashes(normalizeHeadings(html));
   html = html.replace(/<link\b[^>]*href="\/(?:design-tokens|shared-ui)\.css(?:\?[^"]*)?"[^>]*>/g, '')
     .replace(/<script\b[^>]*src="\/(?:shared-ui|arrow-icons)\.js(?:\?[^"]*)?"[^>]*><\/script>/g, '');
   // Presentations keep their independent print/slide canvas, not website navigation.
@@ -75,5 +75,5 @@ export function renderSiteUI(html, { locale = 'ru', path = '/', exists = () => t
   html = html.replace('</body>', modal + '</body>');
   html = html.replace(/<body\b(?: data-reset-ui)?/i, '<body data-reset-ui');
   html = html.replace('</head>', '<link rel="stylesheet" href="/design-tokens.css?v=20260922-ui7"><link rel="stylesheet" href="/shared-ui.css?v=20260930-provider"><script type="module" src="/shared-ui.js?v=20260922-ui7"></script><script src="/arrow-icons.js?v=20260922-ui7" defer></script></head>');
-  return versionAssets(renderBreadcrumbs(normalizeHeadings(html), {locale,path,exists}));
+  return versionAssets(renderBreadcrumbs(normalizeTextDashes(normalizeHeadings(html)), {locale,path,exists}));
 }

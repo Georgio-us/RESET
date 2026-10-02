@@ -15,17 +15,17 @@ const walk = async (directory) => {
 };
 
 const localizedDescription = {
-  ru: 'RESET — цифровой маркетинг для недвижимости. Соединяем маркетинг, продажи, цифровые продукты и AI в единую систему для агентств недвижимости и девелоперов.',
-  uk: 'RESET — цифровий маркетинг для нерухомості. Поєднуємо маркетинг, продажі, цифрові продукти й AI в єдину систему для агенцій нерухомості та девелоперів.',
+  ru: 'RESET - цифровой маркетинг для недвижимости. Соединяем маркетинг, продажи, цифровые продукты и AI в единую систему для агентств недвижимости и девелоперов.',
+  uk: 'RESET - цифровий маркетинг для нерухомості. Поєднуємо маркетинг, продажі, цифрові продукти й AI в єдину систему для агенцій нерухомості та девелоперів.',
   en: 'RESET provides digital marketing for real estate. We connect marketing, sales, digital products and AI for agencies and developers.',
   es: 'RESET ofrece marketing digital para el sector inmobiliario. Conectamos marketing, ventas, productos digitales e IA para agencias y promotoras.',
 };
 
 const localizedTitle = {
-  ru: 'RESET — цифровой маркетинг для недвижимости',
-  uk: 'RESET — цифровий маркетинг для нерухомості',
-  en: 'RESET — digital marketing for real estate',
-  es: 'RESET — marketing digital inmobiliario',
+  ru: 'RESET - цифровой маркетинг для недвижимости',
+  uk: 'RESET - цифровий маркетинг для нерухомості',
+  en: 'RESET - digital marketing for real estate',
+  es: 'RESET - marketing digital inmobiliario',
 };
 
 for (const locale of locales) {

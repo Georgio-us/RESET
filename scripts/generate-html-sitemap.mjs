@@ -9,7 +9,7 @@ for(const locale of ['ru','uk','en','es']){
  const groups=[[],[],[],[]];
  for(const url of urls.filter(u=>u.pathname.startsWith(`/${locale}/`))){
   const html=await readFile(resolve(root,'.'+url.pathname+(url.pathname.endsWith('/')?'index.html':'')),'utf8');
-  const title=html.match(/<title>(.*?)<\/title>/s)?.[1].replace(/\s*[—–]\s*RESET$/,'')||url.pathname;
+  const title=html.match(/<title>(.*?)<\/title>/s)?.[1].replace(/\s*[--]\s*RESET$/,'')||url.pathname;
   const group=url.pathname.includes('/services/')?3:url.pathname.includes('/cases/')?1:url.pathname.includes('/materials/')?2:0;
   groups[group].push(`<li><a href="${url.pathname}">${title}</a></li>`);
  }

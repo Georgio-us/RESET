@@ -38,20 +38,20 @@ const ukOverrides = {
   '20+ рекламных креативов': '20+ рекламних креативів',
   'который остаётся': 'який залишається',
   'в работе каждый день.': 'у роботі щодня.',
-  'VIA.AI — Telegram Mini App для риелторов: поиск объектов, готовые подборки, работа с заявками и управление базой в одном интерфейсе.': 'VIA.AI — Telegram Mini App для рієлторів: пошук об’єктів, готові добірки, робота із заявками та керування базою в одному інтерфейсі.',
+  'VIA.AI - Telegram Mini App для риелторов: поиск объектов, готовые подборки, работа с заявками и управление базой в одном интерфейсе.': 'VIA.AI - Telegram Mini App для рієлторів: пошук об’єктів, готові добірки, робота із заявками та керування базою в одному інтерфейсі.',
   'Диалоговый поиск объектов': 'Діалоговий пошук об’єктів',
   'Карточки, фильтры и база объектов': 'Картки, фільтри та база об’єктів',
   'Заявки и административный контур': 'Заявки та адміністративний контур',
   'как привык.': 'як звик.',
   'Для Style Properties мы встроили AI-виджет в сайт агентства. Он понимает свободный запрос, подбирает объекты по каталогу и продолжает диалог, если точного совпадения нет.': 'Для Style Properties ми вбудували AI-віджет у сайт агенції. Він розуміє вільний запит, добирає об’єкти з каталогу та продовжує діалог, якщо точного збігу немає.',
-  'Локация, бюджет, тип объекта и контекст — без фильтров и сложных форм.': 'Локація, бюджет, тип об’єкта й контекст — без фільтрів і складних форм.',
+  'Локация, бюджет, тип объекта и контекст - без фильтров и сложных форм.': 'Локація, бюджет, тип об’єкта й контекст - без фільтрів і складних форм.',
   'Предлагает релевантную альтернативу, если точного объекта нет в каталоге.': 'Пропонує релевантну альтернативу, якщо точного об’єкта немає в каталозі.',
   'Ведёт к подборке': 'Веде до добірки',
   'Переводит диалог в следующее действие и показывает конкретные объекты.': 'Переводить діалог у наступну дію та показує конкретні об’єкти.',
   '06 / ВЫБРАННЫЕ КЕЙСЫ': '06 / ОБРАНІ КЕЙСИ',
   'Собираем системы': 'Збираємо системи',
   'реального рынка.': 'реального ринку.',
-  'Из разрозненных материалов — ясный бренд, путь клиента и систему привлечения.': 'Із розрізнених матеріалів — зрозумілий бренд, шлях клієнта та систему залучення.',
+  'Из разрозненных материалов - ясный бренд, путь клиента и систему привлечения.': 'Із розрізнених матеріалів - зрозумілий бренд, шлях клієнта та систему залучення.',
   'Конверсионный сайт и калькулятор сметы': 'Конверсійний сайт і калькулятор кошторису',
   'WhatsApp Business для быстрого контакта': 'WhatsApp Business для швидкого контакту',
   'Портфолио, отзывы, контент и печатные материалы': 'Портфоліо, відгуки, контент і друковані матеріали',
@@ -66,7 +66,7 @@ const ukOverrides = {
   'ВСЁ РАБОТАЕТ ОТДЕЛЬНО': 'УСЕ ПРАЦЮЄ ОКРЕМО',
   'инструменты уже есть, но работают': 'інструменти вже є, але працюють',
   'каждый сам по себе.': 'кожен сам по собі.',
-  'Систему собирали разные подрядчики в разное время: один настроил сайт, другой рекламу, третий CRM. Каждый решил свою задачу, но общая логика между инструментами так и не появилась.': 'Систему збирали різні підрядники в різний час: один налаштував сайт, інший — рекламу, третій — CRM. Кожен вирішив своє завдання, але спільна логіка між інструментами так і не з’явилася.',
+  'Систему собирали разные подрядчики в разное время: один настроил сайт, другой рекламу, третий CRM. Каждый решил свою задачу, но общая логика между инструментами так и не появилась.': 'Систему збирали різні підрядники в різний час: один налаштував сайт, інший - рекламу, третій - CRM. Кожен вирішив своє завдання, але спільна логіка між інструментами так і не з’явилася.',
   'Смотрим, какие инструменты уже есть и чем реально пользуется команда.': 'Дивимося, які інструменти вже є та чим команда справді користується.',
   'Проверяем, как между собой передаются данные, заявки и события.': 'Перевіряємо, як між собою передаються дані, заявки та події.',
   'Дорабатываем только недостающие связи и убираем лишние разрывы.': 'Допрацьовуємо лише відсутні зв’язки та прибираємо зайві розриви.',
@@ -75,14 +75,14 @@ const ukOverrides = {
   'Бизнес работает, но результаты': 'Бізнес працює, але результати',
   'что улучшать первым.': 'що покращувати насамперед.',
   'Реклама запущена, сайт есть, заявки могут приходить, но общая система уже не даёт того результата, который нужен.': 'Рекламу запущено, сайт є, заявки можуть надходити, але загальна система вже не дає потрібного результату.',
-  'Система долго развивалась частями, отдельные решения устарели, слабые места накапливались, а изменения делались точечно — без понимания общей картины.': 'Система довго розвивалася частинами, окремі рішення застаріли, слабкі місця накопичувалися, а зміни робили точково — без розуміння загальної картини.',
+  'Система долго развивалась частями, отдельные решения устарели, слабые места накапливались, а изменения делались точечно - без понимания общей картины.': 'Система довго розвивалася частинами, окремі рішення застаріли, слабкі місця накопичувалися, а зміни робили точково - без розуміння загальної картини.',
   'Смотрим рекламу, сайт, аналитику, CRM и текущий процесс работы с заявками.': 'Дивимося рекламу, сайт, аналітику, CRM і поточний процес роботи із заявками.',
   'Приоритеты': 'Пріоритети',
   'Определяем сильные и слабые места и понимаем, что действительно влияет на результат.': 'Визначаємо сильні та слабкі місця й розуміємо, що справді впливає на результат.',
   'Вместо попыток улучшать всё сразу становится понятно, где находится главный резерв роста и какие действия дадут наибольший эффект в первую очередь.': 'Замість спроб покращити все одразу стає зрозуміло, де головний резерв зростання та які дії дадуть найбільший ефект насамперед.',
   'Согласен на обработку данных по': 'Погоджуюся на обробку даних за',
   'Давайте разберём': 'Давайте розберемо',
-  'Оставьте контакт — вернёмся с вопросами и следующим шагом.': 'Залиште контакт — повернемося із запитаннями та наступним кроком.',
+  'Оставьте контакт - вернёмся с вопросами и следующим шагом.': 'Залиште контакт - повернемося із запитаннями та наступним кроком.',
   'Отправляя форму, вы принимаете': 'Надсилаючи форму, ви приймаєте',
   'Мы на связи.': 'Ми на зв’язку.',
   'Запрос уже у команды. Вернёмся к вам по указанному контакту, чтобы уточнить детали и предложить следующий шаг.': 'Запит уже в команди. Повернемося до вас за вказаним контактом, щоб уточнити деталі та запропонувати наступний крок.',
@@ -121,7 +121,7 @@ const ukOverrides = {
   'Google Ads: спрос, семантика и реальная цена лида': 'Google Ads: попит, семантика та реальна ціна ліда',
   'Собственный AI-инструмент консультирует клиентов, понимает намерение, подбирает объекты и ведёт пользователя к обращению.': 'Власний AI-інструмент консультує клієнтів, розуміє намір, добирає об’єкти й веде користувача до звернення.',
   'а помощник по выбору объекта.': 'а помічник у виборі об’єкта.',
-  'Посетителю сайта нужен быстрый ответ на вопрос о нерухомості. Команде продаж — понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения.': 'Відвідувачу сайту потрібна швидка відповідь на запитання про нерухомість. Команді продажів — розуміння запиту, контакт клієнта й наступний крок без ручної обробки кожного першого повідомлення.',
+  'Посетителю сайта нужен быстрый ответ на вопрос о нерухомості. Команде продаж - понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения.': 'Відвідувачу сайту потрібна швидка відповідь на запитання про нерухомість. Команді продажів - розуміння запиту, контакт клієнта й наступний крок без ручної обробки кожного першого повідомлення.',
   'Текстовый и голосовой сценарий вместо формы с длинным списком полей.': 'Текстовий і голосовий сценарій замість форми з довгим списком полів.',
   '02 / БАЗА ОБЪЕКТОВ': '02 / БАЗА ОБ’ЄКТІВ',
   'AI учитывает бюджет, локацию, комнаты и другие условия поиска.': 'AI враховує бюджет, локацію, кімнати та інші умови пошуку.',
@@ -182,13 +182,13 @@ const ukOverrides = {
   'Креатив Meta Ads: выбор формата и площади': 'Креатив Meta Ads: вибір формату та площі',
   'Статистика рекламных кампаний Google Ads': 'Статистика рекламних кампаній Google Ads',
   'Результаты кампаний Meta Ads': 'Результати кампаній Meta Ads',
-  'Воронка фиксирует контекст обращения и даёт команде понятный следующий шаг — вместо разрозненных сообщений и таблиц.': 'Воронка фіксує контекст звернення та дає команді зрозумілий наступний крок — замість розрізнених повідомлень і таблиць.',
+  'Воронка фиксирует контекст обращения и даёт команде понятный следующий шаг - вместо разрозненных сообщений и таблиц.': 'Воронка фіксує контекст звернення та дає команді зрозумілий наступний крок - замість розрізнених повідомлень і таблиць.',
   'Выбрать дом ↗': 'Обрати будинок ↗',
-  'Запуск — это': 'Запуск — це',
+  'Запуск - это': 'Запуск - це',
   'Интеграция рекламных источников': 'Інтеграція рекламних джерел',
   'Кампании собраны вокруг реальных намерений: покупка дома, локация, формат жизни и финансовые условия.': 'Кампанії зібрано навколо реальних намірів: купівля будинку, локація, формат життя та фінансові умови.',
   'Креативи, которые': 'Креативи, які',
-  'Настроены GA4, GTM, Meta Pixel и события — от первого перехода до отправки формы.': 'Налаштовано GA4, GTM, Meta Pixel і події — від першого переходу до надсилання форми.',
+  'Настроены GA4, GTM, Meta Pixel и события - от первого перехода до отправки формы.': 'Налаштовано GA4, GTM, Meta Pixel і події - від першого переходу до надсилання форми.',
   'Настроили GA4, Google Tag Manager, Meta Pixel и события: от первого перехода до отправки формы и коммуникации с менеджером.': 'Налаштували GA4, Google Tag Manager, Meta Pixel і події: від першого переходу до надсилання форми та комунікації з менеджером.',
   'Не было связки: сайт, реклама, аналитика и продажи': 'Не було зв’язки: сайт, реклама, аналітика та продажі',
   'Новый лид': 'Новий лід',
@@ -217,18 +217,18 @@ const ukOverrides = {
   'такой же управляемый': 'такий самий керований',
   'Все материалы': 'Усі матеріали',
   '← Все материалы': '← Усі матеріали',
-  'Выберите направление — внутри каждого раздела собраны статьи, которые можно читать последовательно или открывать напрямую.': 'Оберіть напрям — у кожному розділі зібрано статті, які можна читати послідовно або відкривати напряму.',
+  'Выберите направление - внутри каждого раздела собраны статьи, которые можно читать последовательно или открывать напрямую.': 'Оберіть напрям - у кожному розділі зібрано статті, які можна читати послідовно або відкривати напряму.',
   'Выбрать раздел': 'Обрати розділ',
   'Открыть раздел': 'Відкрити розділ',
   'Практические материалы': 'Практичні матеріали',
   'Копировать ссылку': 'Копіювати посилання',
   'Поделиться статьёй': 'Поділитися статтею',
-  'Разработка — материалы RESET': 'Розробка — матеріали RESET',
-  'Дизайн — материалы RESET': 'Дизайн — матеріали RESET',
-  'Маркетинг — материалы RESET': 'Маркетинг — матеріали RESET',
-  'Ринок — материалы RESET': 'Ринок — матеріали RESET',
-  'AI — материалы RESET': 'AI — матеріали RESET',
-  'Все материалы — RESET': 'Усі матеріали — RESET',
+  'Разработка - материалы RESET': 'Розробка - матеріали RESET',
+  'Дизайн - материалы RESET': 'Дизайн - матеріали RESET',
+  'Маркетинг - материалы RESET': 'Маркетинг - матеріали RESET',
+  'Ринок - материалы RESET': 'Ринок - матеріали RESET',
+  'AI - материалы RESET': 'AI - матеріали RESET',
+  'Все материалы - RESET': 'Усі матеріали - RESET',
   'Инструменты': 'Інструменти',
   'Выбор': 'Вибір',
   'Как выбрать подход': 'Як обрати підхід',
@@ -258,7 +258,7 @@ const ukOverrides = {
   'Определим, что стоит менять сейчас и какой формат решения даст опору для следующего этапа.': 'Визначимо, що варто змінювати зараз і який формат рішення стане опорою для наступного етапу.',
   'Выбрать решение, которое можно развивать дальше.': 'Обрати рішення, яке можна розвивати далі.',
   'Определить, какие данные и сценарии уже есть.': 'Визначити, які дані та сценарії вже є.',
-  'Рабочий подход должен соответствовать этапу проекта и конкретному ограничению. Иногда нужен быстрый тест гипотезы, иногда — основа для нескольких каналов, контента и аналитики.': 'Робочий підхід має відповідати етапу проєкту та конкретному обмеженню. Іноді потрібен швидкий тест гіпотези, іноді — основа для кількох каналів, контенту й аналітики.',
+  'Рабочий подход должен соответствовать этапу проекта и конкретному ограничению. Иногда нужен быстрый тест гипотезы, иногда - основа для нескольких каналов, контента и аналитики.': 'Робочий підхід має відповідати етапу проєкту та конкретному обмеженню. Іноді потрібен швидкий тест гіпотези, іноді - основа для кількох каналів, контенту й аналітики.',
   'Визуальный контекст материала RESET Journal.': 'Візуальний контекст матеріалу RESET Journal.',
   'Ни один инструмент не работает сам по себе. Его нужно связать с трафиком, контентом, аналитикой и действиями команды. Тогда можно понять не только факт результата, но и причину, по которой он появился.': 'Жоден інструмент не працює сам по собі. Його потрібно пов’язати з трафіком, контентом, аналітикою та діями команди. Тоді можна зрозуміти не лише факт результату, а й причину його появи.',
   'После внедрения важно следить за поведением пользователей, качеством обращений и тем, как решение влияет на следующие этапы работы.': 'Після впровадження важливо стежити за поведінкою користувачів, якістю звернень і тим, як рішення впливає на наступні етапи роботи.',
@@ -276,7 +276,7 @@ const ukOverrides = {
   'Ошибка начинается, когда формат выбирают по привычке: «нам нужен сайт, потому что он солиднее» или «сделаем лендинг, потому что быстрее». В обоих случаях можно получить красивую страницу, которая не помогает продажам.': 'Помилка починається, коли формат обирають за звичкою: «нам потрібен сайт, бо він солідніший» або «зробимо лендінг, бо так швидше». В обох випадках можна отримати гарну сторінку, яка не допомагає продажам.',
   'Разберём, какой формат нужен вашему проекту.': 'Розберімо, який формат потрібен вашому проєкту.',
   'что должно измениться в пути клиента и системе работы после решения.': 'що має змінитися в шляху клієнта та системі роботи після рішення.',
-  '— собрать спрос на один объект, объяснить сложное предложение или стать постоянной точкой продаж.': '— зібрати попит на один об’єкт, пояснити складну пропозицію або стати постійною точкою продажів.',
+  '- собрать спрос на один объект, объяснить сложное предложение или стать постоянной точкой продаж.': '- зібрати попит на один об’єкт, пояснити складну пропозицію або стати постійною точкою продажів.',
   'Как выбрать между лендингом и сайтом для проекта нерухомості: цели, структура, сценарии и следующий шаг.': 'Як обрати між лендінгом і сайтом для проєкту нерухомості: цілі, структура, сценарії та наступний крок.',
   'Материалы RESET о разработке сайтов и цифровых продуктов для нерухомості.': 'Матеріали RESET про розробку сайтів і цифрових продуктів для нерухомості.',
   'Материалы RESET: AI.': 'Матеріали RESET: AI.',
@@ -301,7 +301,7 @@ const enOverrides = {
   'Решения': 'Solutions',
   'Кейсы': 'Case studies',
   'Обсудить задачу': 'Discuss your project',
-  'REAL ESTATE / УКРАИНА — ЕВРОПА': 'REAL ESTATE / UKRAINE — EUROPE',
+  'REAL ESTATE / УКРАИНА - ЕВРОПА': 'REAL ESTATE / UKRAINE - EUROPE',
   'Настраиваем': 'We build',
   'системы роста': 'growth systems',
   'для недвижимости.': 'for real estate.',
@@ -356,7 +356,7 @@ const enOverrides = {
   'Главная': 'Home',
   'Собираем системы': 'We build systems',
   'реального рынка.': 'for the real market.',
-  'Из разрозненных материалов — ясный бренд, путь клиента и систему привлечения.': 'From scattered materials to a clear brand, customer journey and acquisition system.',
+  'Из разрозненных материалов - ясный бренд, путь клиента и систему привлечения.': 'From scattered materials to a clear brand, customer journey and acquisition system.',
   'Конверсионный сайт и калькулятор сметы': 'Conversion website and cost calculator',
   'WhatsApp Business для быстрого контакта': 'WhatsApp Business for fast contact',
   'Портфолио, отзывы, контент и печатные материалы': 'Portfolio, testimonials, content and print materials',
@@ -420,10 +420,10 @@ const enOverrides = {
   'Подбор объектов по запросу': 'Property selection by request',
   'Заявки и административный контур': 'Leads and administration',
   'Digital-инструменты для работы риелторов с клиентами и базой объектов.': 'Digital tools for real-estate agents working with clients and a property database.',
-  'VIA.AI — Telegram Mini App для риелторов: поиск объектов, готовые подборки, работа с заявками и управление базой в одном интерфейсе.': 'VIA.AI is a Telegram Mini App for real-estate agents: property search, ready selections, lead handling and database management in one interface.',
-  'Агентствам нужен был быстрый ежедневный инструмент прямо в Telegram — без отдельных CRM и сайтов. Мы объединили работу с объектами, клиентами и AI в одной платформе.': 'Agencies needed a fast daily tool inside Telegram, without separate CRM systems and websites. We brought properties, clients and AI together in one platform.',
+  'VIA.AI - Telegram Mini App для риелторов: поиск объектов, готовые подборки, работа с заявками и управление базой в одном интерфейсе.': 'VIA.AI is a Telegram Mini App for real-estate agents: property search, ready selections, lead handling and database management in one interface.',
+  'Агентствам нужен был быстрый ежедневный инструмент прямо в Telegram - без отдельных CRM и сайтов. Мы объединили работу с объектами, клиентами и AI в одной платформе.': 'Agencies needed a fast daily tool inside Telegram, without separate CRM systems and websites. We brought properties, clients and AI together in one platform.',
   'Для Style Properties мы встроили AI-виджет в сайт агентства. Он понимает свободный запрос, подбирает объекты по каталогу и продолжает диалог, если точного совпадения нет.': 'For Style Properties, we integrated an AI widget into the agency website. It understands natural-language requests, selects properties from the catalogue and continues the dialogue when there is no exact match.',
-  'Локация, бюджет, тип объекта и контекст — без фильтров и сложных форм.': 'Location, budget, property type and context — without filters or complex forms.',
+  'Локация, бюджет, тип объекта и контекст - без фильтров и сложных форм.': 'Location, budget, property type and context - without filters or complex forms.',
   'Предлагает релевантную альтернативу, если точного объекта нет в каталоге.': 'Offers a relevant alternative when the exact property is not in the catalogue.',
   'AI-консультанты, Telegram-боты, автоматические сценарии, работа с базами объектов, голосовые и текстовые интерфейсы.': 'AI consultants, Telegram bots, automated workflows, property-database operations, and voice and text interfaces.',
   'SEO-структура сайта, технический аудит, работа со страницами и индексацией, настройка GA4, GTM, Google Search Console и событий.': 'SEO site structure, technical audit, page and indexing work, plus GA4, GTM, Google Search Console and event setup.',
@@ -450,7 +450,7 @@ const enOverrides = {
   'Определяем приоритетные действия и следующий шаг.': 'We determine priority actions and the next step.',
   'Определяем, какие инструменты действительно нужны именно этому проекту.': 'We determine which tools this specific project truly needs.',
   'Основа, на которой не теряются лиды.': 'A foundation where leads are not lost.',
-  'Оставьте контакт — вернёмся с вопросами и следующим шагом.': 'Leave your contact details — we will return with questions and a next step.',
+  'Оставьте контакт - вернёмся с вопросами и следующим шагом.': 'Leave your contact details - we will return with questions and a next step.',
   'Ответим и предложим следующий шаг без готовых шаблонных решений.': 'We will respond and suggest the next step without off-the-shelf solutions.',
   'Отзывы клиентов,': 'Client testimonials,',
   'Отправляя форму, вы принимаете': 'By submitting the form, you accept the',
@@ -490,7 +490,7 @@ const enOverrides = {
   'Следующий экран': 'Next screen', 'Предыдущий экран': 'Previous screen', 'Хлебные крошки': 'Breadcrumbs',
   'Все кейсы →': 'All case studies →', '← Все кейсы': '← All case studies', '← Смотреть все кейсы': '← View all case studies',
   'CTR лучшего объявления': 'Best-ad CTR', 'GA4, GTM, CRM и процесс работы с лидами': 'GA4, GTM, CRM and lead-management process',
-  'Воронка фиксирует контекст обращения и даёт команде понятный следующий шаг — вместо разрозненных сообщений и таблиц.': 'The funnel records the context of each enquiry and gives the team a clear next step instead of scattered messages and spreadsheets.',
+  'Воронка фиксирует контекст обращения и даёт команде понятный следующий шаг - вместо разрозненных сообщений и таблиц.': 'The funnel records the context of each enquiry and gives the team a clear next step instead of scattered messages and spreadsheets.',
   'Выбрать дом ↗': 'Choose a home ↗', 'Голосовые и текстовые запросы': 'Voice and text requests',
   'Готовый инструмент': 'Ready-to-use tool', 'База клиентов внутри системы': 'Client database inside the system',
   'Быстрый поиск недвижимости': 'Fast property search', 'Импорт объектов через Excel и OLX': 'Property import through Excel and OLX',
@@ -507,11 +507,11 @@ const enOverrides = {
   'События и отправка форм': 'Events and form submissions', 'События на сайте': 'Website events',
   'Стратегия выхода на рынок': 'Market-entry strategy', 'Сценарий выбора дома, барьеры и триггеры решения.': 'Home-selection scenario, barriers and decision triggers.',
   'Ясный объект, преимущества и следующий шаг.': 'A clear property, its benefits and the next step.',
-  'Все материалы': 'All materials', 'Все материалы — RESET': 'All materials — RESET',
-  'Выберите направление — внутри каждого раздела собраны статьи, которые можно читать последовательно или открывать напрямую.': 'Choose a direction — each section contains articles you can read in sequence or open directly.',
+  'Все материалы': 'All materials', 'Все материалы - RESET': 'All materials - RESET',
+  'Выберите направление - внутри каждого раздела собраны статьи, которые можно читать последовательно или открывать напрямую.': 'Choose a direction - each section contains articles you can read in sequence or open directly.',
   'Выбрать раздел': 'Choose a section', 'Разделы материалов': 'Material sections', 'Поделиться статьёй': 'Share article', 'Копировать ссылку': 'Copy link',
-  'Дизайн — материалы RESET': 'Design — RESET materials', 'Маркетинг — материалы RESET': 'Marketing — RESET materials',
-  'AI — материалы RESET': 'AI — RESET materials', 'Market — материалы RESET': 'Market — RESET materials',
+  'Дизайн - материалы RESET': 'Design - RESET materials', 'Маркетинг - материалы RESET': 'Marketing - RESET materials',
+  'AI - материалы RESET': 'AI - RESET materials', 'Market - материалы RESET': 'Market - RESET materials',
   'Визуальный контекст материала RESET Journal.': 'Visual context for this RESET Journal article.',
   'Выбор между лендингом и сайтом начинается не с количества экранов. Он зависит от того,': 'The choice between a landing page and a website does not start with the number of screens. It depends on',
   'В этой стартовой версии разбираем вопрос через призму реальной задачи проекта:': 'In this first version, we examine the question through the lens of a real project task:',
@@ -537,7 +537,7 @@ const enOverrides = {
   'Контекст задачи важнее инструмента': 'Task context matters more than the tool',
   'Решение влияет на привлечение, доверие, обработку обращений и способность проекта масштабироваться без потери качества.': 'The decision affects acquisition, trust, enquiry handling and the project’s ability to scale without losing quality.',
   'Поэтому стартовать стоит с аудитории, предложения и существующего пути пользователя. Это даёт критерии выбора, а не набор общих рекомендаций.': 'Start with the audience, the offer and the current user journey. This gives you selection criteria rather than generic recommendations.',
-  'Рабочий подход должен соответствовать этапу проекта и конкретному ограничению. Иногда нужен быстрый тест гипотезы, иногда — основа для нескольких каналов, контента и аналитики.': 'A working approach must fit the project stage and a specific constraint. Sometimes a quick hypothesis test is needed; sometimes a foundation for several channels, content and analytics.',
+  'Рабочий подход должен соответствовать этапу проекта и конкретному ограничению. Иногда нужен быстрый тест гипотезы, иногда - основа для нескольких каналов, контента и аналитики.': 'A working approach must fit the project stage and a specific constraint. Sometimes a quick hypothesis test is needed; sometimes a foundation for several channels, content and analytics.',
   'Сформулировать одну измеримую задачу.': 'Formulate one measurable task.',
   'Определить, какие данные и сценарии уже есть.': 'Identify which data and scenarios already exist.',
   'Выбрать решение, которое можно развивать дальше.': 'Choose a solution that can be developed further.',
@@ -567,13 +567,13 @@ const enOverrides = {
   'SEO и реклама как связанные элементы одного контура роста.': 'SEO and advertising as connected elements of one growth framework.',
   'Как связать оффер, креатив и обработку лида.': 'How to connect the offer, creative and lead handling.',
   'Инструменты': 'Tools', 'Открыть раздел': 'Open section', 'Практические материалы': 'Practical materials',
-  'Разработка — материалы RESET': 'Development — RESET materials',
+  'Разработка - материалы RESET': 'Development - RESET materials',
   'Нужно быстро проверить спрос и оффер.': 'You need to quickly test demand and the offer.',
   'Сначала определяем разрыв в системе.': 'First, we identify the gap in the system.',
   'Стартовый материал о выборе формата.': 'A starting article about choosing a format.',
   'Решение выбирают по будущему пути клиента, а не по числу блоков.': 'The solution is chosen by the future client journey, not the number of blocks.',
   'Сайты и цифровые продукты как часть системы продаж.': 'Websites and digital products as part of the sales system.',
-  'Market — материалы RESET': 'Market — RESET materials',
+  'Market - материалы RESET': 'Market - RESET materials',
   'Как выбрать между лендингом и сайтом для проекта недвижимости: цели, структура, сценарии и следующий шаг.': 'How to choose between a landing page and a website for a real-estate project: goals, structure, scenarios and the next step.',
   'Как выбирать технологию по задаче, а не по моде.': 'How to choose technology by the task, not by fashion.',
   'Лендинги, сайты, CRM-интеграции и цифровые продукты: разбираем, как выбрать подходящий формат и не потерять будущие возможности проекта.': 'Landing pages, websites, CRM integrations and digital products: how to choose the right format and retain future project opportunities.',
@@ -583,15 +583,15 @@ const enOverrides = {
   'Разберём эту задачу в контексте вашего проекта.': 'Let’s examine this task in the context of your project.',
   'Разберём, какой формат нужен вашему проекту.': 'Let’s determine which format your project needs.',
   'что должно измениться в пути клиента и системе работы после решения.': 'what should change in the client journey and work system after the decision.',
-  '— собрать спрос на один объект, объяснить сложное предложение или стать постоянной точкой продаж.': '— build demand for one property, explain a complex offer or become a permanent sales point.',
+  '- собрать спрос на один объект, объяснить сложное предложение или стать постоянной точкой продаж.': '- build demand for one property, explain a complex offer or become a permanent sales point.',
   'Как собрать кампании вокруг намерения купить.': 'How to build campaigns around buying intent.',
   'Что действительно влияет на восприятие продукта.': 'What truly affects product perception.',
   'AI первым начинает диалог': 'AI starts the dialogue first', 'AI учитывает бюджет, локацию, комнаты и другие условия поиска.': 'AI considers budget, location, rooms and other search conditions.',
   'AI-помощник, обученный на вашей базе объектов': 'AI assistant trained on your property database',
   'Добавляйте новые объекты, редактируйте существующие и управляйте собственной базой недвижимости через удобный интерфейс.': 'Add new properties, edit existing ones and manage your own property database through a convenient interface.',
-  'Запуск — это': 'A launch is',
+  'Запуск - это': 'A launch is',
   'Кампании собраны вокруг реальных намерений: покупка дома, локация, формат жизни и финансовые условия.': 'Campaigns are built around real intent: buying a home, location, lifestyle and financial conditions.',
-  'Настроены GA4, GTM, Meta Pixel и события — от первого перехода до отправки формы.': 'GA4, GTM, Meta Pixel and events are set up from the first visit through form submission.',
+  'Настроены GA4, GTM, Meta Pixel и события - от первого перехода до отправки формы.': 'GA4, GTM, Meta Pixel and events are set up from the first visit through form submission.',
   'Настроили GA4, Google Tag Manager, Meta Pixel и события: от первого перехода до отправки формы и коммуникации с менеджером.': 'We set up GA4, Google Tag Manager, Meta Pixel and events from the first visit through form submission and manager communication.',
   'Не было связки: сайт, реклама, аналитика и продажи': 'There was no connection between the website, advertising, analytics and sales',
   'Новый лид': 'New lead', 'Новый лид → В работе → Встреча → Отложенный спрос → Сделка': 'New lead → In progress → Meeting → Deferred demand → Deal',
@@ -620,7 +620,7 @@ const enOverrides = {
   'Креатив Meta Ads: выбор формата и площади': 'Meta Ads creative: choosing format and area',
   'Статистика рекламных кампаний Google Ads': 'Google Ads campaign statistics',
   'Результаты кампаний Meta Ads': 'Meta Ads campaign results',
-  'Посетителю сайта нужен быстрый ответ на вопрос о real estate. Команде продаж — понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения.': 'A website visitor needs a quick answer about real estate. The sales team needs to understand the request, receive the client’s contact and know the next step without manually handling every first message.',
+  'Посетителю сайта нужен быстрый ответ на вопрос о real estate. Команде продаж - понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения.': 'A website visitor needs a quick answer about real estate. The sales team needs to understand the request, receive the client’s contact and know the next step without manually handling every first message.',
   'Собственный AI-инструмент консультирует клиентов, понимает намерение, подбирает объекты и ведёт пользователя к обращению.': 'A proprietary AI tool advises clients, understands intent, selects properties and guides the user towards an enquiry.',
   'Тестируем не декоративные объявления, а разные точки входа: дом, условия покупки, локацию и стиль жизни.': 'We test not decorative ads, but different entry points: the home, purchase conditions, location and lifestyle.',
   'Формируйте подборки объектов буквально за несколько секунд и сохраняйте их для каждого клиента.': 'Create property selections in seconds and save them for each client.',
@@ -635,7 +635,7 @@ const enOverrides = {
 const esOverrides = {
   'Язык сайта': 'Idioma del sitio', 'Основная навигация': 'Navegación principal',
   'Система': 'Sistema', 'Решения': 'Soluciones', 'Кейсы': 'Casos de estudio',
-  'Обсудить задачу': 'Hablar del proyecto', 'REAL ESTATE / УКРАИНА — ЕВРОПА': 'REAL ESTATE / UCRANIA — EUROPA',
+  'Обсудить задачу': 'Hablar del proyecto', 'REAL ESTATE / УКРАИНА - ЕВРОПА': 'REAL ESTATE / UCRANIA - EUROPA',
   'Настраиваем': 'Construimos', 'системы роста': 'sistemas de crecimiento', 'для недвижимости.': 'para el sector inmobiliario.',
   'Соединяем маркетинг, продажи, цифровые продукты и AI в одну систему, которая приводит к сделке.': 'Unimos marketing, ventas, productos digitales e IA en un sistema que conduce a la conversión.',
   'Разобрать задачу': 'Analizar el reto', 'Как это работает': 'Cómo funciona',
@@ -717,8 +717,8 @@ for (const sourcePath of sourceFiles) {
       .replace(/Creatives, которые/g, 'Creatives that')
       .replace(/Creatives и результаты Meta Ads/g, 'Creatives and Meta Ads results')
       .replace(/Спрос, который/g, 'Demand that')
-      .replace(/Посетителю сайта нужен быстрый ответ на вопрос о real estate\. Команде продаж — понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения\./g, 'A website visitor needs a quick answer about real estate. The sales team needs to understand the request, receive the client’s contact and know the next step without manually handling every first message.')
-      .replace(/System долго развивалась частями, отдельные решения устарели, слабые места накапливались, а изменения делались точечно — без понимания общей картины\./g, 'The system evolved in fragments over time: some solutions became outdated, weak points accumulated and changes were made tactically without a view of the whole picture.')
+      .replace(/Посетителю сайта нужен быстрый ответ на вопрос о real estate\. Команде продаж - понимание запроса, контакт клиента и следующий шаг без ручной обработки каждого первого сообщения\./g, 'A website visitor needs a quick answer about real estate. The sales team needs to understand the request, receive the client’s contact and know the next step without manually handling every first message.')
+      .replace(/System долго развивалась частями, отдельные решения устарели, слабые места накапливались, а изменения делались точечно - без понимания общей картины\./g, 'The system evolved in fragments over time: some solutions became outdated, weak points accumulated and changes were made tactically without a view of the whole picture.')
       .replace(/Систему собирали разные подрядчики в разное время: один настроил сайт, другой рекламу, третий CRM\. Каждый решил свою задачу, но общая логика между инструментами так и не появилась\./g, 'Different contractors built the system at different times: one set up the website, another advertising, a third the CRM. Each solved their own task, but no shared logic emerged between the tools.')
       .replace(/Начнём с того,/g, 'Let’s start with')
       .replace(/Системный/g, 'Systematic')
@@ -733,7 +733,7 @@ for (const sourcePath of sourceFiles) {
       .replace(/который остаётся/g, 'that remains')
       .replace(/с CRM, объектами/g, 'with CRM and properties')
       .replace(/что улучшать первым\./g, 'what to improve first.')
-      .replace(/Market — материалы RESET/g, 'Market — RESET materials')
+      .replace(/Market - материалы RESET/g, 'Market - RESET materials')
       .replace(/Market<br>для <em>роста\.<\/em>/g, 'Market<br>for <em>growth.</em>')
       .replace(/Practical insights для проектов in real estate\./g, 'Practical insights for real-estate projects.')
       .replace(/Инструмент,<br \/>that остаётся<br \/><em>in use every day\.<\/em>/g, 'A tool,<br />that remains<br /><em>in use every day.</em>')
@@ -761,17 +761,17 @@ for (const sourcePath of sourceFiles) {
   html = html.replace(/<head>/i, `<head>\n    ${alternates}`);
   if (locale === 'uk' && sourceRelativePath === 'index.html') {
     html = html
-      .replace(/<title>[^<]*<\/title>/, '<title>RESET — системи зростання для нерухомості</title>')
-      .replace(/<meta name="description" content="[^"]*" \/>/, '<meta name="description" content="RESET — системи зростання для нерухомості: маркетинг, сайти, CRM, аналітика та AI для агенцій, девелоперів і real estate-проєктів." />');
+      .replace(/<title>[^<]*<\/title>/, '<title>RESET - системи зростання для нерухомості</title>')
+      .replace(/<meta name="description" content="[^"]*" \/>/, '<meta name="description" content="RESET - системи зростання для нерухомості: маркетинг, сайти, CRM, аналітика та AI для агенцій, девелоперів і real estate-проєктів." />');
   }
   if (locale === 'en' && sourceRelativePath === 'index.html') {
     html = html
-      .replace(/<title>[^<]*<\/title>/, '<title>RESET — growth systems for real estate</title>')
+      .replace(/<title>[^<]*<\/title>/, '<title>RESET - growth systems for real estate</title>')
       .replace(/<meta name="description" content="[^"]*" \/>/, '<meta name="description" content="RESET builds growth systems for real estate: marketing, websites, CRM, analytics and AI for agencies, developers and property businesses." />');
   }
   if (locale === 'es' && sourceRelativePath === 'index.html') {
     html = html
-      .replace(/<title>[^<]*<\/title>/, '<title>RESET — sistemas de crecimiento para inmobiliarias</title>')
+      .replace(/<title>[^<]*<\/title>/, '<title>RESET - sistemas de crecimiento para inmobiliarias</title>')
       .replace(/<meta name="description" content="[^"]*" \/>/, '<meta name="description" content="RESET crea sistemas de crecimiento para inmobiliarias: marketing, sitios web, CRM, analítica e IA para agencias y promotoras." />');
   }
 
