@@ -12,7 +12,8 @@
     "build:journal": "node scripts/build-journal.mjs",
     "build:seo": "node scripts/prepare-seo-release.mjs",
     "build:ui": "node scripts/build-shared-ui.mjs",
-    "build:services": "node scripts/build-services.mjs"
+    "build:services": "node scripts/build-services.mjs",
+    "build:covers": "node scripts/build-case-covers.mjs"
   },
   "engines": {
     "node": ">=20"

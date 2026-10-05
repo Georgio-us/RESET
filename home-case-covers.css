@@ -1,4 +1,4 @@
-/* Homepage previews use the approved case assets without cropping or overlaid labels. */
+/* Hero previews retain their approved case assets and device frames. */
 .home-dev .home-cover:before,.home-dev .home-cover:after { display:none; }
 .home-dev .hero-case-art.home-cover { height:330px; display:flex; align-items:center; justify-content:center; padding:16px; background:var(--color-paper); }
 .home-dev .dev-work-image.home-cover { display:flex; align-items:center; justify-content:center; padding:16px; background:var(--color-paper); aspect-ratio:1.35; }
@@ -26,3 +26,38 @@
 }
 /* Allow wide interface images to shrink below their intrinsic height inside the hero. */
 .home-dev .home-cover-desktop .home-cover-media img { min-height:0; flex:1 1 auto; }
+
+/* Shared case-card system: fixed geometry, one teal, authentic case fragments. */
+.home-dev .dev-work-image.case-cover {
+ --cover-teal:#194957;
+ position:relative; display:block; box-sizing:border-box; width:100%;
+ height:auto; min-height:0; aspect-ratio:3/2; padding:0; overflow:hidden;
+ background:var(--cover-teal); border:1px solid #63858e; border-radius:0;
+ color:#dbeef1; container-type:inline-size;
+}
+.home-dev .case-cover:before {
+ content:""; display:block; position:absolute; inset:0; pointer-events:none;
+ background-image:linear-gradient(#a5cbd106 1px,transparent 1px),linear-gradient(90deg,#a5cbd106 1px,transparent 1px);
+ background-size:12% 26%;
+}
+.home-dev .case-cover:after { display:none; }
+.home-dev .case-cover-index {position:absolute;left:4.2%;top:6%;font-size:1.5cqw;letter-spacing:.1em;font-weight:500;color:#9ec2cb;}
+.home-dev .case-cover-title {position:absolute;left:4.2%;bottom:15%;max-width:48%;font-size:7.8cqw;line-height:.98;letter-spacing:-.055em;font-weight:700;z-index:2;}
+.home-dev .case-cover-caption {position:absolute;left:4.2%;bottom:5.8%;width:79%;font-size:1.55cqw;line-height:1.45;letter-spacing:.045em;font-weight:500;font-style:normal;text-transform:uppercase;color:#a8cbd2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.home-dev .case-cover-fragment {position:absolute;right:4.2%;top:24%;width:49%;height:48%;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.home-dev .case-cover-fragment img {display:block;position:static;width:100%;height:100%;object-fit:contain;object-position:center;border:0;border-radius:0;padding:0;filter:none;transform:none;box-shadow:none;}
+.home-dev .case-cover-phone .case-cover-fragment {top:9%;right:12%;width:28%;height:69%;}
+.home-dev .case-cover-creative .case-cover-fragment {top:12%;right:5%;width:45%;height:65%;}
+.home-dev .case-cover-full>img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border:0;padding:0;filter:none;}
+.home-dev .case-cover-full:before {display:none;}
+.home-dev .dev-work-image.case-cover>.case-cover-arrow {position:absolute;right:3.2%;bottom:4.8%;width:6.6%;height:auto;aspect-ratio:1;display:grid;place-items:center;border-radius:0;border:1px solid #83aebc;background:#103747;color:#dbeef1;box-shadow:5px 5px 0 #83aebc;z-index:3;}
+.home-dev .case-cover-arrow svg {width:58%;height:58%;stroke:currentColor;stroke-width:1.6;}
+.home-dev .case-cover:focus-visible {outline:3px solid #dbeef1;outline-offset:5px;}
+@media(max-width:700px){
+ .home-dev .case-cover-index{font-size:2.3cqw;}
+ .home-dev .case-cover-caption{font-size:2.1cqw;letter-spacing:.015em;}
+ .home-dev .case-cover-title{font-size:7.8cqw;bottom:18%;}
+}
+
+.home-dev .case-cover-long-title .case-cover-title {font-size:6.4cqw;}
+.home-dev .case-cover-full[data-work-link="shepit-website"]>img {object-fit:contain;padding:4%;box-sizing:border-box;}
