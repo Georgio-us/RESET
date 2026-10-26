@@ -14,8 +14,16 @@
       "id": "service-meta-ads",
       "kind": "service",
       "sourceSlug": "meta-ads",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-meta-ads",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-11-02T09:00:00Z",
+      "labels": {
+        "ru": "Реклама недвижимости в Facebook и Instagram",
+        "uk": "Реклама нерухомості у Facebook та Instagram",
+        "en": "Real estate advertising on Facebook and Instagram",
+        "es": "Publicidad inmobiliaria en Facebook e Instagram"
+      },
       "priority": 1
     },
     {

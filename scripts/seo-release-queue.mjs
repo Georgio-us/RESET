@@ -35,7 +35,8 @@ for (const batch of queue.batches) {
       ? `/${locale}/cases/${batch.sourceSlug}`
       : `/${locale}/services/${batch.sourceSlug}/`;
     const sourceFile = resolve(root, `.${source}${source.endsWith('/') ? 'index.html' : ''}`);
-    if (batch.status !== 'released' && !existsSync(sourceFile)) {
+    if (batch.newLocales?.includes(locale) && existsSync(sourceFile)) throw new Error(`New locale already has a source URL: ${source}`);
+    if (batch.status !== 'released' && !batch.newLocales?.includes(locale) && !existsSync(sourceFile)) {
       if (batch.status === 'ready') throw new Error(`Missing source: ${source}`);
       blockers.push(`Missing locale page: ${source}`);
       continue;
@@ -51,6 +52,15 @@ for (const batch of queue.batches) {
     const html = await readFile(targetFile, 'utf8');
     if (!html.includes(`rel="canonical" href="https://resetdigital.agency${target}"`)) {
       throw new Error(`Wrong canonical: ${target}`);
+    }
+    if (/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i.test(html)) throw new Error(`Noindex target: ${target}`);
+    for (const alternate of queue.locales) {
+      const alternateTarget = batch.kind === 'case'
+        ? `/${alternate}/cases/${batch.targetSlug}`
+        : `/${alternate}/services/${batch.targetSlug}/`;
+      if (!html.includes(`hreflang="${alternate}" href="https://resetdigital.agency${alternateTarget}"`)) {
+        throw new Error(`Missing alternate ${alternate}: ${target}`);
+      }
     }
     if (batch.status === 'released' && (!cohort.pilot.includes(target) || !sitemap.includes(`<loc>https://resetdigital.agency${target}</loc>`))) {
       throw new Error(`Released URL missing from sitemap: ${target}`);

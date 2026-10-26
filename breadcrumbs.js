@@ -21,7 +21,7 @@ export function breadcrumbItems(html,{locale='ru',path='/',exists=()=>true}={}){
  if(!title)return [];
  const home=`/${locale}/`,items=[{name:l.home,item:home}];
  if(route.startsWith('/cases/'))items.push({name:c.cases,item:home+'#case-index'});
- if(route.startsWith('/services/')&&route!=='/services/')items.push({name:c.services,item:home+'services/'});
+ if(route.startsWith('/services/')&&route!=='/services/'&&exists(home+'services/'))items.push({name:c.services,item:home+'services/'});
  if(route.startsWith('/materials/')&&route!=='/materials/'){
   items.push({name:'Journal',item:home+'materials/'});
   const parts=route.split('/').filter(Boolean);

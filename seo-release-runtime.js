@@ -17,7 +17,7 @@ export function scheduledRoute(queue, pathname, now = new Date()) {
       if (pathname === target || pathname === `${target}index.html`) {
         if (!active) return { status: 404 };
       }
-      if (active && (pathname === source || pathname === source.replace(/\/$/, '') || pathname === `${source}index.html`)) {
+      if (active && !batch.newLocales?.includes(locale) && (pathname === source || pathname === source.replace(/\/$/, '') || pathname === `${source}index.html`)) {
         return { status: 301, location: target };
       }
     }

@@ -1,0 +1,48 @@
+{
+  "labels": {
+    "services": "Servicios",
+    "home": "Inicio",
+    "eyebrow": "RESET / SERVICIOS INMOBILIARIOS",
+    "includes": "Qué incluye el trabajo",
+    "fit": "Cuándo es adecuado",
+    "process": "Cómo trabajamos",
+    "cases": "Proyectos relacionados de RESET",
+    "caseLink": "Ver el caso",
+    "cost": "Precio y alcance",
+    "faq": "Antes de empezar",
+    "contact": "Hablemos de tu proyecto",
+    "contactText": "Cuéntanos qué inmueble o promoción quieres anunciar y en qué punto está el proyecto. Revisaremos la información, acordaremos el alcance y prepararemos una propuesta.",
+    "cta": "Hablar del proyecto",
+    "estimate": "Solicitar presupuesto",
+    "other": "Otros servicios",
+    "steps": "Del análisis al lanzamiento",
+    "scope": "Acordamos el alcance antes de empezar"
+  },
+  "service": {
+    "slug": "meta-ads",
+    "cases": ["an-factor", "shepit-meta-ads", "delmar-meta-ads"],
+    "name": "Meta Ads",
+    "title": "Publicidad inmobiliaria en Facebook e Instagram",
+    "intro": "Diseñamos ofertas, piezas creativas y campañas para agencias y promotoras. Conectamos la captación con la gestión comercial para evaluar tanto el volumen como la calidad de los contactos.",
+    "fit": "Para inmuebles concretos, promociones residenciales y ofertas de agencias. Funciona mejor cuando las condiciones de compra están claras, hay material sobre el producto y alguien puede atender las consultas.",
+    "includes": [
+      ["Oferta y audiencias", "Revisamos el inmueble, su ubicación, las condiciones de compra y los motivos para elegirlo. A partir de ahí definimos las ofertas que merece la pena probar."],
+      ["Creatividades y página de destino", "Preparamos mensajes y materiales visuales, elegimos entre la web y un formulario de contacto y comprobamos el recorrido hasta la consulta."],
+      ["Campañas y medición", "Configuramos campañas, eventos y entrega de contactos según los accesos y las integraciones acordadas."],
+      ["Gestión y optimización", "Comparamos las combinaciones de anuncios, redistribuimos el presupuesto y ajustamos las campañas con la información del equipo comercial."]
+    ],
+    "steps": [
+      ["Analizar el punto de partida", "Revisamos los inmuebles, las campañas anteriores, el presupuesto, la web y la forma de atender los contactos."],
+      ["Acordar el plan de lanzamiento", "Definimos ofertas, creatividades, zonas, presupuesto de prueba y criterios para evaluar los resultados."],
+      ["Lanzar la prueba", "Comprobamos que los contactos llegan correctamente y reunimos los primeros datos."],
+      ["Ajustar las campañas", "Contrastamos el coste y la calidad de los contactos con el equipo comercial y acordamos los siguientes pasos."]
+    ],
+    "price": "El precio depende del número de inmuebles y mercados, la producción creativa y el alcance de la gestión. Desglosamos la preparación del lanzamiento y el trabajo continuo por separado en la propuesta.",
+    "priceNote": "El presupuesto publicitario no está incluido en nuestros honorarios. La fotografía y el vídeo se presupuestan aparte.",
+    "faq": [
+      ["¿Podemos anunciar un inmueble sin tener web?", "Sí, si un formulario de contacto encaja con el objetivo. Antes de lanzar la campaña acordamos dónde llegarán las consultas y quién responderá."],
+      ["¿Garantizáis un coste fijo por contacto?", "No. Depende del mercado, la oferta, la competencia y el presupuesto. Los resultados de casos anteriores no garantizan que se repita el mismo coste."],
+      ["¿Qué necesitáis de nuestro equipo?", "Inmuebles y precios actualizados, condiciones de compra, fotos o vídeos, acceso a los activos publicitarios y una persona responsable de responder a las consultas."]
+    ]
+  }
+}

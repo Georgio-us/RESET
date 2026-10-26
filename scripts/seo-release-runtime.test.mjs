@@ -6,7 +6,7 @@ const queue = {
   locales: ['ru', 'uk', 'en', 'es'],
   batches: [{
     id: 'sample', kind: 'service', sourceSlug: 'old-service', targetSlug: 'better-service',
-    status: 'ready', releaseAt: '2026-11-02T09:00:00Z',
+    status: 'ready', releaseAt: '2026-11-02T09:00:00Z', newLocales: ['es'],
     labels: { ru: 'Услуга', uk: 'Послуга', en: 'Service', es: 'Servicio' },
   }],
 };
@@ -20,6 +20,7 @@ test('scheduled pages stay unavailable until release; old URL redirects directly
     status: 301, location: '/ru/services/better-service/',
   });
   assert.equal(scheduledRoute(queue, '/ru/services/better-service/', after), null);
+  assert.equal(scheduledRoute(queue, '/es/services/old-service/', after), null);
 });
 
 test('sitemap and public links change at the same release instant', () => {
