@@ -14,7 +14,7 @@
     "build:ui": "node scripts/build-shared-ui.mjs",
     "build:services": "node scripts/build-services.mjs",
     "build:covers": "node scripts/build-case-covers.mjs",
-    "build:staged-meta-ads": "node scripts/build-staged-meta-ads.mjs",
+    "build:staged-services": "node scripts/build-staged-services.mjs",
     "check:seo-queue": "node scripts/seo-release-queue.mjs"
   },
   "engines": {
