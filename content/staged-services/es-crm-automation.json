@@ -1,0 +1,29 @@
+{
+  "service": {
+    "slug": "crm-automation",
+    "cases": ["delmar-custom-crm", "dominanta-spain"],
+    "name": "CRM y automatización",
+    "title": "CRM y gestión de contactos para inmobiliarias",
+    "intro": "Conectamos las consultas, los inmuebles y el trabajo del equipo comercial. Configuramos un CRM existente o diseñamos una solución a medida según el proceso de la agencia.",
+    "fit": "Cuando las consultas llegan por varios canales, se pierde el historial del cliente o resulta difícil saber en qué punto está cada operación. Primero entendemos cómo trabaja el equipo y después elegimos la herramienta.",
+    "includes": [
+      ["Mapa del proceso", "Revisamos de dónde llegan los contactos, quién los atiende, las etapas de cada operación y las acciones de seguimiento."],
+      ["Embudo y datos", "Configuramos etapas, campos, fichas de clientes y relaciones con los inmuebles en el sistema elegido."],
+      ["Entrada de contactos", "Conectamos los formularios y canales acordados y comprobamos avisos, asignaciones y conservación del contexto."],
+      ["Puesta en marcha del equipo", "Probamos situaciones habituales, explicamos el funcionamiento y preparamos los informes acordados."]
+    ],
+    "steps": [
+      ["Entender el trabajo actual", "Identificamos canales, datos y puntos donde se pierden las consultas."],
+      ["Elegir la solución", "Comparamos lo que permite un CRM existente con lo que exigiría un desarrollo a medida."],
+      ["Configurar y conectar", "Preparamos el embudo, los permisos, las integraciones y la migración de datos acordada."],
+      ["Probar el recorrido", "Seguimos una consulta hasta la siguiente acción del asesor y formamos al equipo."]
+    ],
+    "price": "El precio depende del CRM elegido, las integraciones, la migración de datos, los permisos y el desarrollo a medida. Definimos el alcance antes de empezar.",
+    "priceNote": "Las licencias del CRM, la telefonía y los servicios externos se pagan aparte. Revisamos su necesidad y coste al elegir la solución.",
+    "faq": [
+      ["¿Tenemos que cambiar de CRM?", "No. Si el sistema actual cubre las necesidades, trabajamos con su configuración y sus integraciones."],
+      ["¿Podemos trasladar nuestra base de datos?", "Después de revisar su estructura y calidad, acordamos qué trasladar, cómo relacionar los campos y cómo comprobar el resultado."],
+      ["¿La automatización sustituirá al equipo comercial?", "Ayuda a transferir datos, recordar acciones y reducir tareas manuales. El equipo sigue siendo responsable de las conversaciones y las operaciones."]
+    ]
+  }
+}

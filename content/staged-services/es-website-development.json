@@ -1,0 +1,29 @@
+{
+  "service": {
+    "slug": "website-development",
+    "cases": ["shepit-website", "nivellux"],
+    "name": "Desarrollo web",
+    "title": "Webs para agencias y promociones inmobiliarias",
+    "intro": "Creamos páginas de captación, webs corporativas y catálogos de inmuebles. Diseñamos el recorrido desde el primer contacto con la oferta hasta la elección de un inmueble y la consulta.",
+    "fit": "Para un proyecto nuevo, el lanzamiento de campañas o una web que ya no responde a las necesidades del equipo. Elegimos el formato según el contenido, las fuentes de tráfico y la forma en que se actualiza el catálogo.",
+    "includes": [
+      ["Estructura y contenido", "Definimos públicos, páginas, materiales y las acciones principales que debe poder realizar el visitante."],
+      ["Diseño para cada pantalla", "Preparamos la presentación visual y la interfaz para móvil y ordenador respetando la identidad de la marca."],
+      ["Desarrollo e integraciones", "Construimos páginas y formularios y conectamos las bases de inmuebles, el CRM u otros servicios acordados."],
+      ["Preparación para publicar", "Comprobamos formularios, enlaces y vista móvil. Configuramos los metadatos básicos, el sitemap y los eventos de analítica acordados."]
+    ],
+    "steps": [
+      ["Elegir el formato", "Decidimos si la tarea requiere una página de captación, una web de varias secciones o un catálogo."],
+      ["Acordar estructura y diseño", "Definimos páginas, materiales, recorridos del visitante y dirección visual."],
+      ["Desarrollar", "Construimos la interfaz y conectamos las funciones acordadas."],
+      ["Revisar y entregar", "Publicamos la web, comprobamos la recepción de consultas y explicamos cómo actualizar el contenido."]
+    ],
+    "price": "El presupuesto depende del número y tipo de páginas, los idiomas, las funciones del catálogo, la gestión de contenidos y las integraciones. Lo preparamos después de acordar la estructura y los materiales.",
+    "priceNote": "El dominio, el alojamiento y los servicios de pago se detallan por separado. La asistencia posterior y la creación de contenido se acuerdan en el alcance del proyecto.",
+    "faq": [
+      ["¿Podemos aprovechar la web actual?", "Sí. Primero comprobamos qué conviene conservar y qué cambios resolverían el problema sin rehacerlo todo."],
+      ["¿Quién aporta los textos y las fotos?", "Al empezar acordamos qué materiales facilita vuestro equipo y cuáles debemos producir dentro del proyecto."],
+      ["¿El desarrollo incluye SEO?", "Incluye la preparación técnica de las páginas acordadas. El trabajo SEO continuo, la ampliación de palabras clave y la publicación de contenidos se contratan por separado."]
+    ]
+  }
+}

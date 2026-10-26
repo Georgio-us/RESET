@@ -69,7 +69,7 @@
           "Review lead cost and quality, then agree on the next steps."
         ]
       ],
-      "price": "Pricing depends on the number of properties and markets, creative production and the management scope. Launch preparation and ongoing management are itemised separately in the proposal.",
+      "price": "Pricing depends on the number of properties and markets, creative production and the management scope. The proposal lists launch preparation and ongoing management separately.",
       "priceNote": "Ad spend is separate from our fees. Photography and video production are scoped separately.",
       "faq": [
         [
@@ -158,7 +158,7 @@
       "name": "Website development",
       "title": "Websites for real estate agencies and developments",
       "intro": "We create landing pages, company websites and property catalogues. We design the journey from discovering an offer to choosing a property and making an enquiry.",
-      "fit": "For a new project, an advertising launch or a website that no longer supports the product and team. We choose the format around content, traffic sources and how listings are updated.",
+      "fit": "For a new project, an advertising launch or a website that no longer supports the product and team. We choose the format based on the content, traffic sources and how the team updates property listings.",
       "includes": [
         [
           "Structure and content",
@@ -283,7 +283,7 @@
       ],
       "name": "SEO and analytics",
       "title": "SEO and analytics for real estate websites",
-      "intro": "We help search engines understand pages and teams understand enquiry sources. We review the technical foundation, site structure and performance measurement.",
+      "intro": "We help search engines understand pages and teams understand enquiry sources. We check the site’s technical condition, page structure and analytics.",
       "fit": "For websites with crawling or indexing issues, unclear structure or incomplete enquiry data. We define scope after reviewing the website and available reports.",
       "includes": [
         [

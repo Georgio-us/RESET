@@ -1,0 +1,29 @@
+{
+  "service": {
+    "slug": "google-ads",
+    "cases": ["shepit-google-ads", "shepit-website"],
+    "name": "Google Ads",
+    "title": "Publicidad en Google para el sector inmobiliario",
+    "intro": "Trabajamos con las búsquedas de personas que ya están buscando una vivienda o un servicio. Relacionamos la consulta, el anuncio y la página de destino con una oferta concreta.",
+    "fit": "Para proyectos con demanda de búsqueda relevante y una web donde el visitante pueda conocer la oferta y consultar. Antes de lanzar, revisamos la demanda, la zona y las páginas de destino.",
+    "includes": [
+      ["Demanda y palabras clave", "Investigamos las búsquedas comerciales, distinguimos la intención de cada consulta y excluimos las que no corresponden a la oferta."],
+      ["Estructura y anuncios", "Organizamos las campañas por oferta y ubicación, y preparamos anuncios y recursos complementarios."],
+      ["Páginas de destino y medición", "Comprobamos que las páginas respondan a las búsquedas, que los formularios funcionen y que las consultas se midan. Los cambios de la web se presupuestan aparte."],
+      ["Optimización de campañas", "Revisamos los términos de búsqueda, el gasto y las conversiones para ajustar palabras clave negativas, pujas y presupuesto."]
+    ],
+    "steps": [
+      ["Evaluar la demanda", "Revisamos la oferta, las zonas, las búsquedas y el estado de la web."],
+      ["Definir la estructura", "Acordamos campañas, páginas de destino y presupuesto de prueba."],
+      ["Comprobar y lanzar", "Probamos los eventos de conversión y los formularios antes de activar las campañas."],
+      ["Ajustar según los resultados", "Valoramos las consultas recibidas, excluimos búsquedas irrelevantes y afinamos la configuración."]
+    ],
+    "price": "El precio depende de la cantidad de ofertas, zonas e idiomas y del estado de la medición. Desglosamos por separado la configuración, la gestión y los cambios necesarios en la web.",
+    "priceNote": "La inversión en Google Ads se paga aparte. La creación de nuevas páginas de destino no forma parte automáticamente de la gestión de campañas.",
+    "faq": [
+      ["¿Necesitamos una web?", "Los anuncios de búsqueda necesitan una página de destino adecuada. Revisamos la página actual y explicamos si basta con ella o hay que modificarla."],
+      ["¿Cómo medimos los resultados?", "Medimos las consultas acordadas y su calidad. Los clics y el CTR ayudan a analizar la campaña, pero no sustituyen a las consultas y las ventas."],
+      ["¿Qué presupuesto necesitamos?", "Lo estimamos después de revisar la demanda, la ubicación y las ofertas. No proponemos una cifra universal sin esos datos."]
+    ]
+  }
+}

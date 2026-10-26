@@ -1,0 +1,29 @@
+{
+  "service": {
+    "slug": "ai-automation",
+    "cases": ["via-ai-widget", "telegram-ai-crm", "delmar-custom-crm"],
+    "name": "IA y automatización",
+    "title": "Herramientas de IA para equipos inmobiliarios",
+    "intro": "Aplicamos la IA a tareas concretas: entender la consulta de un cliente, buscar inmuebles en la base de datos y pasar el contacto a un asesor. Podemos usar un producto existente o diseñar un flujo a medida.",
+    "fit": "Para agencias con una base de inmuebles actualizada y consultas frecuentes que siguen un proceso claro. Antes de implantar la solución comprobamos los datos y definimos qué puede automatizarse.",
+    "includes": [
+      ["Flujo y límites", "Definimos qué puede responder el sistema y cuándo debe pasar la conversación a una persona."],
+      ["Conexión con la base de datos", "Comprobamos la fuente, los campos y las reglas de búsqueda, y acordamos cómo se actualizarán los datos."],
+      ["Interfaz y entrega de contactos", "Elegimos entre un widget para la web y una Mini App de Telegram. Configuramos la identidad visual y el envío de consultas."],
+      ["Pruebas de respuesta", "Probamos la selección de inmuebles y la entrega de contactos con consultas habituales, también cuando faltan datos o no hay resultados."]
+    ],
+    "steps": [
+      ["Elegir la tarea", "Definimos el canal, los datos y el resultado útil de cada conversación."],
+      ["Acordar el producto", "Elegimos un paquete VIA existente o un flujo a medida."],
+      ["Conectar y probar", "Configuramos la base de datos, la interfaz y el envío de contactos."],
+      ["Lanzar", "Revisamos las primeras conversaciones y las mejoras incluidas en el alcance acordado."]
+    ],
+    "price": "Los paquetes de productos existentes se describen en sus casos: VIA AI cuesta $400 en su versión básica y $800 en la ampliada; VIA Properties empieza en $200, o en $500 con panel de administración. Las soluciones a medida se presupuestan según el flujo y las integraciones.",
+    "priceNote": "En VIA AI estos importes corresponden a una configuración inicial única. El uso de IA y de servicios de voz se paga aparte. El alcance de cada paquete figura en la página del producto.",
+    "faq": [
+      ["¿La IA inventa inmuebles?", "La selección utiliza la base de datos conectada. Durante la configuración comprobamos cómo responde cuando falta información o no hay inmuebles que encajen."],
+      ["¿Puede conectarse a nuestra base de datos?", "Primero revisamos el formato y la forma de acceso. Conectar una fuente compatible y desarrollar una integración a medida requieren trabajos distintos."],
+      ["¿Dónde podemos ver el producto?", "Los casos de VIA AI y VIA Properties muestran las interfaces y los flujos. Escríbenos para hablar de una demostración y de la configuración."]
+    ]
+  }
+}

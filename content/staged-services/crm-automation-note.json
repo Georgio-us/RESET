@@ -1,0 +1,6 @@
+{
+  "ru": ["Кто отвечает за новую заявку", "До настройки согласуем источник обращения, ответственного менеджера и следующий шаг. При проверке проводим тестовую заявку по всей цепочке, включая уведомление и запись в CRM."],
+  "uk": ["Хто відповідає за нову заявку", "До налаштування узгоджуємо джерело звернення, відповідального менеджера й наступний крок. Під час перевірки проводимо тестову заявку через увесь процес, зокрема сповіщення та запис у CRM."],
+  "en": ["Who owns a new enquiry", "Before configuration, we agree on the source, responsible agent and next action. We then follow a test enquiry through the full flow, including the notification and CRM record."],
+  "es": ["Quién se hace cargo de cada contacto", "Antes de configurar el sistema acordamos el origen de la consulta, el asesor responsable y la siguiente acción. Después seguimos una consulta de prueba por todo el recorrido, incluidos el aviso y el registro en el CRM."]
+}

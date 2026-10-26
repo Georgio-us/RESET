@@ -38,37 +38,39 @@ test('sitemap and public links change at the same release instant', () => {
   assert.ok(updated.includes('<li><a href="/ru/services/better-service/">Услуга</a></li>'));
 });
 
-test('the configured Meta Ads release preserves the indexed cohort and opens four localized targets', async () => {
+test('each configured service release preserves the indexed cohort and opens four localized targets', async () => {
   const root = fileURLToPath(new URL('../', import.meta.url));
   const liveQueue = JSON.parse(await readFile(`${root}content/seo-release-queue.json`, 'utf8'));
   const cohort = JSON.parse(await readFile(`${root}content/seo-sitemap-cohort.json`, 'utf8'));
   const staticXml = await readFile(`${root}sitemap.xml`, 'utf8');
   const spanishHome = await readFile(`${root}es/index.html`, 'utf8');
-  const beforeRelease = new Date('2026-11-02T08:59:59Z');
-  const atRelease = new Date('2026-11-02T09:00:00Z');
-
-  assert.equal(scheduledSitemap(liveQueue, staticXml, beforeRelease), staticXml);
-  for (const locale of liveQueue.locales) {
-    const target = `/${locale}/services/real-estate-meta-ads/`;
-    assert.deepEqual(scheduledRoute(liveQueue, target, beforeRelease), { status: 404 });
-    assert.equal(scheduledRoute(liveQueue, target, atRelease), null);
-    if (locale !== 'es') {
-      assert.deepEqual(scheduledRoute(liveQueue, `/${locale}/services/meta-ads/`, atRelease), {
-        status: 301, location: target,
-      });
+  const ready = liveQueue.batches.filter(batch => batch.status === 'ready');
+  assert.equal(ready.length, 6);
+  for (const [index, batch] of ready.entries()) {
+    const atRelease = new Date(batch.releaseAt);
+    const beforeRelease = new Date(atRelease.getTime() - 1);
+    const beforeXml = scheduledSitemap(liveQueue, staticXml, beforeRelease);
+    const releasedXml = scheduledSitemap(liveQueue, staticXml, atRelease);
+    assert.equal((beforeXml.match(/<loc>/g) || []).length, 22 + index * 4);
+    assert.equal((releasedXml.match(/<loc>/g) || []).length, 22 + (index + 1) * 4);
+    for (const path of [...cohort.indexedBaseline, ...cohort.pilot]) {
+      assert.ok(releasedXml.includes(`<loc>https://resetdigital.agency${path}</loc>`), path);
     }
+    for (const locale of liveQueue.locales) {
+      const target = `/${locale}/services/${batch.targetSlug}/`;
+      assert.deepEqual(scheduledRoute(liveQueue, target, beforeRelease), { status: 404 });
+      assert.equal(scheduledRoute(liveQueue, target, atRelease), null);
+      assert.ok(!beforeXml.includes(`<loc>https://resetdigital.agency${target}</loc>`));
+      assert.ok(releasedXml.includes(`<loc>https://resetdigital.agency${target}</loc>`));
+      if (locale !== 'es') {
+        assert.deepEqual(scheduledRoute(liveQueue, `/${locale}/services/${batch.sourceSlug}/`, atRelease), {
+          status: 301, location: target,
+        });
+      }
+    }
+    const spanishTarget = `href="/es/services/${batch.targetSlug}/"`;
+    assert.ok(!scheduledHtml(liveQueue, spanishHome, 'es', beforeRelease).includes(spanishTarget));
+    const releasedHome = scheduledHtml(liveQueue, spanishHome, 'es', atRelease);
+    assert.equal(releasedHome.split(spanishTarget).length - 1, 1);
   }
-
-  const releasedXml = scheduledSitemap(liveQueue, staticXml, atRelease);
-  for (const path of [...cohort.indexedBaseline, ...cohort.pilot]) {
-    assert.ok(releasedXml.includes(`<loc>https://resetdigital.agency${path}</loc>`), path);
-  }
-  for (const locale of liveQueue.locales) {
-    assert.ok(releasedXml.includes(`<loc>https://resetdigital.agency/${locale}/services/real-estate-meta-ads/</loc>`));
-  }
-  assert.equal((releasedXml.match(/<loc>/g) || []).length, 26);
-  assert.ok(!scheduledHtml(liveQueue, spanishHome, 'es', beforeRelease).includes('href="/es/services/real-estate-meta-ads/"'));
-  const releasedHome = scheduledHtml(liveQueue, spanishHome, 'es', atRelease);
-  assert.equal((releasedHome.match(/href="\/es\/services\/real-estate-meta-ads\/"/g) || []).length, 1);
-  assert.ok(releasedHome.includes('Ver el servicio'));
 });

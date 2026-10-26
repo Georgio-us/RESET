@@ -7,6 +7,7 @@ import { renderSiteUI, contactForm, arrow } from '../site-ui.js';
 const root = resolve(fileURLToPath(new URL('../', import.meta.url)));
 const origin = 'https://resetdigital.agency';
 const queue = JSON.parse(await readFile(resolve(root, 'content/seo-release-queue.json'), 'utf8'));
+const spanishBase = JSON.parse(await readFile(resolve(root, 'content/staged-services/es-meta-ads.json'), 'utf8'));
 const batches = queue.batches.filter(item => item.kind === 'service' && item.targetSlug);
 const escape = value => String(value).replace(/[&<>"']/g, character => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
@@ -24,7 +25,8 @@ for (const locale of queue.locales) {
     : JSON.parse(await readFile(resolve(root, `content/services/${locale}.json`), 'utf8'));
   const s = data.service || data.services.find(item => item.slug === batch.sourceSlug);
   if (!s) throw new Error(`Missing ${batch.sourceSlug} content for ${locale}`);
-  const l = data.labels;
+  const l = data.labels || (locale === 'es' ? spanishBase.labels : null);
+  if (!l) throw new Error(`Missing service labels for ${locale}: ${batch.id}`);
   const path = paths[locale];
   const breadcrumbs = [
     { name: l.home, item: `${origin}/${locale}/` },

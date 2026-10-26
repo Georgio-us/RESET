@@ -1,0 +1,6 @@
+{
+  "ru": ["Как сайт остаётся актуальным после запуска", "Перед разработкой уточняем, кто будет менять тексты, цены и карточки объектов. От этого зависят выбор системы управления, права доступа и объём инструкции для команды."],
+  "uk": ["Як сайт залишається актуальним після запуску", "Перед розробкою уточнюємо, хто змінюватиме тексти, ціни та картки об’єктів. Від цього залежать вибір системи керування, права доступу й обсяг інструкції для команди."],
+  "en": ["How the website stays current after launch", "Before development, we clarify who will update copy, prices and property listings. This informs the content system, access permissions and guidance for the team."],
+  "es": ["Cómo mantener la web al día tras el lanzamiento", "Antes de desarrollar la web aclaramos quién actualizará los textos, los precios y las fichas de inmuebles. Eso influye en la elección del gestor de contenidos, los permisos y la formación del equipo."]
+}

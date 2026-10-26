@@ -1,0 +1,6 @@
+{
+  "ru": ["Когда AI передаёт диалог человеку", "Заранее определяем ситуации, в которых данных недостаточно, объект не найден или клиенту нужен менеджер. Эти сценарии проверяем на реальных примерах запросов перед запуском."],
+  "uk": ["Коли AI передає діалог людині", "Заздалегідь визначаємо ситуації, коли даних бракує, об’єкт не знайдено або клієнту потрібен менеджер. Перед запуском перевіряємо ці сценарії на прикладах реальних запитів."],
+  "en": ["When AI hands a conversation to a person", "We agree in advance what happens when data is missing, no property matches or a client needs an agent. We test these paths with realistic enquiries before launch."],
+  "es": ["Cuándo pasa la IA la conversación a una persona", "Acordamos de antemano qué ocurre si faltan datos, no hay un inmueble adecuado o el cliente necesita un asesor. Probamos esas situaciones con consultas realistas antes de lanzar."]
+}

@@ -33,40 +33,95 @@
       "id": "service-google-ads",
       "kind": "service",
       "sourceSlug": "google-ads",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-google-ads",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-11-09T09:00:00Z",
+      "labels": {
+        "ru": "Поисковая реклама для недвижимости",
+        "uk": "Пошукова реклама для нерухомості",
+        "en": "Search advertising for real estate",
+        "es": "Publicidad en Google para el sector inmobiliario"
+      },
+      "homepageCard": {
+        "es": { "heading": "Google Ads", "linkText": "Ver el servicio" }
+      },
       "priority": 2
     },
     {
       "id": "service-seo-analytics",
       "kind": "service",
       "sourceSlug": "seo-analytics",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-seo-analytics",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-11-16T09:00:00Z",
+      "labels": {
+        "ru": "SEO и аналитика для сайтов недвижимости",
+        "uk": "SEO й аналітика для сайтів нерухомості",
+        "en": "SEO and analytics for real estate websites",
+        "es": "SEO y analítica para webs inmobiliarias"
+      },
+      "homepageCard": {
+        "es": { "heading": "SEO y análisis", "linkText": "Ver el servicio" }
+      },
       "priority": 3
     },
     {
       "id": "service-ai-automation",
       "kind": "service",
       "sourceSlug": "ai-automation",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-ai-automation",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-11-23T09:00:00Z",
+      "labels": {
+        "ru": "AI-инструменты для работы с недвижимостью",
+        "uk": "AI-інструменти для роботи з нерухомістю",
+        "en": "AI tools for real estate workflows",
+        "es": "Herramientas de IA para equipos inmobiliarios"
+      },
+      "homepageCard": {
+        "es": { "heading": "AI, automatización", "linkText": "Ver el servicio" }
+      },
       "priority": 4
     },
     {
       "id": "service-crm-automation",
       "kind": "service",
       "sourceSlug": "crm-automation",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-crm-automation",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-11-30T09:00:00Z",
+      "labels": {
+        "ru": "CRM и автоматизация заявок для недвижимости",
+        "uk": "CRM та автоматизація заявок для нерухомості",
+        "en": "CRM and lead automation for real estate",
+        "es": "CRM y gestión de contactos para inmobiliarias"
+      },
+      "homepageCard": {
+        "es": { "heading": "CRM y automatización de contactos", "linkText": "Ver el servicio" }
+      },
       "priority": 5
     },
     {
       "id": "service-website-development",
       "kind": "service",
       "sourceSlug": "website-development",
-      "targetSlug": null,
-      "status": "needs-editorial",
+      "targetSlug": "real-estate-websites",
+      "newLocales": ["es"],
+      "status": "ready",
+      "releaseAt": "2026-12-07T09:00:00Z",
+      "labels": {
+        "ru": "Сайты для агентств и проектов недвижимости",
+        "uk": "Сайти для агентств і проєктів нерухомості",
+        "en": "Websites for real estate agencies and developments",
+        "es": "Webs para agencias y promociones inmobiliarias"
+      },
+      "homepageCard": {
+        "es": { "heading": "Webs inmobiliarias", "linkText": "Ver el servicio" }
+      },
       "priority": 6
     }
   ]

@@ -1,0 +1,29 @@
+{
+  "service": {
+    "slug": "seo-analytics",
+    "cases": ["estyle-spain", "shepit-website"],
+    "name": "SEO y analítica",
+    "title": "SEO y analítica para webs inmobiliarias",
+    "intro": "Ayudamos a los buscadores a entender las páginas y al equipo a saber de dónde llegan las consultas. Revisamos el estado técnico de la web, la estructura de las páginas y la analítica.",
+    "fit": "Para webs con problemas de rastreo o indexación, una estructura poco clara o datos incompletos sobre las consultas. Definimos el alcance tras revisar la web y los informes disponibles.",
+    "includes": [
+      ["Auditoría técnica", "Comprobamos respuestas del servidor, direcciones canónicas, robots.txt, sitemap, duplicados y acceso a las páginas importantes."],
+      ["Estructura y contenido", "Relacionamos las búsquedas con servicios e inmuebles y planificamos páginas y enlaces internos."],
+      ["Configuración de la medición", "Comprobamos o configuramos GA4, GTM, Search Console y los eventos de consulta acordados."],
+      ["Plan de mejoras", "Priorizamos los cambios, acordamos quién los implementa y verificamos el resultado."]
+    ],
+    "steps": [
+      ["Reunir la información", "Revisamos la web, los objetivos, las zonas de interés y los accesos a la analítica."],
+      ["Hacer el diagnóstico", "Separamos los errores técnicos de las tareas de estructura y contenido."],
+      ["Aplicar los cambios acordados", "Resolvemos los problemas elegidos y configuramos la medición."],
+      ["Seguir la evolución", "Comparamos el tratamiento de las páginas, el tráfico de búsqueda y las consultas en periodos equivalentes."]
+    ],
+    "price": "Podemos empezar con una auditoría puntual o acordar también la implementación y el seguimiento. El precio depende del tamaño de la web, los idiomas, su estado técnico y las páginas nuevas que hagan falta.",
+    "priceNote": "La redacción de artículos, el desarrollo de páginas y el trabajo continuo se presupuestan por separado. No garantizamos plazos de indexación ni posiciones en Google.",
+    "faq": [
+      ["¿Cuándo aparecerá la web en Google?", "Podemos eliminar obstáculos técnicos y enviar páginas para que se procesen. El buscador decide si las indexa y cuándo lo hace."],
+      ["¿Basta con instalar una herramienta de analítica?", "No. Hay que definir eventos útiles, comprobar que se registran y distinguir las visitas de las consultas reales."],
+      ["¿Garantizáis las primeras posiciones?", "No. Acordamos trabajos concretos y cómo medirlos, pero no prometemos posiciones que dependen del buscador y de la competencia."]
+    ]
+  }
+}
