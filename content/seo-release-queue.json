@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "locales": ["ru", "uk", "en", "es"],
+  "batches": [
+    {
+      "id": "kommo-crm-pilot",
+      "kind": "case",
+      "sourceSlug": "kommo-crm.html",
+      "targetSlug": "shepit-kommo-crm.html",
+      "status": "released",
+      "releasedAt": "2026-10-26"
+    },
+    {
+      "id": "service-meta-ads",
+      "kind": "service",
+      "sourceSlug": "meta-ads",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 1
+    },
+    {
+      "id": "service-google-ads",
+      "kind": "service",
+      "sourceSlug": "google-ads",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 2
+    },
+    {
+      "id": "service-seo-analytics",
+      "kind": "service",
+      "sourceSlug": "seo-analytics",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 3
+    },
+    {
+      "id": "service-ai-automation",
+      "kind": "service",
+      "sourceSlug": "ai-automation",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 4
+    },
+    {
+      "id": "service-crm-automation",
+      "kind": "service",
+      "sourceSlug": "crm-automation",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 5
+    },
+    {
+      "id": "service-website-development",
+      "kind": "service",
+      "sourceSlug": "website-development",
+      "targetSlug": null,
+      "status": "needs-editorial",
+      "priority": 6
+    }
+  ]
+}
