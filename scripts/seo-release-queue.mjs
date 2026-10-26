@@ -25,6 +25,9 @@ for (const batch of queue.batches) {
   if (batch.status === 'ready' && (!batch.releaseAt || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(batch.releaseAt))) {
     throw new Error(`Ready batch has no UTC release time: ${batch.id}`);
   }
+  if (batch.status === 'ready' && queue.locales.some(locale => !batch.labels?.[locale])) {
+    throw new Error(`Ready batch has no localized navigation labels: ${batch.id}`);
+  }
   if (batch.status === 'released' && !batch.releasedAt) throw new Error(`Released batch has no date: ${batch.id}`);
 
   for (const locale of queue.locales) {

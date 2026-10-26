@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import { existsSync } from 'node:fs';
 import { renderSiteUI } from './site-ui.js';
 import { normalizeLead, contactLines } from './lead-data.js';
+import { scheduledRoute, scheduledSitemap, scheduledHtml } from './seo-release-runtime.js';
 
 const root = resolve(fileURLToPath(new URL('.', import.meta.url)));
 const port = Number(process.env.PORT || 3000);
@@ -13,6 +14,7 @@ const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
 const telegramChatId = process.env.TELEGRAM_CHAT_ID;
 const maxBodySize = 20_000;
 const analyticsMeasurementId = 'G-TW7GHVZLVD';
+const seoReleaseQueue = JSON.parse(await readFile(resolve(root, 'content/seo-release-queue.json'), 'utf8'));
 
 const mimeTypes = {
   '.txt': 'text/plain; charset=utf-8',
@@ -234,6 +236,25 @@ const serveStatic = async (request, response) => {
     return;
   }
 
+  const scheduled = scheduledRoute(seoReleaseQueue, pathname);
+  if (scheduled?.status === 301) {
+    response.writeHead(301, { Location: scheduled.location + url.search, 'Cache-Control': 'no-store' });
+    response.end();
+    return;
+  }
+  if (scheduled?.status === 404) {
+    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' });
+    response.end('Страница не найдена');
+    return;
+  }
+
+  if (pathname === '/sitemap.xml') {
+    const xml = scheduledSitemap(seoReleaseQueue, await readFile(resolve(root, 'sitemap.xml'), 'utf8'));
+    response.writeHead(200, { 'Content-Type': mimeTypes['.xml'], 'Cache-Control': 'no-store' });
+    response.end(xml);
+    return;
+  }
+
   const canonicalPath = await canonicalRedirect(pathname, root);
   if (canonicalPath) {
     response.writeHead(301, { Location: canonicalPath + url.search, 'Cache-Control': 'no-store' });
@@ -279,7 +300,7 @@ const serveStatic = async (request, response) => {
     });
     if (extension === '.html') {
       const document = await readFile(filePath, 'utf8');
-      response.end(injectHeadScripts(renderSiteUI(document, { locale: locale || document.match(/<html[^>]*lang="(ru|uk|en|es)"/)?.[1] || 'ru', path: pathname, exists: target => existsSync(resolve(root, `.${target.endsWith('/') ? target + 'index.html' : target}`)) })));
+      response.end(injectHeadScripts(renderSiteUI(scheduledHtml(seoReleaseQueue, document, locale), { locale: locale || document.match(/<html[^>]*lang="(ru|uk|en|es)"/)?.[1] || 'ru', path: pathname, exists: target => existsSync(resolve(root, `.${target.endsWith('/') ? target + 'index.html' : target}`)) })));
       return;
     }
     response.end(await readFile(filePath));
