@@ -24,6 +24,9 @@
         "en": "Real estate advertising on Facebook and Instagram",
         "es": "Publicidad inmobiliaria en Facebook e Instagram"
       },
+      "homepageCard": {
+        "es": { "heading": "Meta Ads", "linkText": "Ver el servicio" }
+      },
       "priority": 1
     },
     {

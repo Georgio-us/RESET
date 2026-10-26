@@ -43,6 +43,7 @@ test('the configured Meta Ads release preserves the indexed cohort and opens fou
   const liveQueue = JSON.parse(await readFile(`${root}content/seo-release-queue.json`, 'utf8'));
   const cohort = JSON.parse(await readFile(`${root}content/seo-sitemap-cohort.json`, 'utf8'));
   const staticXml = await readFile(`${root}sitemap.xml`, 'utf8');
+  const spanishHome = await readFile(`${root}es/index.html`, 'utf8');
   const beforeRelease = new Date('2026-11-02T08:59:59Z');
   const atRelease = new Date('2026-11-02T09:00:00Z');
 
@@ -66,4 +67,8 @@ test('the configured Meta Ads release preserves the indexed cohort and opens fou
     assert.ok(releasedXml.includes(`<loc>https://resetdigital.agency/${locale}/services/real-estate-meta-ads/</loc>`));
   }
   assert.equal((releasedXml.match(/<loc>/g) || []).length, 26);
+  assert.ok(!scheduledHtml(liveQueue, spanishHome, 'es', beforeRelease).includes('href="/es/services/real-estate-meta-ads/"'));
+  const releasedHome = scheduledHtml(liveQueue, spanishHome, 'es', atRelease);
+  assert.equal((releasedHome.match(/href="\/es\/services\/real-estate-meta-ads\/"/g) || []).length, 1);
+  assert.ok(releasedHome.includes('Ver el servicio'));
 });

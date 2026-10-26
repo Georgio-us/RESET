@@ -1,4 +1,5 @@
 const origin = 'https://resetdigital.agency';
+const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const routeFor = (batch, locale, slug) => batch.kind === 'case'
   ? `/${locale}/cases/${slug}`
@@ -41,6 +42,13 @@ export function scheduledHtml(queue, html, locale, now = new Date()) {
       const target = routeFor(batch, language, batch.targetSlug);
       result = result.replaceAll(`href="${source}"`, `href="${target}"`);
       result = result.replaceAll(`href="${origin}${source}"`, `href="${origin}${target}"`);
+    }
+    const card = batch.homepageCard?.[locale];
+    if (card && html.includes('<section class="platforms-section services-section" id="services"')) {
+      const pattern = new RegExp(`(<article class="service-card[^"]*">(?:(?!<\\/article>)[\\s\\S])*?<h3>${escapePattern(card.heading)}<\\/h3>(?:(?!<\\/article>)[\\s\\S])*?)(<\\/article>)`);
+      const path = routeFor(batch, locale, batch.targetSlug);
+      result = result.replace(pattern, (_, contents, close) =>
+        `${contents}<a class="service-detail-link" href="${path}">${card.linkText} <span aria-hidden="true">↗</span></a>${close}`);
     }
   }
   if (!locale || !html.includes('<title>') || !html.includes('</main>')) return result;
