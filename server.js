@@ -226,6 +226,22 @@ const handleLead = async (request, response) => {
   }
 };
 
+const sendNotFound = async (response, locale = 'ru', pathname = '/') => {
+  try {
+    const document = await readFile(resolve(root, `${locale}/404.html`), 'utf8');
+    const localized = document.replace(/href="index\.html"/g, `href="/${locale}/"`);
+    response.writeHead(404, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'X-Content-Type-Options': 'nosniff',
+      'Cache-Control': 'no-store',
+    });
+    response.end(injectHeadScripts(renderSiteUI(localized, { locale, path: pathname, exists: () => false })));
+  } catch {
+    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    response.end('Страница не найдена');
+  }
+};
+
 const serveStatic = async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host || 'localhost'}`);
   let pathname;
@@ -243,8 +259,7 @@ const serveStatic = async (request, response) => {
     return;
   }
   if (scheduled?.status === 404) {
-    response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' });
-    response.end('Страница не найдена');
+    await sendNotFound(response, pathname.match(/^\/(ru|uk|en|es)\//)?.[1] || 'ru', pathname);
     return;
   }
 
@@ -325,15 +340,7 @@ const serveStatic = async (request, response) => {
         // Respond with the standard 404 below.
       }
     }
-    const notFoundPath = locale ? resolve(root, `${locale}/404.html`) : resolve(root, '404.html');
-    try {
-      const document = await readFile(notFoundPath, 'utf8');
-      response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'X-Content-Type-Options': 'nosniff' });
-      response.end(injectHeadScripts(renderSiteUI(document, { locale: locale || 'ru', path: pathname, exists: () => false })));
-    } catch {
-      response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
-      response.end('Страница не найдена');
-    }
+    await sendNotFound(response, locale || 'ru', pathname);
   }
 };
 
