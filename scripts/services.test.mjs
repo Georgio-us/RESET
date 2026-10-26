@@ -6,7 +6,6 @@ import {resolve} from 'node:path';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const read=p=>readFileSync(resolve(root,p),'utf8');
 test('service destinations are discoverable, translated and attributed to the selected service',()=>{
- const sitemap=read('sitemap.xml');
  for(const locale of ['ru','uk','en']){
   const data=JSON.parse(read(`content/services/${locale}.json`));
   assert.equal(data.services.length,6);
@@ -14,7 +13,8 @@ test('service destinations are discoverable, translated and attributed to the se
   for(const service of data.services){
    const path=`/${locale}/services/${service.slug}/`,html=read(path.slice(1)+'index.html');
    assert.ok(home.includes(`href="${path}"`));assert.ok(hub.includes(`href="${path}"`));
-   assert.ok(sitemap.includes(`<loc>https://resetdigital.agency${path}</loc>`));
+   assert.ok(html.includes(`<link rel="canonical" href="https://resetdigital.agency${path}">`));
+   assert.match(html,/<meta name="robots" content="index,follow/);
    assert.equal((html.match(/<h1>/g)||[]).length,1);
    assert.ok(html.includes(`name="source" value="service-${service.slug}"`));
    assert.ok(html.includes('id="service-enquiry"'));

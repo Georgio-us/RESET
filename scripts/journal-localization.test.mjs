@@ -9,7 +9,6 @@ const read=p=>readFileSync(resolve(root,p),'utf8');
 const plan=JSON.parse(read('content/journal.json')).articles;
 const locales=['ru','uk','en','es'];
 test('every journal topic is published in all four languages, linked and indexable',()=>{
- const sitemap=read('sitemap.xml');
  for(const {category,slug} of plan) for(const locale of locales){
   const source=`content/articles/${locale}/${category}/${slug}/`;
   const meta=JSON.parse(read(source+'article.json'));
@@ -20,7 +19,6 @@ test('every journal topic is published in all four languages, linked and indexab
   assert.ok(body.length>5000,`Incomplete body: ${path}`);
   assert.match(html,/<meta name="robots" content="index,follow/);
   assert.ok(html.includes(`<link rel="canonical" href="https://resetdigital.agency${path}">`));
-  assert.ok(sitemap.includes(`<loc>https://resetdigital.agency${path}</loc>`));
   assert.ok(read(`${locale}/materials/${category}/index.html`).includes(`href="${path}"`));
   for(const lang of locales) assert.ok(html.includes(`hreflang="${lang}" href="https://resetdigital.agency/${lang}/materials/${category}/${slug}/"`),path+' '+lang);
   if(['en','es'].includes(locale)) assert.doesNotMatch(body+JSON.stringify(meta),/[А-Яа-яЁёІіЇїЄє]/,path);

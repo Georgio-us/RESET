@@ -10,6 +10,7 @@
     ],
     "task": "Задача: связать рекламу с работой отдела продаж",
     "taskText": "У проекта уже были каналы привлечения. Требовалось организовать обработку обращений: собрать заявки в CRM, отразить этапы работы и дать команде дополнительный способ замечать новые обращения без постоянного просмотра системы.",
+    "journey": "Маршрут новой заявки: обращение из Facebook или с сайта поступает в Kommo, менеджер ведёт сделку по этапам воронки, а рабочая группа получает уведомление в Telegram. CRM остаётся местом работы со сделкой; бот помогает команде быстрее заметить её поступление.",
     "work": "Что настроили",
     "steps": [
       [
@@ -54,6 +55,7 @@
     ],
     "task": "Завдання: поєднати рекламу з роботою відділу продажів",
     "taskText": "Проєкт уже мав канали залучення. Потрібно було організувати обробку звернень: зібрати заявки в CRM, відобразити етапи роботи й дати команді додатковий спосіб помічати нові звернення без постійного перегляду системи.",
+    "journey": "Шлях нової заявки: звернення з Facebook або сайту надходить у Kommo, менеджер веде угоду за етапами воронки, а робоча група отримує сповіщення в Telegram. CRM залишається місцем роботи з угодою; бот допомагає команді швидше помітити її надходження.",
     "work": "Що налаштували",
     "steps": [
       [
@@ -98,6 +100,7 @@
     ],
     "task": "The task: connect marketing with the sales workflow",
     "taskText": "The project already had acquisition channels. The team needed a process for handling enquiries: collect leads in the CRM, track sales stages and notice new enquiries without constantly checking the system.",
+    "journey": "A new lead's path: an enquiry from Facebook or the website enters Kommo, a manager moves the deal through the pipeline, and the team receives an alert in Telegram. The CRM remains the place to work on the deal; the bot helps the team notice its arrival promptly.",
     "work": "What we set up",
     "steps": [
       [
@@ -142,6 +145,7 @@
     ],
     "task": "El reto: conectar la captación con el trabajo comercial",
     "taskText": "El proyecto ya contaba con canales de captación. Faltaba organizar la gestión de consultas: reunir los contactos en el CRM, reflejar las etapas de venta y ofrecer al equipo otra forma de detectar nuevas consultas sin revisar el sistema constantemente.",
+    "journey": "Recorrido de una nueva consulta: llega desde Facebook o la web a Kommo, un gestor mueve la oportunidad por las etapas del embudo y el equipo recibe un aviso en Telegram. El CRM sigue siendo el espacio de trabajo de la oportunidad; el bot ayuda a detectar su llegada a tiempo.",
     "work": "Qué configuramos",
     "steps": [
       [

@@ -49,6 +49,6 @@ test('every selected project is present in each localized homepage catalog', () 
       assert.ok(cards.some(card => card.includes(`data-work-link="${slug}"`)), `${path}: missing ${slug}`);
     }
     assert.equal(cards.length, 15, path);
-    for (const slug of ['estyle-spain','kommo-crm','factor-seo']) assert.ok(cards.some(card => card.includes(`/cases/${slug}.html`)), `${path}: missing restored ${slug}`);
+    for (const slug of ['estyle-spain','shepit-kommo-crm','factor-seo']) assert.ok(cards.some(card => card.includes(`/cases/${slug}.html`)), `${path}: missing restored ${slug}`);
   }
 });

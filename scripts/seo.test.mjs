@@ -10,6 +10,8 @@ test('public aliases converge without creating redirects for missing documents',
 });
 test('sitemap contains unique self-canonical indexable pages and only published articles',async()=>{
  const xml=await readFile(resolve(root,'sitemap.xml'),'utf8');const urls=[...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map(m=>m[1]);assert.equal(urls.length,new Set(urls).size);
+ const cohort=JSON.parse(await readFile(resolve(root,'content/seo-sitemap-cohort.json'),'utf8'));
+ assert.deepEqual(new Set(urls),new Set([...cohort.indexedBaseline,...cohort.pilot].map(path=>'https://resetdigital.agency'+path)));
  for(const url of urls){const p=new URL(url).pathname;const s=await readFile(resolve(root,'.'+p+(p.endsWith('/')?'index.html':'')),'utf8');assert.doesNotMatch(s,/<meta[^>]*name="robots"[^>]*content="[^"]*noindex/i,url);assert.ok(s.includes(`rel="canonical" href="${url}"`),url);
  const m=p.match(/^\/(ru|uk|en|es)\/materials\/([^/]+)\/([^/]+)\/$/);if(m){const a=JSON.parse(await readFile(resolve(root,`content/articles/${m[1]}/${m[2]}/${m[3]}/article.json`),'utf8'));assert.equal(a.status,'published',url)}}
  assert.ok(urls.includes('https://resetdigital.agency/ru/materials/development/cms-ili-custom/'));
@@ -20,6 +22,16 @@ test('retired AI URLs redirect directly to the current case in the same language
  assert.equal(await canonicalRedirect('/cases/ai-sales-assistant.html',root),'/ru/cases/telegram-ai-crm.html');
  assert.equal(await canonicalRedirect('/ru/cases/irina-uzhelovskaya.html',root),null);
  const xml=await readFile(resolve(root,'sitemap.xml'),'utf8');assert.ok(!xml.includes('ai-sales-assistant.html'));
+});
+test('previous Kommo case URLs redirect to the revised case in every locale',async()=>{
+ for(const locale of ['ru','uk','en','es']){
+  assert.equal(await canonicalRedirect(`/${locale}/cases/kommo-crm.html`,root),`/${locale}/cases/shepit-kommo-crm.html`);
+  assert.equal(await canonicalRedirect(`/${locale}/cases/shepit-kommo-crm.html`,root),null);
+ }
+ assert.equal(await canonicalRedirect('/cases/kommo-crm.html',root),'/ru/cases/shepit-kommo-crm.html');
+ const xml=await readFile(resolve(root,'sitemap.xml'),'utf8');
+ assert.equal((xml.match(/shepit-kommo-crm\.html/g)||[]).length,4);
+ assert.ok(!xml.includes('/cases/kommo-crm.html'));
 });
 test('HTML maps expose every indexable URL and case breadcrumbs point to actual documents',async()=>{
  const xml=await readFile(resolve(root,'sitemap.xml'),'utf8');
